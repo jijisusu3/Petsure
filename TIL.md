@@ -105,3 +105,40 @@ export default App;
 * [React로-...더보기-버튼-만들기-반응형](https://velog.io/@arihi/React로-...더보기-버튼-만들기-반응형)
 * [useRef 사용법](https://www.daleseo.com/react-hooks-use-ref/)
 * [React로 타이머 구현하기 Part.3 (完) (velog.io)](https://velog.io/@leobang17/React로-타이머-구현하기-pt.3)
+
+
+
+
+
+# 0906
+
+### redux 관련 공부
+
+### 정리
+
+* props 문법 대신
+  * props는 state를 하위 component로 전달전달 해야되므로 이 과정을 없애기위함
+  * store.js 만들어서 필요한 state를 저장해두면 각 component에 쉽게 쓸 수 있다.
+
+* state 변경관리(상태관리)에 좋다.
+  * 하나의 state를 여러 component에서 다른 방식으로 수정할 때 추적/관리하기 쉽다.
+  * store.js에 state의 수정방법을 정의해 두고, component에서 수정사항 요청만 하도록 코드 제한
+
+* 참고 영상
+  * https://www.youtube.com/watch?v=QZcYz2NrDIs
+
+
+
+
+
+# 0913
+
+### 로고 제작
+
+* adobe express
+  * https://express.adobe.com/ko-KR/sp/design/post/urn:aaid:sc:AP:5c3d1f8c-3866-46a7-8ccb-855c63ae25bb
+
+### git cz
+
+* commitizen으로 커밋 버전관리
+  * https://dailyheumsi.tistory.com/266
