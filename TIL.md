@@ -142,3 +142,17 @@ export default App;
 
 * commitizen으로 커밋 버전관리
   * https://dailyheumsi.tistory.com/266
+
+
+
+
+
+# 0914
+
+### 와이어프레임
+
+* 질병사전 page
+
+### 로고
+
+* 로고 다시 제작 중..
