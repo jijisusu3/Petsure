@@ -1,21 +1,13 @@
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
-import HeaderNavAuth from './components/common/HeaderNavAuth';
 import HeaderNav from './components/common/HeaderNav';
 
 import LandingPage from './pages/LandingPage';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { validToken } from './store/auth-thunkActions';
 import useInterval from './components/utils/hooks/useInterval';
 import { createSerializableStateInvariantMiddleware } from '@reduxjs/toolkit';
 
-const authPathSet = new Set([
-  '/login',
-  '/auth/find-info',
-  '/auth/find-email',
-  '/auth/find-password',
-  '/signup',
-]);
+const authPathSet = new Set([]);
 
 function App() {
   const { pathname: path } = useLocation();
@@ -23,39 +15,28 @@ function App() {
 
   // 사용 nav 설정
   let selectedNav = '';
-  if (authPathSet.has(path)) {
-    if (
-      path.includes('find-email') ||
-      path.includes('find-password') ||
-      path.includes('find-info')
-    ) {
-      selectedNav = <HeaderNavAuth color="black" />;
-    } else {
-      selectedNav = <HeaderNavAuth color="white" fixed />;
-    }
-  } else {
-    selectedNav = <HeaderNav />;
-  }
+  // if (authPathSet.has(path)) {
+  //   if (
+  //     path.includes('find-email') ||
+  //     path.includes('find-password') ||
+  //     path.includes('find-info')
+  //   ) {
+  //     selectedNav = <HeaderNavAuth color="black" />;
+  //   } else {
+  //     selectedNav = <HeaderNavAuth color="white" fixed />;
+  //   }
+  // } else {
+  //   selectedNav = <HeaderNav />;
+  // }
 
-  // token 여부 확인
-  const auth = useSelector(state => state.auth);
-  const user = useSelector(state => state.user);
-  // 토큰 재평가하기 (이슈 있음)
-
-  useInterval(
-    () => {
-      if (auth) dispatch(validToken(auth.token));
-    },
-    auth ? 300000 : null,
-  );
-
+  // // token 여부 확인
   return (
     <>
       {selectedNav}
       <main>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/login" element={<LoginPage />} />
+          {/* <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/auth/find-info" element={<FindInfo />} />
           <Route path="/auth/find-email" element={<FindEmail />} />
@@ -69,7 +50,7 @@ function App() {
             <Route path="heart" element={<HeartPage />} />
             <Route path="withdrawal" element={<WithdrawalPage />} />
             <Route path="*" element={<Navigate to="/settings/profile" replace />} />
-          </Route>
+          </Route> */}
         </Routes>
       </main>
     </>

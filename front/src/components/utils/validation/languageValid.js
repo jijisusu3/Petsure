@@ -1,9 +1,9 @@
 //무조건 입력하게
 export function languageValidHandler(dropdownValue) {
   if (dropdownValue.value == null) {
-    return false
+    return false;
   }
-  return true
+  return true;
 }
 
 const languageValidObj = {
@@ -11,4 +11,4 @@ const languageValidObj = {
     func: dropdownValue => languageValidHandler(dropdownValue),
     message: '사용언어를 입력해주세요.',
   },
-}
+};

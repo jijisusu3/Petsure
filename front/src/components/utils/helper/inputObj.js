@@ -1,1 +1,1 @@
-export let inputObj = { value: null, valid: false }
+export let inputObj = { value: null, valid: false };

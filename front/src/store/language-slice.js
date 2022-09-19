@@ -1,5 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit'
-import { getLanguages } from './language-thunkActions'
+import { createSlice } from '@reduxjs/toolkit';
+import { getLanguages } from './language-thunkActions';
 
 const languageSlice = createSlice({
   name: 'language',
@@ -11,18 +11,18 @@ const languageSlice = createSlice({
   },
   extraReducers: {
     [getLanguages.pending]: () => {
-      return
+      return;
     },
     [getLanguages.fulfilled]: (state, { payload }) => {
-      state.languageId = payload.id
-      state.lan = payload.lan
+      state.languageId = payload.id;
+      state.lan = payload.lan;
     },
     [getLanguages.rejected]: (state, { payload }) => {
-      state.isError = true
-      state.message = payload.message
+      state.isError = true;
+      state.message = payload.message;
     },
   },
-})
+});
 
-export const countryActions = languageSlice.actions
-export default languageSlice
+export const countryActions = languageSlice.actions;
+export default languageSlice;

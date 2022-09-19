@@ -1,25 +1,14 @@
-import { useState } from 'react'
-import Modal from '../common/Modal'
-import PrivacyPolicyContents from './PrivacyPolicyContents'
+import { useState } from 'react';
+import Modal from '../common/Modal';
+import PrivacyPolicyContents from './PrivacyPolicyContents';
 
 export default function MeetingEntrySection() {
-  const [modalState, setModalState] = useState(false)
-  const handleModal = () => setModalState(!modalState)
+  const [modalState, setModalState] = useState(false);
+  const handleModal = () => setModalState(!modalState);
 
   const contents = {
-    content: (
-      <PrivacyPolicyContents handleModal={handleModal}></PrivacyPolicyContents>
-    ),
-  }
+    content: <PrivacyPolicyContents handleModal={handleModal} />,
+  };
 
-  return (
-    <>
-      <Modal
-        opened={modalState}
-        handleModal={handleModal}
-        contents={contents}
-        locked
-      />
-    </>
-  )
+  return <Modal opened={modalState} handleModal={handleModal} contents={contents} locked />;
 }

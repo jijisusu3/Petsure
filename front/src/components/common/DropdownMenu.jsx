@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types'
-import Sheet from './Sheet'
-import classes from './DropdownMenu.module.css'
+import PropTypes from 'prop-types';
+import Sheet from './Sheet';
+import classes from './DropdownMenu.module.css';
 
 function DropdownMenu({ items }) {
   return (
@@ -10,9 +10,7 @@ function DropdownMenu({ items }) {
           {items.map(item => (
             <div
               key={item.text}
-              className={`${classes.menuItem} ${
-                item.color ? classes[item.color] : ''
-              }`}
+              className={`${classes.menuItem} ${item.color ? classes[item.color] : ''}`}
               onClick={item.action}
             >
               {item.text}
@@ -21,7 +19,7 @@ function DropdownMenu({ items }) {
         </div>
       </Sheet>
     </div>
-  )
+  );
 }
 
 DropdownMenu.propTypes = {
@@ -32,6 +30,6 @@ DropdownMenu.propTypes = {
       action: PropTypes.func.isRequired,
     }),
   ),
-}
+};
 
-export default DropdownMenu
+export default DropdownMenu;
