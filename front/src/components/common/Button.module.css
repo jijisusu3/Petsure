@@ -1,0 +1,83 @@
+.button_success {
+  cursor: pointer;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 0.3rem;
+  box-shadow: 0px 8px 5px -5px rgba(191, 189, 189, 0.5);
+}
+
+.button_success:hover,
+.button_error:hover,
+.button_neutral:hover,
+.button_recommend:hover {
+  color: #ffffff;
+  opacity: 0.85;
+}
+
+.button_error {
+  cursor: pointer;
+  background-color: var(--color-error);
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 0.3rem;
+  box-shadow: 0px 8px 5px -5px rgba(191, 189, 189, 0.5);
+}
+
+.button_neutral {
+  cursor: pointer;
+  background-color: var(--color-grey-300);
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 0.3rem;
+  box-shadow: 0px 8px 5px -5px rgba(191, 189, 189, 0.5);
+}
+
+.button_recommend {
+  cursor: pointer;
+  background-color: var(--color-secondary);
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 0.3rem;
+  box-shadow: 0px 8px 5px -5px rgba(191, 189, 189, 0.5);
+}
+
+.button_vip {
+  cursor: pointer;
+  background-color: var(--color-vip);
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 0.3rem;
+  box-shadow: 0px 8px 5px -5px rgba(191, 189, 189, 0.5);
+}
+
+.button_inherit {
+  width: 100%;
+}
+
+.button_large {
+  width: 20rem;
+}
+
+.button_middle {
+  width: 14rem;
+}
+
+.button_small {
+  width: 7rem;
+}
+
+.button_large_height {
+  width: 43rem;
+  height: 3.5rem;
+}
+
+.button_text_big {
+  text-align: center;
+  /* font-size: large; */
+}

@@ -1,0 +1,26 @@
+.sheet {
+  background-color: white;
+  box-shadow: 0 6px 25px 0 rgba(161, 161, 161, 0.25);
+  border-radius: 1rem;
+  position: relative;
+}
+
+.sheet.small {
+  padding: 1rem;
+}
+
+.sheet.medium {
+  padding: 2rem;
+}
+
+.sheet.medium_large {
+  padding: 3rem;
+}
+
+.sheet.large {
+  padding: 4rem;
+}
+
+.sheet.shallow {
+  box-shadow: 0 4px 8px 0 rgba(161, 161, 161, 0.25);
+}
