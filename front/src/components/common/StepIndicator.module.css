@@ -1,0 +1,49 @@
+.stepIndicator {
+    z-index: 20;
+    width: 40%;
+    height: 3rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.circleContainer {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+}
+
+.stepCircle {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-grey-300);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.stepCircle.passed {
+    background-color: var(--color-secondary);
+    color: white;
+}
+
+.backgroundContainer {
+    width: 90%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.background {
+    width: calc(100% - 1.5rem);
+    height: 0.5rem;
+    background-color: var(--color-grey-300);
+}
+
+.background.passed {
+    background-color: var(--color-secondary);
+}
