@@ -1,0 +1,32 @@
+.dropdownMenu {
+  z-index: 50;
+  position: absolute;
+  top: 4rem;
+  right: 0;
+}
+
+.dropdownInner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.menuItem {
+  display: flex;
+  cursor: pointer;
+  font-weight: 500;
+  word-break: keep-all;
+  padding: 2px 0;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  transition: border 0.15s;
+}
+
+.menuItem:hover {
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.error {
+  color: var(--color-error);
+}

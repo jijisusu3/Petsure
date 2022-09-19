@@ -1,0 +1,24 @@
+.select {
+    width: 100px;
+    padding: .8em .5em;
+    border: none;
+    border-bottom: 1px solid #000000;
+    outline: none;
+    font-family: inherit;
+    /*background: url('arrow.jpg') no-repeat 95% 50%;*/
+    border-radius: 0px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+} 
+
+.element_style {
+    width: 500 !important;
+}
+
+
+/*
+.select::-ms-expand {
+    display: none;
+}
+*/
