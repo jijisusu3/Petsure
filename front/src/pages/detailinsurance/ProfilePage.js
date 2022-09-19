@@ -1,5 +1,5 @@
-import UserProfileForm from '../../components/settings/UserProfileForm'
+import UserProfileForm from '../../components/settings/UserProfileForm';
 
 export default function ProfilePage() {
-  return <UserProfileForm />
+  return <UserProfileForm />;
 }

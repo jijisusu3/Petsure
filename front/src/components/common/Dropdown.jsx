@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types'
-import classes from './Dropdown.module.css'
+import PropTypes from 'prop-types';
+import classes from './Dropdown.module.css';
 
 const Dropdown = ({ id, value, items, placeholder, handleChange }) => {
   return (
@@ -26,8 +26,8 @@ const Dropdown = ({ id, value, items, placeholder, handleChange }) => {
         ))}
       </select>
     </div>
-  )
-}
+  );
+};
 
 Dropdown.propTypes = {
   id: PropTypes.string,
@@ -35,6 +35,6 @@ Dropdown.propTypes = {
   placeholder: PropTypes.string,
   items: PropTypes.array.isRequired,
   handleChange: PropTypes.func.isRequired,
-}
+};
 
-export default Dropdown
+export default Dropdown;

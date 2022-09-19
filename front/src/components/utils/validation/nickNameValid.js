@@ -1,24 +1,24 @@
 export function nickNameValidLengthHandler(inputValue) {
   if (inputValue.length < 2) {
-    return false
+    return false;
   }
-  return true
+  return true;
 }
 
 export function nickNameValidOtherLetterHandler(inputValue) {
-  const regxSpecial = /[`~!@#$%^&*|\\\'\";:\/?^=^+_()<>]/
+  const regxSpecial = /[`~!@#$%^&*|\\\'\";:\/?^=^+_()<>]/;
   if (regxSpecial.test(inputValue)) {
-    return false
+    return false;
   }
-  return true
+  return true;
 }
 
 export function nickNameValidStartLetterHandler(inputValue) {
-  const regxText = /^[ㄱ-ㅎ|가-힣|a-z|A-Z]+$/
+  const regxText = /^[ㄱ-ㅎ|가-힣|a-z|A-Z]+$/;
   if (regxText.test(inputValue[0])) {
-    return true
+    return true;
   }
-  return false
+  return false;
 }
 
 const nickNameValidObj = {
@@ -34,4 +34,4 @@ const nickNameValidObj = {
     func: inputValue => nickNameValidStartLetterHandler(inputValue),
     message: '닉네임의 첫문자는 영어 혹은 한글이어야 합니다.',
   },
-}
+};

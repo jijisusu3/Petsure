@@ -1,4 +1,4 @@
-import classes from './LoadingSpinner.module.css'
+import classes from './LoadingSpinner.module.css';
 
 /// / loading Spinner /////////////////////////////////////
 /// ///////////////////////////////////////////////////////
@@ -17,7 +17,7 @@ function LodingSpinner() {
     <div className={classes.loading_spinner_wrapper}>
       <div className={classes.loading_spinner} />
     </div>
-  )
+  );
 }
 
-export default LodingSpinner
+export default LodingSpinner;
