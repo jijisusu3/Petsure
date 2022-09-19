@@ -11,8 +11,8 @@
  * handleChange {function}: 라디오 박스 이벤트 핸들러
  */
 
-import classes from './RadioBtnGroup.module.css'
-import PropTypes from 'prop-types'
+import classes from './RadioBtnGroup.module.css';
+import PropTypes from 'prop-types';
 
 function RadioBtn({ id, name, children, selectedValue, handleChange }) {
   return (
@@ -28,30 +28,19 @@ function RadioBtn({ id, name, children, selectedValue, handleChange }) {
       />
       <div className={classes.visibleRadio}>
         <div className={classes.outer}>
-          <div className={classes.inner}></div>
+          <div className={classes.inner} />
         </div>
       </div>
       {children}
     </label>
-  )
+  );
 }
 
-export default function RadioBtnGroup({
-  label,
-  name,
-  items,
-  vertical,
-  selected,
-  handleChange,
-}) {
+export default function RadioBtnGroup({ label, name, items, vertical, selected, handleChange }) {
   return (
     <div className={classes.groupContainer}>
       <div className={classes.label}>{label}</div>
-      <div
-        className={`${classes.radioBtnGroup} ${
-          vertical ? classes.vertical : ''
-        }`}
-      >
+      <div className={`${classes.radioBtnGroup} ${vertical ? classes.vertical : ''}`}>
         {items.map(item => (
           <RadioBtn
             key={item.value}
@@ -65,19 +54,16 @@ export default function RadioBtnGroup({
         ))}
       </div>
     </div>
-  )
+  );
 }
 
 RadioBtn.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string,
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]),
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   selectedValue: PropTypes.string,
   handleChange: PropTypes.func,
-}
+};
 
 RadioBtnGroup.propTypes = {
   label: PropTypes.string,
@@ -91,4 +77,4 @@ RadioBtnGroup.propTypes = {
   vertical: PropTypes.bool,
   selected: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
-}
+};

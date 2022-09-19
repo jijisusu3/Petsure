@@ -1,9 +1,9 @@
 //무조건 입력하게
 export function countryValidHandler(dropdownValue) {
   if ((dropdownValue.value = null)) {
-    return false
+    return false;
   }
-  return true
+  return true;
 }
 
 const countryValidObj = {
@@ -11,4 +11,4 @@ const countryValidObj = {
     func: dropdownValue => countryValidHandler(dropdownValue),
     message: '국가를 입력해주세요.',
   },
-}
+};

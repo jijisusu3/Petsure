@@ -1,27 +1,27 @@
 export function nameValidHandler(inputValue) {
   //  const regxEmail = /^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
-  const regxName = /^[가-힣a-zA-Z]+$/
+  const regxName = /^[가-힣a-zA-Z]+$/;
   if (regxName.test(inputValue)) {
-    return true
+    return true;
   }
-  return false
+  return false;
 }
 
 //무조건 입력하게
 export function nameValidLengthHandler(inputValue) {
   if (inputValue.length < 2) {
-    return false
+    return false;
   }
-  return true
+  return true;
 }
 
 //특수문자 사용못하게
 export function nameValidOtherLetterHandler(inputValue) {
-  const regxSpecial = /[`~!@#$%^&*|\\\'\";:\/?^=^+_()<>]/
+  const regxSpecial = /[`~!@#$%^&*|\\\'\";:\/?^=^+_()<>]/;
   if (regxSpecial.test(inputValue)) {
-    return false
+    return false;
   }
-  return true
+  return true;
 }
 
 const nameValidObj = {
@@ -37,4 +37,4 @@ const nameValidObj = {
     func: inputValue => nameValidHandler(inputValue),
     message: '이름은 한글 및 영어만 입력이 가능합니다',
   },
-}
+};

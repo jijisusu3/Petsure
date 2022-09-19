@@ -1,6 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import classes from './Button.module.css'
+import React from 'react';
+import PropTypes from 'prop-types';
+import classes from './Button.module.css';
 
 // Button-Component ///////////////////////
 /// ////////////////////////////////////////
@@ -13,61 +13,55 @@ import classes from './Button.module.css'
 // onEvent - 적용된 함수 실행
 // closable (모달전용) - 모달이 보일 때 버튼이 안보이도록, 모달이 꺼지면 다시 버튼이 보임
 
-function Button({
-  size = 'inherit',
-  color = 'success',
-  onEvent,
-  text = '버튼',
-  closable = false,
-}) {
-  let className = ''
+function Button({ size = 'inherit', color = 'success', onEvent, text = '버튼', closable = false }) {
+  let className = '';
   switch (size) {
     case 'large':
-      className += `${classes.button_large} `
-      break
+      className += `${classes.button_large} `;
+      break;
     case 'middle':
-      className += `${classes.button_middle} `
-      break
+      className += `${classes.button_middle} `;
+      break;
     case 'small':
-      className += `${classes.button_small} `
-      break
+      className += `${classes.button_small} `;
+      break;
     case 'large_height':
-      className += `${classes.button_large_height} `
-      break
+      className += `${classes.button_large_height} `;
+      break;
     default:
-      className += `${classes.button_inherit} `
-      break
+      className += `${classes.button_inherit} `;
+      break;
   }
 
   switch (color) {
     case 'error':
-      className += `${classes.button_error} `
-      break
+      className += `${classes.button_error} `;
+      break;
     case 'neutral':
-      className += `${classes.button_neutral} `
-      break
+      className += `${classes.button_neutral} `;
+      break;
     case 'recommend':
-      className += `${classes.button_recommend} `
-      break
+      className += `${classes.button_recommend} `;
+      break;
     case 'vip':
-      className += `${classes.button_vip} `
-      break
+      className += `${classes.button_vip} `;
+      break;
     default:
-      className += `${classes.button_success} `
-      break
+      className += `${classes.button_success} `;
+      break;
   }
 
-  if (closable) className += 'closable '
+  if (closable) className += 'closable ';
 
   function clickHandler(params) {
-    params ? onEvent(params) : onEvent()
+    params ? onEvent(params) : onEvent();
   }
 
   return (
     <button className={className} onClick={clickHandler}>
       {text}
     </button>
-  )
+  );
 }
 
 Button.propTypes = {
@@ -76,6 +70,6 @@ Button.propTypes = {
   onEvent: PropTypes.func,
   text: PropTypes.string.isRequired,
   closable: PropTypes.bool,
-}
+};
 
-export default Button
+export default Button;

@@ -18,30 +18,20 @@
  * scroll {boolean}: 세로 스크롤바 표시 여부
  */
 
-import ModalPortal from './Portal'
-import Button from './Button'
-import classes from './Modal.module.css'
-import PropTypes from 'prop-types'
+import ModalPortal from './Portal';
+import Button from './Button';
+import classes from './Modal.module.css';
+import PropTypes from 'prop-types';
 
 // TODO: Sheet 컴포넌트로 교체
-function ModalSection({
-  children,
-  opened,
-  handleModal,
-  contents,
-  locked,
-  scroll,
-}) {
+function ModalSection({ children, opened, handleModal, contents, locked, scroll }) {
   const closeModal = e => {
-    const isClosable = [...e.target.classList].some(cls => cls === 'closable')
-    if (opened && isClosable) handleModal()
-  }
+    const isClosable = [...e.target.classList].some(cls => cls === 'closable');
+    if (opened && isClosable) handleModal();
+  };
 
   return (
-    <div
-      className={`${classes.overlay} ${locked ? '' : 'closable'}`}
-      onClick={closeModal}
-    >
+    <div className={`${classes.overlay} ${locked ? '' : 'closable'}`} onClick={closeModal}>
       <section className={classes.modal}>
         {contents ? (
           <>
@@ -57,9 +47,7 @@ function ModalSection({
                 </div>
               )}
             </header>
-            <div
-              className={`${classes.content} ${scroll ? classes.scroll : ''}`}
-            >
+            <div className={`${classes.content} ${scroll ? classes.scroll : ''}`}>
               {contents.content}
             </div>
             <div className={classes.actionsContainer}>
@@ -77,12 +65,7 @@ function ModalSection({
                       />
                     ))
                   ) : (
-                    <Button
-                      text="확인"
-                      size="small"
-                      onEvent={closeModal}
-                      closable
-                    />
+                    <Button text="확인" size="small" onEvent={closeModal} closable />
                   )}
                 </div>
               )}
@@ -93,27 +76,18 @@ function ModalSection({
             {children}
             <div className={classes.actionsContainer}>
               <div className={classes.actions}>
-                <Button
-                  text="확인"
-                  size="small"
-                  onEvent={closeModal}
-                  closable
-                />
+                <Button text="확인" size="small" onEvent={closeModal} closable />
               </div>
             </div>
           </>
         )}
       </section>
     </div>
-  )
+  );
 }
 
 export default function Modal({ opened, ...rest }) {
-  return (
-    <ModalPortal>
-      {opened && <ModalSection opened={opened} {...rest} />}
-    </ModalPortal>
-  )
+  return <ModalPortal>{opened && <ModalSection opened={opened} {...rest} />}</ModalPortal>;
 }
 
 ModalSection.propTypes = {
@@ -140,9 +114,9 @@ ModalSection.propTypes = {
   }),
   locked: PropTypes.bool,
   scroll: PropTypes.bool,
-}
+};
 
 Modal.propTypes = {
   opened: PropTypes.bool.isRequired,
   rest: PropTypes.object,
-}
+};

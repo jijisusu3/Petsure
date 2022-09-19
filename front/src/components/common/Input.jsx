@@ -13,9 +13,9 @@
  * disabled {bool}: 입력 비활성화 여부, 기본 값은 false
  */
 
-import { useState, useRef, useEffect } from 'react'
-import PropTypes from 'prop-types'
-import classes from './Input.module.css'
+import { useState, useRef, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import classes from './Input.module.css';
 function Input({
   id,
   type = 'text',
@@ -28,58 +28,55 @@ function Input({
   defaultValue,
   disabled,
 }) {
-  const inputRef = useRef()
-  const [errorComponent, setErrorComponent] = useState(null)
+  const inputRef = useRef();
+  const [errorComponent, setErrorComponent] = useState(null);
 
-  let colorInputClass = ''
-  let colorLabelClass = ''
+  let colorInputClass = '';
+  let colorLabelClass = '';
 
   switch (errorComponent) {
     case null:
-      colorInputClass = ''
-      colorLabelClass = ''
-      break
+      colorInputClass = '';
+      colorLabelClass = '';
+      break;
     case '':
-      colorInputClass = classes.validInput
-      colorLabelClass = classes.validLabel
-      break
+      colorInputClass = classes.validInput;
+      colorLabelClass = classes.validLabel;
+      break;
     default:
-      colorInputClass = classes.invalidInput
-      colorLabelClass = classes.invalidLabel
+      colorInputClass = classes.invalidInput;
+      colorLabelClass = classes.invalidLabel;
   }
 
-  let checkValid
+  let checkValid;
   function inputValidHandler() {
-    clearTimeout(checkValid)
+    clearTimeout(checkValid);
     checkValid = setTimeout(() => {
-      let errorComponent = ''
+      let errorComponent = '';
       for (let func in onValid) {
         if (!onValid[func].func(inputRef.current.value, meta)) {
-          errorComponent = <ErrorComponent text={onValid[func].message} />
-          break
+          errorComponent = <ErrorComponent text={onValid[func].message} />;
+          break;
         }
       }
-      console.log('유효성 체크')
-      setErrorComponent(errorComponent)
+      console.log('유효성 체크');
+      setErrorComponent(errorComponent);
       onData({
         value: inputRef.current.value,
         valid: errorComponent === '' ? true : false,
-      })
-    }, 200)
+      });
+    }, 200);
   }
 
   useEffect(() => {
-    inputRef.current.value = defaultValue || ''
-    onData && defaultValue && inputValidHandler()
-  }, [defaultValue])
+    inputRef.current.value = defaultValue || '';
+    onData && defaultValue && inputValidHandler();
+  }, [defaultValue]);
 
   return (
     <div className={classes.inputContainer}>
       {noLabel || (
-        <label
-          className={`${classes.inputLabel} ${colorLabelClass}`}
-          htmlFor={id}
-        >
+        <label className={`${classes.inputLabel} ${colorLabelClass}`} htmlFor={id}>
           {id}
           {required && <span className={classes.requiredMark}>*</span>}
         </label>
@@ -97,7 +94,7 @@ function Input({
       {/* 에러가 렌더링 되는 창 */}
       {errorComponent && errorComponent}
     </div>
-  )
+  );
 }
 
 Input.propTypes = {
@@ -111,14 +108,14 @@ Input.propTypes = {
   meta: PropTypes.any,
   defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   disabled: PropTypes.bool,
-}
+};
 
 function ErrorComponent({ text }) {
-  return <div className={classes.errorComponent}>{text}</div>
+  return <div className={classes.errorComponent}>{text}</div>;
 }
 
 ErrorComponent.propTypes = {
   text: PropTypes.string.isRequired,
-}
+};
 
-export default Input
+export default Input;

@@ -1,6 +1,6 @@
-import React from 'react'
-import classes from './Sheet.module.css'
-import PropTypes from 'prop-types'
+import React from 'react';
+import classes from './Sheet.module.css';
+import PropTypes from 'prop-types';
 
 // Sheet-Component //////////////////////
 ////////////////////////////////////////
@@ -23,17 +23,14 @@ const Sheet = ({ children, size, shallow, clickBlocked }) => {
     >
       {children}
     </section>
-  )
-}
+  );
+};
 
 Sheet.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]),
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   shallow: PropTypes.bool,
   clickBlocked: PropTypes.bool,
-}
+};
 
-export default Sheet
+export default Sheet;
