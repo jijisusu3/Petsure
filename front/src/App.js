@@ -14,7 +14,7 @@ function App() {
   const dispatch = useDispatch();
 
   // 사용 nav 설정
-  let selectedNav = '';
+  // let selectedNav = <HeaderNav />;
   // if (authPathSet.has(path)) {
   //   if (
   //     path.includes('find-email') ||
@@ -32,7 +32,7 @@ function App() {
   // // token 여부 확인
   return (
     <>
-      {selectedNav}
+      <HeaderNav />
       <main>
         <Routes>
           <Route path="/" element={<LandingPage />} />
