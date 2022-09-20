@@ -1,0 +1,51 @@
+.checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkbox.locked {
+  cursor: default;
+}
+
+.invisibleBox {
+  display: none;
+}
+
+.visibleBox {
+  position: relative;
+  display: flex;
+  padding: 4px;
+}
+
+.backgroundBox {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+
+.backgroundBox.locked {
+  border: 2px solid var(--color-grey-300);
+}
+
+.invisibleBox:checked + .backgroundBox {
+  background-color: var(--color-primary);
+}
+
+.invisibleBox:checked + .visibleBox > .checkIcon {
+  opacity: 1;
+}
+
+.checkIcon {
+  position: relative;
+  top: -4px;
+  left: 0;
+  fill: var(--color-primary);
+  opacity: 0;
+  transition: opacity 0.15s;
+}

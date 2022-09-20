@@ -1,0 +1,2103 @@
+[
+    {
+        "model": "insurance.breed",
+        "pk": 1,
+        "fields": {
+            "disease": [
+                1,
+                3,
+                23
+            ],
+            "name": "웰시 코기",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 2,
+        "fields": {
+            "disease": [
+                5,
+                13,
+                22,
+                21,
+                25,
+                12,
+                11
+            ],
+            "name": "골든 리트리버",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 3,
+        "fields": {
+            "disease": [
+                11
+            ],
+            "name": "그레이트 데인",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 4,
+        "fields": {
+            "disease": [
+                5,
+                22,
+                21,
+                11
+            ],
+            "name": "그레이트 피레니즈",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 5,
+        "fields": {
+            "disease": [
+                5,
+                17,
+                16
+            ],
+            "name": "뉴펀들랜드",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 6,
+        "fields": {
+            "disease": [
+                19,
+                11,
+                23,
+                13
+            ],
+            "name": "닥스훈트",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 7,
+        "fields": {
+            "disease": [
+                22,
+                12,
+                21,
+                10,
+                9
+            ],
+            "name": "달마티안",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 8,
+        "fields": {
+            "disease": [
+                17,
+                16
+            ],
+            "name": "도베르만 핀셔",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 9,
+        "fields": {
+            "disease": [
+                23
+            ],
+            "name": "라사 압소",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 10,
+        "fields": {
+            "disease": [
+                19,
+                5,
+                9,
+                11,
+                13
+            ],
+            "name": "래브라도 리트리버",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 11,
+        "fields": {
+            "disease": [
+                9,
+                5,
+                1,
+                3,
+                17,
+                16
+            ],
+            "name": "롯트와일러",
+            "species": 1,
+            "wild": true
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 12,
+        "fields": {
+            "disease": [
+                5,
+                17,
+                16,
+                1,
+                3
+            ],
+            "name": "마스티프",
+            "species": 1,
+            "wild": true
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 13,
+        "fields": {
+            "disease": [
+                4
+            ],
+            "name": "맨체스터 테리어",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 14,
+        "fields": {
+            "disease": [
+                17,
+                16,
+                3,
+                1,
+                13,
+                27
+            ],
+            "name": "몰티즈",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 15,
+        "fields": {
+            "disease": [
+                11,
+                17,
+                16,
+                9,
+                10,
+                2
+            ],
+            "name": "미니어처 슈나우저",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 16,
+        "fields": {
+            "disease": [
+                11,
+                2
+            ],
+            "name": "미니어처 푸들",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 17,
+        "fields": {
+            "disease": [
+                11
+            ],
+            "name": "미니어처 핀셔",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 18,
+        "fields": {
+            "disease": [
+                1,
+                3,
+                15
+            ],
+            "name": "바센지",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 19,
+        "fields": {
+            "disease": [
+                23,
+                1,
+                3
+            ],
+            "name": "바셋 하운드",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 20,
+        "fields": {
+            "disease": [
+                15
+            ],
+            "name": "버니즈 마운틴 독",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 21,
+        "fields": {
+            "disease": [
+                11
+            ],
+            "name": "베들링턴 테리어",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 22,
+        "fields": {
+            "disease": [
+                3,
+                1,
+                2
+            ],
+            "name": "보더 콜리",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 23,
+        "fields": {
+            "disease": [
+                3,
+                1,
+                15,
+                17,
+                16,
+                22,
+                12
+            ],
+            "name": "보더 테리어",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 24,
+        "fields": {
+            "disease": [
+                3,
+                1,
+                17,
+                16
+            ],
+            "name": "보르조이",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 25,
+        "fields": {
+            "disease": [
+                11,
+                2,
+                17,
+                16
+            ],
+            "name": "보스턴 테리어",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 26,
+        "fields": {
+            "disease": [
+                1,
+                22,
+                12,
+                21,
+                17
+            ],
+            "name": "복서",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 27,
+        "fields": {
+            "disease": [
+                16,
+                2
+            ],
+            "name": "부비에 데 플랑드르",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 28,
+        "fields": {
+            "disease": [
+                3,
+                1,
+                18,
+                5
+            ],
+            "name": "불 마스티프",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 29,
+        "fields": {
+            "disease": [
+                3,
+                1,
+                17,
+                15,
+                22,
+                25,
+                12
+            ],
+            "name": "불 테리어",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 30,
+        "fields": {
+            "disease": [
+                1,
+                3,
+                18,
+                11
+            ],
+            "name": "불도그",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 31,
+        "fields": {
+            "disease": [
+                17,
+                16
+            ],
+            "name": "브리타니",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 32,
+        "fields": {
+            "disease": [
+                19,
+                11,
+                13,
+                2
+            ],
+            "name": "비글",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 33,
+        "fields": {
+            "disease": [
+                11,
+                2,
+                27
+            ],
+            "name": "비숑 프리제",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 34,
+        "fields": {
+            "disease": [
+                11
+            ],
+            "name": "비어디드 콜리",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 35,
+        "fields": {
+            "disease": [
+                9,
+                11
+            ],
+            "name": "사모예드",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 36,
+        "fields": {
+            "disease": [
+                17,
+                16
+            ],
+            "name": "살루키",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 37,
+        "fields": {
+            "disease": [
+                1,
+                3,
+                2
+            ],
+            "name": "셰틀랜드 쉽독",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 38,
+        "fields": {
+            "disease": [
+                3,
+                1,
+                20,
+                11,
+                2
+            ],
+            "name": "스탠더드 푸들",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 39,
+        "fields": {
+            "disease": [
+                22,
+                21
+            ],
+            "name": "시바 이누",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 40,
+        "fields": {
+            "disease": [
+                3,
+                1
+            ],
+            "name": "시베리안 허스키",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 41,
+        "fields": {
+            "disease": [
+                19,
+                15,
+                27
+            ],
+            "name": "시츄",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 42,
+        "fields": {
+            "disease": [
+                1,
+                3,
+                23
+            ],
+            "name": "실리함 테리어",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 43,
+        "fields": {
+            "disease": [
+                19,
+                11,
+                22,
+                12,
+                21,
+                2
+            ],
+            "name": "아메리칸 코카 스파니엘",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 44,
+        "fields": {
+            "disease": [
+                2
+            ],
+            "name": "아이리쉬 세터",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 45,
+        "fields": {
+            "disease": [
+                5,
+                1,
+                3
+            ],
+            "name": "아이리쉬 울프하운드",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 46,
+        "fields": {
+            "disease": [
+                11,
+                2
+            ],
+            "name": "아이리쉬 워터 스파니엘",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 47,
+        "fields": {
+            "disease": [
+                11
+            ],
+            "name": "아이리쉬 테리어",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 48,
+        "fields": {
+            "disease": [
+                5
+            ],
+            "name": "아키타",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 49,
+        "fields": {
+            "disease": [
+                11
+            ],
+            "name": "아프간 하운드",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 50,
+        "fields": {
+            "disease": [
+                5,
+                15
+            ],
+            "name": "알래스칸 맬러뮤트",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 51,
+        "fields": {
+            "disease": [
+                9,
+                5
+            ],
+            "name": "오스트레일리안 테리어",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 52,
+        "fields": {
+            "disease": [
+                3,
+                1,
+                11,
+                9
+            ],
+            "name": "올드 잉글리시 쉽독",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 53,
+        "fields": {
+            "disease": [
+                5
+            ],
+            "name": "와이마라너",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 54,
+        "fields": {
+            "disease": [
+                22,
+                7,
+                14,
+                17,
+                16,
+                27
+            ],
+            "name": "요크셔 테리어",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 55,
+        "fields": {
+            "disease": [
+                22,
+                21,
+                25,
+                12
+            ],
+            "name": "웨스트 하이랜드 화이트 테리어",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 56,
+        "fields": {
+            "disease": [
+                1,
+                3
+            ],
+            "name": "웰시 테리어",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 57,
+        "fields": {
+            "disease": [
+                3,
+                1,
+                22,
+                25,
+                12,
+                5
+            ],
+            "name": "잉글리시 세터",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 58,
+        "fields": {
+            "disease": [
+                2,
+                3,
+                1
+            ],
+            "name": "잉글리시 스프링거 스파니엘",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 59,
+        "fields": {
+            "disease": [
+                11,
+                2,
+                17,
+                16
+            ],
+            "name": "잉글리시 코카 스파니엘",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 60,
+        "fields": {
+            "disease": [
+                9
+            ],
+            "name": "저먼 셰퍼드 도그",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 61,
+        "fields": {
+            "disease": [
+                11,
+                5
+            ],
+            "name": "저먼 와이어헤어드 포인터",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 62,
+        "fields": {
+            "disease": [
+                11
+            ],
+            "name": "제페니스 친",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 63,
+        "fields": {
+            "disease": [
+                22,
+                12,
+                21,
+                25,
+                15
+            ],
+            "name": "차우차우",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 64,
+        "fields": {
+            "disease": [
+                5
+            ],
+            "name": "체사피크 베이 리트리버",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 65,
+        "fields": {
+            "disease": [
+                4,
+                22,
+                19,
+                24,
+                6,
+                9,
+                20,
+                27
+            ],
+            "name": "치와와",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 66,
+        "fields": {
+            "disease": [
+                11,
+                5
+            ],
+            "name": "컬리 코티드 리트리버",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 67,
+        "fields": {
+            "disease": [
+                11
+            ],
+            "name": "케리 블루 테리어",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 68,
+        "fields": {
+            "disease": [
+                11
+            ],
+            "name": "코몬돌",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 69,
+        "fields": {
+            "disease": [
+                11,
+                23
+            ],
+            "name": "클럼버 스파니엘",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 70,
+        "fields": {
+            "disease": [
+                11,
+                27
+            ],
+            "name": "토이 푸들",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 71,
+        "fields": {
+            "disease": [
+                11
+            ],
+            "name": "티벳탄 테리어",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 72,
+        "fields": {
+            "disease": [
+                4,
+                1
+            ],
+            "name": "파피용",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 73,
+        "fields": {
+            "disease": [
+                8,
+                26,
+                22,
+                1,
+                3,
+                18,
+                13
+            ],
+            "name": "퍼그",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 74,
+        "fields": {
+            "disease": [
+                23
+            ],
+            "name": "페키니즈",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 75,
+        "fields": {
+            "disease": [
+                4,
+                7,
+                14,
+                17,
+                16,
+                27
+            ],
+            "name": "포메라니안",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 76,
+        "fields": {
+            "disease": [
+                5
+            ],
+            "name": "포인터",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 77,
+        "fields": {
+            "disease": [
+                22,
+                21,
+                1,
+                3,
+                18,
+                26,
+                13
+            ],
+            "name": "프렌치 불도그",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 78,
+        "fields": {
+            "disease": [
+                11,
+                5
+            ],
+            "name": "플랫 코티드 리트리버",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 79,
+        "fields": {
+            "disease": [
+                11
+            ],
+            "name": "핏불 테리어",
+            "species": 1,
+            "wild": true
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 80,
+        "fields": {
+            "disease": [
+                3,
+                1,
+                17,
+                16
+            ],
+            "name": "휘펫",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 81,
+        "fields": {
+            "disease": [
+                24
+            ],
+            "name": "믹스견",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 82,
+        "fields": {
+            "disease": [],
+            "name": "기타",
+            "species": 1,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 83,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "노르웨이 숲",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 84,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "네벨룽",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 85,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "네바 마스커레이드",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 86,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "데본렉스",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 87,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "돈스코이/돈스핑크스",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 88,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "라가머핀",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 89,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "랙돌",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 90,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "러시안 블루",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 91,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "라이코이",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 92,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "라팜",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 93,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "맹크스",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 94,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "메인쿤",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 95,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "먼치킨",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 96,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "미뉴에트",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 97,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "발리니즈",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 98,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "버만",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 99,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "버미즈",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 100,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "벵갈",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 101,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "봄베이",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 102,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "브리티시 쇼트헤어",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 103,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "브리티시 롱헤어",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 104,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "버밀라",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 105,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "시베리안",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 106,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "샴",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 107,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "샤트룩스",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 108,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "셀커크 렉스",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 109,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "소말리",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 110,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "스코티시 폴드",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 111,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "스코티시 스트레이트",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 112,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "스핑크스",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 113,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "싱가푸라",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 114,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "스노우슈",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 115,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "사바나",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 116,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "소코케",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 117,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "아라비안 마우",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 118,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "아메리칸 밥테일",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 119,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "아메리칸 쇼트헤어",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 120,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "아메리칸 와이어헤어",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 121,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "아메리칸 컬",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 122,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "아비시니안",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 123,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "오리엔탈 쇼트헤어",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 124,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "오리엔탈 롱헤어",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 125,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "오시캣",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 126,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "유러피안",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 127,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "유러피안버미즈",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 128,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "이집션마우",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 129,
+        "fields": {
+            "disease": [
+                1,
+                6,
+                10,
+                15
+            ],
+            "name": "엑조틱",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 130,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "재패니즈 밥테일",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 131,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "쵸시",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 132,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "카오마니",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 133,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "컬러포인트쇼트헤어",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 134,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "코니시 렉스",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 135,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "코랫",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 136,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "쿠리리안 밥테일",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 137,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "킴릭",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 138,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "타이",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 139,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "터키시 반",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 140,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "터키시 앙고라",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 141,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "통키니즈",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 142,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "토이거",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 143,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "토이밥",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 144,
+        "fields": {
+            "disease": [
+                1,
+                22,
+                6,
+                10,
+                15
+            ],
+            "name": "페르시안",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 145,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "픽시 밥",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 146,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "피터볼드",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 147,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "하바나브라운",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 148,
+        "fields": {
+            "disease": [
+                1,
+                6
+            ],
+            "name": "히말라얀",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 149,
+        "fields": {
+            "disease": [
+                6,
+                10,
+                15
+            ],
+            "name": "믹스묘",
+            "species": 2,
+            "wild": false
+        }
+    },
+    {
+        "model": "insurance.breed",
+        "pk": 150,
+        "fields": {
+            "disease": [],
+            "name": "기타",
+            "species": 2,
+            "wild": false
+        }
+    }
+]

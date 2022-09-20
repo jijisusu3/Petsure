@@ -1,0 +1,60 @@
+.groupContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  display: flex;
+  gap: 2px;
+  font-weight: 700;
+}
+
+.radioBtnGroup {
+  display: flex;
+  gap: 16px;
+}
+
+.vertical {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.radioBtn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px;
+}
+
+.invisibleRadio {
+  display: none;
+}
+
+.invisibleRadio:checked+.visibleRadio .inner {
+  background-color: var(--color-primary);
+}
+
+.visibleRadio {
+  width: 16px;
+  height: 16px;
+}
+
+.outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--color-grey-900);
+  border-radius: 8px;
+}
+
+.inner {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: white;
+  transition: background 0.15s;
+}

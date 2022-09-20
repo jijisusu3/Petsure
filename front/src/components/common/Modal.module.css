@@ -1,0 +1,58 @@
+.overlay {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: all 0.15s;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  min-width: 512px;
+  max-width: 60%;
+  max-height: 90%;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: white;
+  box-shadow: 0 6px 25px 0 rgba(0, 0, 0, 0.25);
+}
+
+.modalHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.subInfo {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-grey-500);
+  font-weight: 500;
+}
+
+.content {
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.scroll {
+  overflow-y: scroll;
+}
+
+.actionsContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.actions {
+  display: flex;
+  gap: 2rem;
+}
