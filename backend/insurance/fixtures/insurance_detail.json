@@ -1,0 +1,1773 @@
+[
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 1,
+        "fields": {
+            "insurance": 3,
+            "name": "기본",
+            "fee": 28110,
+            "basic": [
+                6,
+                7,
+                8,
+                9,
+                10,
+                11
+            ],
+            "all_cover": [
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 2,
+        "fields": {
+            "insurance": 3,
+            "name": "기본+입원의료비",
+            "fee": 41200,
+            "basic": [
+                6,
+                7,
+                8,
+                9,
+                10,
+                11
+            ],
+            "special": [
+                12
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 3,
+        "fields": {
+            "insurance": 3,
+            "name": "기본+배상책임",
+            "fee": 28850,
+            "basic": [
+                6,
+                7,
+                8,
+                9,
+                10,
+                11
+            ],
+            "special": [
+                13
+            ],
+            "all_cover": [
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 4,
+        "fields": {
+            "insurance": 3,
+            "name": "기본+입원의료비+배상책임",
+            "fee": 41940,
+            "basic": [
+                6,
+                7,
+                8,
+                9,
+                10,
+                11
+            ],
+            "special": [
+                12,
+                13
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 5,
+        "fields": {
+            "insurance": 4,
+            "name": "기본",
+            "fee": 29070,
+            "basic": [
+                14,
+                15,
+                16,
+                17,
+                18,
+                19
+            ],
+            "all_cover": [
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 6,
+        "fields": {
+            "insurance": 4,
+            "name": "기본+입원의료비",
+            "fee": 43150,
+            "basic": [
+                14,
+                15,
+                16,
+                17,
+                18,
+                19
+            ],
+            "special": [
+                20
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 7,
+        "fields": {
+            "insurance": 2,
+            "name": "기본",
+            "fee": 34040,
+            "basic": [
+                21,
+                22,
+                23,
+                24,
+                25,
+                26
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 8,
+        "fields": {
+            "insurance": 2,
+            "name": "기본+배상책임",
+            "fee": 33080,
+            "basic": [
+                27,
+                28,
+                29,
+                30,
+                31,
+                32
+            ],
+            "special": [
+                33
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 9,
+        "fields": {
+            "insurance": 1,
+            "name": "기본",
+            "fee": 15400,
+            "basic": [
+                1
+            ],
+            "all_cover": [
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 10,
+        "fields": {
+            "insurance": 1,
+            "name": "기본+수술비용 확대 보장",
+            "fee": 19950,
+            "basic": [
+                1
+            ],
+            "special": [
+                2
+            ],
+            "all_cover": [
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 11,
+        "fields": {
+            "insurance": 1,
+            "name": "기본+피부병보장",
+            "fee": 21500,
+            "basic": [
+                1
+            ],
+            "special": [
+                4
+            ],
+            "all_cover": [
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 12,
+        "fields": {
+            "insurance": 1,
+            "name": "기본+배상책임",
+            "fee": 16150,
+            "basic": [
+                1
+            ],
+            "special": [
+                5
+            ],
+            "all_cover": [
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 13,
+        "fields": {
+            "insurance": 1,
+            "name": "기본+수술비용 확대 보장+피부병보장",
+            "fee": 25900,
+            "basic": [
+                1
+            ],
+            "special": [
+                2,
+                4
+            ],
+            "all_cover": [
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 14,
+        "fields": {
+            "insurance": 1,
+            "name": "기본+수술비용 확대 보장+슬관절 수술비",
+            "fee": 31150,
+            "basic": [
+                1
+            ],
+            "special": [
+                2,
+                3
+            ],
+            "all_cover": [
+                0,
+                1,
+                0,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 15,
+        "fields": {
+            "insurance": 1,
+            "name": "기본+수술비용 확대 보장+배상책임",
+            "fee": 20500,
+            "basic": [
+                1
+            ],
+            "special": [
+                3,
+                4
+            ],
+            "all_cover": [
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 16,
+        "fields": {
+            "insurance": 1,
+            "name": "기본+피부병보장+배상책임",
+            "fee": 22100,
+            "basic": [
+                1
+            ],
+            "special": [
+                4,
+                5
+            ],
+            "all_cover": [
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 17,
+        "fields": {
+            "insurance": 1,
+            "name": "기본+수술비용 확대 보장+피부병보장+슬관절 수술비",
+            "fee": 37100,
+            "basic": [
+                1
+            ],
+            "special": [
+                2,
+                3,
+                4
+            ],
+            "all_cover": [
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 18,
+        "fields": {
+            "insurance": 1,
+            "name": "기본+수술비용 확대 보장+피부병보장+배상책임",
+            "fee": 26350,
+            "basic": [
+                1
+            ],
+            "special": [
+                2,
+                4,
+                5
+            ],
+            "all_cover": [
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 19,
+        "fields": {
+            "insurance": 1,
+            "name": "기본+수술비용 확대 보장+슬관절 수술비+배상책임",
+            "fee": 31950,
+            "basic": [
+                1
+            ],
+            "special": [
+                2,
+                3,
+                5
+            ],
+            "all_cover": [
+                0,
+                1,
+                0,
+                1,
+                1,
+                0,
+                0,
+                0,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 20,
+        "fields": {
+            "insurance": 1,
+            "name": "기본+수술비용 확대 보장+피부병보장+슬관절 수술비+배상책임",
+            "fee": 37550,
+            "basic": [
+                1
+            ],
+            "special": [
+                2,
+                3,
+                4,
+                5
+            ],
+            "all_cover": [
+                0,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 21,
+        "fields": {
+            "insurance": 5,
+            "name": "기본",
+            "fee": 17040,
+            "basic": [
+                34,
+                35,
+                36
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 22,
+        "fields": {
+            "insurance": 5,
+            "name": "기본+비뇨기질환 확장보장",
+            "fee": 25880,
+            "basic": [
+                34,
+                35,
+                36
+            ],
+            "special": [
+                37
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 23,
+        "fields": {
+            "insurance": 6,
+            "name": "기본",
+            "fee": 3100,
+            "basic": [
+                38,
+                39
+            ],
+            "all_cover": [
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 24,
+        "fields": {
+            "insurance": 6,
+            "name": "기본+배상책임(대인 및 대동물)",
+            "fee": 3350,
+            "basic": [
+                38,
+                39
+            ],
+            "special": [
+                40
+            ],
+            "all_cover": [
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 25,
+        "fields": {
+            "insurance": 6,
+            "name": "기본+배상책임(공공장소 대물)",
+            "fee": 3230,
+            "basic": [
+                38,
+                39
+            ],
+            "special": [
+                41
+            ],
+            "all_cover": [
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 26,
+        "fields": {
+            "insurance": 6,
+            "name": "기본+배상책임(대인 및 대동물)+배상책임(공공장소 대물)",
+            "fee": 3480,
+            "basic": [
+                38,
+                39
+            ],
+            "special": [
+                40,
+                41
+            ],
+            "all_cover": [
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 27,
+        "fields": {
+            "insurance": 8,
+            "name": "기본",
+            "fee": 42070,
+            "basic": [
+                49,
+                50,
+                51,
+                52
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 28,
+        "fields": {
+            "insurance": 9,
+            "name": "기본",
+            "fee": 320,
+            "basic": [
+                53
+            ],
+            "all_cover": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 29,
+        "fields": {
+            "insurance": 11,
+            "name": "기본",
+            "fee": 13240,
+            "basic": [
+                54,
+                55,
+                56
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 30,
+        "fields": {
+            "insurance": 11,
+            "name": "기본+배상책임 230",
+            "fee": 13470,
+            "basic": [
+                54,
+                55,
+                56
+            ],
+            "special": [
+                57
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 31,
+        "fields": {
+            "insurance": 11,
+            "name": "기본+슬관절 1740",
+            "fee": 14980,
+            "basic": [
+                54,
+                55,
+                56
+            ],
+            "special": [
+                58
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 32,
+        "fields": {
+            "insurance": 11,
+            "name": "기본+피부병 3210",
+            "fee": 16450,
+            "basic": [
+                54,
+                55,
+                56
+            ],
+            "special": [
+                59
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                0,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 33,
+        "fields": {
+            "insurance": 11,
+            "name": "기본+구강 480",
+            "fee": 13720,
+            "basic": [
+                54,
+                55,
+                56
+            ],
+            "special": [
+                60
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 34,
+        "fields": {
+            "insurance": 11,
+            "name": "기본+배상책임+슬관절",
+            "fee": 15210,
+            "basic": [
+                54,
+                55,
+                56
+            ],
+            "special": [
+                57,
+                58
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 35,
+        "fields": {
+            "insurance": 11,
+            "name": "기본+배상책임+피부병",
+            "fee": 16680,
+            "basic": [
+                54,
+                55,
+                56
+            ],
+            "special": [
+                57,
+                59
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 36,
+        "fields": {
+            "insurance": 11,
+            "name": "기본+배상책임+구강",
+            "fee": 13950,
+            "basic": [
+                54,
+                55,
+                56
+            ],
+            "special": [
+                57,
+                60
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1,
+                0,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 37,
+        "fields": {
+            "insurance": 11,
+            "name": "기본+슬관절+피부병",
+            "fee": 18190,
+            "basic": [
+                54,
+                55,
+                56
+            ],
+            "special": [
+                58,
+                59
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 38,
+        "fields": {
+            "insurance": 11,
+            "name": "기본+슬관절+구강",
+            "fee": 15460,
+            "basic": [
+                54,
+                55,
+                56
+            ],
+            "special": [
+                58,
+                60
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 39,
+        "fields": {
+            "insurance": 11,
+            "name": "기본+피부병+구강",
+            "fee": 16930,
+            "basic": [
+                54,
+                55,
+                56
+            ],
+            "special": [
+                59,
+                60
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                0,
+                1,
+                1,
+                0,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 40,
+        "fields": {
+            "insurance": 11,
+            "name": "기본+배상책임+슬관절+피부병",
+            "fee": 18420,
+            "basic": [
+                54,
+                55,
+                56
+            ],
+            "special": [
+                57,
+                58,
+                59
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 41,
+        "fields": {
+            "insurance": 11,
+            "name": "기본+배상책임+슬관절+구강",
+            "fee": 15690,
+            "basic": [
+                54,
+                55,
+                56
+            ],
+            "special": [
+                57,
+                58,
+                60
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 42,
+        "fields": {
+            "insurance": 11,
+            "name": "기본+슬관절+피부병+구강",
+            "fee": 18670,
+            "basic": [
+                54,
+                55,
+                56
+            ],
+            "special": [
+                58,
+                59,
+                60
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 43,
+        "fields": {
+            "insurance": 11,
+            "name": "기본+배상책임+슬관절+피부병+구강",
+            "fee": 18900,
+            "basic": [
+                54,
+                55,
+                56
+            ],
+            "special": [
+                57,
+                58,
+                59,
+                60
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 44,
+        "fields": {
+            "insurance": 12,
+            "name": "기본",
+            "fee": 1080,
+            "basic": [
+                61
+            ],
+            "all_cover": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 45,
+        "fields": {
+            "insurance": 13,
+            "name": "기본",
+            "fee": 2000,
+            "basic": [
+                62
+            ],
+            "all_cover": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 46,
+        "fields": {
+            "insurance": 10,
+            "name": "기본",
+            "fee": 21820,
+            "basic": [
+                63,
+                64,
+                65
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 47,
+        "fields": {
+            "insurance": 10,
+            "name": "기본+슬관절",
+            "fee": 25390,
+            "basic": [
+                63,
+                64,
+                65
+            ],
+            "special": [
+                66
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 48,
+        "fields": {
+            "insurance": 10,
+            "name": "기본+피부병",
+            "fee": 28250,
+            "basic": [
+                63,
+                64,
+                65
+            ],
+            "special": [
+                67
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                0,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 49,
+        "fields": {
+            "insurance": 10,
+            "name": "기본+구강",
+            "fee": 22780,
+            "basic": [
+                63,
+                64,
+                65
+            ],
+            "special": [
+                68
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 50,
+        "fields": {
+            "insurance": 10,
+            "name": "기본+배상책임",
+            "fee": 22240,
+            "basic": [
+                63,
+                64,
+                65
+            ],
+            "special": [
+                69
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 51,
+        "fields": {
+            "insurance": 10,
+            "name": "기본+슬관절+피부병",
+            "fee": 31820,
+            "basic": [
+                63,
+                64,
+                65
+            ],
+            "special": [
+                66,
+                67
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 52,
+        "fields": {
+            "insurance": 10,
+            "name": "기본+슬관절+구강",
+            "fee": 26350,
+            "basic": [
+                63,
+                64,
+                65
+            ],
+            "special": [
+                66,
+                68
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 53,
+        "fields": {
+            "insurance": 10,
+            "name": "기본+슬관절+배상책임",
+            "fee": 25810,
+            "basic": [
+                63,
+                64,
+                65
+            ],
+            "special": [
+                66,
+                69
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 54,
+        "fields": {
+            "insurance": 10,
+            "name": "기본+피부병+구강",
+            "fee": 26350,
+            "basic": [
+                63,
+                64,
+                65
+            ],
+            "special": [
+                67,
+                68
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                0,
+                1,
+                1,
+                0,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 55,
+        "fields": {
+            "insurance": 10,
+            "name": "기본+피부병+배상책임",
+            "fee": 28670,
+            "basic": [
+                63,
+                64,
+                65
+            ],
+            "special": [
+                67,
+                69
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 56,
+        "fields": {
+            "insurance": 10,
+            "name": "기본+구강+배상책임",
+            "fee": 23200,
+            "basic": [
+                63,
+                64,
+                65
+            ],
+            "special": [
+                68,
+                69
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1,
+                0,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 57,
+        "fields": {
+            "insurance": 10,
+            "name": "기본+슬관절+피부병+구강",
+            "fee": 32780,
+            "basic": [
+                63,
+                64,
+                65
+            ],
+            "special": [
+                66,
+                67,
+                68
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 58,
+        "fields": {
+            "insurance": 10,
+            "name": "기본+슬관절+피부병+배상책임",
+            "fee": 32240,
+            "basic": [
+                63,
+                64,
+                65
+            ],
+            "special": [
+                66,
+                67,
+                69
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 59,
+        "fields": {
+            "insurance": 10,
+            "name": "기본+슬관절+구강+배상책임",
+            "fee": 26770,
+            "basic": [
+                63,
+                64,
+                65
+            ],
+            "special": [
+                66,
+                68,
+                69
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 60,
+        "fields": {
+            "insurance": 10,
+            "name": "기본+피부병+구강+배상책임",
+            "fee": 29630,
+            "basic": [
+                63,
+                64,
+                65
+            ],
+            "special": [
+                67,
+                68,
+                69
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                0,
+                1,
+                1,
+                0,
+                1
+            ],
+            "content": ""
+        }
+    },
+    {
+        "model": "insurance.Insurance_detail",
+        "pk": 61,
+        "fields": {
+            "insurance": 10,
+            "name": "기본+슬관절+피부병+구강+배상책임",
+            "fee": 33200,
+            "basic": [
+                63,
+                64,
+                65
+            ],
+            "special": [
+                66,
+                67,
+                68,
+                69
+            ],
+            "all_cover": [
+                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0,
+                1
+            ],
+            "content": ""
+        }
+    }
+]
