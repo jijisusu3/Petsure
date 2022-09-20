@@ -5,12 +5,12 @@ import Navbar from 'react-bootstrap/Navbar';
 function HeaderNav() {
   return (
     <Navbar bg="white" variant="white">
-      <Container>
+      <Container fluid>
         <Navbar.Brand href="#landing">
           <img
             src="petsureLogo.png"
-            width="16"
-            height="16"
+            width="32"
+            height="32"
             className="d-inline-block align-top"
             alt=""
           />
