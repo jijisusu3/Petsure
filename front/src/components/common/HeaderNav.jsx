@@ -1,12 +1,13 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function HeaderNav() {
   return (
     <Navbar bg="white" variant="white">
       <Container fluid>
-        <Navbar.Brand href="#landing">
+        <Navbar.Brand href="/landing">
           <img
             src="petsureLogo.png"
             width="32"
@@ -16,13 +17,16 @@ function HeaderNav() {
           />
         </Navbar.Brand>
         <Nav className="me-auto">
-          <Nav.Link href="#home">펫 보험</Nav.Link>
-          <Nav.Link href="#features">질병상식</Nav.Link>
-          <Nav.Link href="#pricing">ABOUT US</Nav.Link>
+          <NavDropdown title="펫 보험">
+            <NavDropdown.Item href="/basicinput/">기본검색</NavDropdown.Item>
+            <NavDropdown.Item href="/allinput/">상세검색</NavDropdown.Item>
+          </NavDropdown>
+          <Nav.Link href="/diseasdict">질병상식</Nav.Link>
+          <Nav.Link href="/aboutus">ABOUT US</Nav.Link>
         </Nav>
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
-            <a href="#guide">가이드</a>
+            <a href="#">가이드</a>
           </Navbar.Text>
         </Navbar.Collapse>
       </Container>
@@ -31,6 +35,7 @@ function HeaderNav() {
 }
 
 export default HeaderNav;
+
 // import { useEffect, useState } from 'react';
 // import { useNavigate } from 'react-router-dom';
 // import { useSelector, useDispatch } from 'react-redux';
