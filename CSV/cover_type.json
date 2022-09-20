@@ -1,0 +1,58 @@
+[
+    {
+        "model": "insurance.cover_type",
+        "pk": 1,
+        "fields": {
+            "type": "통원치료비"
+        }
+    },
+    {
+        "model": "insurance.cover_type",
+        "pk": 2,
+        "fields": {
+            "type": "입원치료비"
+        }
+    },
+    {
+        "model": "insurance.cover_type",
+        "pk": 3,
+        "fields": {
+            "type": "수술치료비"
+        }
+    },
+    {
+        "model": "insurance.cover_type",
+        "pk": 4,
+        "fields": {
+            "type": "슬관절"
+        }
+    },
+    {
+        "model": "insurance.cover_type",
+        "pk": 5,
+        "fields": {
+            "type": "피부병"
+        }
+    },
+    {
+        "model": "insurance.cover_type",
+        "pk": 6,
+        "fields": {
+            "type": "구강"
+        }
+    },
+    {
+        "model": "insurance.cover_type",
+        "pk": 7,
+        "fields": {
+            "type": "비뇨기"
+        }
+    },
+    {
+        "model": "insurance.cover_type",
+        "pk": 8,
+        "fields": {
+            "type": "배상책임"
+        }
+    }
+]
