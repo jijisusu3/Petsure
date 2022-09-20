@@ -1,0 +1,192 @@
+[
+    {
+        "model": "insurance.Detail_user",
+        "pk": 1,
+        "fields": {
+            "breed": 31,
+            "animal_name": "이봉봉",
+            "species": 1,
+            "animal_birth": 2,
+            "hospitalization": 4,
+            "outpatient": 3,
+            "skin_disease": 3,
+            "operation": 1,
+            "patella": 4,
+            "dental": 2,
+            "urinary": 1,
+            "liability": 1,
+            "insurance_choice": 47
+        }
+    },
+    {
+        "model": "insurance.Detail_user",
+        "pk": 2,
+        "fields": {
+            "breed": 81,
+            "animal_name": "이봉일",
+            "species": 1,
+            "animal_birth": 3,
+            "hospitalization": 5,
+            "outpatient": 4,
+            "skin_disease": 4,
+            "operation": 2,
+            "patella": 2,
+            "dental": 1,
+            "urinary": 1,
+            "liability": 3,
+            "insurance_choice": 47
+        }
+    },
+    {
+        "model": "insurance.Detail_user",
+        "pk": 3,
+        "fields": {
+            "breed": 31,
+            "animal_name": "이봉이",
+            "species": 1,
+            "animal_birth": 3,
+            "hospitalization": 5,
+            "outpatient": 4,
+            "skin_disease": 4,
+            "operation": 2,
+            "patella": 3,
+            "dental": 2,
+            "urinary": 4,
+            "liability": 3,
+            "insurance_choice": 46
+        }
+    },
+    {
+        "model": "insurance.Detail_user",
+        "pk": 4,
+        "fields": {
+            "breed": 31,
+            "animal_name": "이봉삼",
+            "species": 1,
+            "animal_birth": 0,
+            "hospitalization": 2,
+            "outpatient": 1,
+            "skin_disease": 1,
+            "operation": 1,
+            "patella": 1,
+            "dental": 1,
+            "urinary": 1,
+            "liability": 1,
+            "insurance_choice": 27
+        }
+    },
+    {
+        "model": "insurance.Detail_user",
+        "pk": 5,
+        "fields": {
+            "breed": 31,
+            "animal_name": "이봉봉",
+            "species": 1,
+            "animal_birth": 1,
+            "hospitalization": 3,
+            "outpatient": 2,
+            "skin_disease": 3,
+            "operation": 2,
+            "patella": 1,
+            "dental": 1,
+            "urinary": 4,
+            "liability": 1,
+            "insurance_choice": 27
+        }
+    },
+    {
+        "model": "insurance.Detail_user",
+        "pk": 6,
+        "fields": {
+            "breed": 81,
+            "animal_name": "이봉봉",
+            "species": 1,
+            "animal_birth": 4,
+            "hospitalization": 4,
+            "outpatient": 5,
+            "skin_disease": 1,
+            "operation": 1,
+            "patella": 2,
+            "dental": 1,
+            "urinary": 1,
+            "liability": 1,
+            "insurance_choice": 46
+        }
+    },
+    {
+        "model": "insurance.Detail_user",
+        "pk": 7,
+        "fields": {
+            "breed": 81,
+            "animal_name": "이봉봉",
+            "species": 1,
+            "animal_birth": 2,
+            "hospitalization": 2,
+            "outpatient": 1,
+            "skin_disease": 2,
+            "operation": 4,
+            "patella": 3,
+            "dental": 2,
+            "urinary": 1,
+            "liability": 2,
+            "insurance_choice": 46
+        }
+    },
+    {
+        "model": "insurance.Detail_user",
+        "pk": 8,
+        "fields": {
+            "breed": 31,
+            "animal_name": "이봉봉",
+            "species": 1,
+            "animal_birth": 3,
+            "hospitalization": 3,
+            "outpatient": 2,
+            "skin_disease": 1,
+            "operation": 5,
+            "patella": 4,
+            "dental": 1,
+            "urinary": 2,
+            "liability": 2,
+            "insurance_choice": 46
+        }
+    },
+    {
+        "model": "insurance.Detail_user",
+        "pk": 9,
+        "fields": {
+            "breed": 31,
+            "animal_name": "이봉봉",
+            "species": 1,
+            "animal_birth": 4,
+            "hospitalization": 4,
+            "outpatient": 3,
+            "skin_disease": 3,
+            "operation": 4,
+            "patella": 4,
+            "dental": 2,
+            "urinary": 2,
+            "liability": 3,
+            "insurance_choice": 46
+        }
+    },
+    {
+        "model": "insurance.Detail_user",
+        "pk": 10,
+        "fields": {
+            "breed": 31,
+            "animal_name": "이봉봉",
+            "species": 1,
+            "animal_birth": 7,
+            "hospitalization": 5,
+            "outpatient": 4,
+            "skin_disease": 2,
+            "operation": 5,
+            "patella": 4,
+            "dental": 2,
+            "urinary": 1,
+            "liability": 3,
+            "insurance_choice": 47
+        }
+    }
+]
