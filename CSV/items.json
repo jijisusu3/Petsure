@@ -1,0 +1,482 @@
+[
+    {
+        "model": "insurance.items",
+        "pk": 1,
+        "fields": {
+            "name": "브리더 크린 치약 닭고기향 70g",
+            "price": 2800,
+            "content": "충치와 구취 및 치와 산화 예방에 도움을 주는 치약/\n잇몸에 풍부한 영양공급으로 모세혈관 강화 및 잇몸질환 예방에 도움/\n복용해도 무해한 안전 성분",
+            "item_url": "https://dogpre.com/product/782",
+            "image": "https://img.dogpre.com/mobile/dogpre/product/1/782_originalView_01181722.jpg",
+            "cover_type": 6
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 2,
+        "fields": {
+            "name": "브리더 치약&칫솔 세트",
+            "price": 4700,
+            "content": "치아와 잇몸구조를 고려한 과학적 디자인/\n부드럽고 끝이 둥근 모 사용으로 잇몸자극 최소화/\n충치와 구취 제거 및 잇몸 질환 예방/\n치약 + 칫솔 + 손가락 칫솔 세트 구성",
+            "item_url": "https://dogpre.com/product/785",
+            "image": "https://img.dogpre.com/mobile/dogpre/product/1/785_originalView_01340364.jpg",
+            "cover_type": 6
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 3,
+        "fields": {
+            "name": "버박 C.E.T. 치약 닭고기맛 70g",
+            "price": 11800,
+            "content": "플라그생성균을 억제하는 C.E.T 이중효소의 특허공법 적용/\n세균억제 및 세균의 산 생성 억제로 치주질환 예방/\n구취 개선 및 이중 효소 시스템으로 플라그 생성 감소",
+            "item_url": "https://dogpre.com/product/38822",
+            "image": "https://img.dogpre.com/mobile/dogpre/product/39/38822_originalView_01500282.jpg",
+            "cover_type": 6
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 4,
+        "fields": {
+            "name": "쏘아베 덴탈클리닉 먹는치약 퍼피 복숭아향 120ml",
+            "price": 5450,
+            "content": "헹굼없이 치아와 혓바닥에 바르는 치약/\n구취제거, 항균작용, 세포 활성화 등 치아건강 효과/\n치아 건강에 유익한 비타민B6, 키토산, 아미노산 함유/\n키토산 함유로 구강내 향균작용, 구강점막의 세포 활성화에 효과",
+            "item_url": "https://dogpre.com/product/13683",
+            "image": "https://img.dogpre.com/mobile/dogpre/product/14/13683_originalView_01578700.jpg",
+            "cover_type": 6
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 5,
+        "fields": {
+            "name": "에티펫 치아 깨끗 티슈 30매",
+            "price": 1700,
+            "content": "오랄클렌져 성분이 첨가된 간편 칫솔 티슈/\n폴리페놀성분으로 입냄새 억제 효과/\n형광증백제, 포름알데히드를 무첨가한 안전한 제품/\n녹차추출물 함유 및 6단계 정수물 사용",
+            "item_url": "https://dogpre.com/product/24021",
+            "image": "https://img.dogpre.com/mobile/dogpre/product/25/24021_originalView_01696836.jpg",
+            "cover_type": 6
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 6,
+        "fields": {
+            "name": "인 in 피모영양제 680g",
+            "price": 43000,
+            "content": "레시틴 및 각종 비타민과 미네랄이 함유된 기능성 영양제/\n습진,각질,가려움증 등 각종 피부질환에 도움/\n골격형성, 발육, 면역체계 증진에 효과/\n열처리를 하지않아 영양소 손실 최소화",
+            "item_url": "https://dogpre.com/product/883",
+            "image": "https://img.dogpre.com/mobile/dogpre/product/1/883_originalView_01206828.jpg",
+            "cover_type": 5
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 7,
+        "fields": {
+            "name": "닥터 스프레이 아토엑스 200ml",
+            "price": 10200,
+            "content": "유기게르마늄 성분 함유로 피부면역력 강화에 도움/\n콜로이드 실버 함유로 천연살균 및 항균 99.9%/\n식약처 FDA 구강, 피부 테스트 안전인증성분 함유/\nPH 중성으로 반려동물의 피부에 자극없이 작용/\n무형광, 무색소, 무알콜, 무파라벤 등 10가지 유해성분 무첨가",
+            "item_url": "https://dogpre.com/product/41927",
+            "image": "https://img.dogpre.com/mobile/dogpre/product/42/41927_originalView_01060369.jpg",
+            "cover_type": 5
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 8,
+        "fields": {
+            "name": "체리쉬 항문세정제 120ml",
+            "price": 3700,
+            "content": "민감한 피부, 피모를 진정/\n털에 붙은 이물질 제거에 용이/\n항문 주위를 세척하는 전용 세척액",
+            "item_url": "https://dogpre.com/product/12208",
+            "image": "https://img.dogpre.com/mobile/dogpre/product/13/12208_originalView_1751.jpg",
+            "cover_type": 5
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 9,
+        "fields": {
+            "name": "데이비스 테라코트 피모영양제 400g",
+            "price": 27900,
+            "content": "인지질 공급으로 세포막 구성, 순환기 건강 강화/\n피부 치유, 재생, 건조함 방지 및 피부탄력 증가 효과/\n우수한 혼합제조방식으로 알레르기 반응 없이 체내흡수/\n세포와 근육조직의 유동성을 증진시켜 활력과 운동성 부여",
+            "item_url": "https://dogpre.com/product/19772",
+            "image": "https://img.dogpre.com/mobile/dogpre/product/20/19772_originalView_01663494.jpg",
+            "cover_type": 5
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 10,
+        "fields": {
+            "name": "디아팜 포우 왁스 50g",
+            "price": 22000,
+            "content": "Cera Alba(꿀벌왁스), Caster Oil(캐스터오일)함유로 뛰어난 보습효과/\n천연 보호막 형성으로 피부 건조 방지 및 진정효과/\n손상되고 갈라진 발바닥 유수분 밸런스 조절/\n외부의 각종 자극으로부터 보호 및 자외선 차단 기능",
+            "item_url": "https://dogpre.com/product/9810",
+            "image": "https://img.dogpre.com/mobile/dogpre/product/10/9810_originalView_01232357.jpg",
+            "cover_type": 5
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 11,
+        "fields": {
+            "name": "인핸서 in hancer 관절영양제 340g 170정",
+            "price": 49000,
+            "content": "손상된 관절회복 및 관절염 예방에 효과/\n상어 추출물인 콘드로이친 성분 함유로 혈액순환에 효과/\n특수허브가 함유된 간편한 너겟타입으로 빠른 소화흡수 가능/\n연령에 상관없이 관절건강에 문제가있는 애견을 위한 기능성 간식",
+            "item_url": "https://dogpre.com/product/877",
+            "image": "https://img.dogpre.com/mobile/dogpre/product/1/877_originalView_01962210.jpg",
+            "cover_type": 4
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 12,
+        "fields": {
+            "name": "데이스포 에이치시리즈 관절 250g",
+            "price": 10000,
+            "content": "고품질의 글루코사민 및 콘드로이친 다량 함유로 관절건강에 도움/\n관절 질환 염증성 기능장애 예방/\n노령견, 비만견의 골격과 관절 건강에 효과적/\n노화 방지용 식이 원료 사용/\n천연항산화제 첨가로 관절건강뿐아니라, 피부건강에도 도움",
+            "item_url": "https://dogpre.com/product/17124",
+            "image": "https://img.dogpre.com/mobile/dogpre/product/18/17124_originalView_01621443.jpg",
+            "cover_type": 4
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 13,
+        "fields": {
+            "name": "인트라젠 조인트파워 120정",
+            "price": 17000,
+            "content": "연골재생력과 뼈건강에 우수한 관절 영양제/\n슬개골 탈구예방, 손상된 관절회복, 관절염 예방에 효과/\n시력보호 및 눈물자국제거에 뛰어난 효과/\n위, 장 개선, 면역력 증강에도 도움",
+            "item_url": "https://dogpre.com/product/49199",
+            "image": "https://img.dogpre.com/mobile/dogpre/product/50/49199_originalView_01947334.jpg",
+            "cover_type": 4
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 14,
+        "fields": {
+            "name": "버박 칼시데리스 30정",
+            "price": 16400,
+            "content": "칼슘의 흡수를 도와주는 인, 비타민 D의 이상적인 조합/\n임신견의 태아발육과 비유기의 젖생산을 위한 칼슘, 인 공급/\n어린견의 성장발육에 도움 및 섬유소성 골이영양증 예방/\n직접 씹어먹거나 잘게 부수어 사료와 함께 급여",
+            "item_url": "https://dogpre.com/product/37631",
+            "image": "https://img.dogpre.com/mobile/dogpre/product/38/37631_originalView_01615144.jpg",
+            "cover_type": 4
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 15,
+        "fields": {
+            "name": "조인트맥스 트리플 스트랭스 30정",
+            "price": 21000,
+            "content": "부드러운 타입의 관절 영양 보조제/\n관절 건강에 효과적인 글루코사민 함유/\n뼈 형성 및 세포보호에 도움을주는 망간 첨가/\n식물성 콘드로이친 함유로 알러지 예방 효과",
+            "item_url": "https://dogpre.com/product/57335",
+            "image": "https://img.dogpre.com/mobile/dogpre/product/58/57335_originalView_01561847.jpg",
+            "cover_type": 4
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 16,
+        "fields": {
+            "name": "애니멀에센셜 시원한 소변 팅크 30ml",
+            "price": 33000,
+            "content": "허브 추출 성분과 정제수만을 사용한 영양제/\n직접 입에 넣거나 물에 희석해서 간편하게 급여/\n비뇨기 계통 진정 작용 및 염증 완화 효과/\n면역기능 증강으로 목 감염증 및 알레르기 예방",
+            "item_url": "https://dogpre.com/product/5421",
+            "image": "https://img.dogpre.com/mobile/dogpre/product/6/5421_originalView_01514387.jpg",
+            "cover_type": 7
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 17,
+        "fields": {
+            "name": "닥터스비오 신장 150g",
+            "price": 16000,
+            "content": "건강 상태에 따라 급여하는 기능성 프리미엄 요거트/\n이뇨작용을 돕는 펙틴이 함유된 단호박과 크랜베리 첨가/\n락토바실러스균과 비피더스균으로 장 건강과 면역력 증진에 도움/\n물의 양에 따라 요거트나 드링크 형태로 급여/\n하루 1포 급여시 음수 요구량의 30~50% 수분섭취 가능",
+            "item_url": "https://dogpre.com/product/62815",
+            "image": "https://img.dogpre.com/mobile/dogpre/product/63/62815_originalView_01511643.jpg",
+            "cover_type": 7
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 18,
+        "fields": {
+            "name": "베토퀴놀 루비날 60정",
+            "price": 40000,
+            "content": "만성 신장염증으로 인한 섬유화 진행억제 기능/\n네프론 손실로 인한 신장질환을 가진 반려동물의 신장수치 개선/\n염증으로 인한 섬유화를 억제하여 추가손상 예방",
+            "item_url": "https://dogpre.com/product/43556",
+            "image": "https://img.dogpre.com/mobile/dogpre/product/44/43556_originalView_01792822.jpg",
+            "cover_type": 7
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 19,
+        "fields": {
+            "name": "베토퀴놀 이파키틴 60g",
+            "price": 28000,
+            "content": "신부전 시 발생하는 고인산혈증 감소 효과/\n장관 내 인 성분을 흡착하여 신장질환에 도움",
+            "item_url": "https://dogpre.com/product/43550",
+            "image": "https://img.dogpre.com/mobile/dogpre/product/44/43550_originalView_01093389.jpg",
+            "cover_type": 7
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 20,
+        "fields": {
+            "name": "슈퍼벳 레날 바인더 독 신장질환 인 흡착 보조제 120캡슐",
+            "price": 55000,
+            "content": "반려견 전용 신장질환 인 흡착 보조제/\n신장질환 예방 또는 초기 관리에 탁월",
+            "item_url": "https://dogpre.com/product/88011",
+            "image": "https://img.dogpre.com/mobile/dogpre/product/89/88011_originalView_01331998.jpg",
+            "cover_type": 7
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 21,
+        "fields": {
+            "name": "부들부들 에코랜드 덴탈 바르는 치약 80g",
+            "price": 5000,
+            "content": "유럽 ECOCERT 공식 인증 제품/\n유기농 녹차 추출물, 로즈마리 추출물 함유/\n충치, 구취 예방 및 박테리아, 치석제거/\n칫솔질 필요없이 간편하게 바르는 타입",
+            "item_url": "https://catpre.com/product/4563",
+            "image": "https://img.catpre.com/mobile/catpre/product/5/4563_originalView_01373385.jpg",
+            "cover_type": 6
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 22,
+        "fields": {
+            "name": "펫 투스케어 칫솔 블루",
+            "price": 2800,
+            "content": "ㄱ자로 비스듬하게 제작되어 애완동물 양치에 최적화/\n미국 듀폰사의 부드러운 칫솔모 사용/\n작고 부드러운 칫솔모로 구강안쪽, 치간, 잇몸라인까지 케어",
+            "item_url": "https://catpre.com/product/17327",
+            "image": "https://img.catpre.com/mobile/catpre/product/18/17327_originalView_02200666.jpg",
+            "cover_type": 6
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 23,
+        "fields": {
+            "name": "M&C 헬시 바이트 브레스 앤 덴탈 영양제 65g",
+            "price": 5500,
+            "content": "치석과 플라그 제거 가능한 기능성 영양제/\n입 냄새 제거 및 구강 청결 유지/\n로즈마리 추출물 등 천연성분 함유/\n파슬리 씨와 클로버 잎 오일이 함유로 입 냄새 제거",
+            "item_url": "https://catpre.com/product/17855",
+            "image": "https://img.catpre.com/mobile/catpre/product/18/17855_originalView_01050153.jpg",
+            "cover_type": 6
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 24,
+        "fields": {
+            "name": "에티펫 치아 깨끗 티슈 30매",
+            "price": 1450,
+            "content": "오랄클렌져 성분이 첨가된 간편 칫솔 티슈/\n폴리페놀성분으로 입냄새 억제 효과/\n형광증백제, 포름알데히드를 무첨가한 안전한 제품/\n녹차추출물 함유 및 6단계 정수물 사용",
+            "item_url": "https://catpre.com/product/11394",
+            "image": "https://img.catpre.com/mobile/catpre/product/12/11394_originalView_01411443.jpg",
+            "cover_type": 6
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 25,
+        "fields": {
+            "name": "프로덴 플라그오프 고양이전용 파우더 40g",
+            "price": 25900,
+            "content": "100% 자연 해초 성분의 먹는 치석 제거제/\n치석제거 및 입냄새 제거, 플라그 제거에 효과/\n사료에 매일 한번씩 뿌려줌으로서 간단하게 사용 가능",
+            "item_url": "https://catpre.com/product/23881",
+            "image": "https://img.catpre.com/mobile/catpre/product/24/23881_originalView_01892014.jpg",
+            "cover_type": 6
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 26,
+        "fields": {
+            "name": "데이비스 테라코트 피모영양제 400g",
+            "price": 26000,
+            "content": "인지질 공급으로 세포막 구성, 순환기 건강 강화/\n피부 치유, 재생, 건조함 방지 및 피부탄력 증가 효과/\n우수한 혼합제조방식으로 알레르기 반응 없이 체내흡수/\n세포와 근육조직의 유동성을 증진시켜 활력과 운동성 부여",
+            "item_url": "https://catpre.com/product/11187",
+            "image": "https://img.catpre.com/mobile/catpre/product/12/11187_originalView_01896299.jpg",
+            "cover_type": 5
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 27,
+        "fields": {
+            "name": "닥터 스프레이 아토엑스 200ml",
+            "price": 10200,
+            "content": "유기게르마늄 성분 함유로 피부면역력 강화에 도움/\n콜로이드 실버 함유로 천연살균 및 항균 99.9%/\n식약처 FDA 구강, 피부 테스트 안전인증성분 함유",
+            "item_url": "https://catpre.com/product/23621",
+            "image": "https://img.catpre.com/mobile/catpre/product/24/23621_originalView_01542250.jpg",
+            "cover_type": 5
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 28,
+        "fields": {
+            "name": "필루 고양이용 네츄럴 해충방지 파우더 150g",
+            "price": 7500,
+            "content": "95% 이상의 천연성분 및 5% 이상의 오가닉성분 구성/\n외부 해충방지를 위한 파우더 타입 해충방지제",
+            "item_url": "https://catpre.com/product/18149",
+            "image": "https://img.catpre.com/mobile/catpre/product/19/18149_originalView_01228730.jpg",
+            "cover_type": 5
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 29,
+        "fields": {
+            "name": "브릴리언트 연어오일 300ml",
+            "price": 15000,
+            "content": "신선한 노르웨이 연어 사용한 오일/\n오메가3&6가 풍부하여 피부,피모 개선/\n특허받은 효소 추출법에 의해 연어오일 추출/\n공기 차단을 해주는 특수 펌핑 캡 사용",
+            "item_url": "https://catpre.com/product/38228",
+            "image": "https://img.catpre.com/mobile/catpre/product/39/38228_originalView_01965657.jpg",
+            "cover_type": 5
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 30,
+        "fields": {
+            "name": "식스스텝 오메가 3 크릴분말 30개입",
+            "price": 15900,
+            "content": "반려동물을 위한 분말 타입의 영양 보충제/\n청정해역 남극에서 어획하는 크릴에서 추출/\n20배 농축한 100% 순수 크릴 분말만으로 구성",
+            "item_url": "https://catpre.com/product/32809",
+            "image": "https://img.catpre.com/mobile/catpre/product/33/32809_originalView_01967060.jpg",
+            "cover_type": 5
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 31,
+        "fields": {
+            "name": "서플메이트 건강스틱 관절건강 75g",
+            "price": 5000,
+            "content": "뼈와 관절에 도움을 주는 콜라겐 함유/\n멀티비타민과 타우린 배합으로 원기회복에 효과/\n상어연골 추출물 함유로 칼슘부족 예방",
+            "item_url": "https://catpre.com/product/20",
+            "image": "https://img.catpre.com/mobile/catpre/product/1/20_originalView_01636279.jpg",
+            "cover_type": 4
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 32,
+        "fields": {
+            "name": "인트라젠 조인트파워 120정",
+            "price": 13500,
+            "content": "연골재생력과 뼈건강에 우수한 관절 영양제/\n슬개골 탈구예방, 손상된 관절회복, 관절염 예방에 효과/\n시력보호 및 눈물자국제거에 뛰어난 효과/\n위, 장 개선, 면역력 증강에도 도움",
+            "item_url": "https://catpre.com/product/24504",
+            "image": "https://img.catpre.com/mobile/catpre/product/25/24504_originalView_01652275.jpg",
+            "cover_type": 4
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 33,
+        "fields": {
+            "name": "버박 칼시데리스 30정",
+            "price": 17900,
+            "content": "칼슘의 흡수를 도와주는 인, 비타민 D의 이상적인 조합/\n임신묘의 태아 발육과 비유기의 젖 생산을 위한 칼슘, 비타민, 인 공급/\n키튼의 성장발육에 도움 및 섬유소성 골이영양증 예방",
+            "item_url": "https://catpre.com/product/1851",
+            "image": "https://img.catpre.com/mobile/catpre/product/2/1851_originalView_01117788.jpg",
+            "cover_type": 4
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 34,
+        "fields": {
+            "name": "식스스텝 초록입홍합 상어연골 관절영양제 60g",
+            "price": 24900,
+            "content": "반려동물을 위한 분말 타입의 영양 보충제/\n연골, 관절 건강에 도움이 되는 성분 첨가",
+            "item_url": "https://catpre.com/product/32815",
+            "image": "https://img.catpre.com/mobile/catpre/product/33/32815_originalView_01717317.jpg",
+            "cover_type": 4
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 35,
+        "fields": {
+            "name": "우프앤먀오 관절영양제 분말형 60g",
+            "price": 35000,
+            "content": "반려동물을 위한 분말 타입의 관절 영양제/\n초록입홍합이 슬개골 탈구 예방에 도움/\n엔지비타로 만들어진 18종 아미노산 함유/\n브로멜라인 첨가로 항염 효과에 도움",
+            "item_url": "https://catpre.com/product/38331",
+            "image": "https://img.catpre.com/mobile/catpre/product/39/38331_originalView_01766742.jpg",
+            "cover_type": 4
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 36,
+        "fields": {
+            "name": "M&C 헬시 바이트 유리너리 케어 영양제 65g",
+            "price": 5500,
+            "content": "비뇨기 건강에 도움을 주는 기능성 영양제/\n건식사료 급여로 인한 요로결석 예방에 도움/\nDL-메티오닌 함유로 소변의 PH수치를 낮춰주는 역할/\n천연 크랜베리 추출물 함유로 배뇨에서 발생하는 냄새제거 효과",
+            "item_url": "https://catpre.com/product/17858",
+            "image": "https://img.catpre.com/mobile/catpre/product/18/17858_originalView_01063396.jpg",
+            "cover_type": 7
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 37,
+        "fields": {
+            "name": "뉴트리벳 비뇨기계 질환 영양제 89ml",
+            "price": 16000,
+            "content": "NASC 미국 동물식품품질관리협회 품질인증 제품/\n비뇨기계 세균성 질환 예방에 도움/\n크랜베리추출물에 함유된 프로안토시아니딘이 세균의 잔류를 방지/\n필수 아미노산인 메티오닌 함유로 소변 pH 조절",
+            "item_url": "https://catpre.com/product/20564",
+            "image": "https://img.catpre.com/mobile/catpre/product/21/20564_originalView_01353179.jpg",
+            "cover_type": 7
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 38,
+        "fields": {
+            "name": "벳플러스 시스테이드 플러스 30개입",
+            "price": 17500,
+            "content": "비뇨기계 건강에 도움이 되는 알약 영양제/\nL-테아닌을 함유하여 스트레스 완화에 도움/\n항산화 작용을 하는 케르세틴 함유",
+            "item_url": "https://catpre.com/product/38447",
+            "image": "https://img.catpre.com/mobile/catpre/product/39/38447_originalView_01722337.jpg",
+            "cover_type": 7
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 39,
+        "fields": {
+            "name": "베토퀴놀 이파키틴 60g",
+            "price": 28000,
+            "content": "신부전 시 발생하는 고인산혈증 감소 효과/\n장관 내 인 성분을 흡착하여 신장질환에 도움",
+            "item_url": "https://catpre.com/product/19649",
+            "image": "https://img.catpre.com/mobile/catpre/product/20/19649_originalView_01373973.jpg",
+            "cover_type": 7
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 40,
+        "fields": {
+            "name": "캣츠힐 유리너리 영양제 30개입",
+            "price": 33000,
+            "content": "마따따비를 함유한 고양이 전용 유리너리 영양제/\nL-테아닌 성분을 첨가하여 스트레스 완화에 도움/\n면역력 향상, 바이러스 예방 등에 좋은 L-라이신 함유/\n눈과 심장 건강에 효과적인 필수아미노산 타우린 첨가",
+            "item_url": "https://catpre.com/product/36359",
+            "image": "https://img.catpre.com/mobile/catpre/product/37/36359_originalView_01903192.jpg",
+            "cover_type": 7
+        }
+    }
+]
