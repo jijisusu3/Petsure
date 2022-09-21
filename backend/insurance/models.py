@@ -63,7 +63,7 @@ class Items(models.Model):
 
 
 class Detail_user(models.Model):
-    breed = models.ForeignKey(Breed, on_delete=models.CASCADE, related_name='detail_user')
+    breed = models.IntegerField()
     species = models.IntegerField()
     animal_name = models.CharField(max_length=100)
     animal_birth = models.IntegerField()
