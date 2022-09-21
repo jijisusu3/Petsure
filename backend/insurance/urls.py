@@ -9,7 +9,7 @@ urlpatterns = [
     # path('insurance/basic/', views.basic),
     # path('insurance/detail/', views.detail),
     # path('insurance/choice/', views.choice),
-    # path('insurance/servey/', views.servey),
-    # path('disease/', views.disease),
-    # path('disease/<int:desease_id>/', views.disease_detail),
+    # path('insurance/survey/', views.survey),
+    path('disease/', views.disease),
+    path('disease/<int:disease_id>/', views.disease_detail),
 ]
