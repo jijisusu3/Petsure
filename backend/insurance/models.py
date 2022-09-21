@@ -6,7 +6,7 @@ class Insurance(models.Model):
     insurance_name = models.CharField(max_length=100)
     species = models.IntegerField()
     company_score = models.FloatField()
-    company_url = models.CharField(max_length=100)
+    company_url = models.CharField(max_length=300)
     company_logo = models.CharField(max_length=200)
     renewal = models.BooleanField(default=False)
     payment_period = models.IntegerField()
