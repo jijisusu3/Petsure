@@ -4,7 +4,7 @@ from . import views
 app_name = 'insurance'
 
 urlpatterns = [
-    # path('breed/', views.breed),
+    path('breed/', views.breed),
     # path('breed/<species>/<name>/', views.breed_search),
     # path('insurance/basic/', views.basic),
     # path('insurance/detail/', views.detail),

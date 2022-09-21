@@ -4,8 +4,9 @@ from ..models import Cover, Cover_type, Insurance, Insurance_detail, Items
 
 class CoverSerializer(serializers.ModelSerializer):
     class CoverTypeSerializer(serializers.ModelSerializer):
-        model = Cover_type
-        fields = '__all__'
+        class Meta :
+            model = Cover_type
+            fields = '__all__'
 
     cover_type = CoverTypeSerializer(read_only=True)
 
@@ -16,9 +17,10 @@ class CoverSerializer(serializers.ModelSerializer):
 
 class ItemsSerialzier(serializers.ModelSerializer):
     class CoverTypeSerializer(serializers.ModelSerializer):
-        model = Cover_type
-        fields = '__all__'
-    
+        class Meta :
+            model = Cover_type
+            fields = '__all__'
+        
     cover_type = CoverTypeSerializer(read_only=True)
 
     class Meta:
