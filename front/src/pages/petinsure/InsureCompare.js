@@ -1,7 +1,10 @@
 // 보험비교
-// import SettingsContainer from '../../components/settings/SettingsContainer';
+import InsureCompare from '../../components/petinsure/InsureCompare';
 
-export function InsureCompare() {
-  // return <SettingsContainer />;
-  return <h1>InsureCompare</h1>;
+export function InsureComparePage() {
+  return (
+    <>
+      <InsureCompare />;
+    </>
+  );
 }
