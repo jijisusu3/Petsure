@@ -9,7 +9,7 @@ import pandas as pd
 import numpy as np
 # import json
 
-from .models import Breed, Disease, Insurance_detail
+from .models import Breed, Disease, Insurance_detail, Insurance
 from insurance.serializers.others import BreedSerializer, DiseaseListSerializer, DiseaseSerializer
 
 
@@ -79,22 +79,12 @@ def basic(request):
         insurances = Insurance_detail.objects.values()
         distance = []
         for insure in insurances:
-            tmp = insure['all_cover'][4:]
-            compare = np.array(tmp)
-            dist = np.linalg.norm(compare - condition)
-            distance.append(dist)
+            if Insurance.objects.filter(id=insure['insurance_id']).values('species') != 2:
+                tmp = insure['all_cover'][4:]
+                compare = np.array(tmp)
+                dist = np.linalg.norm(compare - condition)
+                distance.append(dist)
 
-        df = pd.DataFrame({
-            "distance" : distance
-        })
-
-        sorted_df = df.sort_values(by=["distance"], ignore_index=False)[:15]
-        results = sorted_df.index.to_list()
-        
-        basic = []
-        for result in results:
-            basic.append(Insurance_detail.objects.filter(id=result).values())
-            print(Insurance_detail.objects.filter(id=result).values())
 
 
     if data['species'] == 2: # 고양이
@@ -112,9 +102,29 @@ def basic(request):
                 disease_data = Disease.objects.filter(breed=data['breed']).values()
                 for disease_detail in disease_data:
                     if disease_detail['cover_type_id']:
-                        condition[disease_detail['cover_type_id']- 4] += 1            
+                        condition[disease_detail['cover_type_id']- 4] += 1
+
+        insurances = Insurance_detail.objects.values()
+        distance = []
+        for insure in insurances:
+            if Insurance.objects.filter(id=insure['insurance_id']).values('species') != 1: 
+                tmp = insure['all_cover'][4:]
+                compare = np.array(tmp)
+                dist = np.linalg.norm(compare - condition)
+                distance.append(dist)           
 
         
+    df = pd.DataFrame({
+        "distance" : distance
+    })
+
+    sorted_df = df.sort_values(by=["distance"], ignore_index=False)[:15]
+    results = sorted_df.index.to_list()
+    
+    basic = []
+    for result in results:
+        basic.append(Insurance_detail.objects.filter(id=result).values())
+        print(Insurance_detail.objects.filter(id=result).values())
         pass
 
 
