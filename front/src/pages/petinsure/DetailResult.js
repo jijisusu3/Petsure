@@ -1,7 +1,14 @@
-// 상세검색결과
-// import SettingsContainer from '../../components/settings/SettingsContainer';
+import { useEffect, useState } from 'react';
+import { InsureCoverage } from '../../components/common/InsureCoverage';
+import { DonutChart } from '../../components/common/SureScore';
 
-export function DetailResult() {
-  // return <SettingsContainer />;
-  return <h1>DetailResult</h1>;
+export function DetailResultPage() {
+  return (
+    <>
+      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+        <DonutChart value={70} />
+      </div>
+      <InsureCoverage />
+    </>
+  );
 }
