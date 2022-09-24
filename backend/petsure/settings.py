@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     
     #3rd party app
     'corsheaders',
+    'drf_yasg',
     'rest_framework',
     'django_extensions',
 
