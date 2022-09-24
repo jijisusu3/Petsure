@@ -82,6 +82,8 @@ def disease_detail(request, disease_id):
 def basic(request):
     data = request.data
     condition = [0]*5
+    dog_fee = [1, 1.1, 1.3, 1.57, 1.8, 1.95, 2.1, 2.2, 2.27, 1.9, 1.97]
+    cat_fee = [0.95, 1.01, 1.03, 1.06, 1.15, 1.19, 1.25, 1.33]
 
     if data['species'] == 1: # 개
         # 나이
@@ -157,7 +159,10 @@ def basic(request):
         basic_detail = {}
         res = Insurance_detail.objects.filter(id=result+1).values()
         basic_detail['id'] = res[0]['id']
-        basic_detail['fee'] = res[0]['fee']
+        if data['species'] == 1:
+            basic_detail['fee'] = int(res[0]['fee']*dog_fee[data['animal_birth']])
+        if data['species'] == 2:
+            basic_detail['fee'] = int(res[0]['fee']*cat_fee[data['animal_birth']])            
 
         res_mother = Insurance.objects.filter(id=res[0]['insurance_id']).values()
         basic_detail['insurance_name'] = res_mother[0]['insurance_name']
