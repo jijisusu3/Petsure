@@ -9,7 +9,7 @@ import pandas as pd
 import numpy as np
 # import json
 
-from .models import Breed, Disease, Insurance_detail, Insurance
+from .models import Breed, Disease, Insurance_detail, Insurance, Cover, Cover_type
 from insurance.serializers.others import BreedSerializer, DiseaseListSerializer, DiseaseSerializer
 
 
@@ -19,6 +19,13 @@ def breed(request):
     breeds = get_list_or_404(Breed)
     serializer = BreedSerializer(breeds, many=True)
     return Response(serializer.data)
+
+@api_view(['GET'])
+def breed_detail(request, breed_id):
+    breed = get_object_or_404(Breed, pk=breed_id)
+    serializer = BreedSerializer(breed)
+    return Response(serializer.data)
+
 
 @api_view(['GET'])
 def disease(request):
@@ -34,23 +41,8 @@ def disease_detail(request, disease_id):
 
 @api_view(['POST'])
 def basic(request):
-    # 1. **프론트** ⇒ 개/냥, 나이, 종 **POST**  *(저장은 안함)* 
-    # 2. USER 정보 리스트 생성 [x, x, x, x, x] (슬개골, 피부, 구강, 비뇨기, 배상책임)
     data = request.data
     condition = [0]*5
-
-# 3. 받은 나이 별 ⇒ 질병 체크 / 종 별 ⇒ 맹견 분류 (맹견 - 배상책임) + 취약 질병 체크
-# 4. 개/냥 ⇒ 보험 필터링
-# - 나이
-#     - 개
-#         - 0, 1 : 슬개골, 피부
-#         - 2 ~ 5 : 구강
-#         - 6 ~ :  구강, 피부, 비뇨
-#     - 고양이
-#         - 0 : 피부
-#         - 1 , 2 :
-#         - 3 ~ 5 : 구강
-#         - 6 ~ : 구강, 비뇨
 
     if data['species'] == 1: # 개
         # 나이
@@ -86,7 +78,6 @@ def basic(request):
                 distance.append(dist)
 
 
-
     if data['species'] == 2: # 고양이
         if data['animal_birth'] == 0:
             condition[1] += 1
@@ -117,17 +108,33 @@ def basic(request):
     df = pd.DataFrame({
         "distance" : distance
     })
-
     sorted_df = df.sort_values(by=["distance"], ignore_index=False)[:15]
     results = sorted_df.index.to_list()
-    
-    basic = []
+
+    basics = []
     for result in results:
-        basic.append(Insurance_detail.objects.filter(id=result).values())
-        print(Insurance_detail.objects.filter(id=result).values())
-        pass
+        basic_detail = {}
+        res = Insurance_detail.objects.filter(id=result+1).values()
+        print(res[0])
+        basic_detail['id'] = res[0]['id']
+        basic_detail['fee'] = res[0]['fee']
 
+        res_mother = Insurance.objects.filter(id=res[0]['insurance_id']).values()
+        basic_detail['insurance_name'] = res_mother[0]['insurance_name']
+        basic_detail['company_logo'] = res_mother[0]['company_logo']
+        basic_detail['company_url'] = res_mother[0]['company_url']
 
-# 5. 필터링된 보험들[3:]과 USER 정보 리스트 유클리드 거리 유사도 측정
-# 6. 결과 sort ⇒ 15개 잘라서 response body 담아서 보냄.
-    return 
+        res_cover = []
+        for i in res[0]['basic']:
+            rc_detail = {}
+            rc = Cover.objects.filter(id=i).values()
+            rc_ct = Cover_type.objects.filter(id=rc[0]['cover_type_id']).values('type')
+            rc_detail['type'] = rc_ct[0]['type']
+            rc_detail['price'] = rc[0]['price']
+            rc_detail['detail'] = rc[0]['detail']
+            res_cover.append(rc_detail)
+
+        basic_detail['cover'] = res_cover
+        basics.append(basic_detail)
+
+    return Response(basics)

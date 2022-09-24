@@ -5,6 +5,7 @@ app_name = 'insurance'
 
 urlpatterns = [
     path('breed/', views.breed),
+    path('breed/<int:breed_id>', views.breed_detail),
     # path('breed/<species>/<name>/', views.breed_search),
     path('insurance/basic/', views.basic),
     # path('insurance/detail/', views.detail),
