@@ -1,16 +1,17 @@
 # from django.shortcuts import render
 from django.shortcuts import get_list_or_404, get_object_or_404
-
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
+from drf_yasg.utils import swagger_auto_schema
+from drf_yasg import openapi
 
 import pandas as pd
 import numpy as np
 # import json
 
 from .models import Breed, Disease, Insurance_detail, Insurance, Cover, Cover_type
-from insurance.serializers.others import BreedSerializer, DiseaseListSerializer, DiseaseSerializer
+from insurance.serializers.others import BreedSerializer,  DiseaseListSerializer, DiseaseSerializer
 
 
 # Create your views here.
@@ -39,6 +40,44 @@ def disease_detail(request, disease_id):
     serializer = DiseaseSerializer(disease)
     return Response(serializer.data)
 
+@swagger_auto_schema(
+        method='post',
+        request_body=openapi.Schema(
+            'basic',
+            type=openapi.TYPE_OBJECT,
+            properties={
+                "breed": openapi.Schema('종 번호', type=openapi.TYPE_INTEGER),
+                "animal_name": openapi.Schema('펫 이름', type=openapi.TYPE_STRING),
+                "species": openapi.Schema('개/냥', type=openapi.TYPE_INTEGER),
+                "animal_birth": openapi.Schema('나이', type=openapi.TYPE_INTEGER),
+            }
+        ),
+        responses={
+            200: openapi.Schema(
+                type=openapi.TYPE_ARRAY,
+                items=openapi.Items(
+                    type=openapi.TYPE_OBJECT,
+                    properties={
+                        "id": openapi.Schema('id', type=openapi.TYPE_NUMBER),
+                        "fee": openapi.Schema('요금', type=openapi.TYPE_INTEGER),
+                        "insurance_name": openapi.Schema('보험 이름', type=openapi.TYPE_STRING),
+                        "company_logo": openapi.Schema('보험사 로고', type=openapi.TYPE_STRING),
+                        "company_url": openapi.Schema('보험사 링크', type=openapi.TYPE_STRING),
+                        "cover": openapi.Schema('약관', type=openapi.TYPE_OBJECT,
+                        properties={
+                            "type": openapi.Schema('타입', type=openapi.TYPE_STRING),
+                            "price": openapi.Schema('최대보장금액', type=openapi.TYPE_INTEGER),
+                            "detail": openapi.Schema('요금', type=openapi.TYPE_STRING)
+                        }
+                        )
+                    }
+                    )
+
+                
+            )
+
+        }
+)
 @api_view(['POST'])
 def basic(request):
     data = request.data
@@ -62,11 +101,11 @@ def basic(request):
             if data['breed'] == breed['id']:
                 if breed['wild']: 
                     condition[4] += 1
-                
                 disease_data = Disease.objects.filter(breed=data['breed']).values()
                 for disease_detail in disease_data:
                     if disease_detail['cover_type_id']:
-                        condition[disease_detail['cover_type_id']- 4] += 1                
+                        condition[disease_detail['cover_type_id']- 4] += 1 
+            break               
         
         insurances = Insurance_detail.objects.values()
         distance = []
@@ -94,6 +133,8 @@ def basic(request):
                 for disease_detail in disease_data:
                     if disease_detail['cover_type_id']:
                         condition[disease_detail['cover_type_id']- 4] += 1
+                break
+            
 
         insurances = Insurance_detail.objects.values()
         distance = []
@@ -115,7 +156,6 @@ def basic(request):
     for result in results:
         basic_detail = {}
         res = Insurance_detail.objects.filter(id=result+1).values()
-        print(res[0])
         basic_detail['id'] = res[0]['id']
         basic_detail['fee'] = res[0]['fee']
 
