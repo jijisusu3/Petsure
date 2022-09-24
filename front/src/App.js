@@ -7,10 +7,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import useInterval from './components/utils/hooks/useInterval';
 import { createSerializableStateInvariantMiddleware } from '@reduxjs/toolkit';
 import { AllInput } from './pages/petinsure/AllInput';
-import { BasicInput } from './pages/petinsure/BasicInput';
+import { BasicInputPage } from './pages/petinsure/BasicInput';
 import { BasicResult } from './pages/petinsure/BasicResult';
 import { DetailResult } from './pages/petinsure/DetailResult';
-import { InsureComparePage } from './pages/petinsure/insurecompare';
+import { InsureComparePage } from './pages/petinsure/InsureCompare';
 import { InsureDetail } from './pages/petinsure/InsureDetail';
 import { DiseaseDict } from './pages/DiseaseDict';
 import { AboutUs } from './pages/AboutUs';
@@ -44,7 +44,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/landing" element={<LandingPage />} />
-          <Route path="/basicinput" element={<BasicInput />} />
+          <Route path="/basicinput" element={<BasicInputPage />} />
           <Route path="basicinput/basicresult" element={<BasicResult />} />
           <Route path="/allinput" element={<AllInput />} />
           <Route path="allinput/detailresult" element={<DetailResult />} />
