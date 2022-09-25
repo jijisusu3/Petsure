@@ -24,7 +24,10 @@ schema_view_v1 = get_schema_view(
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('insurance.urls')),
-    url(r'^swagger(?P<format>\.json|\.yaml)$', schema_view_v1.without_ui(cache_timeout=0), name='schema-json'),
-    url(r'^swagger/$', schema_view_v1.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
-    url(r'^redoc/$', schema_view_v1.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+]
+
+urlpatterns += [
+    path('swagger<str:format>', schema_view_v1.without_ui(cache_timeout=0), name='schema-json'),
+    path('swagger/', schema_view_v1.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('docs/', schema_view_v1.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]
