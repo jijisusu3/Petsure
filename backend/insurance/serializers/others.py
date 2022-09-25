@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from ..models import Breed, Cover_type, Detail_user, Disease, Survey
-from .insurance import InsuranceDetailSerializer
+# from .insurance import InsuranceDetailSerializer
 
 
 class BreedSerializer(serializers.ModelSerializer):
