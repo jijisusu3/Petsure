@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from insurance.serializers.others import SurveySerializer
 from ..models import Cover, Cover_type, Insurance, Insurance_detail, Items
 
 
@@ -16,16 +17,10 @@ class CoverSerializer(serializers.ModelSerializer):
 
 
 class ItemsSerialzier(serializers.ModelSerializer):
-    class CoverTypeSerializer(serializers.ModelSerializer):
-        class Meta :
-            model = Cover_type
-            fields = '__all__'
-        
-    cover_type = CoverTypeSerializer(read_only=True)
-
     class Meta:
         model = Items
-        fields = '__all__'
+        fields = ('name', 'price', 'item_url', 'image')
+
 
 
 class InsuranceSerializer(serializers.ModelSerializer):
@@ -37,8 +32,20 @@ class InsuranceSerializer(serializers.ModelSerializer):
 
 
 class InsuranceDetailSerializer(serializers.ModelSerializer):
+
+    survey = SurveySerializer(read_only=True, many=True)
+    
     insurance = InsuranceSerializer(read_only=True)
 
     class Meta :
         model = Insurance_detail
+        fields = '__all__'
+
+        
+class CoverTypeSerializer(serializers.ModelSerializer):
+
+    items = ItemsSerialzier(read_only=True, many=True)
+
+    class Meta:
+        model = Cover_type
         fields = '__all__'

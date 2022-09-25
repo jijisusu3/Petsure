@@ -8,9 +8,9 @@ urlpatterns = [
     path('breed/<int:breed_id>', views.breed_detail),
     # path('breed/<species>/<name>/', views.breed_search),
     path('insurance/basic/', views.basic),
-    # path('insurance/detail/', views.detail),
-    # path('insurance/choice/', views.choice),
-    # path('insurance/survey/', views.survey),
+    path('insurance/detail/', views.detail),
+    path('insurance/choice/', views.choice),
+    path('insurance/survey/', views.survey),
     path('disease/', views.disease),
     path('disease/<int:disease_id>/', views.disease_detail),
 ]

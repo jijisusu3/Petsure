@@ -7,13 +7,15 @@ from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 
 from math import sqrt
+from django.http import JsonResponse
 
 import pandas as pd
 import numpy as np
 # import json
 
-from .models import Breed, Disease, Insurance_detail, Insurance, Cover, Cover_type
-from insurance.serializers.others import BreedSerializer,  DiseaseListSerializer, DiseaseSerializer
+from .models import *
+from .serializers.insurance import *
+from .serializers.others import *
 
 
 # Create your views here.
@@ -42,6 +44,29 @@ def disease_detail(request, disease_id):
     serializer = DiseaseSerializer(disease)
     return Response(serializer.data)
 
+@api_view(['PUT'])
+def choice(request):
+    user = request.data.get('user')
+    insurance_detail = request.data.get('insurance_detail')
+    serializer = get_object_or_404(Detail_user, id=user)
+    serializer.insurance_choice = insurance_detail
+    serializer.save()
+    return Response("user_choice 저장")
+
+@api_view(['POST'])
+def survey(request):
+    user = get_object_or_404(Detail_user, id=request.data.get('user'))
+    choice = request.data.get('insurance_detail')
+    insurance = get_object_or_404(Insurance_detail, id=choice)
+    serializer = SurveySerializer(data=request.data)
+    try: # 이 유저가 이미 해당 보험에 대한 의견을 남겼을 때,
+        survey_list = get_object_or_404(Survey, detail_user=user, insurance_detail=choice)
+    except: # 이 유저가 해당 보험에 대해 의견을 처음 남길 때,
+        if serializer.is_valid(raise_exception=True):
+            serializer.save(detail_user=user, insurance_detail=insurance)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    return Response("This survey already exists", status=400)
+    
 @swagger_auto_schema(
         method='post',
         request_body=openapi.Schema(
@@ -85,7 +110,7 @@ def basic(request):
     data = request.data
     condition = [0]*5
     dog_fee = [1, 1.1, 1.3, 1.57, 1.8, 1.95, 2.1, 2.2, 2.27, 1.9, 1.97]
-    cat_fee = [0.95, 1.01, 1.03, 1.06, 1.15, 1.19, 1.25, 1.33]
+    cat_fee = [1, 0.95, 1.01, 1.03, 1.06, 1.15, 1.19, 1.25, 1.33]
 
     if data['species'] == 1: # 개
         # 나이
@@ -189,18 +214,18 @@ def basic(request):
 
 @api_view(["POST"])
 def detail(request):
+    dog_fee = [1, 1.1, 1.3, 1.57, 1.8, 1.95, 2.1, 2.2, 2.27, 1.9, 1.97]
+    cat_fee = [1, 0.95, 1.01, 1.03, 1.06, 1.15, 1.19, 1.25, 1.33]
     data = request.data
-    user = [0] * 9
+    user = []
+    into_user = [
+        'outpatient', 'hospitalization', 'operation', 'patella', 
+        'skin_disease', 'dental', 'urinary', 'liability'
+    ]
+    for i in into_user:
+        user.append(data.get(i))
+    user.append(0)
 
-    user[0] = data['outpatient']
-    user[1] = data['hospitalization']
-    user[2] = data['operation']
-    user[3] = data['patella']
-    user[4] = data['skin_disease']
-    user[5] = data['dental']
-    user[6] = data['urinary']
-    user[7] = data['liability']
-    user[8] = data['insurance_choice']
 
     if data['species'] == 1:
         df_user = pd.read_csv("knn_data/doguser.csv", encoding="cp949")
@@ -223,22 +248,136 @@ def detail(request):
     print(lst, pk_lst)
 
 
-    recommend = list()
+    recommends = list()
     for j in range(8):
-        recommend.append((pk_lst[j], 100 - 1.96*(j+1)))
+        recommends.append((pk_lst[j], 100 - 1.96*(j+1)))
 
     # recommend의 결과값은
     # (insurance_pk, score) 형태로 나옵니다.
     # 이거 가져다 쓰시면 됩니다!!!!!!!!
+    result = {}
+
+    before_ranking = []
+    sure_ranking = []
+    price_ranking = []
+    cover_ranking = []
+
+    def make_user():
+        serializer = DetailUserSerializer(data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            if serializer.data.get('animal_name') != request.data.get('animal_name'):
+                temp_user = get_object_or_404(Detail_user, pk=serializer.data.get('id'))
+                temp_user.delete()
+                make_user()
+            else:
+                result["user"] = serializer.data.get('id')
+                return
+
+    def make_sure_score():
+        return
+
+    for i in range(1, len(recommends) + 1):
+        temp_detail = {}
+        d, matching_score = recommends[i - 1]
+        
+        recommend = get_object_or_404(Insurance_detail, id=d)
+        serializer = InsuranceDetailSerializer(recommend)
+
+        temp_detail["sure_score"] = make_sure_score()
+
+        temp_detail["name"] = serializer.data.get("name")
+
+        if data["species"] == 1:
+            temp_detail["fee"] = int(serializer.data.get("fee")*dog_fee[data["animal_birth"]])
+        if data["species"] == 2:
+            temp_detail["fee"] = int(serializer.data.get("fee")*cat_fee[data["animal_birth"]])
+
+        temp_detail["all_cover"] = serializer.data.get("all_cover")
+        temp_detail["insurance"] = serializer.data.get("insurance")
+        
+        # 해당 보험의 basic_cover, special_cover 보내주기
+        basic_cover = []
+        special_cover = []
+        basic = serializer.data.get("basic")
+        special = serializer.data.get("special")
+        cover_list = serializer.data.get("insurance").get("cover")
+        cover_count = 0
+        if bool(basic):
+            for c in basic:
+                cover_count += 1
+                cover = {}
+                for i in cover_list:
+                    if i["id"] == c:
+                        cover["cover_type"] = i["cover_type"]["id"]
+                        cover["price"] = i["price"]
+                        cover["detail"] = i["detail"]
+                        basic_cover.append(cover)
+            temp_detail["basic"] = basic_cover
+                
+        if bool(special):
+            for c in special:
+                cover_count += 1
+                cover = {}
+                for i in cover_list:
+                    if i["id"] == c:
+                        cover["cover_type"] = i["cover_type"]["id"]
+                        cover["price"] = i["price"]
+                        cover["detail"] = i["detail"]
+                        special_cover.append(cover)
+            temp_detail["special"] = basic_cover
+
+        temp_detail["cover_count"] = cover_count
+
+
+        # survey 비율 넣기
+        temp_survey = []
+        more_temp_survey = []
+        survey_list = serializer.data.get("survey")
+        count_survey = 0
+        for survey in survey_list:
+            more_temp_survey.append(survey["score"])
+            count_survey += 1
+        for i in range(5, 0, -1):
+            count_score = 0
+            for j in more_temp_survey:
+                if i == j:
+                    count_score += 1
+            temp_survey.append(count_score/count_survey)
+        temp_detail["survey"] = temp_survey
+
+
+
+        # 상품 넣기
+        user_survey = []
+        this_cover = temp_detail["all_cover"][4:8]
+        key_list = [
+            'patella', 'skin_disease', 'dental', 'urinary'
+        ]
+
+        for k in key_list:
+            user_survey.append(request.data.get(k))
+
+        item_cover = 0
+        max_missing = 0
+        for i in range(0, 4):
+            missing = user_survey[i]
+            if (not bool(this_cover[i])) and (max_missing < missing):
+                max_missing = missing
+                item_cover = i + 4
+
+        if bool(item_cover):
+            temp_detail["item_cover"] = item_cover
+            missing_type =  get_object_or_404(Cover_type, id=item_cover)
+            serializer = CoverTypeSerializer(missing_type)
+            print(serializer.data.get("items")[6:10])
+            # temp_detail["items"] = serializer.data.get("items")
+
+        before_ranking.append(temp_detail)
+
     return
 
-
-
-
-
-
-
-# --------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------
 # K-nearest neighbor 구현에 필요한 함수입니다.-------------------------------------
 
 def euclidean_distance(user, neighbor):
