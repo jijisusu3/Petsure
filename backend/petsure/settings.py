@@ -37,8 +37,8 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',        
     ],
     'DEFAULT_PERMISSION_CLASSES': [        
-        # 'rest_framework.permissions.AllowAny',
-        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.AllowAny',
+        # 'rest_framework.permissions.IsAuthenticated',
     ]
 }
 
@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     
     #3rd party app
     'corsheaders',
+    'drf_yasg',
     'rest_framework',
     'django_extensions',
 
