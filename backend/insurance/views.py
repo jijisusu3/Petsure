@@ -6,6 +6,8 @@ from rest_framework import status
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 
+from math import sqrt
+
 import pandas as pd
 import numpy as np
 # import json
@@ -183,3 +185,104 @@ def basic(request):
         basics.append(basic_detail)
 
     return Response(basics)
+
+
+@api_view(["POST"])
+def detail(request):
+    data = request.data
+    user = [0] * 9
+
+    user[0] = data['outpatient']
+    user[1] = data['hospitalization']
+    user[2] = data['operation']
+    user[3] = data['patella']
+    user[4] = data['skin_disease']
+    user[5] = data['dental']
+    user[6] = data['urinary']
+    user[7] = data['liability']
+    user[8] = data['insurance_choice']
+
+    if data['species'] == 1:
+        df_user = pd.read_csv("knn_data/doguser.csv", encoding="cp949")
+    else:
+        df_user = pd.read_csv("knn_data/catuser.csv", encoding="cp949")
+    
+    df_user.drop(['animal_name', 'species', 'animal_birth', 'breed'], axis=1, inplace=True)
+    neighbor_list = df_user.values.tolist()
+
+    k = 51
+
+    lst = [0] * 8
+    pk_lst = [0] * 8
+    dist_lst = get_pred(user, neighbor_list, k)
+
+    for i in range(8):
+        lst[i] = max(dist_lst)
+        pk_lst[i] = dist_lst.index(max(dist_lst))
+        dist_lst[dist_lst.index(max(dist_lst))] = 0
+    print(lst, pk_lst)
+
+
+    recommend = list()
+    for j in range(8):
+        recommend.append((pk_lst[j], 100 - 1.96*(j+1)))
+
+    # recommend의 결과값은
+    # (insurance_pk, score) 형태로 나옵니다.
+    # 이거 가져다 쓰시면 됩니다!!!!!!!!
+    return
+
+
+
+
+
+
+
+# --------------------------------------------------------------------------------
+# K-nearest neighbor 구현에 필요한 함수입니다.-------------------------------------
+
+def euclidean_distance(user, neighbor):
+	distance = 0.0
+	for i in range(len(user)-1):
+		distance += (user[i] - neighbor[i])**2
+	return sqrt(distance)
+
+def inverse_weight(user, neighbor):
+  weight = 0.0
+  num = 1.0
+  const = 0.1
+  distance = euclidean_distance(user, neighbor)
+  weight = num / (distance + const)
+  return weight
+
+def get_neighbors(user, neighbor_list, k):
+	distances = list()
+	for neighbor in neighbor_list:
+		dist = inverse_weight(user, neighbor)
+		distances.append((neighbor, dist))
+	distances.sort(reverse=True, key=lambda tup: tup[1])
+	print('neighbors distances : ', distances)
+
+	near_neighbors = list()
+	for i in range(k):
+		near_neighbors.append(distances[i][0])
+	print('near neighbors : ', near_neighbors)
+	return near_neighbors
+
+def predict_classification(user, neighbor_list, k):
+	neighbors = get_neighbors(user, neighbor_list, k)
+	predict_candidate = [row[-1] for row in neighbors]
+	print('predict_candidate : ', predict_candidate)
+	prediction = predict_candidate
+	# prediction = max(set(predict_candidate), key=predict_candidate.count)
+	return prediction
+
+def get_pred(user, neighbor_list, k):
+	predict_candidate = predict_classification(user, neighbor_list, k)
+	for neighbor in neighbor_list:
+		weight_dist = inverse_weight(user, neighbor)
+	lst = [0] * 62 # 보험이 61개이므로 62로 지정, 추후 보험상품 추가되면 수정 필요
+	for i in range(k):
+		x = predict_candidate[i]
+		lst[x] += weight_dist
+	return lst
