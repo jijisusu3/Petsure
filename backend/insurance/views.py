@@ -228,9 +228,9 @@ def detail(request):
 
 
     if data['species'] == 1:
-        df_user = pd.read_csv("knn_data/doguser.csv", encoding="cp949")
+        df_user = pd.read_csv("./knn_data/doguser.csv", encoding="cp949")
     else:
-        df_user = pd.read_csv("knn_data/catuser.csv", encoding="cp949")
+        df_user = pd.read_csv("./knn_data/catuser.csv", encoding="cp949")
     
     df_user.drop(['animal_name', 'species', 'animal_birth', 'breed'], axis=1, inplace=True)
     neighbor_list = df_user.values.tolist()
@@ -274,8 +274,9 @@ def detail(request):
                 result["user"] = serializer.data.get('id')
                 return
 
-    def make_sure_score():
-        return
+    def make_sure_score(c, p, m):
+        s_score = (c * 0.3) + (p * 0.4) + (m * 0.4)
+        return s_score
 
     for i in range(1, len(recommends) + 1):
         temp_detail = {}
@@ -284,7 +285,6 @@ def detail(request):
         recommend = get_object_or_404(Insurance_detail, id=d)
         serializer = InsuranceDetailSerializer(recommend)
 
-        temp_detail["sure_score"] = make_sure_score()
 
         temp_detail["name"] = serializer.data.get("name")
 
@@ -302,6 +302,14 @@ def detail(request):
         basic = serializer.data.get("basic")
         special = serializer.data.get("special")
         cover_list = serializer.data.get("insurance").get("cover")
+
+        company_score = serializer.data.get("insurance").get("company_score")
+        price_score = serializer.data.get("insurance").get("price_score")
+        temp_detail["sure_score"] = make_sure_score(company_score, price_score, matching_score)
+        print(company_score)
+        print(price_score)
+        print(temp_detail["sure_score"])
+
         cover_count = 0
         if bool(basic):
             for c in basic:
@@ -375,7 +383,9 @@ def detail(request):
 
         before_ranking.append(temp_detail)
 
-    return
+    result["before_ranking"] = before_ranking
+
+    return JsonResponse(result)
 
 # -------------------------------------------------------------------------------
 # K-nearest neighbor 구현에 필요한 함수입니다.-------------------------------------
