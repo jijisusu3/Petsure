@@ -7,10 +7,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import useInterval from './components/utils/hooks/useInterval';
 import { createSerializableStateInvariantMiddleware } from '@reduxjs/toolkit';
 import { AllInput } from './pages/petinsure/AllInput';
-import { BasicInput } from './pages/petinsure/BasicInput';
+import { BasicInputPage } from './pages/petinsure/BasicInput';
 import { BasicResult } from './pages/petinsure/BasicResult';
 import { DetailResult } from './pages/petinsure/DetailResult';
-import { InsureCompare } from './pages/petinsure/InsureCompare';
+import { InsureComparePage } from './pages/petinsure/InsureCompare';
 import { InsureDetail } from './pages/petinsure/InsureDetail';
 import { DiseaseDict } from './pages/DiseaseDict';
 import { AboutUs } from './pages/AboutUs';
@@ -44,17 +44,12 @@ function App() {
       <main>
         <Routes>
           <Route path="/landing" element={<LandingPage />} />
-          <Route path="/basicinput/" element={<BasicInput />}>
-            <Route path="basicresult" element={<BasicResult />} />
-            <Route path="detailresult" element={<DetailResult />} />
-            <Route path="insurecompare" element={<InsureCompare />} />
-            <Route path="insuredetail" element={<InsureDetail />} />
-          </Route>
-          <Route path="/allinput/" element={<AllInput />}>
-            <Route path="detailresult" element={<DetailResult />} />
-            <Route path="insurecompare" element={<InsureCompare />} />
-            <Route path="insuredetail" element={<InsureDetail />} />
-          </Route>
+          <Route path="/basicinput" element={<BasicInputPage />} />
+          <Route path="basicinput/basicresult" element={<BasicResult />} />
+          <Route path="/allinput" element={<AllInput />} />
+          <Route path="allinput/detailresult" element={<DetailResult />} />
+          <Route path="allinput/insurecompare" element={<InsureComparePage />} />
+          <Route path="allinput/insuredetail" element={<InsureDetail />} />
           <Route path="/diseasdict" element={<DiseaseDict />} />
           <Route path="/aboutus" element={<AboutUs />} />
         </Routes>
