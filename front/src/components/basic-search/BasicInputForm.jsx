@@ -87,8 +87,8 @@ function BasicInputForm() {
             basicinputHandler();
           }}
         >
-          <div className={classes.login_main}>
-            <h2 className={classes.login_title}>우리 아이 보험료 확인</h2>
+          <div className={classes.basicinput_main}>
+            <h2 className={classes.basicinput_title}>우리 아이 보험료 확인</h2>
             <div>
               <Input
                 id="name"
@@ -108,7 +108,7 @@ function BasicInputForm() {
               />
             </div>
           </div>
-          <div className={classes.login_btns}>
+          <div className={classes.basicinput_btns}>
             <div>
               {name.valid && date.valid ? (
                 <Button text="검색하기" onEvent={basicinputHandler} />
