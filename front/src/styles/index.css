@@ -118,6 +118,10 @@ main {
   align-items: center;
 }
 
+.width_150vw {
+  width: 150vw;
+}
+
 .width_50vw {
   width: 50vw;
 }

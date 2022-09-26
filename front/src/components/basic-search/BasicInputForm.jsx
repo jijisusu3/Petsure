@@ -55,7 +55,7 @@ function BasicInputForm() {
   const navigate = useNavigate();
 
   function routerPushHandler() {
-    navigate('basicinput/basicresult');
+    navigate('/basicinput/basicresult');
   }
 
   const basicinputHandler = async () => {
@@ -111,7 +111,7 @@ function BasicInputForm() {
           <div className={classes.basicinput_btns}>
             <div>
               {name.valid && date.valid ? (
-                <Button text="검색하기" onEvent={basicinputHandler} />
+                <Button text="검색하기" onEvent={routerPushHandler} />
               ) : (
                 <Button text="검색하기" color="neutral" onEvent={basicinputErrorHandler} />
               )}
