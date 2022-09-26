@@ -1,8 +1,6 @@
-
 from rest_framework import serializers
 from ..models import Breed, Cover_type, Detail_user, Disease, Survey
-from .insurance import InsuranceDetailSerializer
-
+# from .insurance import InsuranceDetailSerializer
 
 
 class BreedSerializer(serializers.ModelSerializer):
@@ -43,12 +41,13 @@ class DetailUserSerializer(serializers.ModelSerializer):
         fields = '__all__'
     
 
-class SurveySerializer(serializers.ModelSerializer):
-    detail_user = DetailUserSerializer(read_only=True)
-    insurance_detail = InsuranceDetailSerializer(read_only=True)
 
+class SurveySerializer(serializers.ModelSerializer):
     class Meta :
         model = Survey
-        field = '__all__'
+        fields = ('pk', 'detail_user', 'review', 'score', 'insurance_detail',)
+        read_only_fields = ('insurance_detail', 'detail_user')
+
+
 
 
