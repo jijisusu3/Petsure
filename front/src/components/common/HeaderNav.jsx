@@ -7,7 +7,7 @@ function HeaderNav() {
   return (
     <Navbar bg="white" variant="white">
       <Container fluid>
-        <Navbar.Brand href="/landing">
+        <Navbar.Brand href="/">
           <img
             src="petsureLogo.png"
             width="32"
