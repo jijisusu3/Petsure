@@ -43,7 +43,7 @@ function App() {
       <HeaderNav />
       <main>
         <Routes>
-          <Route path="/landing" element={<LandingPage />} />
+          <Route path="/" element={<LandingPage />} />
           <Route path="/basicinput" element={<BasicInputPage />} />
           <Route path="basicinput/basicresult" element={<BasicResultPage />} />
           <Route path="/allinput" element={<AllInputPage />} />

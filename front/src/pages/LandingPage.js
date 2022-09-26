@@ -82,7 +82,8 @@ const LandingPage = () => {
       {/* {contents.map((content, index) => (
         <LandingSection key={index} content={content} />
       ))} */}
-      <FooterBar />
+      <h2>이게 landing page다~!</h2>
+      {/* <FooterBar /> */}
     </>
   );
 };
