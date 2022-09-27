@@ -331,9 +331,8 @@ def detail(request):
         recommend = get_object_or_404(Insurance_detail, id=d)
         serializer = InsuranceDetailSerializer(recommend)
 
-
+        temp_detail["id"] = serializer.data.get("id")
         temp_detail["name"] = serializer.data.get("name")
-
         if data["species"] == 1:
             temp_detail["fee"] = int(serializer.data.get("fee")*dog_fee[data["animal_birth"]])
         if data["species"] == 2:
@@ -351,8 +350,8 @@ def detail(request):
 
         company_score = serializer.data.get("insurance").get("company_score")
         price_score = serializer.data.get("price_score")
+        temp_detail["price_score"] = price_score
         temp_detail["sure_score"] = make_sure_score(company_score, price_score, matching_score)
-
         cover_count = 0
         if bool(basic):
             for c in basic:
@@ -376,7 +375,7 @@ def detail(request):
                         cover["price"] = i["price"]
                         cover["detail"] = i["detail"]
                         special_cover.append(cover)
-            temp_detail["special"] = basic_cover
+            temp_detail["special"] = special_cover
 
         temp_detail["cover_count"] = cover_count
 
@@ -426,7 +425,12 @@ def detail(request):
             else:
                 temp_detail["items"] = serializer.data.get("items")[6:10]
         else:
-            pass
+            missing_type =  get_object_or_404(Cover_type, id=9)
+            serializer = CoverTypeSerializer(missing_type)
+            if data['species'] == 1:
+                temp_detail["items"] = serializer.data.get("items")[0:5]
+            else:
+                temp_detail["items"] = serializer.data.get("items")[6:10]
 
         before_ranking.append(temp_detail)
     

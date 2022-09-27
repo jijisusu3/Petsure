@@ -54,5 +54,12 @@
         "fields": {
             "type": "배상책임"
         }
+    },
+    {
+        "model": "insurance.cover_type",
+        "pk": 9,
+        "fields": {
+            "type": "기타"
+        }
     }
 ]
