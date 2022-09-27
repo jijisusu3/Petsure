@@ -13,8 +13,8 @@
   position: absolute;
   width: 100%;
   height: inherit;
-  clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%);
-  -webkit-clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%);
+  /* clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%);
+  -webkit-clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%); */
 }
 
 .blur {

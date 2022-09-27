@@ -1,34 +1,36 @@
 import { useNavigate } from 'react-router-dom';
-// import LandingSection from '../components/landing/LandingSection';
+import LandingSection from '../components/landing/LandingSection';
 import FooterBar from '../components/common/FooterBar';
-import AboutTopic from '../components/landing/AboutTopic';
+// import AboutTopic from '../components/landing/AboutTopic';
 
 const LandingPage = () => {
   const navigate = useNavigate();
 
   const contents = [
     {
-      title: ['HELLO to the WORLD!'],
-      content: [
-        '다양한 사람들과 무료로 대화를 나눠보세요!',
-        '여러분도 원어민처럼 혀를 굴릴 수 있어요.',
-      ],
+      title: ['Are you sure?', 'PetSure!'],
+      content: ['다양한 보험 정보를 무료로 검색해보세요!', '반려동물을 위한 확실한 보험정보'],
       button: {
-        name: 'Try now!',
+        name: '펫슈어와 함께 알아보기',
+        color: 'secondary',
+        size: 'middle',
         action() {
-          navigate('/login');
+          navigate('/basicinput');
         },
       },
+
       // foreground: <RotatingGlobe />,
+      // center: true,
     },
-    // {
-    //   title: ['전 세계 사람들과 랜덤으로 1:1 화상통화'],
-    //   content: ['혹시 아나요? 지구 반대편 사람과 새로운 친구가 될지.'],
-    //   right: true,
-    //   foreground: <div />,
-    //   background: 'back1',
-    //   colorInvert: true,
-    // },
+    {
+      title: ['전 세계 사람들과 랜덤으로 1:1 화상통화'],
+      content: ['혹시 아나요? 지구 반대편 사람과 새로운 친구가 될지.'],
+      right: true,
+      foreground: <div />,
+      background: 'back1',
+      colorInvert: true,
+    },
+
     // {
     //   title: ['5분마다 만나는 새로운 인연'],
     //   content: ['대화가 길어질까봐 걱정하지 않으셔도 돼요.'],
@@ -79,11 +81,11 @@ const LandingPage = () => {
 
   return (
     <>
-      {/* {contents.map((content, index) => (
+      {contents.map((content, index) => (
         <LandingSection key={index} content={content} />
-      ))} */}
+      ))}
       <h2>이게 landing page다~!</h2>
-      {/* <FooterBar /> */}
+      <FooterBar />
     </>
   );
 };
