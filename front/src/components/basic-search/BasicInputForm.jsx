@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import Sheet from '../common/Sheet';
+import RibbonSheet from '../common/RibbonSheet';
 import Input from '../common/Input';
 import Button from '../common/Button';
 import classes from './BasicInputForm.module.css';
@@ -80,7 +81,7 @@ function BasicInputForm() {
 
   return (
     <div>
-      <Sheet size="large">
+      <RibbonSheet size="large">
         <form
           onSubmit={e => {
             e.preventDefault();
@@ -89,24 +90,39 @@ function BasicInputForm() {
         >
           <div className={classes.basicinput_main}>
             <h2 className={classes.basicinput_title}>우리 아이 보험료 확인</h2>
-            <div>
-              <Input
-                id="name"
-                type="text"
-                placeholder="우리 아이 이름"
-                onValid={nameValidObj}
-                onData={nameData => setName(nameData)}
-              />
-            </div>
-            <div>
-              <Input
-                id="date"
-                type="text"
-                placeholder="생년월일 (ex.20180603)"
-                onValid={dateValidObj}
-                onData={dateData => setDate(dateData)}
-              />
-            </div>
+
+            <table className={classes.basicinput_table_border}>
+              <tr>
+                <td>
+                  <div>
+                    <Input
+                      id="name"
+                      type="text"
+                      placeholder="우리 아이 이름"
+                      onValid={nameValidObj}
+                      onData={nameData => setName(nameData)}
+                    />
+                  </div>{' '}
+                </td>
+                <td>
+                  {' '}
+                  <h2>!!!!!!@!@!@</h2>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div>
+                    <Input
+                      id="date"
+                      type="text"
+                      placeholder="생년월일 (ex.20180603)"
+                      onValid={dateValidObj}
+                      onData={dateData => setDate(dateData)}
+                    />
+                  </div>
+                </td>
+              </tr>
+            </table>
           </div>
           <div className={classes.basicinput_btns}>
             <div>
@@ -118,7 +134,7 @@ function BasicInputForm() {
             </div>
           </div>
         </form>
-      </Sheet>
+      </RibbonSheet>
     </div>
   );
 }

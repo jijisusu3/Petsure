@@ -1,5 +1,5 @@
 .basicinput_title {
-    text-align: center;
+    text-align: left;
     margin-bottom: 3rem;
   }
   
@@ -34,3 +34,9 @@
     display: flex;
     justify-content: space-evenly;
   }
+
+  .basicinput_table_border {
+    border: double 3px red;
+  }
+
+  
