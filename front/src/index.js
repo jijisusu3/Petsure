@@ -10,12 +10,11 @@ import './styles/index.css';
 import './styles/minireset.min.css';
 import './styles/pretendard.css';
 import App from './App';
-import axios from 'axios';
 
 // axios.defaults.baseURL = 'http://localhost:8000'
 // axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8'
 // axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*'
-axios.defaults.withCredentials = true;
+// axios.defaults.withCredentials = true;
 
 window.addEventListener('unload', () => {
   // localStorage.removeItem('persist:root')
