@@ -38,6 +38,7 @@ export default function LandingSection({ content }) {
               <Button
                 text={content.button.name}
                 color={content.button.color}
+                size={content.button.size}
                 onEvent={content.button.action}
               />
             </div>
@@ -57,6 +58,7 @@ LandingSection.propTypes = {
     button: PropTypes.shape({
       name: PropTypes.string.isRequired,
       color: PropTypes.string,
+      size: PropTypes.string,
       action: PropTypes.func,
     }),
     right: PropTypes.bool,
