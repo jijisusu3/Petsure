@@ -19,7 +19,9 @@ export function InsureCard() {
       <div>
         <h2>보험이름들어가면될듯</h2>
         <h5>보장내용</h5>
-        <Sheet size="badge">슬개골</Sheet>
+        <Sheet className={classes.badge} size="badge">
+          슬개골
+        </Sheet>
       </div>
       <div className={classes.sureScore}>
         <h3>Sure점수</h3>
