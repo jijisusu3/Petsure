@@ -29,6 +29,7 @@ const LandingPage = () => {
       background: 'back1',
       colorInvert: true,
     },
+
     // {
     //   title: ['5분마다 만나는 새로운 인연'],
     //   content: ['대화가 길어질까봐 걱정하지 않으셔도 돼요.'],
