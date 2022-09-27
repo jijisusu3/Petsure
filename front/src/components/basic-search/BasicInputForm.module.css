@@ -39,4 +39,20 @@
     border: double 3px red;
   }
 
-  
+  .img {
+    width:100px;
+    height: 100px;
+    margin:30px;
+    padding: 20px;
+  }
+  .btn{
+    margin: 15px;
+    padding: 5px;
+  }
+   
+  [type=radio] {
+    margin:0;padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+  }

@@ -1,7 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:700);
 
-
-
 .ribbonsheet {
   background-color: white;
   box-shadow: 0 6px 25px 0 rgba(161, 161, 161, 0.25);
@@ -22,7 +20,7 @@
   z-index: -1;
   content: '';
   display: block;
-  border: 5px solid #2980b9;
+  border: 5px solid #2a94da;
 }
 .ribbon span {
   position: absolute;
