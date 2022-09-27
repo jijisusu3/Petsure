@@ -1,6 +1,7 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
-import languageSlice from './language-slice';
+import catlistSlice from './catlist-slice';
+import doglistSlice from './doglist-slice';
 
 import {
   persistStore,
@@ -21,7 +22,8 @@ const persistConfig = {
 };
 
 const persistingReducer = combineReducers({
-  language: languageSlice.reducer,
+  catlist: catlistSlice.reducer,
+  doglist: doglistSlice.reducer,
 });
 
 // const normalReducer = combineReducers({})
