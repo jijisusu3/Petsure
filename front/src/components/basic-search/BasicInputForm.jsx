@@ -93,6 +93,20 @@ function BasicInputForm() {
 
             <table className={classes.basicinput_table_border}>
               <tr>
+                <label className="btn">
+                  <input type="radio" name="test" id="option1" autocomplete="off" checked />
+                  {/* <img src={dog} /> */}
+                  <span class="checkmark" />
+                  <p>dog</p>
+                </label>
+                <label className="btn">
+                  <input type="radio" name="test" id="option1" autocomplete="off" checked />
+                  {/* <img src={cat} /> */}
+                  <span class="checkmark" />
+                  <p>cat</p>
+                </label>
+              </tr>
+              <tr>
                 <td>
                   <div>
                     <Input
