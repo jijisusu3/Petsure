@@ -18,6 +18,7 @@ const LandingPage = () => {
           navigate('/basicinput');
         },
       },
+
       // foreground: <RotatingGlobe />,
       // center: true,
     },
