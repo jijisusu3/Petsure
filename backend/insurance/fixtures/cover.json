@@ -7,7 +7,7 @@
             "insurance": 1,
             "price": 10,
             "wild": true,
-            "detail": "1일당 10만원 연간 1000만원 : 1일당 자기부담금 2만원 공제 후 70% 보상"
+            "detail": "1일당 10만원 (연간 1000만원): 1일당 자기부담금 1만원 공제 후 50% 보상"
         }
     },
     {
@@ -16,9 +16,9 @@
         "fields": {
             "cover_type": 3,
             "insurance": 1,
-            "price": 100,
+            "price": 200,
             "wild": true,
-            "detail": "1일당 100만원 연간 2회 : 질병상해의료비 보험금 차감 후 70%보상"
+            "detail": "1일당 200만원 (연간 2회): 질병상해의료비 초과분 50%보상"
         }
     },
     {
@@ -27,9 +27,9 @@
         "fields": {
             "cover_type": 4,
             "insurance": 1,
-            "price": 100,
+            "price": 200,
             "wild": true,
-            "detail": "1일당 100만원 연간 1회 : 실제 치료비의 50% 보상"
+            "detail": "치료시 1일당 10만원 (연간 1000만원) 수술시 1일당 200만원 (연간 2회): 자기부담금 1만원 공제 후 50% 보상"
         }
     },
     {
@@ -40,7 +40,7 @@
             "insurance": 1,
             "price": 10,
             "wild": true,
-            "detail": "1일당 10만원 연간 1000만원 : 1일당 2만원 공제 후 70% 보상"
+            "detail": "치료시 1일당 10만원 (연간 1000만원) 수술시 1일당 200만원 (연간 2회): 자기부담금 1만원 공제 후 50% 보상"
         }
     },
     {
@@ -51,7 +51,7 @@
             "insurance": 1,
             "price": 3000,
             "wild": true,
-            "detail": "1사고당 3000만원 연간 3000만원 : 1사고당 10만원 공제 후 보상"
+            "detail": "1사고당 3000만원 (연간 3000만원): 1사고당 10만원 공제 후 보상"
         }
     },
     {
@@ -62,7 +62,7 @@
             "insurance": 3,
             "price": 15,
             "wild": true,
-            "detail": "1일당 15만원 (최대 한도: 500만원) : \n1일당 자기부담금(1만원) 차감 후 70% 보상"
+            "detail": "1일당 15만원 (연간 500만원 한도): 1일당 자기부담금 1만원 공제 후 70% 보상"
         }
     },
     {
@@ -73,7 +73,7 @@
             "insurance": 3,
             "price": 200,
             "wild": true,
-            "detail": "1일당 200만원 (최대 한도: 500만원) : \n1일당 자기부담금(1만원) 차감 후 70% 보상)"
+            "detail": "1일당 200만원 (연간 500만원 한도): 1일당 자기부담금 1만원 공제 후 70% 보상)"
         }
     },
     {
@@ -84,7 +84,7 @@
             "insurance": 3,
             "price": 200,
             "wild": true,
-            "detail": "보험개시일로 부터 1년 이내 발생 시 미지급 : \n1일당 자기부담금(1만원) 차감 후 70% 보상)"
+            "detail": "보험개시일로 부터 1년 이내 발생 시 미지급: 1일당 자기부담금 1만원 공제 후 70% 보상)"
         }
     },
     {
@@ -95,7 +95,7 @@
             "insurance": 3,
             "price": 200,
             "wild": true,
-            "detail": "입원·통원 시 1일당 10만원\n수술시 1일당 200만원 (최대 한도: 500만원) : \n1일당 자기부담금(1만원) 차감 후 70% 보상)"
+            "detail": "입원·통원 시 1일당 15만원 수술시 1일당 200만원 (연간 500만원 한도): 1일당 자기부담금1만원 공제 후 70% 보상"
         }
     },
     {
@@ -106,7 +106,7 @@
             "insurance": 3,
             "price": 200,
             "wild": true,
-            "detail": "입원·통원 시 1일당 10만원\n수술시 1일당 200만원 (최대 한도: 500만원) : \n1일당 자기부담금(1만원) 차감 후 70% 보상(기본) 치과치료 미보장"
+            "detail": "입원·통원 시 1일당 15만원 수술시 1일당 200만원 (연간 500만원 한도): 1일당 자기부담금 1만원 공제 후 70% 보상 치과치료 미보장"
         }
     },
     {
@@ -117,7 +117,7 @@
             "insurance": 3,
             "price": 200,
             "wild": true,
-            "detail": "입원·통원 시 1일당 10만원\n수술시 1일당 200만원 (최대 한도: 500만원) : \n1일당 자기부담금(1만원) 차감 후 70% 보상(기본)"
+            "detail": "입원·통원 시 1일당 15만원 수술시 1일당 200만원 (연간 500만원 한도): 1일당 자기부담금 1만원 공제 후 70% 보상"
         }
     },
     {
@@ -128,7 +128,7 @@
             "insurance": 3,
             "price": 15,
             "wild": true,
-            "detail": "1일당 15만원 (최대 한도: 500만원) : \n1일당 자기부담금(1만원) 차감 후 70% 보상(기본)"
+            "detail": "1일당 15만원 (연간 500만원 한도): 1일당 자기부담금 1만원 공제 후 70% 보상"
         }
     },
     {
@@ -139,7 +139,7 @@
             "insurance": 3,
             "price": 500,
             "wild": true,
-            "detail": "피보험자가 피해자에게 지급할 책임을 지는 법률상의\n손해배상금"
+            "detail": "피보험자가 피해자에게 지급할 책임을 지는 법률상의 손해배상금"
         }
     },
     {
@@ -150,7 +150,7 @@
             "insurance": 4,
             "price": 15,
             "wild": true,
-            "detail": "1일당 15만원 (최대 한도: 500만원) :\n1일당 자기부담금(1만원) 차감 후 70% 보상(기본)"
+            "detail": "1일당 15만원 (연간 500만원 한도): 1일당 자기부담금 1만원 공제 후 70% 보상"
         }
     },
     {
@@ -161,7 +161,7 @@
             "insurance": 4,
             "price": 200,
             "wild": true,
-            "detail": "1일당 200만원 (최대 한도: 500만원) : \n1일당 자기부담금(1만원) 차감 후 70% 보상(기본)"
+            "detail": "1일당 200만원 (연간 500만원 한도): 1일당 자기부담금 1만원 공제 후 70% 보상"
         }
     },
     {
@@ -172,7 +172,7 @@
             "insurance": 4,
             "price": 200,
             "wild": true,
-            "detail": "1일당 200만원 (최대 한도: 500만원) : \n1일당 자기부담금(1만원) 차감 후 70% 보상(기본)"
+            "detail": "1일당 200만원 (연간 500만원 한도)): 1일당 자기부담금 1만원 공제 후 70% 보상"
         }
     },
     {
@@ -183,7 +183,7 @@
             "insurance": 4,
             "price": 200,
             "wild": true,
-            "detail": "입원·통원 시 1일당 10만원\n수술시 1일당 200만원 (최대 한도: 500만원) : \n1일당 자기부담금(1만원) 차감 후 70% 보상(기본)"
+            "detail": "입원·통원 시 1일당 15만원 수술시 1일당 200만원 (연간 500만원 한도): 1일당 자기부담금 1만원 공제 후 70% 보상"
         }
     },
     {
@@ -194,7 +194,7 @@
             "insurance": 4,
             "price": 200,
             "wild": true,
-            "detail": "치과치료 미보장\n입원·통원 시 1일당 10만원\n수술시 1일당 200만원 (최대 한도: 500만원) : \n1일당 자기부담금(1만원) 차감 후 70% 보상(기본)"
+            "detail": "치과치료 미보장 / 입원·통원 시 1일당 15만원 / 수술시 1일당 200만원 (연간 500만원 한도): 1일당 자기부담금 1만원 공제 후 70% 보상"
         }
     },
     {
@@ -205,7 +205,7 @@
             "insurance": 4,
             "price": 200,
             "wild": true,
-            "detail": "입원·통원 시 1일당 10만원\n수술시 1일당 200만원 (최대 한도: 500만원) : \n1일당 자기부담금(1만원) 차감 후 70% 보상(기본)"
+            "detail": "입원·통원 시 1일당 15만원 수술시 1일당 200만원 (연간 500만원 한도): 1일당 자기부담금 1만원 공제 후 70% 보상"
         }
     },
     {
@@ -216,7 +216,7 @@
             "insurance": 4,
             "price": 15,
             "wild": true,
-            "detail": "1일당 15만원 (최대 한도: 500만원):\n1일당 자기부담금(1만원) 차감 후 70% 보상(기본)"
+            "detail": "1일당 15만원 (연간 500만원 한도): 1일당 자기부담금 1만원 공제 후 70% 보상"
         }
     },
     {
@@ -227,7 +227,7 @@
             "insurance": 2,
             "price": 15,
             "wild": true,
-            "detail": "1일 15만 원, 연간 20일 한도 (자기부담금 1만 원)"
+            "detail": "1일 15만원 (연간 20일 한도): 자기부담금 1만원 공제 후 70% 보상"
         }
     },
     {
@@ -238,7 +238,7 @@
             "insurance": 2,
             "price": 15,
             "wild": true,
-            "detail": "1일 15만 원, 연간 20일 한도 (자기부담금 1만 원)"
+            "detail": "1일 15만원 (연간 20일 한도): 자기부담금 1만원 공제 후 70% 보상"
         }
     },
     {
@@ -249,7 +249,7 @@
             "insurance": 2,
             "price": 150,
             "wild": true,
-            "detail": "1회 150만 원, 연간 2회 한도 (자기부담금 1만 원)"
+            "detail": "1회 150만원 (연간 2회 한도): 자기부담금 1만원 공제 후 70% 보상"
         }
     },
     {
@@ -260,7 +260,7 @@
             "insurance": 2,
             "price": 15,
             "wild": true,
-            "detail": "수술 : 1회 150만 원, 연간 2회 한도\n입원 : 1일 15만 원, 연간 20일 한도\n통원 : 1일 15만 원, 연간 20일 한도\n(자기부담금 1만 원)"
+            "detail": "입원·통원 1일 당 15만 원 (연간 20일 한도) / 수술 1회당 150만 원 (연간 2회 한도): 자기부담금 1만 원 공제 후 70% 보상"
         }
     },
     {
@@ -271,7 +271,7 @@
             "insurance": 2,
             "price": 15,
             "wild": true,
-            "detail": "수술 : 1회 150만 원, 연간 2회 한도\n입원 : 1일 15만 원, 연간 20일 한도\n통원 : 1일 15만 원, 연간 20일 한도\n(자기부담금 1만 원)"
+            "detail": "입원·통원 1일 당 15만 원 (연간 20일 한도) / 수술 1회당 150만 원 (연간 2회 한도): 자기부담금 1만 원 공제 후 70% 보상"
         }
     },
     {
@@ -282,7 +282,7 @@
             "insurance": 2,
             "price": 150,
             "wild": true,
-            "detail": "수술 : 1회 150만 원, 연간 2회 한도\n입원 : 1일 15만 원, 연간 20일 한도\n통원 : 1일 15만 원, 연간 20일 한도\n(자기부담금 1만 원)"
+            "detail": "입원·통원 1일 당 15만 원 (연간 20일 한도) / 수술 1회당 150만 원 (연간 2회 한도): 자기부담금 1만 원 공제 후 70% 보상"
         }
     },
     {
@@ -293,7 +293,7 @@
             "insurance": 2,
             "price": 15,
             "wild": true,
-            "detail": "1일 15만 원, 연간 20일 한도 (자기부담금 3만 원)"
+            "detail": "1일 15만 원 (연간 20일 한도): 자기부담금 3만원 공제 후 70% 보상"
         }
     },
     {
@@ -304,7 +304,7 @@
             "insurance": 2,
             "price": 15,
             "wild": true,
-            "detail": "1일 15만 원, 연간 20일 한도 (자기부담금 3만 원)"
+            "detail": "1일 15만 원 (연간 20일 한도): 자기부담금 3만원 공제 후 70% 보상"
         }
     },
     {
@@ -315,7 +315,7 @@
             "insurance": 2,
             "price": 150,
             "wild": true,
-            "detail": "1회 150만 원, 연간 2회 한도 (자기부담금 3만 원)"
+            "detail": "1회 150만 원 (연간 2회 한도): 자기부담금 3만원 공제 후 70% 보상"
         }
     },
     {
@@ -326,7 +326,7 @@
             "insurance": 2,
             "price": 15,
             "wild": true,
-            "detail": "수술 : 1회 150만 원, 연간 2회 한도\n입원 : 1일 15만 원, 연간 20일 한도\n통원 : 1일 15만 원, 연간 20일 한도\n(자기부담금 3만 원)"
+            "detail": "입원·통원 1일당 15만 원 (연간 20일 한도) / 수술 1회당 150만 원 (연간 2회 한도): 자기부담금 3만 원 공제 후 70% 보상"
         }
     },
     {
@@ -337,7 +337,7 @@
             "insurance": 2,
             "price": 15,
             "wild": true,
-            "detail": "수술 : 1회 150만 원, 연간 2회 한도\n입원 : 1일 15만 원, 연간 20일 한도\n통원 : 1일 15만 원, 연간 20일 한도\n(자기부담금 3만 원)"
+            "detail": "입원·통원 1일당 15만 원 (연간 20일 한도) / 수술 1회당 150만 원 (연간 2회 한도): 자기부담금 3만 원 공제 후 70% 보상"
         }
     },
     {
@@ -348,7 +348,7 @@
             "insurance": 2,
             "price": 150,
             "wild": true,
-            "detail": "수술 : 1회 150만 원, 연간 2회 한도\n입원 : 1일 15만 원, 연간 20일 한도\n통원 : 1일 15만 원, 연간 20일 한도\n(자기부담금 3만 원)"
+            "detail": "입원·통원 1일당 15만 원 (연간 20일 한도) / 수술 1회당 150만 원 (연간 2회 한도): 자기부담금 3만 원 공제 후 70% 보상"
         }
     },
     {
@@ -370,7 +370,7 @@
             "insurance": 5,
             "price": 10,
             "wild": true,
-            "detail": "1일당 10만원 연간 20회 : 1일당 자기부담금 2만원 공제 후 50% 보상"
+            "detail": "1일당 10만원 (연간 20회 한도): 1일당 자기부담금 2만원 공제 후 50% 보상"
         }
     },
     {
@@ -381,7 +381,7 @@
             "insurance": 5,
             "price": 10,
             "wild": true,
-            "detail": "1일당 10만원 연간 20회 : 1일당 자기부담금 2만원 공제 후 50% 보상"
+            "detail": "1일당 10만원 (연간 20회 한도): 1일당 자기부담금 2만원 공제 후 50% 보상"
         }
     },
     {
@@ -392,7 +392,7 @@
             "insurance": 5,
             "price": 100,
             "wild": true,
-            "detail": "수술 1회당 100만원 한도 연간 2회 : 1일당 자기부담금 2만원 공제 후 50% 보상"
+            "detail": "수술 1회당 100만원 (연간 2회 한도) : 1일당 자기부담금 2만원 공제 후 50% 보상"
         }
     },
     {
@@ -403,7 +403,7 @@
             "insurance": 5,
             "price": 100,
             "wild": true,
-            "detail": "수술 1회당 100만원 한도 (수술 연 2회) : 입통원 1일당 10만원 한도 (입통원 각 연 20일 한도 보상) : 1일당 2만원 공제 후 50% 보상"
+            "detail": "수술 1회당 100만원 한도 (연간 2회 한도) : 입통원 1일당 10만원 한도 (각 연간 20일 한도) : 1일당 2만원 공제 후 50% 보상"
         }
     },
     {
@@ -414,7 +414,7 @@
             "insurance": 6,
             "price": 100,
             "wild": true,
-            "detail": "자기부담금(1만원) 차감 후 70% 보상"
+            "detail": "1일당 최대 100만원 (연간 20회 한도): 자기부담금 1만원 공제 후 70% 보상"
         }
     },
     {
@@ -425,7 +425,7 @@
             "insurance": 6,
             "price": 100,
             "wild": true,
-            "detail": "자기부담금(1만원) 차감 후 70% 보상"
+            "detail": "1회당 최대 100만원 (연간 2회 한도) : 자기부담금 1만원 공제 후 70% 보상"
         }
     },
     {
@@ -436,7 +436,7 @@
             "insurance": 6,
             "price": 500,
             "wild": true,
-            "detail": "대인 및 대동물: 자기부담금(3만원) 차감 후 1사고당 최대 500만원 보상"
+            "detail": "대인 및 대동물 자기부담금 3만원 공제 후 1사고당 최대 500만원 보상"
         }
     },
     {
@@ -447,7 +447,7 @@
             "insurance": 6,
             "price": 150,
             "wild": true,
-            "detail": "공공장소 대물: 자기부담금(10만원) 차감 후 1사고당 최대 150만원 보상"
+            "detail": "공공장소 대물 자기부담금 10만원 공제 후 1사고당 최대 150만원 보상"
         }
     },
     {
@@ -458,7 +458,7 @@
             "insurance": 7,
             "price": 100,
             "wild": true,
-            "detail": "1사고/질병당 100만원, 보상한도 500만원, 자기부담금 1만원"
+            "detail": "1사고/질병당 100만원 (연간 500만원 한도): 자기부담금 1만원 공제 후 70% 보상"
         }
     },
     {
@@ -469,18 +469,18 @@
             "insurance": 7,
             "price": 100,
             "wild": true,
-            "detail": "1사고/질병당 100만원, 보상한도 500만원, 자기부담금 1만원"
+            "detail": "1사고/질병당 100만원 (연간 500만원 한도): 자기부담금 1만원 공제 후 70% 보상"
         }
     },
     {
         "model": "insurance.Cover",
         "pk": 44,
         "fields": {
-            "cover_type": 8,
+            "cover_type": 3,
             "insurance": 7,
-            "price": 500,
+            "price": 100,
             "wild": true,
-            "detail": "자기부담금 3만원 차감 후 전액"
+            "detail": "자기부담금 3만원 차감 후 70% 보상"
         }
     },
     {
@@ -491,40 +491,40 @@
             "insurance": 7,
             "price": 500,
             "wild": true,
-            "detail": "최대 8000만원, 등급별 상이"
+            "detail": "최대 500만원자기부담금 3만원 차감 후 100%보상 (맹견이 가해한 사망사고 배상시 최대 보장금액은 등급별 상이)"
         }
     },
     {
         "model": "insurance.Cover",
         "pk": 46,
         "fields": {
-            "cover_type": 4,
+            "cover_type": 1,
             "insurance": 7,
-            "price": 100,
+            "price": 300,
             "wild": true,
-            "detail": "1사고/질병당 100만원, 보상한도 500만원, 자기부담금 1만원"
+            "detail": "1사고/질병당 300만원 (연간 500만원 한도): 자기부담금(1만원) 공제 후 70% 보상"
         }
     },
     {
         "model": "insurance.Cover",
         "pk": 47,
         "fields": {
-            "cover_type": 5,
+            "cover_type": 2,
             "insurance": 7,
-            "price": 100,
+            "price": 300,
             "wild": true,
-            "detail": "1사고/질병당 100만원, 보상한도 500만원, 자기부담금 1만원"
+            "detail": "1사고/질병당 300만원 (연간 500만원 한도): 자기부담금(1만원) 공제 후 70% 보상"
         }
     },
     {
         "model": "insurance.Cover",
         "pk": 48,
         "fields": {
-            "cover_type": 6,
+            "cover_type": 3,
             "insurance": 7,
-            "price": 100,
+            "price": 300,
             "wild": true,
-            "detail": "1사고/질병당 100만원, 보상한도 500만원, 자기부담금 1만원"
+            "detail": "자기부담금 3만원 차감 후 70% 보상"
         }
     },
     {
@@ -535,7 +535,7 @@
             "insurance": 8,
             "price": 5,
             "wild": true,
-            "detail": "1일당 5만원 연간 22회 : 자기부담금 없이 70%보상"
+            "detail": "1일당 5만원 (연간 22회 한도): 자기부담금 없이 70%보상"
         }
     },
     {
@@ -546,7 +546,7 @@
             "insurance": 8,
             "price": 5,
             "wild": true,
-            "detail": "1일당 5만원 연간 22회 : 자기부담금 없이 70%보상"
+            "detail": "1일당 5만원 (연간 22회 한도): 자기부담금 없이 70%보상"
         }
     },
     {
@@ -557,7 +557,7 @@
             "insurance": 8,
             "price": 50,
             "wild": true,
-            "detail": "수술 1회당 50만원 연간 2회 : 자기부담금 없이 70%보상"
+            "detail": "수술 1회당 50만원 (연간 2회 한도) : 자기부담금 없이 70%보상"
         }
     },
     {
@@ -587,10 +587,10 @@
         "pk": 54,
         "fields": {
             "cover_type": 1,
-            "insurance": 11,
+            "insurance": 12,
             "price": 200,
             "wild": true,
-            "detail": "1일 10만원(연간 20일)\n자기부담금 2만원 차감 후 50% 보장"
+            "detail": "1일당 10만원 (연간 20일 한도): 자기부담금 2만원 차감 후 50% 보장"
         }
     },
     {
@@ -598,10 +598,10 @@
         "pk": 55,
         "fields": {
             "cover_type": 2,
-            "insurance": 11,
+            "insurance": 12,
             "price": 200,
             "wild": true,
-            "detail": "1일 10만원(연간 20일)\n자기부담금 2만원 차감 후 50% 보장"
+            "detail": "1일당 10만원 (연간 20일 한도): 자기부담금 2만원 차감 후 50% 보장"
         }
     },
     {
@@ -609,10 +609,10 @@
         "pk": 56,
         "fields": {
             "cover_type": 3,
-            "insurance": 11,
+            "insurance": 12,
             "price": 200,
             "wild": true,
-            "detail": "수술비 1회 100만원 (연간 2회 한도)\n자기부담금 2만원 차감 후 50% 보장"
+            "detail": "수술비 1회 100만원 (연간 2회 한도) 자기부담금 2만원 차감 후 50% 보장"
         }
     },
     {
@@ -620,7 +620,7 @@
         "pk": 57,
         "fields": {
             "cover_type": 8,
-            "insurance": 11,
+            "insurance": 12,
             "price": 500,
             "wild": true,
             "detail": "자기부담금 3만원 차감 후 최대 500만원까지 보장"
@@ -631,7 +631,7 @@
         "pk": 58,
         "fields": {
             "cover_type": 4,
-            "insurance": 11,
+            "insurance": 12,
             "price": 200,
             "wild": true,
             "detail": "(갱신 시 가입가능)치료비 한도서 보장"
@@ -642,7 +642,7 @@
         "pk": 59,
         "fields": {
             "cover_type": 5,
-            "insurance": 11,
+            "insurance": 12,
             "price": 200,
             "wild": true,
             "detail": "(갱신 시 가입가능)치료비 한도서 보장"
@@ -653,7 +653,7 @@
         "pk": 60,
         "fields": {
             "cover_type": 6,
-            "insurance": 11,
+            "insurance": 12,
             "price": 200,
             "wild": true,
             "detail": "(갱신 시 가입가능)치료비 한도서 보장"
@@ -664,10 +664,10 @@
         "pk": 61,
         "fields": {
             "cover_type": 8,
-            "insurance": 12,
+            "insurance": 13,
             "price": 8000,
             "wild": true,
-            "detail": "대인 사망/후유장해 1인당 8000만원\n대인 부상 1인당 1500만원\n대동물 피해 1사고당 200만원(자기부담금: 대인 및 대동물 1사고당 각각 10만원)"
+            "detail": "대인 사망/후유장해 1인당 8000만원 : 대인 부상 1인당 1500만원 : 대동물 피해 1사고당 200만원(자기부담금: 대인 및 대동물 1사고당 각각 10만원)"
         }
     },
     {
@@ -675,7 +675,7 @@
         "pk": 62,
         "fields": {
             "cover_type": 8,
-            "insurance": 13,
+            "insurance": 14,
             "price": 10000,
             "wild": true,
             "detail": "자기부담금 3만원, 과실상계 있음"
@@ -689,7 +689,7 @@
             "insurance": 10,
             "price": 10,
             "wild": true,
-            "detail": "1일 10만원 연간 20회 : 1일당 자기부담금 3만원 차감 후 50% 보장"
+            "detail": "1일당 10만원 (연간 20회 한도): 1일당 자기부담금 3만원 차감 후 50% 보장"
         }
     },
     {
@@ -700,7 +700,7 @@
             "insurance": 10,
             "price": 10,
             "wild": true,
-            "detail": "1일 10만원 연간 20회 : 1일당 자기부담금 3만원 차감 후 50% 보장"
+            "detail": "1일당 10만원 (연간 20회 한도): 1일당 자기부담금 3만원 차감 후 50% 보장"
         }
     },
     {
@@ -711,7 +711,7 @@
             "insurance": 10,
             "price": 100,
             "wild": true,
-            "detail": "수술 1회 100만원 연간 2회 : 자기부담금 3만원 차감 후 50% 보장"
+            "detail": "수술 1회 100만원 (연간 2회 한도): 자기부담금 3만원 차감 후 50% 보장"
         }
     },
     {
@@ -722,7 +722,7 @@
             "insurance": 10,
             "price": 100,
             "wild": true,
-            "detail": "입통원 1일 10만원 연간 20회 : 수술 1회당 100만원 연간 2회 한도 : 자기부담금 3만원 차감 후 50% 보장"
+            "detail": "입통원 1일 10만원 (연간 20회 한도): 수술 1회당 100만원 연간 2회 한도 : 자기부담금 3만원 차감 후 50% 보장"
         }
     },
     {
@@ -733,7 +733,7 @@
             "insurance": 10,
             "price": 100,
             "wild": true,
-            "detail": "입통원 1일 10만원 연간 20회 : 수술 1회당 100만원 연간 2회 한도 : 자기부담금 3만원 차감 후 50% 보장"
+            "detail": "입통원 1일 10만원 (연간 20회 한도): 수술 1회당 100만원 연간 2회 한도 : 자기부담금 3만원 차감 후 50% 보장"
         }
     },
     {
@@ -744,7 +744,7 @@
             "insurance": 10,
             "price": 100,
             "wild": true,
-            "detail": "치석 제거를 위한 스케일링 보장 : 입통원 1일 10만원 연간 20회 : 수술 1회당 100만원 연간 2회 한도 : 자기부담금 3만원 차감 후 50% 보장"
+            "detail": "치석 제거를 위한 스케일링 보장 : 입통원 1일 10만원 (연간 20회 한도) / 수술 1회당 100만원 (연간 2회 한도) : 자기부담금 3만원 차감 후 50% 보장"
         }
     },
     {
@@ -756,6 +756,567 @@
             "price": 500,
             "wild": true,
             "detail": "500만원 한도 자기부담금 3만원 차감 후 50% 보장 : 맹견의 경우, 의무보험에서 보상하는 금액을 초과할 때에 한하여 그 초과액만을 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 70,
+        "fields": {
+            "cover_type": 1,
+            "insurance": 1,
+            "price": 15,
+            "wild": true,
+            "detail": "1일당 15만원 (연간 1500만원): 1일당 자기부담금 1만원 공제 후 70% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 71,
+        "fields": {
+            "cover_type": 3,
+            "insurance": 1,
+            "price": 250,
+            "wild": true,
+            "detail": "1일당 250만원 (연간 2회): 질병상해의료비 초과분 70%보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 72,
+        "fields": {
+            "cover_type": 4,
+            "insurance": 1,
+            "price": 250,
+            "wild": true,
+            "detail": "치료시 1일당 15만원 (연간 1500만원) 수술시 1일당 250만원 (연간 2회): 자기부담금 1만원 공제 후70% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 73,
+        "fields": {
+            "cover_type": 5,
+            "insurance": 1,
+            "price": 15,
+            "wild": true,
+            "detail": "치료시 1일당 15만원 (연간 1500만원) 수술시 1일당 250만원 (연간 2회): 자기부담금 1만원 공제 후70% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 74,
+        "fields": {
+            "cover_type": 8,
+            "insurance": 1,
+            "price": 3000,
+            "wild": true,
+            "detail": "1사고당 3000만원 (연간 3000만원): 1사고당 10만원 공제 후 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 75,
+        "fields": {
+            "cover_type": 1,
+            "insurance": 3,
+            "price": 10,
+            "wild": true,
+            "detail": "1일당 10만원 (연간 350만원 한도): 1일당 자기부담금 1만원 공제 후 50% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 76,
+        "fields": {
+            "cover_type": 3,
+            "insurance": 3,
+            "price": 150,
+            "wild": true,
+            "detail": "1일당 150만원 (연간 350만원 한도): 1일당 자기부담금 1만원 공제 후 50% 보상)"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 77,
+        "fields": {
+            "cover_type": 4,
+            "insurance": 3,
+            "price": 150,
+            "wild": true,
+            "detail": "보험개시일로 부터 1년 이내 발생 시 미지급: 1일당 자기부담금 1만원 공제 후 50% 보상)"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 78,
+        "fields": {
+            "cover_type": 5,
+            "insurance": 3,
+            "price": 150,
+            "wild": true,
+            "detail": "입원·통원 시 1일당 10만원 수술시 1일당 150만원 (연간 350만원 한도): 1일당 자기부담금1만원 공제 후 50% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 79,
+        "fields": {
+            "cover_type": 6,
+            "insurance": 3,
+            "price": 150,
+            "wild": true,
+            "detail": "입원·통원 시 1일당 10만원 수술시 1일당 150만원 (연간 350만원 한도): 1일당 자기부담금 1만원 공제 후 50% 보상 치과치료 미보장"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 80,
+        "fields": {
+            "cover_type": 7,
+            "insurance": 3,
+            "price": 150,
+            "wild": true,
+            "detail": "입원·통원 시 1일당 10만원 수술시 1일당 150만원 (연간 350만원 한도): 1일당 자기부담금 1만원 공제 후 50% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 81,
+        "fields": {
+            "cover_type": 2,
+            "insurance": 3,
+            "price": 10,
+            "wild": true,
+            "detail": "1일당 10만원 (연간 350만원 한도): 1일당 자기부담금 1만원 공제 후 70% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 82,
+        "fields": {
+            "cover_type": 8,
+            "insurance": 3,
+            "price": 1000,
+            "wild": true,
+            "detail": "1회 1천만원 한도: 자기부담금 공제 후 피보험자가 피해자에게 지급할 책임을 지는 법률상의 손해배상금"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 83,
+        "fields": {
+            "cover_type": 1,
+            "insurance": 3,
+            "price": 15,
+            "wild": true,
+            "detail": "1일당 15만원 (연간 500만원 한도): 1일당 자기부담금 1만원 공제 후 80% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 84,
+        "fields": {
+            "cover_type": 3,
+            "insurance": 3,
+            "price": 200,
+            "wild": true,
+            "detail": "1일당 200만원 (연간 500만원 한도): 1일당 자기부담금 1만원 공제 후 80% 보상)"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 85,
+        "fields": {
+            "cover_type": 4,
+            "insurance": 3,
+            "price": 200,
+            "wild": true,
+            "detail": "보험개시일로 부터 1년 이내 발생 시 미지급: 1일당 자기부담금 1만원 공제 후 80% 보상)"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 86,
+        "fields": {
+            "cover_type": 5,
+            "insurance": 3,
+            "price": 200,
+            "wild": true,
+            "detail": "입원·통원 시 1일당 15만원 수술시 1일당 200만원 (연간 500만원 한도): 1일당 자기부담금1만원 공제 후 80% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 87,
+        "fields": {
+            "cover_type": 6,
+            "insurance": 3,
+            "price": 200,
+            "wild": true,
+            "detail": "입원·통원 시 1일당 15만원 수술시 1일당 200만원 (연간 500만원 한도): 1일당 자기부담금 1만원 공제 후 80% 보상 치과치료 미보장"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 88,
+        "fields": {
+            "cover_type": 7,
+            "insurance": 3,
+            "price": 200,
+            "wild": true,
+            "detail": "입원·통원 시 1일당 15만원 수술시 1일당 200만원 (연간 500만원 한도): 1일당 자기부담금 1만원 공제 후 80% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 89,
+        "fields": {
+            "cover_type": 2,
+            "insurance": 3,
+            "price": 15,
+            "wild": true,
+            "detail": "1일당 15만원 (연간 500만원 한도): 1일당 자기부담금 1만원 공제 후 80% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 90,
+        "fields": {
+            "cover_type": 8,
+            "insurance": 3,
+            "price": 1000,
+            "wild": true,
+            "detail": "피보험자가 피해자에게 지급할 책임을 지는 법률상의 손해배상금"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 91,
+        "fields": {
+            "cover_type": 1,
+            "insurance": 4,
+            "price": 15,
+            "wild": true,
+            "detail": "1일당 15만원 (연간 500만원 한도): 1일당 자기부담금 1만원 공제 후 80% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 92,
+        "fields": {
+            "cover_type": 3,
+            "insurance": 4,
+            "price": 200,
+            "wild": true,
+            "detail": "1일당 200만원 (연간 500만원 한도): 1일당 자기부담금 1만원 공제 후 80% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 93,
+        "fields": {
+            "cover_type": 4,
+            "insurance": 4,
+            "price": 200,
+            "wild": true,
+            "detail": "1일당 200만원 (연간 500만원 한도)): 1일당 자기부담금 1만원 공제 후 80% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 94,
+        "fields": {
+            "cover_type": 5,
+            "insurance": 4,
+            "price": 200,
+            "wild": true,
+            "detail": "입원·통원 시 1일당 15만원 수술시 1일당 200만원 (연간 500만원 한도): 1일당 자기부담금 1만원 공제 후 80% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 95,
+        "fields": {
+            "cover_type": 6,
+            "insurance": 4,
+            "price": 200,
+            "wild": true,
+            "detail": "치과치료 미보장 / 입원·통원 시 1일당 15만원 / 수술시 1일당 200만원 (연간 500만원 한도): 1일당 자기부담금 1만원 공제 후 80% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 96,
+        "fields": {
+            "cover_type": 7,
+            "insurance": 4,
+            "price": 200,
+            "wild": true,
+            "detail": "입원·통원 시 1일당 15만원 수술시 1일당 200만원 (연간 500만원 한도): 1일당 자기부담금 1만원 공제 후 80% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 97,
+        "fields": {
+            "cover_type": 2,
+            "insurance": 4,
+            "price": 15,
+            "wild": true,
+            "detail": "1일당 15만원 (연간 500만원 한도): 1일당 자기부담금 1만원 공제 후 80% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 98,
+        "fields": {
+            "cover_type": 1,
+            "insurance": 4,
+            "price": 10,
+            "wild": true,
+            "detail": "1일당 10만원 (연간 350만원 한도): 1일당 자기부담금 1만원 공제 후 50% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 99,
+        "fields": {
+            "cover_type": 3,
+            "insurance": 4,
+            "price": 150,
+            "wild": true,
+            "detail": "1일당 150만원 (연간 350만원 한도): 1일당 자기부담금 1만원 공제 후 50% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 100,
+        "fields": {
+            "cover_type": 4,
+            "insurance": 4,
+            "price": 150,
+            "wild": true,
+            "detail": "1일당 150만원 (연간 350만원 한도)): 1일당 자기부담금 1만원 공제 후 50% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 101,
+        "fields": {
+            "cover_type": 5,
+            "insurance": 4,
+            "price": 150,
+            "wild": true,
+            "detail": "입원·통원 시 1일당 10만원 수술시 1일당 150만원 (연간 350만원 한도): 1일당 자기부담금 1만원 공제 후 50% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 102,
+        "fields": {
+            "cover_type": 6,
+            "insurance": 4,
+            "price": 150,
+            "wild": true,
+            "detail": "치과치료 미보장 / 입원·통원 시 1일당 10만원 / 수술시 1일당 150만원 (연간 350만원 한도): 1일당 자기부담금 1만원 공제 후 50% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 103,
+        "fields": {
+            "cover_type": 7,
+            "insurance": 4,
+            "price": 150,
+            "wild": true,
+            "detail": "입원·통원 시 1일당 10만원 수술시 1일당 150만원 (연간 350만원 한도): 1일당 자기부담금 1만원 공제 후 50% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 104,
+        "fields": {
+            "cover_type": 2,
+            "insurance": 4,
+            "price": 10,
+            "wild": true,
+            "detail": "1일당 10만원 (연간 350만원 한도): 1일당 자기부담금 1만원 공제 후 50% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 105,
+        "fields": {
+            "cover_type": 1,
+            "insurance": 10,
+            "price": 15,
+            "wild": true,
+            "detail": "1일당 15만원 (연간 20회 한도): 1일당 자기부담금 3만원 차감 후 70% 보장"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 106,
+        "fields": {
+            "cover_type": 2,
+            "insurance": 10,
+            "price": 15,
+            "wild": true,
+            "detail": "1일당 15만원 (연간 20회 한도): 1일당 자기부담금 3만원 차감 후 70% 보장"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 107,
+        "fields": {
+            "cover_type": 3,
+            "insurance": 10,
+            "price": 150,
+            "wild": true,
+            "detail": "수술 1회 150만원 (연간 2회 한도): 자기부담금 3만원 차감 후 70% 보장"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 108,
+        "fields": {
+            "cover_type": 4,
+            "insurance": 10,
+            "price": 150,
+            "wild": true,
+            "detail": "입통원 1일 15만원 (연간 20회 한도): 수술 1회당 150만원 연간 2회 한도 : 자기부담금 3만원 차감 후 70% 보장"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 109,
+        "fields": {
+            "cover_type": 5,
+            "insurance": 10,
+            "price": 150,
+            "wild": true,
+            "detail": "입통원 1일 15만원 (연간 20회 한도): 수술 1회당 150만원 연간 2회 한도 : 자기부담금 3만원 차감 후 70% 보장"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 110,
+        "fields": {
+            "cover_type": 6,
+            "insurance": 10,
+            "price": 150,
+            "wild": true,
+            "detail": "치석 제거를 위한 스케일링 보장 : 입통원 1일 15만원 (연간 20회 한도) / 수술 1회당 150만원 (연간 2회 한도) : 자기부담금 3만원 차감 후 70% 보장"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 111,
+        "fields": {
+            "cover_type": 8,
+            "insurance": 10,
+            "price": 500,
+            "wild": true,
+            "detail": "500만원 한도 자기부담금 3만원 차감 후 70% 보장 : 맹견의 경우, 의무보험에서 보상하는 금액을 초과할 때에 한하여 그 초과액만을 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 112,
+        "fields": {
+            "cover_type": 1,
+            "insurance": 5,
+            "price": 15,
+            "wild": true,
+            "detail": "1일당 15만원 (연간 20회 한도): 1일당 자기부담금 2만원 공제 후 70% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 113,
+        "fields": {
+            "cover_type": 2,
+            "insurance": 5,
+            "price": 15,
+            "wild": true,
+            "detail": "1일당 15만원 (연간 20회 한도): 1일당 자기부담금 2만원 공제 후 70% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 114,
+        "fields": {
+            "cover_type": 3,
+            "insurance": 5,
+            "price": 150,
+            "wild": true,
+            "detail": "수술 1회당 150만원 (연간 2회 한도) : 1일당 자기부담금 2만원 공제 후 70% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 115,
+        "fields": {
+            "cover_type": 7,
+            "insurance": 5,
+            "price": 150,
+            "wild": true,
+            "detail": "수술 1회당 150만원 한도 (연간 2회 한도) : 입통원 1일당 15만원 한도 (각 연간 20일 한도) : 1일당 2만원 공제 후 70% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 116,
+        "fields": {
+            "cover_type": 1,
+            "insurance": 1,
+            "price": 15,
+            "wild": true,
+            "detail": "1일당 15만원 (연간 1500만원): 1일당 자기부담금 1만원 공제 후 80% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 117,
+        "fields": {
+            "cover_type": 3,
+            "insurance": 1,
+            "price": 250,
+            "wild": true,
+            "detail": "1일당 250만원 (연간 2회): 질병상해의료비 초과분 80%보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 118,
+        "fields": {
+            "cover_type": 4,
+            "insurance": 1,
+            "price": 15,
+            "wild": true,
+            "detail": "치료시 1일당 15만원 (연간 1500만원) 수술시 1일당 250만원 (연간 2회): 자기부담금 1만원 공제 후 80% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 119,
+        "fields": {
+            "cover_type": 5,
+            "insurance": 1,
+            "price": 15,
+            "wild": true,
+            "detail": "치료시 1일당 15만원 (연간 1500만원) 수술시 1일당 250만원 (연간 2회): 자기부담금 1만원 공제 후 80% 보상"
+        }
+    },
+    {
+        "model": "insurance.Cover",
+        "pk": 120,
+        "fields": {
+            "cover_type": 8,
+            "insurance": 1,
+            "price": 3000,
+            "wild": true,
+            "detail": "1사고당 3000만원 (연간 3000만원): 1사고당 10만원 공제 후 보상"
         }
     }
 ]
