@@ -5,21 +5,21 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function HeaderNav() {
   return (
-    <Navbar bg="white" variant="white">
+    <Navbar className="p-3" bg="white" variant="white" style={{ position: 'sticky' }} fixed="top">
       <Container fluid>
         <Navbar.Brand href="/">
           <img
-            src="petsureLogo.png"
-            width="32"
-            height="32"
+            src={`${process.env.PUBLIC_URL}/petsureLogo.png`}
+            width="40"
+            height="40"
             className="d-inline-block align-top"
             alt=""
           />
         </Navbar.Brand>
-        <Nav className="me-auto">
+        <Nav className="me-auto p-2">
           <NavDropdown title="펫 보험">
-            <NavDropdown.Item href="/basicinput/">기본검색</NavDropdown.Item>
-            <NavDropdown.Item href="/allinput/">상세검색</NavDropdown.Item>
+            <NavDropdown.Item href="/basicinput">기본검색</NavDropdown.Item>
+            <NavDropdown.Item href="/allinput">상세검색</NavDropdown.Item>
           </NavDropdown>
           <Nav.Link href="/diseasdict">질병상식</Nav.Link>
           <Nav.Link href="/aboutus">ABOUT US</Nav.Link>
