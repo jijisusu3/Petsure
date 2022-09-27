@@ -67,48 +67,6 @@ def survey(request):
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     return Response("This survey already exists", status=400)
 
-@api_view(['GET'])
-def calc_basic(request):
-    data = request.data
-    d = data["insurance_detail"]
-    insurance_detail = get_object_or_404(Insurance_detail, id=d)
-    a = insurance_detail.basic[0]
-    cover = get_object_or_404(Cover, id=a)
-    
-    words = cover.detail
-    here = -1
-    percent = 0
-    price = cover.price * 10000
-    my = 0
-    for word in words:
-        here += 1
-        if word == "%":
-            percent = int(words[here - 2]) / 10
-        if word == "금":
-            my = words[here + 2]
-    # 자기부담금 있을 때 ,
-    try:
-        my = int(my) * 10000
-    # 자기부담금 없을 때,
-    except:
-        my = 0
-    
-    result = {}
-    expense = data["expense"]
-    x = (expense - my) * percent
-    print(x)
-
-    # 자기부담금이 낸 돈보다 클 때,
-    if x <= 0:
-        result["result"] = 0
-    # 최대 보장가능한 금액보다 커질 때
-    elif x > price:
-        result["result"] = int(price)
-    else:
-        result["result"] = int(x)
-
-    return JsonResponse(result)
-
 # {
 #     "insurance_detail": [4, 30, 50],
 #     "expense": 67700
@@ -157,7 +115,7 @@ def calc_many(request):
             result["result"].append(int(x))
 
     return JsonResponse(result)
-       
+
 @swagger_auto_schema(
         method='post',
         request_body=openapi.Schema(
@@ -392,7 +350,7 @@ def detail(request):
         cover_list = serializer.data.get("insurance").get("cover")
 
         company_score = serializer.data.get("insurance").get("company_score")
-        price_score = serializer.data.get("insurance").get("price_score")
+        price_score = serializer.data.get("price_score")
         temp_detail["sure_score"] = make_sure_score(company_score, price_score, matching_score)
 
         cover_count = 0
