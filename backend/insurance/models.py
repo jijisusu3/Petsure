@@ -12,7 +12,6 @@ class Insurance(models.Model):
     payment_period = models.IntegerField()
     content = models.TextField(null=True)
     etc = models.TextField(null=True)
-    price_score = models.FloatField()
 
 
 class Insurance_detail(models.Model):
@@ -23,6 +22,7 @@ class Insurance_detail(models.Model):
     special = models.JSONField(null=True)
     all_cover = models.JSONField(null=True)
     content = models.TextField(null=True)
+    price_score = models.FloatField()
 
 
 class Cover_type(models.Model):
