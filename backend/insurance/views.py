@@ -66,7 +66,56 @@ def survey(request):
             serializer.save(detail_user=user, insurance_detail=insurance)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     return Response("This survey already exists", status=400)
-    
+
+# {
+#     "insurance_detail": [4, 30, 50],
+#     "expense": 67700
+# }
+@api_view(['GET'])
+def calc_many(request):
+    data = request.data
+    insurances = data["insurance_detail"]
+    result = {
+        "result": []
+    }
+    # print(type(insurances))
+    for id in insurances:
+        insurance_detail = get_object_or_404(Insurance_detail, id=id)
+        a = insurance_detail.basic[0]
+        cover = get_object_or_404(Cover, id=a)
+        
+        words = cover.detail
+        here = -1
+        percent = 0
+        price = cover.price * 10000
+        my = 0
+        for word in words:
+            here += 1
+            if word == "%":
+                percent = int(words[here - 2]) / 10
+            if word == "금":
+                my = words[here + 2]
+        # 자기부담금 있을 때 ,
+        try:
+            my = int(my) * 10000
+        # 자기부담금 없을 때,
+        except:
+            my = 0
+        
+        expense = data["expense"]
+        x = (expense - my) * percent
+
+        # 자기부담금이 낸 돈보다 클 때,
+        if x <= 0:
+            result["result"].append(0)
+        # 최대 보장가능한 금액보다 커질 때
+        elif x > price:
+            result["result"].append(int(price))
+        else:
+            result["result"].append(int(x))
+
+    return JsonResponse(result)
+
 @swagger_auto_schema(
         method='post',
         request_body=openapi.Schema(
@@ -258,9 +307,6 @@ def detail(request):
     result = {}
 
     before_ranking = []
-    sure_ranking = []
-    price_ranking = []
-    cover_ranking = []
 
     def make_user():
         serializer = DetailUserSerializer(data=request.data)
@@ -304,11 +350,8 @@ def detail(request):
         cover_list = serializer.data.get("insurance").get("cover")
 
         company_score = serializer.data.get("insurance").get("company_score")
-        price_score = serializer.data.get("insurance").get("price_score")
+        price_score = serializer.data.get("price_score")
         temp_detail["sure_score"] = make_sure_score(company_score, price_score, matching_score)
-        print(company_score)
-        print(price_score)
-        print(temp_detail["sure_score"])
 
         cover_count = 0
         if bool(basic):
@@ -378,12 +421,19 @@ def detail(request):
             temp_detail["item_cover"] = item_cover
             missing_type =  get_object_or_404(Cover_type, id=item_cover)
             serializer = CoverTypeSerializer(missing_type)
-            print(serializer.data.get("items")[6:10])
-            # temp_detail["items"] = serializer.data.get("items")
+            if data['species'] == 1:
+                temp_detail["items"] = serializer.data.get("items")[0:5]
+            else:
+                temp_detail["items"] = serializer.data.get("items")[6:10]
+        else:
+            pass
 
         before_ranking.append(temp_detail)
-
-    result["before_ranking"] = before_ranking
+    
+    result["sure_ranking"] = sorted(before_ranking, key = lambda item: ( -item['sure_score']))
+    result["price_ranking"] = sorted(before_ranking, key = lambda item: ( -item['fee']))
+    result["cover_ranking"] = sorted(before_ranking, key= lambda item: ( -item['cover_count']))
+    
 
     return JsonResponse(result)
 
