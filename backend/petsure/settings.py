@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import pymysql
+pymysql.install_as_MySQLdb()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -34,8 +37,8 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',        
     ],
     'DEFAULT_PERMISSION_CLASSES': [        
-        # 'rest_framework.permissions.AllowAny',
-        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.AllowAny',
+        # 'rest_framework.permissions.IsAuthenticated',
     ]
 }
 
@@ -47,6 +50,7 @@ INSTALLED_APPS = [
     
     #3rd party app
     'corsheaders',
+    'drf_yasg',
     'rest_framework',
     'django_extensions',
 
@@ -95,8 +99,13 @@ WSGI_APPLICATION = 'petsure.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'omokjomok',
+        'USER': 'omokjomok',
+        'PASSWORD': 'petsure',
+        'HOST': 'j7b202.p.ssafy.io',
+        'PORT': '3306',
+        'OPTIONS': {"charset": "utf8mb4"}
     }
 }
 

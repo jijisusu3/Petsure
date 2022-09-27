@@ -28,7 +28,7 @@ const Sheet = ({ children, size, shallow, clickBlocked }) => {
 
 Sheet.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(['badge', 'small', 'medium', 'large']),
   shallow: PropTypes.bool,
   clickBlocked: PropTypes.bool,
 };

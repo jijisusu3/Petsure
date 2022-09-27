@@ -6,14 +6,14 @@ import LandingPage from './pages/LandingPage';
 import { useDispatch, useSelector } from 'react-redux';
 import useInterval from './components/utils/hooks/useInterval';
 import { createSerializableStateInvariantMiddleware } from '@reduxjs/toolkit';
-import { AllInput } from './pages/petinsure/AllInput';
-import { BasicInput } from './pages/petinsure/BasicInput';
-import { BasicResult } from './pages/petinsure/BasicResult';
-import { DetailResult } from './pages/petinsure/DetailResult';
-import { InsureCompare } from './pages/petinsure/InsureCompare';
-import { InsureDetail } from './pages/petinsure/InsureDetail';
-import { DiseaseDict } from './pages/DiseaseDict';
-import { AboutUs } from './pages/AboutUs';
+import { AllInputPage } from './pages/petinsure/AllInput';
+import { BasicInputPage } from './pages/petinsure/BasicInput';
+import { BasicResultPage } from './pages/petinsure/BasicResult';
+import { DetailResultPage } from './pages/petinsure/DetailResult';
+import { InsureComparePage } from './pages/petinsure/InsureCompare';
+import { InsureDetailPage } from './pages/petinsure/InsureDetail';
+import { DiseaseDictPage } from './pages/DiseaseDict';
+import { AboutUsPage } from './pages/AboutUs';
 
 const authPathSet = new Set([]);
 
@@ -43,20 +43,15 @@ function App() {
       <HeaderNav />
       <main>
         <Routes>
-          <Route path="/landing" element={<LandingPage />} />
-          <Route path="/basicinput/" element={<BasicInput />}>
-            <Route path="basicresult" element={<BasicResult />} />
-            <Route path="detailresult" element={<DetailResult />} />
-            <Route path="insurecompare" element={<InsureCompare />} />
-            <Route path="insuredetail" element={<InsureDetail />} />
-          </Route>
-          <Route path="/allinput/" element={<AllInput />}>
-            <Route path="detailresult" element={<DetailResult />} />
-            <Route path="insurecompare" element={<InsureCompare />} />
-            <Route path="insuredetail" element={<InsureDetail />} />
-          </Route>
-          <Route path="/diseasdict" element={<DiseaseDict />} />
-          <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/basicinput" element={<BasicInputPage />} />
+          <Route path="basicinput/basicresult" element={<BasicResultPage />} />
+          <Route path="/allinput" element={<AllInputPage />} />
+          <Route path="allinput/detailresult" element={<DetailResultPage />} />
+          <Route path="allinput/insurecompare" element={<InsureComparePage />} />
+          <Route path="allinput/insuredetail" element={<InsureDetailPage />} />
+          <Route path="/diseasdict" element={<DiseaseDictPage />} />
+          <Route path="/aboutus" element={<AboutUsPage />} />
         </Routes>
       </main>
       <FooterBar />

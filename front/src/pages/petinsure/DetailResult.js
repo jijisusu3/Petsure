@@ -1,7 +1,13 @@
 // 상세검색결과
-// import SettingsContainer from '../../components/settings/SettingsContainer';
+import { InsureCard } from '../../components/detail-result/InsureCard';
+import classes from './DetailResult.module.css';
+import Sheet from '../../components/common/Sheet';
 
-export function DetailResult() {
+export function DetailResultPage() {
   // return <SettingsContainer />;
-  return <h1>DetailResult</h1>;
+  return (
+    <Sheet className={classes.insureCard}>
+      <InsureCard />
+    </Sheet>
+  );
 }

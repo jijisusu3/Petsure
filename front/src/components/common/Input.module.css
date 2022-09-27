@@ -27,7 +27,7 @@
 }
 
 .inputLabel {
-  display: flex;
+  display: none; /*이거로 label 있는데도 id 아예 표시되는거싫어서 없애버림*/
   gap: 2px;
   font-weight: 700;
 }
