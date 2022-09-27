@@ -202,6 +202,7 @@ def calc_many(request):
         }
 )
 
+
 @api_view(['POST'])
 def basic(request):
     data = request.data

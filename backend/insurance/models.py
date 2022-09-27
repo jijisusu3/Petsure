@@ -13,7 +13,6 @@ class Insurance(models.Model):
     content = models.TextField(null=True)
     etc = models.TextField(null=True)
 
-
 class Insurance_detail(models.Model):
     insurance = models.ForeignKey(Insurance, on_delete=models.CASCADE, related_name='insurance_detail')
     name = models.CharField(max_length=100)
