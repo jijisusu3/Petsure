@@ -34,6 +34,9 @@ function Button({ size = 'inherit', color = 'success', onEvent, text = '버튼',
   }
 
   switch (color) {
+    case 'yellow':
+      className += `${classes.button_yellow} `;
+      break;
     case 'primary':
       className += `${classes.button_primary} `;
       break;

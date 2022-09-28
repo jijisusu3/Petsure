@@ -103,7 +103,7 @@ def insurance():
         data['fields']['content'] = v['content']
       if v['etc']:
         data['fields']['etc'] = v['etc']
-      data['fields']['price_score'] = float(v['price_score'])
+      # data['fields']['price_score'] = float(v['price_score'])
       result.append(data)
 
   return result
@@ -135,7 +135,7 @@ def insurance_detail():
         for i in range(len(data['fields']['all_cover'] )):
           data['fields']['all_cover'][i] = int(data['fields']['all_cover'][i])        
       data['fields']['content'] = v['content']
-
+      data['fields']['price_score'] = float(v['price_score'])
       result.append(data)
 
   return result
@@ -191,11 +191,11 @@ def detail_user():
 # result = cover_type()
 # result = disease()
 # result = breed()
-# result = items()
+result = items()
 # result = insurance()
 # result = insurance_detail()
-result = detail_user()
+# result = detail_user()
 
 
-with open('detail_user.json', 'w',  encoding='cp949') as file_json:
+with open('items.json', 'w',  encoding='cp949') as file_json:
     json.dump(result, file_json, indent=4, ensure_ascii = False)   

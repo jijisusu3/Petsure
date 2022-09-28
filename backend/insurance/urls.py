@@ -5,6 +5,8 @@ app_name = 'insurance'
 
 urlpatterns = [
     path('breed/', views.breed),
+    path('doglist/', views.dog_list),
+    path('catlist/', views.cat_list),
     path('breed/<int:breed_id>', views.breed_detail),
     # path('breed/<species>/<name>/', views.breed_search),
     path('insurance/basic/', views.basic),
@@ -13,4 +15,5 @@ urlpatterns = [
     path('insurance/survey/', views.survey),
     path('disease/', views.disease),
     path('disease/<int:disease_id>/', views.disease_detail),
+    path('calc/', views.calc_many)
 ]

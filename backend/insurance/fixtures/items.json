@@ -478,5 +478,113 @@
             "image": "https://img.catpre.com/mobile/catpre/product/37/36359_originalView_01903192.jpg",
             "cover_type": 7
         }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 41,
+        "fields": {
+            "name": "인트라젠 플러스 종합영양제 분말형 30개입",
+            "price": 9000,
+            "content": "유산균, 바실러스, 효모 등의 기능성 유익 활성 미생물제제 기반 제품 / 미국 FDA에서 효능과 안정성이 입증된 기능성 유익균 / 생체기능 활성화를 통한 각종 질병예방 및 면역력 증강 / 종합비타민 및 키토산 함유로 면역력 증강과 생체 기능 활성화",
+            "item_url": "https://dogpre.com/product/6078",
+            "image": "https://img.dogpre.com/mobile/dogpre/product/7/6078_originalView_01335584.jpg",
+            "cover_type": 9
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 42,
+        "fields": {
+            "name": "빌리스벳 프로바이오틱스 C 30g",
+            "price": 39000,
+            "content": "뇌 건강과 장건강에 도움을 주는 유산균/프리바이오틱스를 더한 신바이오틱스/보존율을 높여주는 유산균 전용 용기",
+            "item_url": "https://dogpre.com/product/88654",
+            "image": "https://img.dogpre.com/mobile/dogpre/product/89/88654_originalView_01478417.jpg",
+            "cover_type": 9
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 43,
+        "fields": {
+            "name": "베터 루테인 영양제 90g",
+            "price": 19500,
+            "content": "프리미엄 베터 루테인 영양 보충 파우더/루테인 함유로 반려동물의 눈 건강에 도움/HACCP 인증을 받은 시설에서 제조",
+            "item_url": "https://dogpre.com/product/88238",
+            "image": "https://img.dogpre.com/mobile/dogpre/product/89/88238_originalView_01850477.jpg",
+            "cover_type": 9
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 44,
+        "fields": {
+            "name": "닥터리 프리미엄 영양제 눈 건강 영양제 30캡슐",
+            "price": 18000,
+            "content": "눈 건강을 위한 반려동물 전용 영양제/황반변성과 백내장 예방에 도움을 주는 루테인 첨가/혈관벽을 강화시키고 염증 반응을 억제하는데 도움/ATP를 생성해주는 항산화물질 코엔자임 Q10 첨가",
+            "item_url": "https://dogpre.com/product/86843",
+            "image": "https://img.dogpre.com/mobile/dogpre/product/87/86843_originalView_01573054.jpg",
+            "cover_type": 9
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 45,
+        "fields": {
+            "name": "멍스냥스 생 유산균 영양제 민트 10개입",
+            "price": 9900,
+            "content": "70억 유산균의 성견용 생 유산균 영양제/장내 생존율이 높은 프리미엄 균주 5종 배합/특수 복합 코팅으로 사멸하지 않고 장까지 활발하게 증식",
+            "item_url": "https://dogpre.com/product/86463",
+            "image": "https://img.dogpre.com/mobile/dogpre/product/87/86463_originalView_01500200.jpg",
+            "cover_type": 9
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 46,
+        "fields": {
+            "name": "참견의묘미 참 유산균 고양이용 30개입",
+            "price": 28000,
+            "content": "과립 형태의 고양이 전용 유산균 영양제/필요한 만큼의 균수로 장 밸런스 유지에 도움/장 도달성과 정착성이 좋은 식물성 유산균 사용",
+            "item_url": "https://catpre.com/product/37972",
+            "image": "https://img.catpre.com/mobile/catpre/product/38/37972_originalView_01189655.jpg",
+            "cover_type": 9
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 47,
+        "fields": {
+            "name": "하이포닉 편백수 귀세정제 고양이용 120ml",
+            "price": 19000,
+            "content": "유해화학성분 제거로 피부자극 최소화/계면활성제와 파라벤 무첨가/편백수로 제조하여 효과적인 항균, 항염 작용",
+            "item_url": "https://catpre.com/product/23135",
+            "image": "https://img.catpre.com/mobile/catpre/product/24/23135_originalView_01466837.jpg",
+            "cover_type": 9
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 48,
+        "fields": {
+            "name": "멍냥이랑 레스피가드 호흡기 기능개선 영양제 60g",
+            "price": 25900,
+            "content": "호흡기 질병, 기침 및 가래를 완화시켜주는 영양제/파인애플 추출물, 셀레늄&아연 등 천연 성분 함유/동물의약연구소에서 전문가 연구팀이 개발/분말형으로 사료위에 뿌려 간편한 급여 가능",
+            "item_url": "https://catpre.com/product/39389",
+            "image": "https://img.catpre.com/mobile/catpre/product/40/39389_originalView_01466168.jpg",
+            "cover_type": 9
+        }
+    },
+    {
+        "model": "insurance.items",
+        "pk": 49,
+        "fields": {
+            "name": "펫트리온 냥스튼튼 영양제 30개입",
+            "price": 28000,
+            "content": "반려묘의 건강 관리 도움을 주는 영양제/특허 균주로 변 냄새 감소, 면역력 향상 효과/필수 아미노산 타우린 함유로 심장 건강에 도움",
+            "item_url": "https://catpre.com/product/40863",
+            "image": "https://img.catpre.com/mobile/catpre/product/41/40863_originalView_01440719.jpg",
+            "cover_type": 9
+        }
     }
 ]
