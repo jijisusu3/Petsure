@@ -1,0 +1,109 @@
+.outroSection {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('../../images/back3.png');
+  background-size: cover;
+}
+
+/* .bubble1 {
+  position: absolute;
+  top: 25%;
+  left: 30%;
+  opacity: 0;
+  animation: pop 3.1s infinite;
+}
+
+.bubble2 {
+  position: absolute;
+  top: 70%;
+  left: 40%;
+  opacity: 0;
+  animation: pop 4.06s infinite;
+}
+
+.bubble3 {
+  position: absolute;
+  top: 30%;
+  left: 60%;
+  opacity: 0;
+  animation: pop 3.66s infinite;
+}
+
+.bubble4 {
+  position: absolute;
+  top: 58%;
+  left: 15%;
+  opacity: 0;
+  animation: pop 3.31s infinite;
+}
+
+.bubble5 {
+  position: absolute;
+  top: 65%;
+  left: 70%;
+  opacity: 0;
+  animation: pop 2.97s infinite;
+}
+
+.bubble6 {
+  position: absolute;
+  top: 13%;
+  left: 66%;
+  opacity: 0;
+  animation: pop 3.54s infinite;
+}
+
+.bubble7 {
+  position: absolute;
+  top: 5%;
+  left: 38%;
+  opacity: 0;
+  animation: pop 4.44s infinite;
+}
+
+.bubble8 {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  opacity: 0;
+  animation: pop 3.85s infinite;
+}
+
+.bubble9 {
+  position: absolute;
+  top: 50%;
+  left: 80%;
+  opacity: 0;
+  animation: pop 3.33s infinite;
+}
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: translateY(8rem);
+  }
+
+  15% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  65% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  80% {
+    opacity: 0;
+    transform: translateY(8rem);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(8rem);
+  }
+} */
