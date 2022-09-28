@@ -47,7 +47,7 @@ def breed_detail(request, breed_id):
 @api_view(['GET'])
 def disease(request):
     diseases = get_list_or_404(Disease)
-    serializer = DiseaseListSerializer(diseases, many=True)
+    serializer = DiseaseSerializer(diseases, many=True)
     return Response(serializer.data)
 
 @api_view(['GET'])
@@ -343,7 +343,7 @@ def detail(request):
                 return
 
     def make_sure_score(c, p, m):
-        s_score = (c * 0.3) + (p * 0.4) + (m * 0.4)
+        s_score = (c * 0.3) + (p * 0.3) + (m * 0.4)
         return s_score
 
     for i in range(1, len(recommends) + 1):
