@@ -260,7 +260,7 @@ function BasicInputForm() {
                         //  onClicked) =>
                         // console.log(item.id); //테스트
                       ))}
-                      {/* if({item.species} === )  */}
+                      {/* if({item.species} ===  )  */}
                     </Card>
                   </div>
                 </td>
