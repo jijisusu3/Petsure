@@ -343,7 +343,7 @@ def detail(request):
                 return
 
     def make_sure_score(c, p, m):
-        s_score = (c * 0.3) + (p * 0.4) + (m * 0.4)
+        s_score = (c * 0.3) + (p * 0.3) + (m * 0.4)
         return s_score
 
     for i in range(1, len(recommends) + 1):
