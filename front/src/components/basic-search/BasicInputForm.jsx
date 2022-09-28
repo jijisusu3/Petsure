@@ -67,6 +67,7 @@ function BasicInputForm() {
   const [animal, setAnimal] = useState(animalList[0].value);
   const [cat, setCat] = useState(catList[0].value);
   const [dog, setDog] = useState(dogList[0].value);
+  const [itemid, setItemId] = useState(inputObj);
 
   // const [dogdata, setDogdata] = useState(inputObj);
 
@@ -111,64 +112,15 @@ function BasicInputForm() {
   function routerPushHandler() {
     navigate('/basicinput/basicresult');
   }
-
-  // const basicinputHandler = async () => {
-  //   // try {
-  //   //   const userData = {
-  //   //     name: name.value,
-  //   //   };
-  //   //   // dog Data 가져오기
-  //   //   await dispatch(getDoglists(payload.data));
-  //   //   if (payload.data) {
-  //   //     navigate('basicinput/basicresult');
-  //   //     console.log;
-  //   //   }
-  //   // } catch (error) {
-  //   //   alert('검색에 실패했습니다!');
-  //   // }
-  // };
-
   const basicinputErrorHandler = () => {
     alert('입력하신 정보가 유효하지 않습니다. 다시 작성해주세요');
   };
 
-  //dog 출력
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const result = await axios('api/doglist');
+  function SendAnimalIdHandler(e) {
+    //지금 이 안에는 item.id를 읽어올 수 없는데, 그럼 이걸 우짠담...?눈물 광광
+    console.log(e.target);
+  }
 
-  //     setData(result.data);
-  //     console.log(typeof result.data);
-  //     console.log(result.data);
-  //   };
-
-  //   fetchData();
-  // }, []);
-
-  //cat 출력
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const result = await axios('api/catlist');
-
-  //     setData(result.data);
-  //     console.log(typeof result.data);
-  //     console.log(result.data);
-  //   };
-
-  //   fetchData();
-  // }, []);
-
-  //pk 보내기
-  // axios
-  //   .post('api/insurance/basic', {
-  //     breed: undefined,
-  //   })
-  //   .then(function (response) {
-  //     console.log(response);
-  //   })
-  //   .catch(function (error) {
-  //     console.log(error);
-  //   });
   /////////////////////////////////////////////////////////////////////////////////
   //만나이 계산
   //만들었는데 활용할 방법 계산중...
@@ -181,12 +133,13 @@ function BasicInputForm() {
     if (mon < 0 || (mon === 0 && today.getDate() < Number(birth.slice(6, 8)))) {
       return (age = age - 1); //생일이 안지났을 경우 1을 빼줍니다.
     } else {
-      return age;
+      console.log(age);
+      return age; //이게 나가는 데이터임.
     }
   };
-  // 만드는 부분에 있어서 //input date받고 알아서 만나이 계산해서 이걸 밖으로 보내야함
-  ////////////////////////////////////////////////////////////////////////////
 
+  ////////////////////////////////////////////////////////////////////////////
+  // 만드는 부분에 있어서 //input date받고 알아서 만나이 계산해서 이걸 밖으로 보내야함
   const radios = document.getElementsByName('genderS');
 
   return (
@@ -240,7 +193,7 @@ function BasicInputForm() {
                 </td>
                 <td rowSpan="3">
                   <div>
-                    <Form.Label htmlFor="inputPassword5" />
+                    <Form.Label htmlFor="inputanimalname" />
                     <Form.Control
                       type="password"
                       id="inputPassword5"
@@ -250,15 +203,18 @@ function BasicInputForm() {
                   <div className={classes.scroll}>
                     <Card scroll style={{ width: '18rem' }}>
                       {data.map(item => (
-                        <button type="button" classes="list-group-item list-group-item-action">
-                          <li key={item.id}>
+                        <button
+                          type="button"
+                          classes="list-group-item list-group-item-action"
+                          key={item.id}
+                          //1. onEvent={SendAnimalIdHandler}
+                          //2. onData={data => ({ animalId: data.valid ? data.value : undefined })}
+                          onClick={SendAnimalIdHandler}
+                        >
+                          <li>
                             <a>{item.name}</a>
                           </li>
                         </button>
-                        // {if(item.id === animal.value)
-                        //만약 item.id의 값
-                        //  onClicked) =>
-                        // console.log(item.id); //테스트
                       ))}
                       {/* if({item.species} ===  )  */}
                     </Card>
@@ -393,3 +349,4 @@ export default BasicInputForm;
 //     )}
 //   </div>;
 // }
+//
