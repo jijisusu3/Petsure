@@ -169,9 +169,11 @@ def calc_many(request):
 @api_view(['POST'])
 def basic(request):
     data = request.data
+    basics = []
     condition = [0]*5
     dog_fee = [1, 1.1, 1.3, 1.57, 1.8, 1.95, 2.1, 2.2, 2.27, 1.9, 1.97]
     cat_fee = [1, 0.95, 1.01, 1.03, 1.06, 1.15, 1.19, 1.25, 1.33]
+    breed_info = {}
 
     if data['species'] == 1: # 개
         # 나이
@@ -186,17 +188,20 @@ def basic(request):
             condition[3] += 1
         # 종 별 질병 및 배상 책임
         breeds = Breed.objects.values()
-
         for breed in breeds:
             if data['breed'] == breed['id']:
+                breed_info['breed_name'] = breed['name']
                 if breed['wild']: 
                     condition[4] += 1
                 disease_data = Disease.objects.filter(breed=data['breed']).values()
+                disease_list = []
                 for disease_detail in disease_data:
+                    disease_list.append(disease_detail['name'] )
                     if disease_detail['cover_type_id']:
                         condition[disease_detail['cover_type_id']- 4] += 1 
-            break               
-        
+                break               
+        breed_info['disease_name'] = disease_list
+        basics.append(breed_info)
         insurances = Insurance_detail.objects.values()
         distance = []
         for insure in insurances:
@@ -219,11 +224,16 @@ def basic(request):
         breeds = Breed.objects.values()
         for breed in breeds:
             if data['breed'] == breed['id']:
+                breed_info['breed_name'] = breed['name']
                 disease_data = Disease.objects.filter(breed=data['breed']).values()
+                disease_list = []
                 for disease_detail in disease_data:
+                    disease_list.append(disease_detail['name'] )
                     if disease_detail['cover_type_id']:
                         condition[disease_detail['cover_type_id']- 4] += 1
                 break
+        breed_info['disease_name'] = disease_list
+        basics.append(breed_info)
             
 
         insurances = Insurance_detail.objects.values()
@@ -242,7 +252,7 @@ def basic(request):
     sorted_df = df.sort_values(by=["distance"], ignore_index=False)[:15]
     results = sorted_df.index.to_list()
 
-    basics = []
+    
     for result in results:
         basic_detail = {}
         res = Insurance_detail.objects.filter(id=result+1).values()
