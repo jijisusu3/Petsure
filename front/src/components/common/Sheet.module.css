@@ -5,6 +5,20 @@
   position: relative;
 }
 
+.sheet.badge {
+  padding-left: 13.5px;
+  padding-right: 13.5px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  margin-top: 20px;
+  height: 36px;
+  line-height: 40px;
+  width: 80px;
+  text-align: center;
+  background-color: #F0B622;
+  color: white;
+}
+
 .sheet.small {
   padding: 1rem;
 }

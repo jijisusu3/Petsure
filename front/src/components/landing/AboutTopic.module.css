@@ -69,6 +69,8 @@
   justify-content: space-between;
 }
 
+
+
 .overlayTop {
   height: 352px;
   background: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.5));

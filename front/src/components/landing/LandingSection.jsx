@@ -21,7 +21,7 @@ export default function LandingSection({ content }) {
       <div
         className={`${classes.wrapper} ${content.center ? classes.center : ''} ${
           content.colorInvert ? classes.inverted : ''
-        }`}
+        } fadein`}
       >
         {content.center || (content.right && content.foreground)}
         <div className={`${classes.contents} ${content.right ? classes.right : ''}`}>
@@ -29,7 +29,7 @@ export default function LandingSection({ content }) {
             {content.title.join('\n')}
           </h1>
           {content.content && (
-            <p className={`${classes.newLine} ${classes.description} subtitle`}>
+            <p className={`${classes.newLine} ${classes.description} subtitle `}>
               {content.content.join('\n')}
             </p>
           )}
@@ -38,6 +38,7 @@ export default function LandingSection({ content }) {
               <Button
                 text={content.button.name}
                 color={content.button.color}
+                size={content.button.size}
                 onEvent={content.button.action}
               />
             </div>
@@ -57,6 +58,7 @@ LandingSection.propTypes = {
     button: PropTypes.shape({
       name: PropTypes.string.isRequired,
       color: PropTypes.string,
+      size: PropTypes.string,
       action: PropTypes.func,
     }),
     right: PropTypes.bool,

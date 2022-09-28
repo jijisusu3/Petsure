@@ -26,6 +26,18 @@ def breed(request):
     return Response(serializer.data)
 
 @api_view(['GET'])
+def dog_list(request):
+    dogs = Breed.objects.filter(species=1).values()
+    serializer = BreedListSerializer(dogs, many=True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def cat_list(request):
+    cats = Breed.objects.filter(species=2).values()
+    serializer = BreedListSerializer(cats, many=True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
 def breed_detail(request, breed_id):
     breed = get_object_or_404(Breed, pk=breed_id)
     serializer = BreedSerializer(breed)

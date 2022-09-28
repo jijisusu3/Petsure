@@ -1,26 +1,26 @@
 .landingSection {
   position: relative;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   align-items: center;
 }
 
 .landingSection.tall {
-  height: 110vh;
+  height: 100vh;
 }
 
 .background {
   position: absolute;
   width: 100%;
   height: inherit;
-  clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%);
-  -webkit-clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%);
+  /* clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%);
+  -webkit-clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%); */
 }
 
-.blur {
+/* .blur {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
-}
+} */
 
 .wrapper {
   z-index: 1;
@@ -71,18 +71,26 @@
   width: 128px;
 }
 
-/* .back1 {
-  background: url('../../images/talk1.jpg');
+.back1 {
+  background: url('../../images/back1.png');
   background-size: cover;
-} */
+}
 
-/* .back2 {
-  background: url('../../images/talk6.jpg');
+.back2 {
+  background: url('../../images/back2.png');
   background-size: cover;
-} */
+}
+
+.back3 {
+  /* background: url('../../images/back3.png');
+  background-size: cover; */
+  background: rgb(238,238,238);
+  background: linear-gradient(0deg, rgba(238,238,238,1) 0%, rgba(255,255,255,1) 50%, rgba(238,238,238,1) 100%);
+}
 
 .last {
   clip-path: none;
   -webkit-clip-path: none;
   background: linear-gradient(to bottom, white, var(--color-grey-300));
 }
+

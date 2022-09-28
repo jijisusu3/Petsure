@@ -1,5 +1,5 @@
 .basicinput_title {
-    text-align: center;
+    text-align: left;
     margin-bottom: 3rem;
   }
   
@@ -34,3 +34,31 @@
     display: flex;
     justify-content: space-evenly;
   }
+
+  .basicinput_table_border {
+    border: double 3px red;
+  }
+
+  .img {
+    width:100px;
+    height: 100px;
+    margin:30px;
+    padding: 20px;
+  }
+  .btn{
+    margin: 15px;
+    padding: 5px;
+  }
+   
+  [type=radio] {
+    margin:0;padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+  }
+
+  .scroll {
+    max-height: 100px;
+    overflow-y: auto;
+}
+
