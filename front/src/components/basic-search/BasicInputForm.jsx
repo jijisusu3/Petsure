@@ -1,12 +1,13 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import Sheet from '../common/Sheet';
 import RibbonSheet from '../common/RibbonSheet';
 import Input from '../common/Input';
 import Button from '../common/Button';
 import classes from './BasicInputForm.module.css';
-import RadioBtnGroup from '../common/RadioBtnGroup';
 import Form from 'react-bootstrap/Form';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 import {
   nameValidLengthHandler,
@@ -18,6 +19,7 @@ import { dateLengthValidHandler, dateValidHandler } from '../utils/validation/da
 import { inputObj } from '../utils/helper/inputObj';
 
 import { useDispatch } from 'react-redux';
+import axios from 'axios';
 
 // 유효성 검사 설정
 // useRef를 통한 현재 input 값 읽기
@@ -43,45 +45,83 @@ const nameValidObj = {
 const dateValidObj = {
   func0: {
     func: inputValue => dateLengthValidHandler(inputValue),
-    message: '날짜를 입력해주세요.',
+    message: '생년월일을 입력해주세요.',
   },
   func1: {
     func: inputValue => dateValidHandler(inputValue),
-    message: '날짜는 숫자만 입력하실 수 있습니다.',
+    message: '생년월일은 8자리의 숫자만 입력하실 수 있습니다.',
   },
 };
 
-function BasicInputForm() {
+// 개 또는 고양이 리스트
+const animalList = [
+  { name: '강아지', value: '1' },
+  { name: '고양이', value: '2' },
+];
+
+function BasicInputForm({}) {
   const [name, setName] = useState(inputObj);
   const [date, setDate] = useState(inputObj);
-  const [dogdata, setDogdata] = useState(inputObj);
+  const [animal, setAnimal] = useState(animalList[0].value);
+  // const [dogdata, setDogdata] = useState(inputObj);
+
+  const [data, setData] = useState([]);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  // useEffect(() => {
+  //   handleNext({ animal });
+  // }, [animal]);
 
   function routerPushHandler() {
     navigate('/basicinput/basicresult');
   }
 
-  const basicinputHandler = async () => {
-    // try {
-    //   const userData = {
-    //     name: name.value,
-    //   };
-    //   // dog Data 가져오기
-    //   await dispatch(getDoglists(payload.data));
-    //   if (payload.data) {
-    //     navigate('basicinput/basicresult');
-    //     console.log;
-    //   }
-    // } catch (error) {
-    //   alert('검색에 실패했습니다!');
-    // }
-  };
+  // const basicinputHandler = async () => {
+  //   // try {
+  //   //   const userData = {
+  //   //     name: name.value,
+  //   //   };
+  //   //   // dog Data 가져오기
+  //   //   await dispatch(getDoglists(payload.data));
+  //   //   if (payload.data) {
+  //   //     navigate('basicinput/basicresult');
+  //   //     console.log;
+  //   //   }
+  //   // } catch (error) {
+  //   //   alert('검색에 실패했습니다!');
+  //   // }
+  // };
 
   const basicinputErrorHandler = () => {
     alert('입력하신 정보가 유효하지 않습니다. 다시 작성해주세요');
   };
+
+  //breed 출력
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios('api/breed');
+
+      setData(result.data);
+      console.log(typeof result.data);
+      console.log(result.data);
+    };
+
+    fetchData();
+  }, []);
+
+  //pk 보내기
+  // axios
+  //   .post('api/insurance/basic', {
+  //     breed: undefined,
+  //   })
+  //   .then(function (response) {
+  //     console.log(response);
+  //   })
+  //   .catch(function (error) {
+  //     console.log(error);
+  //   });
 
   return (
     <div>
@@ -89,7 +129,7 @@ function BasicInputForm() {
         <form
           onSubmit={e => {
             e.preventDefault();
-            basicinputHandler();
+            // basicinputHandler();
           }}
         >
           <div className={classes.basicinput_main}>
@@ -97,29 +137,55 @@ function BasicInputForm() {
             <table className={classes.basicinput_table_border}>
               <tr>
                 <td>
-                  <div>
-                    <label className="btn">
-                      <input type="radio" name="dog" id="0" autoComplete="off" />
-                      <img
-                        src={`${process.env.PUBLIC_URL}/petsureLogo.png`}
-                        className={classes.img}
-                      />
-                      <span class="checkmark" />
-                      <p>Dog</p>
-                    </label>
-                    <label className="btn">
-                      <input type="radio" name="cat" id="1" autoComplete="off" />
-                      <img
-                        src={`${process.env.PUBLIC_URL}/petsureLogo.png`}
-                        className={classes.img}
-                      />
-                      <span class="checkmark" />
-                      <p>cat</p>
-                    </label>
-                  </div>
+                  <Form>
+                    {['radio'].map(type => (
+                      <div key={`inline-${type}`} className="mb-3">
+                        <td>
+                          <Form.Check
+                            inline
+                            label="Dog"
+                            name="group1"
+                            items={animalList}
+                            selected={animal}
+                            type={type}
+                            id={1}
+                            // id={`inline-${type}-1`}
+                            // handleChange={e => setAnimal(e.target.value)}
+                          />
+                        </td>
+                        <td>
+                          <Form.Check
+                            inline
+                            label="Cat"
+                            name="group1"
+                            items={animalList}
+                            selected={animal}
+                            type={type}
+                            id={2}
+                          />
+                        </td>
+                      </div>
+                    ))}
+                  </Form>
                 </td>
                 <td rowSpan="3">
                   <h2>리스트 들어갈 곳. list 검색</h2>
+                  <div className={classes.scroll}>
+                    <Card scroll style={{ width: '18rem' }}>
+                      {data.map(item => (
+                        <button type="button" class="list-group-item list-group-item-action">
+                          <li key={item.id}>
+                            <a>{item.name}</a>
+                          </li>
+                        </button>
+                        // {if(item.id === animal.value)
+                        //만약 item.id의 값
+                        //  onClicked) =>
+                        // console.log(item.id); //테스트
+                      ))}
+                      {/* if({item.species} === )  */}
+                    </Card>
+                  </div>
                 </td>
               </tr>
               <tr>
@@ -208,3 +274,34 @@ export default BasicInputForm;
 //   </div>
 // ))}
 // </Form>
+
+// //{/* <div>
+// <label className="btn">
+// <input type="radio" name="dog" id="0" autoComplete="off" />
+// <img
+//   src={`${process.env.PUBLIC_URL}/petsureLogo.png`}
+//   className={classes.img}
+// />
+// <span className={classes.checkmark} />
+// <p>Dog</p>
+// </label>
+// <label className="btn">
+// <input type="radio" name="cat" id="1" autoComplete="off" />
+// <img
+//   src={`${process.env.PUBLIC_URL}/petsureLogo.png`}
+//   className={classes.img}
+// />
+// <span class="checkmark" />
+// <p>cat</p>
+// </label>
+// </div> */}
+
+//{/* {data.map(item => (
+//   <ListGroup variant="flush">
+//   <ListGroup.Item active>
+//     <li key={item.id}>
+//       <a>{item.name}</a>
+//     </li>
+//   </ListGroup.Item>
+// </ListGroup>
+// ))} */}

@@ -15,4 +15,5 @@ urlpatterns = [
     path('insurance/survey/', views.survey),
     path('disease/', views.disease),
     path('disease/<int:disease_id>/', views.disease_detail),
+    path('calc/', views.calc_many)
 ]
