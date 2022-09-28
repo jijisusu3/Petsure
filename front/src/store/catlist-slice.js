@@ -2,10 +2,13 @@ import { createSlice } from '@reduxjs/toolkit';
 import { getCatlists } from './catlist-thunkActions';
 
 const catlistSlice = createSlice({
-  name: 'catlist',
+  name: 'cat',
   initialState: {
-    catlistId: undefined,
-    catlist: undefined,
+    id: undefined,
+    disease: [],
+    species: undefined,
+    name: undefined,
+    wild: undefined,
     isError: false,
     message: undefined,
   },
@@ -14,8 +17,11 @@ const catlistSlice = createSlice({
       return;
     },
     [getCatlists.fulfilled]: (state, { payload }) => {
-      state.catlistId = payload.id;
-      state.catlist = payload.catlist;
+      state.id = payload.id;
+      state.disease = payload.disease;
+      state.species = payload.species;
+      state.name = payload.name;
+      state.wild = payload.wild;
     },
     [getCatlists.rejected]: (state, { payload }) => {
       state.isError = true;

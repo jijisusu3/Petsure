@@ -56,3 +56,9 @@
        -moz-appearance:none;
             appearance:none;
   }
+
+  .scroll {
+    max-height: 100px;
+    overflow-y: auto;
+}
+
