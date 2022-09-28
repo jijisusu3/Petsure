@@ -107,18 +107,37 @@ function BasicInputForm() {
       getCatList();
     }
   }, [petType]);
-
+  ///////////////////////////////////////////////////////////////////////////
   /////////////////////////////////////////////////////////////////////////
-  function routerPushHandler() {
+
+  //post basic data/////////////////////
+  const postbasicdata = () => {
+    axios
+      .post('api/insurance/basic', {
+        breed: 31,
+        animal_name: '이봉봉',
+        species: 1,
+        animal_birth: 2,
+      })
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+    //화면이동
     navigate('/basicinput/basicresult');
-  }
+  };
+  ///////////////////////////////////////
   const basicinputErrorHandler = () => {
     alert('입력하신 정보가 유효하지 않습니다. 다시 작성해주세요');
   };
 
-  function SendAnimalIdHandler(e) {
+  //해당 품종의 pk를 받아오는 친구입니다
+  function SendAnimalIdHandler(id, e) {
     //지금 이 안에는 item.id를 읽어올 수 없는데, 그럼 이걸 우짠담...?눈물 광광
-    console.log(e.target);
+    console.log(id);
   }
 
   /////////////////////////////////////////////////////////////////////////////////
@@ -140,7 +159,7 @@ function BasicInputForm() {
 
   ////////////////////////////////////////////////////////////////////////////
   // 만드는 부분에 있어서 //input date받고 알아서 만나이 계산해서 이걸 밖으로 보내야함
-  const radios = document.getElementsByName('genderS');
+  // const radios = document.getElementsByName('genderS');
 
   return (
     <div>
@@ -195,7 +214,7 @@ function BasicInputForm() {
                   <div>
                     <Form.Label htmlFor="inputanimalname" />
                     <Form.Control
-                      type="password"
+                      type="text"
                       id="inputPassword5"
                       aria-describedby="passwordHelpBlock"
                     />
@@ -209,7 +228,9 @@ function BasicInputForm() {
                           key={item.id}
                           //1. onEvent={SendAnimalIdHandler}
                           //2. onData={data => ({ animalId: data.valid ? data.value : undefined })}
-                          onClick={SendAnimalIdHandler}
+                          onClick={e => {
+                            SendAnimalIdHandler(item.id, e);
+                          }}
                         >
                           <li>
                             <a>{item.name}</a>
@@ -243,8 +264,11 @@ function BasicInputForm() {
                       placeholder="생년월일 (ex.20180603)"
                       onValid={dateValidObj}
                       onData={dateData => setDate(dateData)}
+                      // value={birth}
                     />
-                    {/* onEvent={gettingOriginalAge} */}
+                    {/* {dateData.length === 8 ?  (
+                      <onEvent
+                      <p>참이면 보여줄 HTML</p> : null} */}
                   </div>
                 </td>
               </tr>
@@ -253,7 +277,8 @@ function BasicInputForm() {
           <div className={classes.basicinput_btns}>
             <div>
               {name.valid && date.valid ? (
-                <Button text="검색하기" onEvent={routerPushHandler} />
+                //<Button text="검색하기" onEvent={routerPushHandler} />
+                <Button text="검색하기" onEvent={postbasicdata} />
               ) : (
                 <Button text="검색하기" color="neutral" onEvent={basicinputErrorHandler} />
               )}
@@ -267,86 +292,153 @@ function BasicInputForm() {
 
 export default BasicInputForm;
 
-// <label className="btn">
-//                   <input type="radio" name="test" id="option1" autocomplete="off" checked />
-//                   <img src={dog} />
-//                   <span class="checkmark" />
-//                   <p>dog</p>
-//                 </label>
-//                 <label className="btn">
-//                   <input type="radio" name="test" id="option1" autocomplete="off" checked />
-//                   <img src={cat} />
-//                   <span class="checkmark" />
-//                   <p>cat</p>
-//                 </label>
+/////////////////////////////////////////////////////////////////////////////////////////
 
-//<Form>
-// {['checkbox', 'radio'].map(type => (
-//   <div key={`inline-${type}`} className="mb-3">
-//     <Form.Check
-//       inline
-//       label="1"
-//       name="group1"
-//       type={type}
-//       id={`inline-${type}-1`}
-//     />
-//     <Form.Check
-//       inline
-//       label="2"
-//       name="group1"
-//       type={type}
-//       id={`inline-${type}-2`}
-//     />
-//     <Form.Check
-//       inline
-//       disabled
-//       label="3 (disabled)"
-//       type={type}
-//       id={`inline-${type}-3`}
-//     />
-//   </div>
-// ))}
-// </Form>
+// // 상세검색결과
+// import Sheet from '../../components/common/Sheet';
+// import React, { useState, useEffect } from 'react';
+// import Button from 'react-bootstrap/Button';
+// import { SureScore } from '../../components/common/SureScore';
+// import axios from 'axios';
+// import Tab from 'react-bootstrap/Tab';
+// import Tabs from 'react-bootstrap/Tabs';
+// import { CData, SData, PData } from '../../components/detail-result/InsureCard';
 
-// //{/* <div>
-// <label className="btn">
-// <input type="radio" name="dog" id="0" autoComplete="off" />
-// <img
-//   src={`${process.env.PUBLIC_URL}/petsureLogo.png`}
-//   className={classes.img}
-// />
-// <span className={classes.checkmark} />
-// <p>Dog</p>
-// </label>
-// <label className="btn">
-// <input type="radio" name="cat" id="1" autoComplete="off" />
-// <img
-//   src={`${process.env.PUBLIC_URL}/petsureLogo.png`}
-//   className={classes.img}
-// />
-// <span class="checkmark" />
-// <p>cat</p>
-// </label>
-// </div> */}
-
-//{/* {data.map(item => (
-//   <ListGroup variant="flush">
-//   <ListGroup.Item active>
-//     <li key={item.id}>
-//       <a>{item.name}</a>
-//     </li>
-//   </ListGroup.Item>
-// </ListGroup>
-// ))} */}
-
-/////
-// {
-//   <div>
-//     {name.valid && date.valid ? (
-//       <Button text="검색하기" onEvent={routerPushHandler} />
-//     ) : (
-//       <Button text="검색하기" color="neutral" onEvent={basicinputErrorHandler} />
-//     )}
-//   </div>;
+// export function DetailResultPage() {
+//   const [cdatas, setCdatas] = useState([]);
+//   const [pdatas, setPdatas] = useState([]);
+//   const [sdatas, setSdatas] = useState([]);
+//   useEffect(() => {
+//     axios
+//       .post('api/insurance/basic', {
+//         breed: 31,
+//         animal_name: '이봉봉',
+//         species: 1,
+//         animal_birth: 2,
+//       })
+//       .then(response => {
+//         console.log(response.data);
+//       })
+//       .catch(function (error) {
+//         console.log(error);
+//       });
+//   });
+//   return (
+//     <Tabs defaultActiveKey="슈어 점수 순" id="uncontrolled-tab-example" className="mb-3">
+//       <Tab eventKey="슈어 점수 순" title="슈어 점수 순">
+//         <SData />
+//       </Tab>
+//       <Tab eventKey="낮은 가격 순" title="낮은 가격 순">
+//         <PData />
+//       </Tab>
+//       <Tab eventKey="많은 보장 순" title="많은 보장 순">
+//         <CData />
+//       </Tab>
+//     </Tabs>
+//   );
 // }
-//
+// ----------------------------------------------------------------------------
+// import React from "react";
+// import axios from "axios";
+
+// class App extends React.Component {
+//   state = {
+//     isLoading: false,
+//     speci: false,
+//     name: "",
+//     result: "",
+//     message: "",
+//   };
+
+//   onInputValChange = (e) => {
+//     this.setState({ email: e.target.value });
+//   };
+
+//   postEmail = async () => {
+//     this.setState({ isLoading: true });
+
+//     await axios
+//       .post(
+//         "https://{post 요청 url}/email",
+//         {
+//           email: this.state.email,
+//         },
+//         {
+//           headers: {
+//             "Content-Type": "application/json",
+//             Accept: "application/json",
+//           },
+//         }
+//       )
+//       .then((response) => {
+//         this.setState({
+//           message: "이메일을 확인해주세요.",
+//           error: false,
+//         });
+//         console.log(response.data);
+//       })
+//       .catch((response) => {
+//         this.setState({
+//           message: response.response.data.validation.email,
+//           error: true,
+//         });
+//       });
+
+//     this.setState({ isLoading: false });
+//   };
+
+//   componentDidMount() {}
+
+//   render() {
+//     const { isLoading, message, error } = this.state;
+//     return (
+//       <div className="container mx-auto px-4 py-14 sm:px-6 xl:px-12">
+//         <div className="flex items-center justify-center text-center">
+//           <input
+//             type="email"
+//             required={true}
+//             className="w-2/3 rounded-md border bg-gray-50 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50"
+//             placeholder="you@website.com"
+//             onChange={this.onInputValChange}
+//           />
+//           {isLoading ? (
+//             <button
+//               className="w-1/3 rounded-md border border-blue-500 bg-blue-500 py-2 text-white text-center font-bold"
+//               disabled
+//             >
+//               <svg
+//                 aria-hidden="true"
+//                 className="w-6 h-6 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600 inline-block"
+//                 viewBox="0 0 100 101"
+//                 fill="none"
+//                 xmlns="http://www.w3.org/2000/svg"
+//               >
+//                 <path
+//                   d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+//                   fill="currentColor"
+//                 />
+//                 <path
+//                   d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+//                   fill="currentFill"
+//                 />
+//               </svg>
+//             </button>
+//           ) : (
+//             <button
+//               onClick={this.postEmail}
+//               className="w-1/3 rounded-md border border-blue-500 bg-blue-500 py-2 px-6 text-white font-bold"
+//             >
+//               Submit
+//             </button>
+//           )}
+//         </div>
+//         {error ? (
+//           <span className="ml-2 text-sm text-red-500">{message}</span>
+//         ) : (
+//           <span className="ml-2 text-sm text-blue-500">{message}</span>
+//         )}
+//       </div>
+//     );
+//   }
+// }
+// export default App;

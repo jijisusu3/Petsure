@@ -3,5 +3,5 @@
 
 export function BasicResultPage() {
   // return <SettingsContainer />;
-  return <h1>BasicResult</h1>;
+  return <h1>기본검색 결과창</h1>;
 }
