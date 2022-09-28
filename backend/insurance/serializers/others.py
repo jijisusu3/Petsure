@@ -3,6 +3,12 @@ from ..models import Breed, Cover_type, Detail_user, Disease, Survey
 # from .insurance import InsuranceDetailSerializer
 
 
+class BreedListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Breed
+        fields = ('id', 'name')
+
+
 class BreedSerializer(serializers.ModelSerializer):
 
     class DiseaseSerializer(serializers.ModelSerializer):
