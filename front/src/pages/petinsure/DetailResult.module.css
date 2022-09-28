@@ -1,3 +1,37 @@
 .insureCard {
     width: 1342px;
 }
+
+.insureCard {
+    align-items: center;
+    display:flex; 
+}
+
+.insure_logo {
+    display: flex;
+    justify-content: center;
+    width: 320px;
+    display: flex;
+    align-items: center;
+}
+
+.titleBadge {
+    padding-left: 40px;
+    width: 390px;
+}
+
+.detailButton {
+    background-color: #F4AA41;
+    border-color: #F4AA41;
+}
+
+.compareButton {
+    background-color: white;
+    border-color: #F4AA41;
+    color: black;
+}
+
+.sureScore {
+    justify-content: center;
+    align-items: center;
+}

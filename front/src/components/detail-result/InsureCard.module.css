@@ -11,6 +11,11 @@
     align-items: center;
 }
 
+.titleBadge {
+    padding-left: 40px;
+    width: 390px;
+}
+
 .detailButton {
     background-color: #F4AA41;
     border-color: #F4AA41;
