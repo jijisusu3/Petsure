@@ -62,3 +62,14 @@
     overflow-y: auto;
 }
 
+.text_table_border {
+  border: double 5px blue;
+}
+
+.table_padding {
+  padding : 0px 30px 0px 30px ;
+}
+
+.table_padding2 {
+  padding : 0px 30px 0px 0px; 
+}

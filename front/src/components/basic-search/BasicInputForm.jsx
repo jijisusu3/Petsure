@@ -58,11 +58,16 @@ const animalList = [
   { name: '강아지', value: '1' },
   { name: '고양이', value: '2' },
 ];
+const dogList = [{ name: '강아지', value: '1' }];
+const catList = [{ name: '고양이', value: '2' }];
 
-function BasicInputForm({}) {
+function BasicInputForm() {
   const [name, setName] = useState(inputObj);
   const [date, setDate] = useState(inputObj);
   const [animal, setAnimal] = useState(animalList[0].value);
+  const [cat, setCat] = useState(catList[0].value);
+  const [dog, setDog] = useState(dogList[0].value);
+
   // const [dogdata, setDogdata] = useState(inputObj);
 
   const [data, setData] = useState([]);
@@ -71,9 +76,38 @@ function BasicInputForm({}) {
   const navigate = useNavigate();
 
   // useEffect(() => {
-  //   handleNext({ animal });
-  // }, [animal]);
+  //   handleNext({ animal, cat, dog });
+  // }, [animal, cat, dog]);
 
+  ///////////////////////////////////////////////////////////////////////
+  const [content, setContent] = useState();
+
+  const [petType, setPetType] = useState('dog');
+
+  const petTypeClickHandler = e => {
+    setPetType(e.target.value);
+  };
+
+  // axios
+  const getDogList = async () => {
+    const result = await axios('api/doglist');
+    setData(result.data);
+  };
+
+  const getCatList = async () => {
+    const result = await axios('api/catlist');
+    setData(result.data);
+  };
+
+  useEffect(() => {
+    if (petType === 'dog') {
+      getDogList();
+    } else {
+      getCatList();
+    }
+  }, [petType]);
+
+  /////////////////////////////////////////////////////////////////////////
   function routerPushHandler() {
     navigate('/basicinput/basicresult');
   }
@@ -98,18 +132,31 @@ function BasicInputForm({}) {
     alert('입력하신 정보가 유효하지 않습니다. 다시 작성해주세요');
   };
 
-  //breed 출력
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios('api/breed');
+  //dog 출력
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const result = await axios('api/doglist');
 
-      setData(result.data);
-      console.log(typeof result.data);
-      console.log(result.data);
-    };
+  //     setData(result.data);
+  //     console.log(typeof result.data);
+  //     console.log(result.data);
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
+
+  //cat 출력
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const result = await axios('api/catlist');
+
+  //     setData(result.data);
+  //     console.log(typeof result.data);
+  //     console.log(result.data);
+  //   };
+
+  //   fetchData();
+  // }, []);
 
   //pk 보내기
   // axios
@@ -122,11 +169,30 @@ function BasicInputForm({}) {
   //   .catch(function (error) {
   //     console.log(error);
   //   });
+  /////////////////////////////////////////////////////////////////////////////////
+  //만나이 계산
+  //만들었는데 활용할 방법 계산중...
+
+  const gettingOriginalAge = birth => {
+    //birth가 19900305과 같은 형식
+    const today = new Date(); //현재 날짜
+    let age = today.getFullYear() - Number(birth.slice(0, 4));
+    let mon = today.getMonth() + 1 - Number(birth.slice(4, 6)); //getMonth()는 0-11로 출력되므로 +1
+    if (mon < 0 || (mon === 0 && today.getDate() < Number(birth.slice(6, 8)))) {
+      return (age = age - 1); //생일이 안지났을 경우 1을 빼줍니다.
+    } else {
+      return age;
+    }
+  };
+  // 만드는 부분에 있어서 //input date받고 알아서 만나이 계산해서 이걸 밖으로 보내야함
+  ////////////////////////////////////////////////////////////////////////////
+
+  const radios = document.getElementsByName('genderS');
 
   return (
     <div>
       <RibbonSheet size="large">
-        <form
+        <div
           onSubmit={e => {
             e.preventDefault();
             // basicinputHandler();
@@ -136,32 +202,36 @@ function BasicInputForm({}) {
             <h2 className={classes.basicinput_title}>우리 아이 보험료 확인</h2>
             <table className={classes.basicinput_table_border}>
               <tr>
-                <td>
+                <td className={classes.text_table_border}>
                   <Form>
                     {['radio'].map(type => (
-                      <div key={`inline-${type}`} className="mb-3">
-                        <td>
+                      <div key={`inline-${type}`}>
+                        <td className={classes.table_padding}>
                           <Form.Check
                             inline
                             label="Dog"
-                            name="group1"
-                            items={animalList}
-                            selected={animal}
+                            name="radio"
+                            items={dogList}
+                            selected={dog}
                             type={type}
-                            id={1}
-                            // id={`inline-${type}-1`}
+                            // id="1"
+                            onChange={petTypeClickHandler}
+                            value="dog"
+                            id={`inline-${type}-1`}
                             // handleChange={e => setAnimal(e.target.value)}
                           />
                         </td>
-                        <td>
+                        <td className={classes.table_padding}>
                           <Form.Check
                             inline
                             label="Cat"
-                            name="group1"
-                            items={animalList}
-                            selected={animal}
+                            name="radio"
+                            items={catList}
+                            selected={cat}
                             type={type}
-                            id={2}
+                            id="2"
+                            value="cat"
+                            onChange={petTypeClickHandler}
                           />
                         </td>
                       </div>
@@ -169,11 +239,18 @@ function BasicInputForm({}) {
                   </Form>
                 </td>
                 <td rowSpan="3">
-                  <h2>리스트 들어갈 곳. list 검색</h2>
+                  <div>
+                    <Form.Label htmlFor="inputPassword5" />
+                    <Form.Control
+                      type="password"
+                      id="inputPassword5"
+                      aria-describedby="passwordHelpBlock"
+                    />
+                  </div>
                   <div className={classes.scroll}>
                     <Card scroll style={{ width: '18rem' }}>
                       {data.map(item => (
-                        <button type="button" class="list-group-item list-group-item-action">
+                        <button type="button" classes="list-group-item list-group-item-action">
                           <li key={item.id}>
                             <a>{item.name}</a>
                           </li>
@@ -183,14 +260,14 @@ function BasicInputForm({}) {
                         //  onClicked) =>
                         // console.log(item.id); //테스트
                       ))}
-                      {/* if({item.species} === )  */}
+                      {/* if({item.species} ===  )  */}
                     </Card>
                   </div>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <div>
+                  <div className={classes.table_padding2}>
                     <Input
                       id="name"
                       type="text"
@@ -198,9 +275,8 @@ function BasicInputForm({}) {
                       onValid={nameValidObj}
                       onData={nameData => setName(nameData)}
                     />
-                  </div>{' '}
+                  </div>
                 </td>
-                <td> </td>
               </tr>
               <tr>
                 <td>
@@ -212,6 +288,7 @@ function BasicInputForm({}) {
                       onValid={dateValidObj}
                       onData={dateData => setDate(dateData)}
                     />
+                    {/* onEvent={gettingOriginalAge} */}
                   </div>
                 </td>
               </tr>
@@ -226,7 +303,7 @@ function BasicInputForm({}) {
               )}
             </div>
           </div>
-        </form>
+        </div>
       </RibbonSheet>
     </div>
   );
@@ -305,3 +382,14 @@ export default BasicInputForm;
 //   </ListGroup.Item>
 // </ListGroup>
 // ))} */}
+
+/////
+// {
+//   <div>
+//     {name.valid && date.valid ? (
+//       <Button text="검색하기" onEvent={routerPushHandler} />
+//     ) : (
+//       <Button text="검색하기" color="neutral" onEvent={basicinputErrorHandler} />
+//     )}
+//   </div>;
+// }
