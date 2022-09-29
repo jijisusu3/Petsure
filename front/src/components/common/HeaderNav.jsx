@@ -19,9 +19,9 @@ function HeaderNav() {
     setExpanded(isExpanded ? panel : false);
   };
   return (
-    <Navbar className="p-3" bg="white" variant="white" style={{ position: 'sticky' }} fixed="top">
+    <Navbar className="p-1" bg="white" variant="white" style={{ position: 'sticky' }} fixed="top">
       <Container fluid>
-        <Navbar.Brand href="/">
+        <Navbar.Brand href="/" className="ms-3">
           <img
             src={`${process.env.PUBLIC_URL}/petsureLogo.png`}
             width="40"
@@ -30,17 +30,21 @@ function HeaderNav() {
             alt=""
           />
         </Navbar.Brand>
-        <Nav className="me-auto p-2">
-          <NavDropdown title="펫 보험">
+        <Nav className="me-auto p-2 fw-bold fs-6">
+          <NavDropdown className="me-3 ms-5" title="펫 보험">
             <NavDropdown.Item href="/basicinput">기본검색</NavDropdown.Item>
             <NavDropdown.Item href="/allinput">상세검색</NavDropdown.Item>
           </NavDropdown>
-          <Nav.Link href="/diseasdict">질병상식</Nav.Link>
-          <Nav.Link href="/aboutus">ABOUT US</Nav.Link>
+          <Nav.Link href="/diseasdict" className="me-3 ms-5">
+            질병상식
+          </Nav.Link>
+          <Nav.Link href="/aboutus" className="me-3 ms-5 ">
+            ABOUT US
+          </Nav.Link>
         </Nav>
         <Navbar.Collapse className="justify-content-end">
-          <Navbar.Text>
-            <Button variant="link" onClick={() => setShow(true)}>
+          <Navbar.Text className="me-5">
+            <Button className="text-dark fw-bold fs-6" variant="link" onClick={() => setShow(true)}>
               가이드
             </Button>
             <Modal
