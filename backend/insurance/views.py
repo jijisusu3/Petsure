@@ -506,7 +506,7 @@ def get_pred(user, neighbor_list, k):
 	predict_candidate = predict_classification(user, neighbor_list, k)
 	for neighbor in neighbor_list:
 		weight_dist = inverse_weight(user, neighbor)
-	lst = [0] * 62 # 보험이 61개이므로 62로 지정, 추후 보험상품 추가되면 수정 필요
+	lst = [0] * 83 # 보험이 61개이므로 62로 지정, 추후 보험상품 추가되면 수정 필요
 	for i in range(k):
 		x = predict_candidate[i]
 		lst[x] += weight_dist
