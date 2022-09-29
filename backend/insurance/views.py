@@ -47,7 +47,7 @@ def breed_detail(request, breed_id):
 @api_view(['GET'])
 def disease(request):
     diseases = get_list_or_404(Disease)
-    serializer = DiseaseListSerializer(diseases, many=True)
+    serializer = DiseaseSerializer(diseases, many=True)
     return Response(serializer.data)
 
 @api_view(['GET'])

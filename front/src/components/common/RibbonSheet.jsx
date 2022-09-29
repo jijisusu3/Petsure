@@ -4,12 +4,13 @@ import PropTypes from 'prop-types';
 const RibbonSheet = ({ children, size, shallow, clickBlocked }) => {
   return (
     <div
-      className={`${classes.ribbonsheet} ${size ? classes[size] : classes.medium} ${
+      className={`${classes.ribbonsheet} ${size ? classes[size] : classes.large} ${
         shallow ? classes.shallow : ''
       } ${clickBlocked ? 'click-blocked' : ''}`}
     >
       <div className={`${classes.ribbon} ${classes['ribbon-top-left']}`}>
-        <span>ribbon</span>
+        {/* <span>ribbon</span> */}
+        <span> Basic</span>
       </div>
       {children}
     </div>
