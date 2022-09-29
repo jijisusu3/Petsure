@@ -1,0 +1,79 @@
+.basicinput_title {
+    text-align: left;
+    margin-bottom: 3rem;
+  }
+  
+  .basicinput_main {
+    margin-bottom: 3rem;
+  }
+  
+  .basicinput_main div {
+    padding: 0.5rem 0;
+  }
+  
+  .basicinput_btns {
+    text-align: center;
+  }
+  
+  .basicinput_btns div {
+    padding: 0.3rem 0;
+  }
+  
+  .basicinput_tip {
+    margin-top: 3rem;
+    color: var(--color-grey-500);
+  }
+  
+  .basicinput_find_info {
+    color: var(--color-secondary);
+    text-decoration: underline;
+  }
+  
+  .auth_basicinput_wrapper {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .basicinput_table_border {
+    border: double 3px red;
+  }
+
+  .img {
+    width:100px;
+    height: 100px;
+    margin:30px;
+    padding: 20px;
+  }
+  .btn{
+    margin: 15px;
+    padding: 5px;
+  }
+   
+  [type=radio] {
+    margin:0;padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+  }
+
+  .scroll {
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+.text_table_border {
+  border: double 5px blue;
+}
+
+.table_padding {
+  padding : 0px 30px 0px 30px ;
+}
+
+.table_padding2 {
+  padding : 0px 30px 0px 0px; 
+}
+
+.top_padding {
+  padding :100px 0px 0px 0px;
+}
