@@ -84,15 +84,15 @@ def survey(request):
 #     "expense": 67700
 # }
 @api_view(['GET'])
-def calc_many(request):
-    data = request.data
-    insurances = data["insurance_detail"]
+def calc_many(request, expense, insurances):
+    print(expense)
+    insurances = insurances.split(':')
     result = {
         "result": []
     }
     # print(type(insurances))
     for id in insurances:
-        insurance_detail = get_object_or_404(Insurance_detail, id=id)
+        insurance_detail = get_object_or_404(Insurance_detail, id=int(id))
         a = insurance_detail.basic[0]
         cover = get_object_or_404(Cover, id=a)
         
@@ -114,7 +114,6 @@ def calc_many(request):
         except:
             my = 0
         
-        expense = data["expense"]
         x = (expense - my) * percent
 
         # 자기부담금이 낸 돈보다 클 때,
@@ -204,12 +203,14 @@ def basic(request):
         basics.append(breed_info)
         insurances = Insurance_detail.objects.values()
         distance = []
+        distance_id = []
         for insure in insurances:
-            if Insurance.objects.filter(id=insure['insurance_id']).values('species') != 2:
+            if Insurance.objects.filter(id=insure['insurance_id']).values('species').get()['species'] != 2:
                 tmp = insure['all_cover'][4:]
                 compare = np.array(tmp)
                 dist = np.linalg.norm(compare - condition)
                 distance.append(dist)
+                distance_id.append(insure['id'])
 
 
     if data['species'] == 2: # 고양이
@@ -238,24 +239,28 @@ def basic(request):
 
         insurances = Insurance_detail.objects.values()
         distance = []
+        distance_id = []
         for insure in insurances:
-            if Insurance.objects.filter(id=insure['insurance_id']).values('species') != 1: 
+            if Insurance.objects.filter(id=insure['insurance_id']).values('species').get()['species'] != 1: 
                 tmp = insure['all_cover'][4:]
                 compare = np.array(tmp)
                 dist = np.linalg.norm(compare - condition)
-                distance.append(dist)           
-
+                distance.append(dist)
+                distance_id.append(insure['id'])
         
     df = pd.DataFrame({
-        "distance" : distance
+        "distance" : distance,
+        "distance_id" : distance_id
     })
+    print(df)
     sorted_df = df.sort_values(by=["distance"], ignore_index=False)[:15]
-    results = sorted_df.index.to_list()
-
+    results = sorted_df['distance_id'].tolist()
+    # results = sorted_df.index.to_list()
+    print(results)
     
     for result in results:
         basic_detail = {}
-        res = Insurance_detail.objects.filter(id=result+1).values()
+        res = Insurance_detail.objects.filter(id=result).values()
         basic_detail['id'] = res[0]['id']
         if data['species'] == 1:
             basic_detail['fee'] = int(res[0]['fee']*dog_fee[data['animal_birth']])
@@ -276,6 +281,15 @@ def basic(request):
             rc_detail['price'] = rc[0]['price']
             rc_detail['detail'] = rc[0]['detail']
             res_cover.append(rc_detail)
+        if res[0]['special']:
+            for i in res[0]['special']:
+                rc_detail= {}
+                rc = Cover.objects.filter(id=i).values()
+                rc_ct = Cover_type.objects.filter(id=rc[0]['cover_type_id']).values('type')
+                rc_detail['type'] = rc_ct[0]['type']
+                rc_detail['price'] = rc[0]['price']
+                rc_detail['detail'] = rc[0]['detail']
+                res_cover.append(rc_detail)
 
         basic_detail['cover'] = res_cover
         basics.append(basic_detail)
@@ -319,6 +333,7 @@ def detail(request):
     print(lst, pk_lst)
 
 
+
     recommends = list()
     for j in range(8):
         recommends.append((pk_lst[j], 100 - 1.96*(j+1)))
@@ -339,9 +354,9 @@ def detail(request):
                 temp_user.delete()
                 make_user()
             else:
-                result["user"] = serializer.data.get('id')
+                result["detail_user"] = serializer.data.get('id')
                 return
-
+    make_user()
     def make_sure_score(c, p, m):
         s_score = (c * 0.3) + (p * 0.3) + (m * 0.4)
         return s_score
@@ -506,7 +521,7 @@ def get_pred(user, neighbor_list, k):
 	predict_candidate = predict_classification(user, neighbor_list, k)
 	for neighbor in neighbor_list:
 		weight_dist = inverse_weight(user, neighbor)
-	lst = [0] * 62 # 보험이 61개이므로 62로 지정, 추후 보험상품 추가되면 수정 필요
+	lst = [0] * 83 # 보험이 61개이므로 62로 지정, 추후 보험상품 추가되면 수정 필요
 	for i in range(k):
 		x = predict_candidate[i]
 		lst[x] += weight_dist
