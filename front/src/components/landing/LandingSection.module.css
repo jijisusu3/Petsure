@@ -1,12 +1,12 @@
 .landingSection {
   position: relative;
-  height: 110vh;
+  height: 100vh;
   display: flex;
   align-items: center;
 }
 
 .landingSection.tall {
-  height: 110vh;
+  height: 100vh;
 }
 
 .background {
