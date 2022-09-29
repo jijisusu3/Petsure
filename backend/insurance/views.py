@@ -204,12 +204,14 @@ def basic(request):
         basics.append(breed_info)
         insurances = Insurance_detail.objects.values()
         distance = []
+        distance_id = []
         for insure in insurances:
-            if Insurance.objects.filter(id=insure['insurance_id']).values('species') != 2:
+            if Insurance.objects.filter(id=insure['insurance_id']).values('species').get()['species'] != 2:
                 tmp = insure['all_cover'][4:]
                 compare = np.array(tmp)
                 dist = np.linalg.norm(compare - condition)
                 distance.append(dist)
+                distance_id.append(insure['id'])
 
 
     if data['species'] == 2: # 고양이
@@ -238,24 +240,28 @@ def basic(request):
 
         insurances = Insurance_detail.objects.values()
         distance = []
+        distance_id = []
         for insure in insurances:
-            if Insurance.objects.filter(id=insure['insurance_id']).values('species') != 1: 
+            if Insurance.objects.filter(id=insure['insurance_id']).values('species').get()['species'] != 1: 
                 tmp = insure['all_cover'][4:]
                 compare = np.array(tmp)
                 dist = np.linalg.norm(compare - condition)
-                distance.append(dist)           
-
+                distance.append(dist)
+                distance_id.append(insure['id'])
         
     df = pd.DataFrame({
-        "distance" : distance
+        "distance" : distance,
+        "distance_id" : distance_id
     })
+    print(df)
     sorted_df = df.sort_values(by=["distance"], ignore_index=False)[:15]
-    results = sorted_df.index.to_list()
-
+    results = sorted_df['distance_id'].tolist()
+    # results = sorted_df.index.to_list()
+    print(results)
     
     for result in results:
         basic_detail = {}
-        res = Insurance_detail.objects.filter(id=result+1).values()
+        res = Insurance_detail.objects.filter(id=result).values()
         basic_detail['id'] = res[0]['id']
         if data['species'] == 1:
             basic_detail['fee'] = int(res[0]['fee']*dog_fee[data['animal_birth']])
@@ -276,6 +282,15 @@ def basic(request):
             rc_detail['price'] = rc[0]['price']
             rc_detail['detail'] = rc[0]['detail']
             res_cover.append(rc_detail)
+        if res[0]['special']:
+            for i in res[0]['special']:
+                rc_detail= {}
+                rc = Cover.objects.filter(id=i).values()
+                rc_ct = Cover_type.objects.filter(id=rc[0]['cover_type_id']).values('type')
+                rc_detail['type'] = rc_ct[0]['type']
+                rc_detail['price'] = rc[0]['price']
+                rc_detail['detail'] = rc[0]['detail']
+                res_cover.append(rc_detail)
 
         basic_detail['cover'] = res_cover
         basics.append(basic_detail)
