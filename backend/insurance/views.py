@@ -318,6 +318,7 @@ def detail(request):
     print(lst, pk_lst)
 
 
+
     recommends = list()
     for j in range(8):
         recommends.append((pk_lst[j], 100 - 1.96*(j+1)))
@@ -338,9 +339,9 @@ def detail(request):
                 temp_user.delete()
                 make_user()
             else:
-                result["user"] = serializer.data.get('id')
+                result["detail_user"] = serializer.data.get('id')
                 return
-
+    make_user()
     def make_sure_score(c, p, m):
         s_score = (c * 0.3) + (p * 0.3) + (m * 0.4)
         return s_score
