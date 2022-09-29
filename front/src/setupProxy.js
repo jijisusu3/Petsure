@@ -1,10 +1,9 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
-module.exports = app => {
+module.exports = function (app) {
   app.use(
-    '/api',
-    createProxyMiddleware({
-      target: 'https://j7b202.p.ssafy.io/',
+    createProxyMiddleware('/api', {
+      target: 'https://j7b202.p.ssafy.io',
       changeOrigin: true,
     }),
   );

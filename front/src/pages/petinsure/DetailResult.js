@@ -1,8 +1,5 @@
 // 상세검색결과
-import Sheet from '../../components/common/Sheet';
 import React, { useState, useEffect } from 'react';
-import Button from 'react-bootstrap/Button';
-import { SureScore } from '../../components/common/SureScore';
 import axios from 'axios';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
@@ -14,7 +11,7 @@ export function DetailResultPage() {
   const [sdatas, setSdatas] = useState([]);
   useEffect(() => {
     axios
-      .post('/api/insurance/detail/', {
+      .post('/api/insurance/detail', {
         breed: 31,
         animal_name: '이봉봉',
         species: 1,
