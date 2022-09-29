@@ -3,6 +3,7 @@ import LandingSection from '../components/landing/LandingSection';
 import FooterBar from '../components/common/FooterBar';
 import OutroSection from '../components/landing/OutroSection';
 import LandingThree from '../components/landing/LandingThree';
+import LandingFour from '../components/landing/LandingFour';
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -39,6 +40,15 @@ const LandingPage = () => {
       foreground: <div />,
       background: <LandingThree />,
       colorInvert: true,
+    },
+    {
+      title: [''],
+      content: [''],
+      center: true,
+      foreground: <div />,
+      background: <LandingFour />,
+      // background: <LandingThree />,
+      // colorInvert: true,
     },
   ];
 
