@@ -1,13 +1,11 @@
 import React, { useCallback, useState, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import Sheet from '../common/Sheet';
 import RibbonSheet from '../common/RibbonSheet';
 import Input from '../common/Input';
 import Button from '../common/Button';
 import classes from './BasicInputForm.module.css';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
 
 import {
   nameValidLengthHandler,
@@ -22,11 +20,6 @@ import { useDispatch } from 'react-redux';
 import axios from 'axios';
 
 // 유효성 검사 설정
-// useRef를 통한 현재 input 값 읽기
-// useEffect를 통한 useRef 변경마다, 유효성 체크
-// 조건에 따라, 부적합한 값인 경우, 그에 따른 알맞은 에러값 모두 송출
-// 마음의 숙제 : 할 수 있다면 비즈니스 로직으로 빼서 처리하자!!
-
 const nameValidObj = {
   func0: {
     func: inputValue => nameValidLengthHandler(inputValue),
@@ -107,23 +100,40 @@ function BasicInputForm() {
       getCatList();
     }
   }, [petType]);
-
+  ///////////////////////////////////////////////////////////////////////////
   /////////////////////////////////////////////////////////////////////////
-  function routerPushHandler() {
+
+  //post basic data TEST/////////////////////
+  const postbasicdata = () => {
+    axios
+      .post('api/insurance/basic/', {
+        breed: 31,
+        animal_name: '이봉봉',
+        species: 1,
+        animal_birth: 2,
+      })
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+    //화면이동
     navigate('/basicinput/basicresult');
-  }
+  };
+  ///////////////////////////////////////
   const basicinputErrorHandler = () => {
     alert('입력하신 정보가 유효하지 않습니다. 다시 작성해주세요');
   };
 
-  function SendAnimalIdHandler(e) {
-    //지금 이 안에는 item.id를 읽어올 수 없는데, 그럼 이걸 우짠담...?눈물 광광
-    console.log(e.target);
+  //해당 품종의 pk를 받아옴()
+  function SendAnimalIdHandler(id, e) {
+    console.log(id);
   }
 
   /////////////////////////////////////////////////////////////////////////////////
   //만나이 계산
-  //만들었는데 활용할 방법 계산중...
 
   const gettingOriginalAge = birth => {
     //birth가 19900305과 같은 형식
@@ -140,7 +150,7 @@ function BasicInputForm() {
 
   ////////////////////////////////////////////////////////////////////////////
   // 만드는 부분에 있어서 //input date받고 알아서 만나이 계산해서 이걸 밖으로 보내야함
-  const radios = document.getElementsByName('genderS');
+  // const radios = document.getElementsByName('genderS');
 
   return (
     <div>
@@ -159,7 +169,14 @@ function BasicInputForm() {
                   <Form>
                     {['radio'].map(type => (
                       <div key={`inline-${type}`}>
-                        <td className={classes.table_padding}>
+                        <td className="img_align_top">
+                          <img
+                            src={`${process.env.PUBLIC_URL}/petsureLogo.png`}
+                            width="40"
+                            height="40"
+                            // className="d-inline-block align-top"
+                            alt=""
+                          />
                           <Form.Check
                             inline
                             label="Dog"
@@ -174,7 +191,14 @@ function BasicInputForm() {
                             // handleChange={e => setAnimal(e.target.value)}
                           />
                         </td>
-                        <td className={classes.table_padding}>
+                        <td className={classes.img_align_top}>
+                          <img
+                            src={`${process.env.PUBLIC_URL}/petsureLogo.png`}
+                            width="40"
+                            height="40"
+                            // className="d-inline-block align-top"
+                            alt=""
+                          />
                           <Form.Check
                             inline
                             label="Cat"
@@ -191,14 +215,10 @@ function BasicInputForm() {
                     ))}
                   </Form>
                 </td>
-                <td rowSpan="3">
+                <td rowSpan="3" className="left_padding">
                   <div>
                     <Form.Label htmlFor="inputanimalname" />
-                    <Form.Control
-                      type="password"
-                      id="inputPassword5"
-                      aria-describedby="passwordHelpBlock"
-                    />
+                    <Form.Control type="text" id="inputanimalsp" aria-describedby="Block" />
                   </div>
                   <div className={classes.scroll}>
                     <Card scroll style={{ width: '18rem' }}>
@@ -209,7 +229,9 @@ function BasicInputForm() {
                           key={item.id}
                           //1. onEvent={SendAnimalIdHandler}
                           //2. onData={data => ({ animalId: data.valid ? data.value : undefined })}
-                          onClick={SendAnimalIdHandler}
+                          onClick={e => {
+                            SendAnimalIdHandler(item.id, e);
+                          }}
                         >
                           <li>
                             <a>{item.name}</a>
@@ -243,8 +265,11 @@ function BasicInputForm() {
                       placeholder="생년월일 (ex.20180603)"
                       onValid={dateValidObj}
                       onData={dateData => setDate(dateData)}
+                      // value={birth}
                     />
-                    {/* onEvent={gettingOriginalAge} */}
+                    {/* {dateData.length === 8 ?  (
+                      <onEvent
+                      <p>참이면 보여줄 HTML</p> : null} */}
                   </div>
                 </td>
               </tr>
@@ -253,12 +278,26 @@ function BasicInputForm() {
           <div className={classes.basicinput_btns}>
             <div>
               {name.valid && date.valid ? (
-                <Button text="검색하기" onEvent={routerPushHandler} />
+                //<Button text="검색하기" onEvent={routerPushHandler} />
+                <Button text="검색하기" onEvent={postbasicdata} />
               ) : (
                 <Button text="검색하기" color="neutral" onEvent={basicinputErrorHandler} />
               )}
             </div>
           </div>
+          {/* 불러온 radio css 관련 입니다 추후 작업예정
+          <div>
+            <input className="checkbox-tools" type="radio" name="tools" id="tool-1" checked />
+            <label className="for-checkbox-tools" for="tool-1">
+              <i className="uil uil-line-alt" />
+              line
+            </label>
+            <input className="checkbox-tools" type="radio" name="tools" id="tool-2" />
+            <label className="for-checkbox-tools" for="tool-2">
+              <i className="uil uil-vector-square" />
+              square
+            </label>
+          </div> */}
         </div>
       </RibbonSheet>
     </div>
@@ -266,87 +305,3 @@ function BasicInputForm() {
 }
 
 export default BasicInputForm;
-
-// <label className="btn">
-//                   <input type="radio" name="test" id="option1" autocomplete="off" checked />
-//                   <img src={dog} />
-//                   <span class="checkmark" />
-//                   <p>dog</p>
-//                 </label>
-//                 <label className="btn">
-//                   <input type="radio" name="test" id="option1" autocomplete="off" checked />
-//                   <img src={cat} />
-//                   <span class="checkmark" />
-//                   <p>cat</p>
-//                 </label>
-
-//<Form>
-// {['checkbox', 'radio'].map(type => (
-//   <div key={`inline-${type}`} className="mb-3">
-//     <Form.Check
-//       inline
-//       label="1"
-//       name="group1"
-//       type={type}
-//       id={`inline-${type}-1`}
-//     />
-//     <Form.Check
-//       inline
-//       label="2"
-//       name="group1"
-//       type={type}
-//       id={`inline-${type}-2`}
-//     />
-//     <Form.Check
-//       inline
-//       disabled
-//       label="3 (disabled)"
-//       type={type}
-//       id={`inline-${type}-3`}
-//     />
-//   </div>
-// ))}
-// </Form>
-
-// //{/* <div>
-// <label className="btn">
-// <input type="radio" name="dog" id="0" autoComplete="off" />
-// <img
-//   src={`${process.env.PUBLIC_URL}/petsureLogo.png`}
-//   className={classes.img}
-// />
-// <span className={classes.checkmark} />
-// <p>Dog</p>
-// </label>
-// <label className="btn">
-// <input type="radio" name="cat" id="1" autoComplete="off" />
-// <img
-//   src={`${process.env.PUBLIC_URL}/petsureLogo.png`}
-//   className={classes.img}
-// />
-// <span class="checkmark" />
-// <p>cat</p>
-// </label>
-// </div> */}
-
-//{/* {data.map(item => (
-//   <ListGroup variant="flush">
-//   <ListGroup.Item active>
-//     <li key={item.id}>
-//       <a>{item.name}</a>
-//     </li>
-//   </ListGroup.Item>
-// </ListGroup>
-// ))} */}
-
-/////
-// {
-//   <div>
-//     {name.valid && date.valid ? (
-//       <Button text="검색하기" onEvent={routerPushHandler} />
-//     ) : (
-//       <Button text="검색하기" color="neutral" onEvent={basicinputErrorHandler} />
-//     )}
-//   </div>;
-// }
-//
