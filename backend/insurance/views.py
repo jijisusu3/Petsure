@@ -84,15 +84,15 @@ def survey(request):
 #     "expense": 67700
 # }
 @api_view(['GET'])
-def calc_many(request):
-    data = request.data
-    insurances = data["insurance_detail"]
+def calc_many(request, expense, insurances):
+    print(expense)
+    insurances = insurances.split(':')
     result = {
         "result": []
     }
     # print(type(insurances))
     for id in insurances:
-        insurance_detail = get_object_or_404(Insurance_detail, id=id)
+        insurance_detail = get_object_or_404(Insurance_detail, id=int(id))
         a = insurance_detail.basic[0]
         cover = get_object_or_404(Cover, id=a)
         
@@ -114,7 +114,6 @@ def calc_many(request):
         except:
             my = 0
         
-        expense = data["expense"]
         x = (expense - my) * percent
 
         # 자기부담금이 낸 돈보다 클 때,
