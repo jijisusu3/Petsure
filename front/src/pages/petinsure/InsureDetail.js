@@ -31,8 +31,8 @@ export const InsureDetailPage = () => {
       <InsureCard />
       <AreSure />
       <MakeSure />
-      <InsureSurvey />
       <WeSure />
+      <InsureSurvey />
     </div>
   );
 };
