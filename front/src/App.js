@@ -49,7 +49,7 @@ function App() {
           <Route path="/allinput" element={<AllInputPage />} />
           <Route path="allinput/detailresult" element={<DetailResultPage />} />
           <Route path="allinput/insurecompare" element={<InsureComparePage />} />
-          <Route path="allinput/detailresult/:id" element={<InsureDetailPage />} />
+          <Route path="allinput/detailresult/:id1/:id2" element={<InsureDetailPage />} />
           <Route path="/diseasdict" element={<DiseaseDictPage />} />
           <Route path="/aboutus" element={<AboutUsPage />} />
         </Routes>

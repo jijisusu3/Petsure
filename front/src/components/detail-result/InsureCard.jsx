@@ -10,7 +10,7 @@ export function CData() {
   useEffect(() => {
     // dispatch(prdActions.getPostDB());
     axios
-      .post('/api/insurance/detail', {
+      .post('/api/insurance/detail/', {
         breed: 31,
         animal_name: '이봉봉',
         species: 1,
@@ -50,7 +50,7 @@ export function CData() {
       </div>
       <div>
         <h5>월{data.fee}원</h5>
-        <Link to={`/allinput/detailresult/${data.id}`} state={{ data }}>
+        <Link to={`${data.id}`} state={{ data }}>
           <button className={classes.compareButton}>상세보기</button>
         </Link>
         <button className={classes.compareButton}>비교하기</button>
@@ -62,7 +62,7 @@ export function PData() {
   const [datas, setDatas] = useState([]);
   useEffect(() => {
     axios
-      .post('/api/insurance/detail', {
+      .post('/api/insurance/detail/', {
         breed: 31,
         animal_name: '이봉봉',
         species: 1,
@@ -102,7 +102,7 @@ export function PData() {
       </div>
       <div>
         <h5>월{data.fee}원</h5>
-        <Link to={`/allinput/detailresult/${data.id}`} state={{ data }}>
+        <Link to={`${data.id}`} state={{ data }}>
           <button className={classes.compareButton}>상세보기</button>
         </Link>
         <button className={classes.compareButton}>비교하기</button>
@@ -112,9 +112,10 @@ export function PData() {
 }
 export function SData() {
   const [datas, setDatas] = useState([]);
+  const [user, setUser] = useState([]);
   useEffect(() => {
     axios
-      .post('/api/insurance/detail', {
+      .post('/api/insurance/detail/', {
         breed: 31,
         animal_name: '이봉봉',
         species: 1,
@@ -130,6 +131,7 @@ export function SData() {
       })
       .then(response => {
         setDatas(response.data.sure_ranking);
+        setUser(response.data.detail_user);
       })
       .catch(function (error) {
         console.log(error);
@@ -154,7 +156,7 @@ export function SData() {
       </div>
       <div>
         <h5>월{data.fee}원</h5>
-        <Link to={`/allinput/detailresult/${data.id}`} state={{ data }}>
+        <Link to={`${data.id}/${user}`} state={{ data }}>
           <button className={classes.compareButton}>상세보기</button>
         </Link>
         <button className={classes.compareButton}>비교하기</button>
