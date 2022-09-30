@@ -5,8 +5,21 @@ import classes from './InsureCard.module.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
+const coverType = {
+  0: '좋은상품',
+  1: '통원치료비',
+  2: '입원치료비',
+  3: '수술치료비',
+  4: '슬관절',
+  5: '피부병',
+  6: '구강',
+  7: '비뇨기',
+  8: '배상책임',
+};
+
 export function CData() {
   const [datas, setDatas] = useState([]);
+  const [user, setUser] = useState([]);
   useEffect(() => {
     // dispatch(prdActions.getPostDB());
     axios
@@ -26,6 +39,7 @@ export function CData() {
       })
       .then(response => {
         setDatas(response.data.cover_ranking);
+        setUser(response.data.detail_user);
       })
       .catch(function (error) {
         console.log(error);
@@ -39,9 +53,17 @@ export function CData() {
       <div className={classes.titleBadge}>
         <h2>{data.insurance.insurance_name}</h2>
         <h5>보장내용</h5>
-        <Sheet className={classes.badge} size="badge">
-          슬개골
-        </Sheet>
+        <div>
+          {data.all_cover &&
+            data.all_cover.map((key, value) => {
+              if (value > 2 && key == 1)
+                return (
+                  <Sheet key={value} className={classes.badge} size="badge">
+                    {coverType[value]}
+                  </Sheet>
+                );
+            })}
+        </div>
       </div>
       <div className={classes.sureScore}>
         <h3>Sure점수</h3>
@@ -50,7 +72,7 @@ export function CData() {
       </div>
       <div>
         <h5>월{data.fee}원</h5>
-        <Link to={`${data.id}`} state={{ data }}>
+        <Link to={`${data.id}/${user}`} state={{ data }}>
           <button className={classes.compareButton}>상세보기</button>
         </Link>
         <button className={classes.compareButton}>비교하기</button>
@@ -60,6 +82,7 @@ export function CData() {
 }
 export function PData() {
   const [datas, setDatas] = useState([]);
+  const [user, setUser] = useState([]);
   useEffect(() => {
     axios
       .post('/api/insurance/detail/', {
@@ -78,6 +101,7 @@ export function PData() {
       })
       .then(response => {
         setDatas(response.data.price_ranking);
+        setUser(response.data.detail_user);
       })
       .catch(function (error) {
         console.log(error);
@@ -91,9 +115,17 @@ export function PData() {
       <div className={classes.titleBadge}>
         <h2>{data.insurance.insurance_name}</h2>
         <h5>보장내용</h5>
-        <Sheet className={classes.badge} size="badge">
-          슬개골
-        </Sheet>
+        <div>
+          {data.all_cover &&
+            data.all_cover.map((key, value) => {
+              if (value > 2 && key == 1)
+                return (
+                  <Sheet key={value} className={classes.badge} size="badge">
+                    {coverType[value]}
+                  </Sheet>
+                );
+            })}
+        </div>
       </div>
       <div className={classes.sureScore}>
         <h3>Sure점수</h3>
@@ -102,7 +134,7 @@ export function PData() {
       </div>
       <div>
         <h5>월{data.fee}원</h5>
-        <Link to={`${data.id}`} state={{ data }}>
+        <Link to={`${data.id}/${user}`} state={{ data }}>
           <button className={classes.compareButton}>상세보기</button>
         </Link>
         <button className={classes.compareButton}>비교하기</button>
@@ -145,9 +177,17 @@ export function SData() {
       <div className={classes.titleBadge}>
         <h2>{data.insurance.insurance_name}</h2>
         <h5>보장내용</h5>
-        <Sheet className={classes.badge} size="badge">
-          슬개골
-        </Sheet>
+        <div>
+          {data.all_cover &&
+            data.all_cover.map((key, value) => {
+              if (value > 2 && key == 1)
+                return (
+                  <Sheet key={value} className={classes.badge} size="badge">
+                    {coverType[value]}
+                  </Sheet>
+                );
+            })}
+        </div>
       </div>
       <div className={classes.sureScore}>
         <h3>Sure점수</h3>

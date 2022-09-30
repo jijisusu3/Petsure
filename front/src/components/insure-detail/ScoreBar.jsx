@@ -7,7 +7,7 @@ const data = {
   datasets: [
     {
       type: 'bar',
-      label: 'Dataset 3',
+      label: ['보험사 신뢰등급', '안심 보장 점수', '예상 적합도'],
       backgroundColor: 'rgb(75, 192, 192)',
       data: [
         { x: 96.53, y: '보험사 신뢰등급' },
@@ -30,7 +30,7 @@ const options = {
   plugins: {
     legend: {
       labels: {
-        usePointStyle: true,
+        usePointStyle: false,
         padding: 10,
       },
     },
@@ -47,6 +47,12 @@ const options = {
         });
 
         scaleInstance.ticks = newTicks;
+      },
+      scaleLabel: {
+        display: false,
+      },
+      ticks: {
+        display: false, // it should work
       },
       grid: {
         display: false,

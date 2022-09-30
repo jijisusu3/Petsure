@@ -1,0 +1,14 @@
+.item_img {
+    display: flex;
+    justify-content: center;
+    width: 320px;
+    display: flex;
+    align-items: center;
+}
+
+.item_tag {
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 1px 1px 2px 3px grey;
+    padding: 24px 40px 24px 40px;
+}
