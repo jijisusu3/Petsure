@@ -83,10 +83,13 @@ select:focus {
 .form-select {
   font-size: 1.1rem;
 }
+ option {
+  padding: 4px;
+ }
 
 .btn {
   cursor: pointer;
-  margin-top: 50px;
+  margin-top: 30px;
   width: 224px;
   height: 40px;
   background-color: #ee9325;
@@ -96,7 +99,20 @@ select:focus {
   font-weight: 600;
 }
 
-.btn:hover {
+/* .btn:hover {
   color: #ffffff;
   opacity: 0.85;
+} */
+
+.btn:disabled,
+.btn[disabled]{
+  cursor: default;
+  background-color: #ffc8a0;
+  color: #ffffff;
 }
+/* 
+.btn:disabled:hover,
+.btn[disabled]:hover {
+  background-color: #ffc8a0;
+  color: #ffffff;
+} */
