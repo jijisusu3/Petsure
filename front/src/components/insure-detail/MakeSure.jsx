@@ -3,7 +3,6 @@ import HorizonLine from '../common/HorizontalLine';
 import { InsureCoverage } from './InsureCoverage';
 import { useLocation } from 'react-router-dom';
 import { InsureAccordion } from './InsureAccordion';
-import { WeSure } from './WeSure';
 
 export function MakeSure() {
   return (
@@ -19,7 +18,6 @@ export function MakeSure() {
         <h1>이 보험에서 보장하는 내역이에요</h1>
       </div>
       <InsureAccordion />
-      <WeSure />
     </>
   );
 }

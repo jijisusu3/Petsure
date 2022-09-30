@@ -1,8 +1,6 @@
 import React from 'react';
 import HorizonLine from '../common/HorizontalLine';
-import { InsureCoverage } from './InsureCoverage';
 import { useLocation } from 'react-router-dom';
-import { InsureAccordion } from './InsureAccordion';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
 
