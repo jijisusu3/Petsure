@@ -6,24 +6,41 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-export function InsureAccordion() {
+const coverType = {
+  0: '좋은상품',
+  1: '통원치료비',
+  2: '입원치료비',
+  3: '수술치료비',
+  4: '슬관절',
+  5: '피부병',
+  6: '구강',
+  7: '비뇨기',
+  8: '배상책임',
+};
+
+export function InsureBasicAccordion() {
   const location = useLocation();
+  const bdatas = location.state.data.basic;
   console.log(location);
-  return (
-    <>
-      <Accordion className="accordion">
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>Accordion 1</AccordionSummary>
-        <AccordionDetails className="accordionText">
-          LoremLorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>Accordion 2</AccordionSummary>
-        <AccordionDetails>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-          sit amet blandit leo lobortis eget.
-        </AccordionDetails>
-      </Accordion>
-    </>
-  );
+  return bdatas.map(data => (
+    <Accordion key={data.cover_type} className="accordion">
+      <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+        {coverType[data.cover_type]} {data.detail.split(':')[0]}
+      </AccordionSummary>
+      <AccordionDetails className="accordionText">{data.detail.split(':')[1]}</AccordionDetails>
+    </Accordion>
+  ));
+}
+
+export function InsureSpecialAccordion() {
+  const location = useLocation();
+  const sdatas = location.state.data.special;
+  return sdatas.map(data => (
+    <Accordion key={data.cover_type} className="accordion">
+      <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+        {coverType[data.cover_type]} {data.detail.split(':')[0]}
+      </AccordionSummary>
+      <AccordionDetails className="accordionText">{data.detail.split(':')[1]}</AccordionDetails>
+    </Accordion>
+  ));
 }

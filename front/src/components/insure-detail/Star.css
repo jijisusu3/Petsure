@@ -1,12 +1,16 @@
 button {
+  }
+  .on {
     background-color: transparent;
     border: none;
     outline: none;
     cursor: pointer;
-  }
-  .on {
     color: yellow;
   }
   .off {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
     color: #ccc;
   }
