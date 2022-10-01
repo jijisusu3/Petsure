@@ -1,11 +1,12 @@
-import BasicResultForm from './BasicResultForm';
+// import BasicResultForm from './BasicResultForm';
 
-const BasicInput = () => {
+const BasicInputResult = () => {
   return (
-    <div className="flex_row_center">
-      <BasicResultForm />
-    </div>
+    <div>dddd</div>
+    // <div className="flex_row_center">
+    //   <BasicResultForm />
+    // </div>
   );
 };
 
-export default BasicInput;
+export default BasicInputResult;
