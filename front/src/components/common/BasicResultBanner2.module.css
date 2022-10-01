@@ -1,0 +1,54 @@
+.text_big_yellow {
+    text-align: center;
+    padding : 0px 50px;
+    font-size: 120px;
+    color: #ff8736;
+}
+
+.text_bold_middle {
+    text-align : center;
+    font-size : 25px;
+    color : black;
+    font-weight: bolder;
+    padding-top: 30px;
+    white-space:nowrap; /*줄바꿈 금지*/
+}
+
+.text_bolder_small_grey{
+    white-space:nowrap; /*줄바꿈 금지*/
+    color : darkgrey;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.text_bold_small_grey {
+    white-space:nowrap; /*줄바꿈 금지*/
+    color : darkgrey;
+    font-weight: bold;
+    text-align: center;
+}
+
+.text_bold_small_yellow {
+    white-space:nowrap; /*줄바꿈 금지*/
+    color : #ff8736;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.text_center {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+
+/*중앙정렬을 위한 설정*/
+.div_flex{
+    display:flex;
+    flex-wrap: wrap;
+    align-content: center;
+    margin:auto;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top:50px;
+}
