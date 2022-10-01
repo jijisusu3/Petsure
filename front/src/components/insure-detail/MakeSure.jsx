@@ -18,6 +18,7 @@ export function MakeSure() {
           이 보험에서 <span className={classes.h1_fontcolor_yellow}>보장</span>하는 내역이에요 📝
         </h1>
       </div>
+      <br />
       <table className={classes.width_max}>
         <tr>
           <td className={classes.td_bgcolor_border_top_yellow}>
