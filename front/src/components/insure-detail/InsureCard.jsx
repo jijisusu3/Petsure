@@ -189,6 +189,8 @@ const BasicBtn = styled.button`
   color: #5b5b5b;
   font-size: 18px;
   font-weight: bold;
+  border: none;
+  background-color: transparent;
   &:hover {
     color: #f4aa41;
   }
@@ -207,4 +209,6 @@ const ReturnBtn = styled.button`
   position: absolute;
   top: 20px;
   right: 30px;
+  border: none;
+  background-color: transparent;
 `;
