@@ -5,7 +5,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
+import classes from './InsureAccordion.module.css';
 const coverType = {
   0: '좋은상품',
   1: '통원치료비',
@@ -25,9 +25,21 @@ export function InsureBasicAccordion() {
   return bdatas.map(data => (
     <Accordion key={data.cover_type} className="accordion">
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-        {coverType[data.cover_type]} {data.detail.split(':')[0]}
+        <table>
+          <tr>
+            <td className={classes.width_14em_basic_td_middle}>{coverType[data.cover_type]}</td>
+            <td>{data.detail.split(':')[0]}</td>
+          </tr>
+        </table>
       </AccordionSummary>
-      <AccordionDetails className="accordionText">{data.detail.split(':')[1]}</AccordionDetails>
+      <AccordionDetails className="accordionText">
+        <table>
+          <tr>
+            <td className={classes.width_14em}> &nbsp;</td>
+            <td> {data.detail.split(':')[1]}</td>
+          </tr>
+        </table>
+      </AccordionDetails>
     </Accordion>
   ));
 }
@@ -38,9 +50,21 @@ export function InsureSpecialAccordion() {
   return sdatas.map(data => (
     <Accordion key={data.cover_type} className="accordion">
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-        {coverType[data.cover_type]} {data.detail.split(':')[0]}
+        <table>
+          <tr>
+            <td className={classes.width_14em_basic_td_middle}>{coverType[data.cover_type]}</td>
+            <td>{data.detail.split(':')[0]}</td>
+          </tr>
+        </table>
       </AccordionSummary>
-      <AccordionDetails className="accordionText">{data.detail.split(':')[1]}</AccordionDetails>
+      <AccordionDetails className="accordionText">
+        <table>
+          <tr>
+            <td className={classes.width_14em}> &nbsp;</td>
+            <td>{data.detail.split(':')[1]}</td>
+          </tr>
+        </table>
+      </AccordionDetails>
     </Accordion>
   ));
 }
