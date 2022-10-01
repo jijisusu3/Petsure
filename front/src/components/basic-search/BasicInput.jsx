@@ -4,7 +4,7 @@ import Banner from '../common/Banner';
 
 const BasicInput = () => {
   return (
-    <>
+    <div>
       <div>
         <Banner />
       </div>
@@ -13,7 +13,7 @@ const BasicInput = () => {
           <BasicInputForm />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

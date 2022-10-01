@@ -10,7 +10,7 @@ const RibbonSheet = ({ children, size, shallow, clickBlocked }) => {
     >
       <div className={`${classes.ribbon} ${classes['ribbon-top-left']}`}>
         {/* <span>ribbon</span> */}
-        <span> Basic</span>
+        <span>　</span>
       </div>
       {children}
     </div>
