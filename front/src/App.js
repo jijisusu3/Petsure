@@ -11,7 +11,7 @@ import { BasicInputPage } from './pages/petinsure/BasicInput';
 import { BasicResultPage } from './pages/petinsure/BasicResult';
 import { DetailResultPage } from './pages/petinsure/DetailResult';
 import { InsureComparePage } from './pages/petinsure/InsureCompare';
-import { InsureDetailPage } from './pages/petinsure/InsureDetail';
+import InsureDetailPage from './pages/petinsure/InsureDetail';
 import { DiseaseDictPage } from './pages/DiseaseDict';
 import { AboutUsPage } from './pages/AboutUs';
 
@@ -49,7 +49,7 @@ function App() {
           <Route path="/allinput" element={<AllInputPage />} />
           <Route path="allinput/detailresult" element={<DetailResultPage />} />
           <Route path="allinput/insurecompare" element={<InsureComparePage />} />
-          <Route path="allinput/insuredetail" element={<InsureDetailPage />} />
+          <Route path="allinput/detailresult/:id1/:id2" element={<InsureDetailPage />} />
           <Route path="/diseasdict" element={<DiseaseDictPage />} />
           <Route path="/aboutus" element={<AboutUsPage />} />
         </Routes>
