@@ -1,0 +1,24 @@
+.progress {
+    transform-origin: 0% 0%;
+    margin: 20px 0px;
+    background: #F58613;
+    transform: scaleX(0);
+    height: 20px;
+    transition: transform 2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  }
+  
+.threeScore {
+    display: flex;
+}
+
+.threeText {
+    width: 15%;
+}
+.threeText p {
+    margin: 20px 0px;
+    height: 20px;
+}
+
+.threeBar {
+    width: 60%;
+}

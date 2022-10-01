@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-
+import 'bootstrap/dist/css/bootstrap.css';
 import store, { persistor } from './store/index';
 import { PersistGate } from 'redux-persist/integration/react';
 
@@ -11,7 +11,6 @@ import './styles/minireset.min.css';
 import './styles/pretendard.css';
 import App from './App';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
 // axios.defaults.baseURL = 'http://localhost:8000'
 // axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8'
 // axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*'
