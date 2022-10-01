@@ -57,7 +57,7 @@ function BasicInputForm() {
         setBirthMsg('　');
       } else {
         setIsBirth(false);
-        setBirthMsg('해당 나이의 반려동물이 가입할 수 있는 보험은 아직 없어요 :(');
+        setBirthMsg('해당 나이의 반려동물이 가입할 수 있는 보험은 없습니다');
       }
     } else if (event.target.value.length === 0) {
       setIsBirth(false);
@@ -129,7 +129,7 @@ function BasicInputForm() {
             <div className={classes.all}>
               <div className={classes.left}>
                 <div className={classes.radioes}>
-                  <label>
+                  <label className={classes.selectimg}>
                     <input
                       className={classes.radio}
                       type="radio"
@@ -139,7 +139,7 @@ function BasicInputForm() {
                     />
                     <img src="img/dogbutton.svg" alt="" />
                   </label>
-                  <label>
+                  <label className={classes.selectimg}>
                     <input
                       className={classes.radio}
                       type="radio"
