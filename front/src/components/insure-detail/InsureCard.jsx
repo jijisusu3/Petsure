@@ -79,7 +79,7 @@ const InsureCard = () => {
               <BasicText>동물병원에서 통원치료비</BasicText>
             </div>
             <div className="d-flex pb-3">
-              <input type="number" onChange={onChange} value={text} />
+              <Ipt type="number" onChange={onChange} value={text} />
               <BasicBtn onClick={() => register()}>원 청구 시</BasicBtn>
             </div>
             <CardBox>
@@ -165,6 +165,7 @@ const CalButton = styled.button`
   height: 50px;
   color: white;
   background-color: #f7f7f7;
+  border: none;
   border-radius: 10px;
   margin-top: 1rem;
   box-shadow: 1px 1px 3px #dbdbdb;
@@ -211,4 +212,7 @@ const ReturnBtn = styled.button`
   right: 30px;
   border: none;
   background-color: transparent;
+`;
+const Ipt = styled.input`
+  border-radius: 10px;
 `;

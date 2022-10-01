@@ -57,37 +57,46 @@ export default function InsureSurvey() {
     <div className={classes.survey}>
       {/* 새창에서 띄우기 react.ver */}
       <a href={insureUrl} target="_blank" rel="noreferrer">
-        <button onClick={() => insurePage()}>가입 페이지로 이동</button>
+        <button className={classes.run} onClick={() => insurePage()}>
+          가입 페이지로 이동
+        </button>
       </a>
-      <p>이 보험을 추천하시나요?</p>
-      <div className="star-rating">
-        {[...Array(5)].map((star, index) => {
-          index += 1;
-          return (
-            <button
-              type="button"
-              key={index}
-              className={index <= (hover || rating) ? 'on' : 'off'}
-              onClick={() => setRating(index)}
-              onMouseEnter={() => setHover(index)}
-              onMouseLeave={() => setHover(rating)}
-              onChange={e => {
-                setRating(e.target.value);
-              }}
-            >
-              <span className="star">&#9733;</span>
-            </button>
-          );
-        })}
+      <div className={classes.mainbox}>
+        <p className={classes.rectext}>이 보험을 추천하시나요?</p>
+        <div className="star-rating">
+          {[...Array(5)].map((star, index) => {
+            index += 1;
+            return (
+              <button
+                type="button"
+                key={index}
+                className={index <= (hover || rating) ? 'on' : 'off'}
+                onClick={() => setRating(index)}
+                onMouseEnter={() => setHover(index)}
+                onMouseLeave={() => setHover(rating)}
+                onChange={e => {
+                  setRating(e.target.value);
+                }}
+              >
+                <span className="star">&#9733;</span>
+              </button>
+            );
+          })}
+        </div>
+        <hr />
+        <p className={classes.rectext}>의견남기기</p>
+        <input
+          placeholder="의견이 없어도 괜찮아요!"
+          className={classes.ip}
+          type="text"
+          onChange={e => {
+            setSurvey(e.target.value);
+          }}
+        />
+        <button className={classes.subbtn} onClick={() => register()}>
+          제출
+        </button>
       </div>
-      <p>의견남기기</p>
-      <input
-        type="text"
-        onChange={e => {
-          setSurvey(e.target.value);
-        }}
-      />
-      <button onClick={() => register()}>제출</button>
     </div>
   );
 }

@@ -5,7 +5,7 @@ button {
     border: none;
     outline: none;
     cursor: pointer;
-    color: yellow;
+    color: #ffd600;
   }
   .off {
     background-color: transparent;
@@ -14,3 +14,6 @@ button {
     cursor: pointer;
     color: #ccc;
   }
+.star{
+  font-size: 50px;
+}
