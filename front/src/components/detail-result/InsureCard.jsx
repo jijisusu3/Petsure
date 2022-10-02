@@ -53,14 +53,14 @@ export function CData() {
           <p className={classes.name}>{data.insurance.insurance_name}</p>
           <div className={classes.covbox}>
             <p className={classes.covtext}>보장내용</p>
-            <div>
+            <div className={classes.covdiv}>
               {data.all_cover &&
                 data.all_cover.map((key, value) => {
                   if (value > 2 && key == 1)
                     return (
-                      <Sheet key={value} className={classes.badge} size="badge">
+                      <div key={value} className={classes.badge} size="badge">
                         {coverType[value]}
-                      </Sheet>
+                      </div>
                     );
                 })}
             </div>
@@ -121,14 +121,14 @@ export function PData() {
           <p className={classes.name}>{data.insurance.insurance_name}</p>
           <div className={classes.covbox}>
             <p className={classes.covtext}>보장내용</p>
-            <div>
+            <div className={classes.covdiv}>
               {data.all_cover &&
                 data.all_cover.map((key, value) => {
                   if (value > 2 && key == 1)
                     return (
-                      <Sheet key={value} className={classes.badge} size="badge">
+                      <div key={value} className={classes.badge} size="badge">
                         {coverType[value]}
-                      </Sheet>
+                      </div>
                     );
                 })}
             </div>
@@ -189,14 +189,14 @@ export function SData() {
           <p className={classes.name}>{data.insurance.insurance_name}</p>
           <div className={classes.covbox}>
             <p className={classes.covtext}>보장내용</p>
-            <div>
+            <div className={classes.covdiv}>
               {data.all_cover &&
                 data.all_cover.map((key, value) => {
                   if (value > 2 && key == 1)
                     return (
-                      <Sheet key={value} className={classes.badge} size="badge">
+                      <div key={value} className={classes.badge} size="badge">
                         {coverType[value]}
-                      </Sheet>
+                      </div>
                     );
                 })}
             </div>
