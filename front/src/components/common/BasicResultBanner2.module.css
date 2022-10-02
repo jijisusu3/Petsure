@@ -1,56 +1,30 @@
-.text_big_yellow {
-    text-align: center;
-    padding : 0px 50px;
-    font-size: 120px;
-    color: #ff8736;
-}
-
-.text_bold_middle {
-    text-align : center;
-    font-size : 25px;
-    color : black;
-    font-weight: bolder;
-    padding-top: 30px;
-    white-space:nowrap; /*줄바꿈 금지*/
-}
-
-.text_bolder_small_grey{
-    white-space:nowrap; /*줄바꿈 금지*/
-    /* color : darkgrey;
-    font-weight: bolder; */
-    text-align: center;
-    height: 24px;
-}
-
-.text_bold_small_grey {
-    white-space:nowrap; /*줄바꿈 금지*/
-    color : darkgrey;
-    font-weight: bold;
-    text-align: center;
-}
-
-.text_bold_small_yellow {
-    white-space:nowrap; /*줄바꿈 금지*/
-    color : #ff8736;
-    font-weight: bold;
-    text-align: center;
-}
-
-
-.text_center {
-    text-align: center;
+.infocard {
+    max-width: 800px;
+    background-color: #FFF9F5;
+    margin: auto;
+    padding-top: 20px;
     padding-bottom: 30px;
-    height: 24px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 80px;
+    border-color: bisque;
+    box-shadow: rgba(255, 183, 136, 0.16) 0px 1px 3px 0px, rgba(255, 155, 55, 0.15) 0px 0px 0px 1px;
 }
 
 
-/*중앙정렬을 위한 설정*/
-.div_flex{
-    display:flex;
-    flex-wrap: wrap;
-    align-content: center;
-    margin:auto;
-    justify-content: center;
-    margin-bottom: 50px;
-    margin-top:50px;
+.infotitle {
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 5px;
+    margin-bottom: 10px;
+} 
+
+.infocontent {
+    font-size: 16px;
+}
+
+.dsname {
+    color: red;
+    font-weight: 700;
 }
