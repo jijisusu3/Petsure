@@ -3,13 +3,27 @@ import HorizonLine from '../common/HorizontalLine';
 import { InsureCoverage } from './InsureCoverage';
 import { InsureBasicAccordion, InsureSpecialAccordion } from './InsureAccordion';
 import classes from './MakeSure.module.css';
+import Grid from '@mui/material/Grid';
 
 export function MakeSure() {
   return (
     <>
-      <h3>Make SURE?</h3>
-      <h4>확실하게 알아보는 보장 내역</h4>
-      <HorizonLine />
+      <Grid
+        container
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+        style={{ width: 1200 }}
+      >
+        <p style={{ color: '#F0B622', fontWeight: 600, fontSize: 36 }}>
+          Make <span style={{ fontSize: 48, fontWeight: 630 }}>SURE .</span>
+        </p>
+        <p style={{ color: '#717171', fontSize: 28, fontWeight: 600 }}>
+          확실하게 알아보는{' '}
+          <span style={{ fontSize: 36, color: '#F58613', fontWeight: 620 }}>보장 내역</span>
+        </p>
+      </Grid>
+      <div className={classes.sureline} />
       <InsureCoverage />
 
       <div>

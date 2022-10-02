@@ -1,4 +1,21 @@
 .radarInsure {
-    font-size: 40px;
-    width: 800px;
+    width: 700px;
+    margin-top: 120px;
+    margin-left: 200px;
+}
+.radarBox {
+    width: 1200px;
+    padding-left: 50px;
+    padding-top: 80px;
+}
+.fontFirst {
+    font-size: 24px;
+    font-weight: 600;
+    color: #7A8982;
+    margin-bottom: 4px;
+}
+.fontSecond {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 8px;
 }

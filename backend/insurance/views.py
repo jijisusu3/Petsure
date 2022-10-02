@@ -390,6 +390,7 @@ def detail(request):
         price_score = serializer.data.get("price_score")
         temp_detail["price_score"] = price_score
         temp_detail["sure_score"] = make_sure_score(company_score, price_score, matching_score)
+        temp_detail["matching_score"] = matching_score
         cover_count = 0
         if bool(basic):
             for c in basic:
