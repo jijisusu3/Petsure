@@ -19,7 +19,13 @@ function HeaderNav() {
     setExpanded(isExpanded ? panel : false);
   };
   return (
-    <Navbar className="p-1" bg="white" variant="white" style={{ position: 'sticky' }} fixed="top">
+    <Navbar
+      className="p-1 shadow-sm"
+      bg="white"
+      variant="white"
+      style={{ position: 'sticky' }}
+      fixed="top"
+    >
       <Container fluid>
         <Navbar.Brand href="/" className="ms-3">
           <img

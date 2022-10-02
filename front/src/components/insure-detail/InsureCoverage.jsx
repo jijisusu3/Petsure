@@ -66,24 +66,51 @@ export function InsureCoverage() {
       {
         label: location.state.data.insurance.insurance_name,
         data: [sergeryCost, kneeJoint, skinDisease, mouthDisease, urinarySystem],
-        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-        borderColor: 'rgba(255, 99, 132, 1)',
+        backgroundColor: 'rgba(245, 134, 19, 0.5)',
+        borderColor: 'rgba(245, 134, 19, 1)',
         borderWidth: 1,
       },
       {
         label: '보험평균',
         data: [125, 122.51, 123.75, 125, 127.82],
-        backgroundColor: 'rgba(25, 99, 132, 0.2)',
-        borderColor: 'rgba(25, 99, 132, 1)',
+        backgroundColor: 'rgba(240, 182, 34, 0.2)',
+        borderColor: 'rgba(240, 182, 34, 1)',
         borderWidth: 1,
       },
     ],
   };
+  const options = {
+    scales: {
+      r: {
+        pointLabels: {
+          font: {
+            size: 22,
+            weight: 'bold',
+          },
+        },
+      },
+    },
+    plugins: {
+      legend: {
+        position: 'bottom',
+        labels: {
+          font: {
+            size: 20,
+            weight: 'bold',
+          },
+        },
+      },
+    },
+  };
   return (
-    <div className={classes.radarInsure}>
-      <h5>주력하고 있는 보장 상품</h5>
-      <h1>이 상품은 {maxGua}에 집중되어있어요!</h1>
-      <Radar data={data} />
+    <div className={classes.radarBox}>
+      <p className={classes.fontFirst}>주력하고 있는 보장 상품</p>
+      <p className={classes.fontSecond}>
+        이 상품은 <span style={{ color: '#F58613' }}>{maxGua}</span>에 집중되어있어요! 👀
+      </p>
+      <div className={classes.radarInsure}>
+        <Radar data={data} options={options} />
+      </div>
     </div>
   );
 }
