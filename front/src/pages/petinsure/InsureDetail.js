@@ -28,11 +28,13 @@ export const InsureDetailPage = () => {
   const location = useLocation();
   return (
     <div className={classes.areSure}>
+      <div className={classes.boxfixed}>
+        <InsureSurvey />
+      </div>
       <InsureCard />
       <AreSure />
       <MakeSure />
       <WeSure />
-      <InsureSurvey />
     </div>
   );
 };
