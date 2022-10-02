@@ -4,10 +4,16 @@ import BasicCard from './BasicCard';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
 
-function BasicResultForm() {
+import Sheet from '../common/Sheet';
+
+function BasicResultForm(results) {
+  const insurances = results.results;
+  console.log(insurances);
   return (
     <div>
-      <BasicCard />
+      {insurances.map(insurance => (
+        <BasicCard key={insurance.id} insurance={insurance} />
+      ))}
     </div>
   );
 }

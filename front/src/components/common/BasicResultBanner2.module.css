@@ -16,9 +16,10 @@
 
 .text_bolder_small_grey{
     white-space:nowrap; /*줄바꿈 금지*/
-    color : darkgrey;
-    font-weight: bolder;
+    /* color : darkgrey;
+    font-weight: bolder; */
     text-align: center;
+    height: 24px;
 }
 
 .text_bold_small_grey {
@@ -39,6 +40,7 @@
 .text_center {
     text-align: center;
     padding-bottom: 30px;
+    height: 24px;
 }
 
 

@@ -22,6 +22,11 @@
   width: 20rem;
 }
 
+.landingFour > button:hover {
+  color: #ffffff;
+  opacity: 0.85;
+}
+
 /* button {
   color: #ffffff;
   opacity: 0.85;
