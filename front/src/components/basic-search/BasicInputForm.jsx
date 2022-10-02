@@ -81,12 +81,11 @@ function BasicInputForm() {
       .then(response => {
         console.log(response.data);
         localStorage.setItem('user', JSON.stringify(user_data));
+        navigate('/basicinput/basicresult', { state: response.data });
       })
       .catch(error => {
         console.log(error);
       });
-
-    navigate('/basicinput/basicresult');
   };
 
   const onBreedHandler = event => {

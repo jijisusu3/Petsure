@@ -262,6 +262,7 @@ def basic(request):
         basic_detail = {}
         res = Insurance_detail.objects.filter(id=result).values()
         basic_detail['id'] = res[0]['id']
+        basic_detail['name'] = res[0]['name']
         if data['species'] == 1:
             basic_detail['fee'] = int(res[0]['fee']*dog_fee[data['animal_birth']])
         if data['species'] == 2:
