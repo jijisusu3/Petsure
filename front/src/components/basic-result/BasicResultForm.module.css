@@ -14,19 +14,11 @@
 
 .top_padding {
   display: inline-flex;
-  /* display: flex; */
-  padding :100px 0px 0px 0px;
   flex-wrap: wrap;
   flex-direction : row;
   align-content:flex-start;
-  justify-content: space-between;
+  justify-content: space-around;
+  margin: 20px;
 
 }
-
-/* @media screen and (max-width: 650px) {
-  .column {
-    width: 100%;
-    display: flex;
-  }
-} */
 

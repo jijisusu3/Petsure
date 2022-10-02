@@ -1,217 +1,139 @@
 import classes from './BasicResultBanner2.module.css';
 import React, { useState, useEffect } from 'react';
-import { NavItem } from 'react-bootstrap';
-import axios from 'axios';
-import { useLocation } from 'react-router-dom';
 
 const BasicResultBanner2 = results => {
-  // const [cdatas, setCdatas] = useState([1]);
-  // const [ddatas, setDdatas] = useState([]);
-  console.log(results);
-  const mapping = [1];
-
   let user = localStorage.getItem('user');
   user = JSON.parse(user);
-  console.log(user);
-  // useEffect(() => {
-  //   axios
-  //     .post('/api/insurance/basic/', {
-  //       breed: 31,
-  //       animal_name: '이봉봉',
-  //       species: 1,
-  //       animal_birth: 2,
-  //     })
-  //     .then(response => {
-  //       console.log(response.data);
-  //       response.data.splice(1); //응답으로 받은 배열의 전체 또는 특정 인덱스 이후의 모든 원소 삭제
-  //       setCdatas(response.data);
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     });
-  // }, []);
 
   return (
-    // <div>
-    //   <div>{user.animal_name}의 건강 특징은 이래요!</div>
-    //   <div>
-    //     {user.animal_name}은(는) {results.results.breed_name}입니다!
-    //   </div>
-    //   <div>
-    //     앞으로
+    <div className={classes.infocard}>
+      {user.species === 1 ? (
+        <svg
+          width="50"
+          height="50"
+          viewBox="0 0 70 70"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M34.8689 10.9211C18.9603 10.5109 13.8088 22.8265 13.415 27.4476C13.1088 31.0406 11.5666 44.182 19.0588 53.0086C22.9252 57.564 29.1213 59.8336 35.6893 59.6805C42.3119 59.5273 48.2947 58.2094 52.3197 52.9047C59.0955 43.9742 58.3736 30.6305 57.4549 26.3156C56.5908 22.3015 53.2385 11.3914 34.8689 10.9211Z"
+            fill="#FFEAC8"
+          />
+          <path
+            d="M52.9482 35.2352C53.5115 39.5062 51.6576 43.5805 46.774 43.8703C42.306 44.1383 39.5498 41.2891 39.331 37.0945C39.1068 32.7961 41.4584 28.7984 45.1935 28.3883C49.1365 27.9562 52.3904 30.9641 52.9482 35.2352ZM10.3357 14.6125C10.3357 14.6125 4.95992 16.718 3.66383 19.8461C1.9193 24.057 2.72321 32.4133 3.66383 35.6562C4.58805 38.8391 7.04899 42.1258 10.8498 42.0219C14.6505 41.918 17.9865 38.068 19.1623 33.0422C20.3435 28.0109 20.6005 19.3922 20.956 17.85C21.3115 16.3078 21.9295 15.0773 21.9295 15.0773C21.9295 15.0773 17.2099 10.5055 10.3357 14.6125ZM55.349 13.9453C55.349 13.9453 62.6388 14.2023 64.3834 14.9734C66.1279 15.7445 67.7193 19.2336 67.5662 23.9039C67.413 28.5742 67.1068 36.1266 64.7443 38.7352C62.792 40.8898 58.8435 41.043 56.6341 38.3742C54.4248 35.7055 53.0412 31.1883 52.5271 28.2625C52.0131 25.3367 51.1435 21.5414 50.5748 19.8461C50.0115 18.1508 48.6224 14.7656 47.906 13.9945C47.1841 13.2289 48.6224 12.507 55.349 13.9453Z"
+            fill="#D27856"
+          />
+          <path
+            d="M16.3899 12.2008C12.436 11.9492 5.91728 15.0773 4.5829 18.3094C3.24853 21.5414 4.03056 32.0305 5.15165 35.0929C6.3329 38.325 8.79384 42.3828 13.054 38.8937C17.3142 35.4047 18.4407 26.6273 18.8563 23.8055C19.2665 20.9836 19.8298 17.5437 20.4477 16.8273C21.0657 16.1109 21.9352 15.0828 21.9352 15.0828C21.9352 15.0828 21.2681 12.507 16.3899 12.2008ZM56.2188 11.5336C59.9321 11.7906 63.9681 13.1742 65.4556 16.4117C66.9431 19.6437 66.3798 27.2945 65.8165 30.9367C65.2532 34.5789 63.9188 38.3797 60.5829 37.9695C57.247 37.5594 55.5517 33.0422 54.529 28.782C53.5009 24.5219 52.4235 20.2617 51.0892 17.1828C50.2852 15.3234 47.4962 13.9508 47.4962 13.9508C47.4962 13.9508 48.7267 11.0195 56.2188 11.5336Z"
+            fill="#865B51"
+          />
+          <path
+            d="M27.6171 37.018C27.3984 38.8883 26.4359 40.3977 24.3468 40.1789C22.8648 40.0203 21.8695 38.2539 22.0882 36.3781C22.307 34.5078 22.9578 33.1625 24.7078 33.1953C27.4257 33.2445 27.8359 35.1422 27.6171 37.018ZM49.0765 36.493C49.164 38.3742 48.4203 39.982 46.2492 40.1406C44.3624 40.2774 43.3945 38.6422 43.3124 36.7609C43.2249 34.8797 44.1601 33.3703 45.9593 33.1461C48.2945 32.8453 48.989 34.6117 49.0765 36.493ZM41.0812 45.9758C41.1687 47.857 39.8999 49.618 35.946 49.5688C32.096 49.5195 30.696 47.9609 30.6085 46.0797C30.521 44.1984 32.7085 42.5086 35.8421 42.4375C40.157 42.3281 40.9937 44.0891 41.0812 45.9758Z"
+            fill="#2F2F2F"
+          />
+          <path
+            d="M32.353 53.5719C32.353 53.5719 32.8179 58.0399 33.2772 59.3742C34.2507 62.1961 38.3522 61.7258 39.0796 59.068C39.6976 56.8094 39.2874 52.9102 39.2874 52.9102L35.6452 52.3961L32.353 53.5719Z"
+            fill="#E94B8C"
+          />
+          <path
+            d="M36.0717 55.0594C35.4318 55.0867 35.4537 55.6774 35.4537 57.0336C35.4537 58.3953 35.5303 59.2156 36.1482 59.1883C36.7662 59.1609 36.6896 58.1109 36.6896 57.1375C36.6896 56.1641 36.7389 55.032 36.0717 55.0594Z"
+            fill="#EF87B2"
+          />
+          <path
+            d="M27.4259 49.3336C26.6877 50.4219 28.1205 51.3844 29.3017 52.1828C30.483 52.9758 31.9158 54.1844 33.6111 54.157C35.5088 54.1297 36.0228 52.85 36.0228 52.85C36.0228 52.85 36.6408 54.3648 39.3314 54.0805C40.7697 53.9273 42.5416 52.314 43.0775 51.9531C44.1056 51.2586 45.3361 50.389 44.7947 49.6672C44.1767 48.8414 42.8697 49.9515 41.5353 50.6406C40.2009 51.3351 39.7416 51.6687 38.7408 51.6687C37.74 51.6687 37.0455 51.2586 36.9963 49.5906C36.9525 48.2289 36.9689 47.9719 36.9689 47.9719H34.683C34.683 47.9719 34.7595 49.4101 34.7595 49.8203C34.7595 50.8976 34.1963 51.3625 33.1189 51.4117C32.0416 51.4609 30.8877 50.564 30.3189 50.2305C29.7611 49.9023 28.0166 48.464 27.4259 49.3336Z"
+            fill="#2F2F30"
+          />
+        </svg>
+      ) : (
+        <svg
+          width="50"
+          height="50"
+          viewBox="0 0 64 64"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g clip-path="url(#clip0_469_5478)">
+            <path
+              d="M55.2351 29.51C59.9901 17.095 57.0601 7.59499 55.3801 4.86999C54.7151 3.78999 53.4351 3.48999 52.2551 3.85999C49.1451 4.83999 40.7501 11.7 37.0401 21.3M8.76507 29.51C4.01007 17.095 6.94007 7.59499 8.62007 4.86999C9.28507 3.78999 10.5651 3.48999 11.7451 3.85999C14.8551 4.83999 23.2501 11.7 26.9601 21.3"
+              fill="#FFC022"
+            />
+            <path
+              d="M57.0548 35.38C56.1548 22.39 47.2198 13.15 31.9998 13.15C16.7798 13.15 7.84478 22.39 6.94478 35.38C6.41978 42.95 9.46978 49.385 15.4898 53.485C15.4898 53.485 21.5948 58.425 31.9998 58.555C42.4048 58.425 48.5098 53.485 48.5098 53.485C54.5248 49.385 57.5798 42.95 57.0548 35.38Z"
+              fill="#FFC022"
+            />
+            <path
+              opacity="0.47"
+              d="M27.0602 22.51C27.6252 22.99 28.7702 22.92 29.4352 22.15C30.2402 21.215 31.0802 18.065 30.5552 13.195C28.2202 13.28 26.0102 13.615 23.9502 14.18C25.6152 16.91 26.0152 21.62 27.0602 22.51ZM36.9402 22.51C36.3752 22.99 35.2302 22.92 34.5652 22.15C33.7602 21.215 32.9202 18.065 33.4452 13.195C35.7802 13.28 37.9902 13.615 40.0502 14.18C38.3852 16.91 37.9852 21.62 36.9402 22.51Z"
+              fill="#FF7043"
+            />
+            <path
+              d="M17.2151 32.595C17.1751 30.36 18.7451 28.525 20.7151 28.49C22.6851 28.455 23.9201 30.285 23.9601 32.52C24.0001 34.755 22.4301 36.59 20.4601 36.625C18.4901 36.66 17.2551 34.83 17.2151 32.595ZM46.7851 32.595C46.8251 30.36 45.2551 28.525 43.2851 28.49C41.3151 28.455 40.0801 30.285 40.0401 32.52C40.0001 34.755 41.5701 36.59 43.5401 36.625C45.5101 36.66 46.7451 34.83 46.7851 32.595Z"
+              fill="black"
+            />
+            <path
+              d="M1.19979 35.21C1.19979 35.21 5.85479 34.365 11.2148 37.185M1.15479 41.575C1.15479 41.575 5.25979 39.715 10.7748 40.695M2.74979 47.185C2.74979 47.185 6.65979 44.595 11.6248 44.155M62.5848 34.17C62.5848 34.17 57.9048 33.48 52.6448 36.48M62.8448 40.53C62.8448 40.53 58.6798 38.81 53.1998 39.975M61.4398 46.195C61.4398 46.195 57.4448 43.735 52.4698 43.47"
+              stroke="#9E9E9E"
+              stroke-width="3"
+              stroke-miterlimit="10"
+              stroke-linecap="round"
+            />
+            <path
+              d="M27.9802 38.595C27.9552 37.165 30.0102 36.475 31.9552 36.445C33.9002 36.41 35.9902 37.045 36.0152 38.475C36.0402 39.905 33.5852 41.795 32.0402 41.795C30.4952 41.795 28.0052 40.025 27.9802 38.595Z"
+              fill="black"
+            />
+            <path
+              d="M35.9448 44.175C35.9948 44.185 36.0448 44.195 36.0998 44.205C36.7498 44.325 37.3498 44.425 37.9498 44.755C38.0298 44.8 38.1198 44.855 38.1498 44.95C38.1848 45.045 38.1498 45.155 38.1148 45.25C37.8998 45.765 37.4998 46.15 37.0998 46.5C35.5198 47.86 33.5998 48.89 31.6098 48.77C29.8898 48.67 28.2298 47.665 27.2098 46.115C27.1598 46.04 27.1148 45.96 27.1098 45.87C27.1048 45.775 27.1498 45.685 27.1998 45.61C27.4948 45.165 27.9898 44.965 28.4348 44.73C29.2098 44.33 29.9198 43.775 30.5248 43.1C30.8048 42.79 31.0698 42.45 31.4348 42.28C32.0798 41.98 32.3398 42.515 32.7848 42.865C33.2848 43.255 33.9198 43.575 34.5098 43.745C34.9898 43.88 35.4698 44.07 35.9448 44.175Z"
+              fill="#EF7F9D"
+            />
+            <path
+              d="M20.3848 42.435C20.3848 42.435 22.4048 44.895 26.3498 44.895C31.0998 44.895 32.3148 39.655 32.3148 39.655"
+              stroke="black"
+              stroke-width="1.5"
+              stroke-miterlimit="10"
+              stroke-linecap="round"
+            />
+            <path
+              d="M43.6146 42.435C43.6146 42.435 41.5946 44.895 37.6496 44.895C32.8996 44.895 31.6846 39.655 31.6846 39.655"
+              stroke="black"
+              stroke-width="1.5"
+              stroke-miterlimit="10"
+              stroke-linecap="round"
+            />
+            <path
+              d="M46.0798 18.115C45.3098 17.47 45.3298 16.43 45.7798 15.535C46.8598 13.38 49.4448 11.145 50.3598 10.42C51.8598 9.23001 53.0198 8.83001 53.4648 10.745C54.2898 14.285 54.2248 19.09 53.3398 21.74C53.0298 22.675 52.0698 23.17 51.3298 22.525L46.0798 18.115ZM17.9198 18.115C18.6898 17.47 18.6698 16.43 18.2198 15.535C17.1398 13.38 14.5548 11.145 13.6398 10.42C12.1398 9.23001 10.9798 8.83001 10.5348 10.745C9.70983 14.285 9.77483 19.09 10.6598 21.74C10.9698 22.675 11.9298 23.17 12.6698 22.525L17.9198 18.115Z"
+              fill="#FFD1D1"
+            />
+          </g>
+          <path
+            d="M38.1632 45.4736C38.1632 45.4736 35.9532 50.1886 31.7132 50.1886C27.6482 50.1886 25.2632 45.4736 25.2632 45.4736"
+            stroke="black"
+            stroke-width="1.5"
+            stroke-miterlimit="10"
+          />
+          <defs>
+            <clipPath id="clip0_469_5478">
+              <rect width="64" height="64" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+      )}
 
-    //   </div>
-    // </div>
-    <div className={classes.div_flex}>
-      {mapping.map(mappin => (
-        <div key={mappin.id}>
-          <div>
-            <div className={classes.center}>
-              <table>
-                <tr>
-                  <td rowspan="3" className={classes.text_big_yellow} />
-
-                  <td className={classes.text_bold_middle}>
-                    {user.animal_name}의 건강 특징은 이래요!
-                  </td>
-                  <td rowspan="3" className={classes.text_big_yellow} />
-                </tr>
-                <tr>
-                  <td className={classes.text_bolder_small_grey}>
-                    {user.animal_name}은(는) {results.results.breed_name}입니다!
-                  </td>
-                  <td />
-                </tr>
-                {/* {cdata.disease_name.map(item => (
-              <div key={item.id}> */}
-                <tr key={results.results.disease_name}>
-                  <td className={classes.text_center}>
-                    {' '}
-                    앞으로{' '}
-                    <span className={classes.text_bold_small_yellow}>
-                      {results.results.disease_name.map((item, index) => (
-                        <span key={index}>
-                          {index === 0 ? '' : ', '}
-                          {item}{' '}
-                        </span>
-                      ))}
-                    </span>{' '}
-                    을(를) 주의해야해요 💉
-                  </td>
-                  <td />
-                </tr>
-                {/* </div>
-            ))} */}
-              </table>
-            </div>
-            <hr />
-          </div>
-        </div>
-      ))}
+      <p className={classes.infotitle}>{user.animal_name}의 건강 특징은 이래요!</p>
+      <p className={classes.infocontent}>
+        {user.animal_name}은(는) {results.results.breed_name}이라,
+      </p>
+      <p className={classes.infocontent}>
+        앞으로{' '}
+        {results.results.disease_name.map((item, index) => (
+          <span className={classes.dsname} key={index}>
+            {index === 0 ? '' : ', '}
+            {item}
+          </span>
+        ))}
+        을(를) 주의해야해요!
+      </p>
     </div>
   );
 };
 
 export default BasicResultBanner2;
-
-// {
-//   cdata.cover.map(item => (
-//     <div key={item.id} ClassName={classes.maxWidth}>
-//       <tr key={cdatas.cover}>
-//         <td colspan="2" className={classes.basic_text_bold}>
-//           {item.type}
-//         </td>
-//         <td className={classes.basic_text_bold_right}>
-//           {item.type === null ? 'ㅡ' : (item.price * 10000).toLocaleString()}원
-//           {/* 존재할 경우로 바꾸기 */}
-//         </td>
-//       </tr>
-//     </div>
-//   ));
-// }
-
-// import Sheet from '../common/Sheet';
-// import React, { useState, useEffect } from 'react';
-// import classes from './BasicCard.module.css';
-// import Button from '../common/Button';
-// import axios from 'axios';
-// import { Dispatch } from 'react';
-// import { useNavigate } from 'react-router-dom';
-
-// export default function BasicCard() {
-//   const [cdatas, setCdatas] = useState([]);
-//   const [ddatas, setDdatas] = useState([]);
-
-//   const navigate = useNavigate();
-
-//   useEffect(() => {
-//     axios
-//       .post('/api/insurance/basic/', {
-//         breed: 31,
-//         animal_name: '이봉봉',
-//         species: 1,
-//         animal_birth: 2,
-//       })
-//       .then(response => {
-//         console.log(response.data);
-//         response.data.shift(); //응답으로 받은 배열의 0번째 요소 제거
-//         setCdatas(response.data);
-//       })
-//       .catch(function (error) {
-//         console.log(error);
-//       });
-//   }, []);
-
-//   return cdatas.map(cdata => (
-//     <div key={cdata.id} className={classes.basicCard}>
-//       {/* {cdata.cover.map(item => ( */}
-//       {/* // <div key={item.id}> */}
-//       <Sheet size="medium">
-//         <div>
-//           <table className="classes.align_center table_border">
-//             <tr>
-//               <td colSpan="2">
-//                 <div>
-//                   <img className={classes.basicLogo} src={cdata.company_logo} />
-//                 </div>
-//               </td>
-//               <td />
-//             </tr>
-//             <tr>
-//               <td colSpan="2">
-//                 <div className={classes.basicInsuName}>{cdata.insurance_name}</div>
-//               </td>
-//               <td />
-//             </tr>
-//             {cdata.cover.map(item => (
-//               <div key={item.id} ClassName={classes.maxWidth}>
-//                 <tr key={cdatas.cover}>
-//                   {/* {cdata.cover.map(item => (
-//                 <div key={item.id}> */}
-//                   <td colspan="2" className={classes.basic_text_bold}>
-//                     {item.type}
-//                   </td>
-//                   <td className={classes.basic_text_bold_right}>
-//                     {/* {(item.price * 10000).toLocaleString()} 원 */}
-//                     {item.type === null ? 'ㅡ' : (item.price * 10000).toLocaleString()}원
-//                   </td>
-//                 </tr>
-//               </div>
-//             ))}
-//             <tr>
-//               <td className={classes.sure_yellow_text}>슈어지수</td>
-//               <td className={classes.sure_yellow_text_right}>상세 검색에서 보실 수 있어요!</td>
-//             </tr>
-//             <tr>
-//               <td colSpan="2">
-//                 <hr className={classes.hr_padding} />{' '}
-//               </td>
-
-//               <td />
-//             </tr>
-//             <tr>
-//               <td className={classes.basic_text_bold}>납입보험료</td>
-//               <td className={classes.sure_yellow_text_right_size}>
-//                 월 {cdata.fee.toLocaleString()} 원
-//               </td>
-//             </tr>
-
-//             <tr>
-//               <td colSpan="2">
-//                 <div className={classes.basicButton}>
-//                   <Button
-//                     size="middle"
-//                     className={classes.basicButton}
-//                     text="가입 페이지로 이동"
-//                     onEvent={() => window.open([cdata.company_url], '_blank')}
-//                   />
-//                 </div>
-//               </td>
-//               <td />
-//             </tr>
-//           </table>
-//         </div>
-//       </Sheet>
-//     </div>
-//   ));
-// }
