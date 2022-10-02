@@ -73,15 +73,21 @@ export function AllInputPage() {
               />
               <Carousel.Caption style={{ color: '#000' }}>
                 <div>
-                  <label>통원치료비 : </label>
+                  <label className={classes.text_bolder}>
+                    통원치료비가 필요하다고 생각하시나요?{' '}
+                  </label>
                   <RadioInputSet checked={outpatient} setter={setOutpatient} />
                 </div>
                 <div>
-                  <label>입원치료비 : </label>
+                  <label className={classes.text_bolder}>
+                    입원치료비가 필요하다고 생각하시나요?{' '}
+                  </label>
                   <RadioInputSet checked={hospitalization} setter={setHospitalization} />
                 </div>
                 <div>
-                  <label>수술치료비 : </label>
+                  <label className={classes.text_bolder}>
+                    수술치료비가 필요하다고 생각하시나요?
+                  </label>
                   <RadioInputSet checked={operation} setter={setOperation} />
                 </div>
               </Carousel.Caption>
@@ -94,27 +100,28 @@ export function AllInputPage() {
               />
               <Carousel.Caption style={{ color: '#000', right: '10%', left: '10%' }}>
                 <div>
-                  <span>슬개골치료 : </span>
+                  <span className={classes.text_bolder}>슬관절이 걱정되시나요?</span>
                   <RadioInputSet checked={patella} setter={setPatella} />
                 </div>
                 <div>
-                  <span>피부병 : </span>
+                  <span className={classes.text_bolder}>피부병이 걱정되시나요?</span>
                   <RadioInputSet checked={skin} setter={setSkin} />
                 </div>
                 <div>
-                  <span>구강 / 치과 : </span>
+                  <span className={classes.text_bolder}>구강 문제가 걱정되시나요?</span>
                   <RadioInputSet checked={dental} setter={setDental} />
                 </div>
                 <div>
-                  <span>비뇨기 : </span>
+                  <span className={classes.text_bolder}>비뇨기가 걱정되시나요?</span>
                   <RadioInputSet checked={urinary} setter={setUrinary} />
                 </div>
                 <div>
-                  <label>배상책임 : </label>
+                  <label className={classes.text_bolder}>배상책임이 필요하다고 생각하시나요?</label>
                   <RadioInputSet checked={liability} setter={setLiability} />
                 </div>
                 <div>
-                  <a className={classes.allinputSubmit}>설문 제출 후, 상세 검색 바로가기</a>
+                  <button className={classes.btn}>보험 찾아보기</button>
+                  {/* <a className={classes.allinputSubmit}>설문 제출 후, 상세 검색 바로가기</a> */}
                 </div>
               </Carousel.Caption>
             </Carousel.Item>

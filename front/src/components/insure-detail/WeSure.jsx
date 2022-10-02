@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
 import classes from './WeSure.module.css';
+import Sheet from '../common/Sheet';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -67,22 +68,61 @@ export function WeSure() {
       <div style={{ width: '60%' }}>
         <Pie data={data} />
       </div>
+
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+
       <div>
-        <h5>보험에서 빠진 약관 영양제로 보충</h5>
-        <h1>이 보험에서 빠진 {coverType[location.state.data.item_cover]} 관련 제품은 어떠세요?</h1>
-        <div className={classes.item_tag}>
-          <a href={recommendItem[0].item_url} target="_blank" rel="noreferrer">
-            <img className={classes.item_img} alt="item" src={recommendItem[0].image} />
-            <p>{recommendItem[0].name}</p>
-          </a>
-          <a href={recommendItem[0].item_url} target="_blank" rel="noreferrer">
-            <img className={classes.item_img} alt="item" src={recommendItem[1].image} />
-            <p>{recommendItem[1].name}</p>
-          </a>
-          <a href={recommendItem[0].item_url} target="_blank" rel="noreferrer">
-            <img className={classes.item_img} alt="item" src={recommendItem[2].image} />
-            <p>{recommendItem[2].name}</p>
-          </a>
+        <h5 className={classes.h5_grey_font}>보험에서 빠진 약관 영양제로 보충</h5>
+        <h1 className={classes.h1_padding_bolder}>
+          이 보험에서 빠진{' '}
+          <span className={classes.h1_fontcolor_yellow}>
+            {' '}
+            {coverType[location.state.data.item_cover]} 관련{' '}
+          </span>{' '}
+          제품은 어떠세요? 🎁
+        </h1>
+        <br />
+        <div className={classes.width_max}>
+          <Sheet>
+            <div className={classes.item_tag}>
+              <table>
+                <tr>
+                  <td className={classes.table_padding_1rem}>
+                    <a href={recommendItem[0].item_url} target="_blank" rel="noreferrer">
+                      <img className={classes.item_img} alt="item" src={recommendItem[0].image} />
+                    </a>
+                  </td>
+                  <td className={classes.table_padding_1rem}>
+                    <a href={recommendItem[1].item_url} target="_blank" rel="noreferrer">
+                      <img className={classes.item_img} alt="item" src={recommendItem[1].image} />
+                    </a>
+                  </td>
+                  <td className={classes.table_padding_1rem}>
+                    <a href={recommendItem[2].item_url} target="_blank" rel="noreferrer">
+                      <img className={classes.item_img} alt="item" src={recommendItem[2].image} />{' '}
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td className={classes.table_recom_product_text}>
+                    <p>{recommendItem[0].name}</p>
+                  </td>
+                  <td className={classes.table_recom_product_text}>
+                    <p>{recommendItem[1].name}</p>
+                  </td>
+                  <td className={classes.table_recom_product_text}>
+                    <p>{recommendItem[2].name}</p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </Sheet>
         </div>
       </div>
     </>

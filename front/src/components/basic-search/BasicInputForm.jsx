@@ -68,22 +68,24 @@ function BasicInputForm() {
     }
   };
 
+  const user_data = {
+    breed: breed,
+    animal_birth: animal_birth,
+    species: species,
+    animal_name: animal_name,
+  };
+
   const searchBasic = () => {
     axios
-      .post('api/insurance/basic/', {
-        breed: breed,
-        animal_birth: animal_birth,
-        species: species,
-        animal_name: animal_name,
-      })
+      .post('api/insurance/basic/', user_data)
       .then(response => {
         console.log(response.data);
+        localStorage.setItem('user', JSON.stringify(user_data));
+        navigate('/basicinput/basicresult', { state: response.data });
       })
       .catch(error => {
         console.log(error);
       });
-
-    navigate('/basicinput/basicresult');
   };
 
   const onBreedHandler = event => {
