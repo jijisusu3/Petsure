@@ -67,3 +67,7 @@ hr{
   opacity: 0.85;
   box-shadow: 3px 3px 5px #d7d7d7;
 }
+
+.boxsticky {
+  position: sticky;
+}
