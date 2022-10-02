@@ -46,42 +46,36 @@ export function CData() {
       });
   });
   return datas.map(data => (
-    <div key={data.id} className={classes.mainbox}>
-      <div className={classes.insureCard}>
+    <div key={data.id} className={classes.insureCard}>
+      <div>
         <img className={classes.insure_logo} alt="insure" src={data.insurance.company_logo} />
-        <div className={classes.titleBadge}>
-          <p className={classes.name}>{data.insurance.insurance_name}</p>
-          <div className={classes.covbox}>
-            <p className={classes.covtext}>보장내용</p>
-            <div className={classes.covdiv}>
-              {data.all_cover &&
-                data.all_cover.map((key, value) => {
-                  if (value > 2 && key == 1)
-                    return (
-                      <div key={value} className={classes.badge} size="badge">
-                        {coverType[value]}
-                      </div>
-                    );
-                })}
-            </div>
-          </div>
+      </div>
+      <div className={classes.titleBadge}>
+        <h2>{data.insurance.insurance_name}</h2>
+        <h5>보장내용</h5>
+        <div>
+          {data.all_cover &&
+            data.all_cover.map((key, value) => {
+              if (value > 2 && key == 1)
+                return (
+                  <Sheet key={value} className={classes.badge} size="badge">
+                    {coverType[value]}
+                  </Sheet>
+                );
+            })}
         </div>
-        <div className={classes.colDiv}>
-          {/* <h3>Sure점수</h3> */}
-          <SureScore value={data.sure_score.toFixed(2)} />
-          {/* <h4>평균 70.34</h4> */}
-        </div>
-        <div className={classes.colDiv}>
-          <div className={classes.rowDiv}>
-            <p className={classes.feetext}>월</p>
-            <h3 className="fw-bold">{data.fee}</h3>
-            <p className={classes.feetext}>원</p>
-          </div>
-          <Link to={`${data.id}/${user}`} state={{ data }}>
-            <button className={classes.detailButton}>상세보기</button>
-          </Link>
-          <button className={classes.compareButton}>비교하기</button>
-        </div>
+      </div>
+      <div className={classes.sureScore}>
+        <h3>Sure점수</h3>
+        <SureScore value={data.sure_score.toFixed(2)} />
+        <h4>평균 70.34</h4>
+      </div>
+      <div>
+        <h5>월{data.fee}원</h5>
+        <Link to={`${data.id}/${user}`} state={{ data }}>
+          <button className={classes.compareButton}>상세보기</button>
+        </Link>
+        <button className={classes.compareButton}>비교하기</button>
       </div>
     </div>
   ));
@@ -114,42 +108,36 @@ export function PData() {
       });
   });
   return datas.map(data => (
-    <div key={data.id} className={classes.mainbox}>
-      <div className={classes.insureCard}>
+    <div key={data.id} className={classes.insureCard}>
+      <div>
         <img className={classes.insure_logo} alt="insure" src={data.insurance.company_logo} />
-        <div className={classes.titleBadge}>
-          <p className={classes.name}>{data.insurance.insurance_name}</p>
-          <div className={classes.covbox}>
-            <p className={classes.covtext}>보장내용</p>
-            <div className={classes.covdiv}>
-              {data.all_cover &&
-                data.all_cover.map((key, value) => {
-                  if (value > 2 && key == 1)
-                    return (
-                      <div key={value} className={classes.badge} size="badge">
-                        {coverType[value]}
-                      </div>
-                    );
-                })}
-            </div>
-          </div>
+      </div>
+      <div className={classes.titleBadge}>
+        <h2>{data.insurance.insurance_name}</h2>
+        <h5>보장내용</h5>
+        <div>
+          {data.all_cover &&
+            data.all_cover.map((key, value) => {
+              if (value > 2 && key == 1)
+                return (
+                  <Sheet key={value} className={classes.badge} size="badge">
+                    {coverType[value]}
+                  </Sheet>
+                );
+            })}
         </div>
-        <div className={classes.colDiv}>
-          {/* <h3>Sure점수</h3> */}
-          <SureScore value={data.sure_score.toFixed(2)} />
-          {/* <h4>평균 70.34</h4> */}
-        </div>
-        <div className={classes.colDiv}>
-          <div className={classes.rowDiv}>
-            <p className={classes.feetext}>월</p>
-            <h3 className="fw-bold">{data.fee}</h3>
-            <p className={classes.feetext}>원</p>
-          </div>
-          <Link to={`${data.id}/${user}`} state={{ data }}>
-            <button className={classes.detailButton}>상세보기</button>
-          </Link>
-          <button className={classes.compareButton}>비교하기</button>
-        </div>
+      </div>
+      <div className={classes.sureScore}>
+        <h3>Sure점수</h3>
+        <SureScore value={data.sure_score.toFixed(2)} />
+        <h4>평균 70.34</h4>
+      </div>
+      <div>
+        <h5>월{data.fee}원</h5>
+        <Link to={`${data.id}/${user}`} state={{ data }}>
+          <button className={classes.compareButton}>상세보기</button>
+        </Link>
+        <button className={classes.compareButton}>비교하기</button>
       </div>
     </div>
   ));
@@ -182,42 +170,36 @@ export function SData() {
       });
   });
   return datas.map(data => (
-    <div key={data.id} className={classes.mainbox}>
-      <div className={classes.insureCard}>
+    <div key={data.id} className={classes.insureCard}>
+      <div>
         <img className={classes.insure_logo} alt="insure" src={data.insurance.company_logo} />
-        <div className={classes.titleBadge}>
-          <p className={classes.name}>{data.insurance.insurance_name}</p>
-          <div className={classes.covbox}>
-            <p className={classes.covtext}>보장내용</p>
-            <div className={classes.covdiv}>
-              {data.all_cover &&
-                data.all_cover.map((key, value) => {
-                  if (value > 2 && key == 1)
-                    return (
-                      <div key={value} className={classes.badge} size="badge">
-                        {coverType[value]}
-                      </div>
-                    );
-                })}
-            </div>
-          </div>
+      </div>
+      <div className={classes.titleBadge}>
+        <h2>{data.insurance.insurance_name}</h2>
+        <h5>보장내용</h5>
+        <div>
+          {data.all_cover &&
+            data.all_cover.map((key, value) => {
+              if (value > 2 && key == 1)
+                return (
+                  <Sheet key={value} className={classes.badge} size="badge">
+                    {coverType[value]}
+                  </Sheet>
+                );
+            })}
         </div>
-        <div className={classes.colDiv}>
-          {/* <h3>Sure점수</h3> */}
-          <SureScore value={data.sure_score.toFixed(2)} />
-          {/* <h4>평균 70.34</h4> */}
-        </div>
-        <div className={classes.colDiv}>
-          <div className={classes.rowDiv}>
-            <p className={classes.feetext}>월</p>
-            <h3 className="fw-bold">{data.fee}</h3>
-            <p className={classes.feetext}>원</p>
-          </div>
-          <Link to={`${data.id}/${user}`} state={{ data }}>
-            <button className={classes.detailButton}>상세보기</button>
-          </Link>
-          <button className={classes.compareButton}>비교하기</button>
-        </div>
+      </div>
+      <div className={classes.sureScore}>
+        <h3>Sure점수</h3>
+        <SureScore value={data.sure_score.toFixed(2)} />
+        <h4>평균 70.34</h4>
+      </div>
+      <div>
+        <h5>월{data.fee}원</h5>
+        <Link to={`${data.id}/${user}`} state={{ data }}>
+          <button className={classes.compareButton}>상세보기</button>
+        </Link>
+        <button className={classes.compareButton}>비교하기</button>
       </div>
     </div>
   ));
