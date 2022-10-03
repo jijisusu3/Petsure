@@ -31,3 +31,35 @@
     justify-content: center;
     align-items: center;
 }
+
+.compare {
+    position: fixed;
+    bottom: 0;
+    width: 80%;
+}
+
+.compareCard {
+    display: flex;
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    width: 60%;
+    justify-items: center;
+}
+
+.compare_logo {
+    display: flex;
+    justify-content: center;
+    width: 160px;
+    display: flex;
+    align-items: center;
+}
+
+.dialog_content {
+    display: flex;
+}
+
+.compare_chart {
+    width: 500px;
+    height: 300px;
+}
