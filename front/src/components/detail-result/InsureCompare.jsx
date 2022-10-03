@@ -48,11 +48,11 @@ const CompareCard = ({ data, user, addToCompare, removeFromCompare, selected }) 
         <button className={classes.compareButton}>상세보기</button>
       </Link>
       {selected && selected.includes(data) ? (
-        <button color="red" onClick={() => removeFromCompare(data)}>
+        <button key={data.id} color="red" onClick={() => removeFromCompare(data)}>
           Remove
         </button>
       ) : (
-        <button color="blue" onClick={() => addToCompare(data)}>
+        <button key={data.id} color="blue" onClick={() => addToCompare(data)}>
           Compare
         </button>
       )}

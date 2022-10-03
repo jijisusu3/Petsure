@@ -10,12 +10,9 @@ import DialogActions from '@mui/material/DialogActions';
 import Dialog from '@mui/material/Dialog';
 import classes from './InsureCard.module.css';
 
-import cal from '../../images/cal.svg';
+import CompareGraph from './CompareGraph';
 
-import { Chart as ChartJS } from 'chart.js/auto';
-// 버전 업글 이후 위에 것 사용 안해도 안 쓰면 오류남
-import styled from 'styled-components';
-import { Line } from 'react-chartjs-2';
+import cal from '../../images/cal.svg';
 
 const DataComparison = ({ sDatas, pDatas, cDatas, user }) => {
   const [selectedItems, setSelectedItems] = useState([]);
@@ -27,12 +24,28 @@ const DataComparison = ({ sDatas, pDatas, cDatas, user }) => {
   const [mscore, setMscore] = useState([]);
 
   const addToCompare = item => {
-    setSelectedItems(selectedItems => [...selectedItems, item]);
-    setInsId(insId => [...insId, item.id]);
-    setSscore(sscore => [...sscore, { x: item.id.toString(), y: item.sure_score }]);
-    setPscore(pscore => [...pscore, { x: item.id.toString(), y: item.price_score }]);
-    setCscore(cscore => [...cscore, { x: item.id.toString(), y: item.insurance.company_score }]);
-    setMscore(mscore => [...mscore, { x: item.id.toString(), y: item.matching_score }]);
+    if (selectedItems.length < 3) {
+      setSelectedItems(selectedItems => [...selectedItems, item]);
+      setInsId(insId => [...insId, item.id]);
+      setSscore(sscore => [...sscore, { x: item.id.toString(), y: item.sure_score }]);
+      setPscore(pscore => [...pscore, { x: item.id.toString(), y: item.price_score }]);
+      setCscore(cscore => [...cscore, { x: item.id.toString(), y: item.insurance.company_score }]);
+      setMscore(mscore => [...mscore, { x: item.id.toString(), y: item.matching_score }]);
+    } else {
+      alert('보험은 3개까지만 선택 가능합니다.');
+      const filteredItems = selectedItems.filter(data => data.id !== item.id);
+      setSelectedItems(selectedItems => filteredItems);
+      const filteredIds = insId.filter(data => data !== item.id);
+      setInsId(insId => filteredIds);
+      const filteredSscore = sscore.filter(data => Number(data.x) !== item.id);
+      setSscore(sscore => filteredSscore);
+      const filteredPscore = pscore.filter(data => Number(data.x) !== item.id);
+      setPscore(pscore => filteredPscore);
+      const filteredCscore = cscore.filter(data => Number(data.x) !== item.id);
+      setCscore(cscore => filteredCscore);
+      const filteredMscore = mscore.filter(data => Number(data.x) !== item.id);
+      setMscore(mscore => filteredMscore);
+    }
   };
 
   const removeFromCompare = item => {
@@ -85,89 +98,6 @@ const DataComparison = ({ sDatas, pDatas, cDatas, user }) => {
     setText(e.target.value);
   };
 
-  // graph
-  const data = {
-    datasets: [
-      {
-        type: 'line',
-        label: '슈어점수',
-        borderColor: 'rgb(54, 162, 235)',
-        borderWidth: 2,
-        data: sscore,
-        yAxisID: 'y_sub',
-      },
-      {
-        type: 'bar',
-        label: '보험사 신뢰등급',
-        backgroundColor: 'rgb(255, 99, 132)',
-        data: cscore,
-        borderColor: 'red',
-        borderWidth: 2,
-      },
-      {
-        type: 'bar',
-        label: '가격대비 보장점수',
-        backgroundColor: 'rgb(75, 192, 192)',
-        data: pscore,
-        yAxisID: 'y_sub',
-        indexAxis: 'x',
-      },
-      {
-        type: 'bar',
-        label: '예상 적합도',
-        backgroundColor: 'rgb(175, 192, 192)',
-        data: mscore,
-        yAxisID: 'y_sub',
-        indexAxis: 'x',
-      },
-    ],
-  };
-  const options = {
-    spanGaps: true,
-    maxBarThickness: 30,
-    grouped: true,
-    interaction: {
-      mode: 'index',
-    },
-    plugins: {
-      legend: {
-        labels: {
-          usePointStyle: true,
-          padding: 10,
-        },
-      },
-      tooltip: {
-        backgroundColor: 'rgba(124, 35, 35, 0.4)',
-        padding: 10,
-        bodySpacing: 5,
-        usePointStyle: true,
-        filter: item => item.parsed.y !== null,
-        callbacks: {
-          title: context => context[0].label,
-          label: context => {
-            let label = context.dataset.label + '' || '';
-
-            return context.parsed.y !== null ? label + ': ' + context.parsed.y : null;
-          },
-        },
-      },
-    },
-    scales: {
-      y: [
-        {
-          ticks: {
-            display: false,
-          },
-        },
-      ],
-      y_sub: {
-        position: 'right',
-        ticks: {
-          display: false,
-        },
-      },
-    },
-  };
   return (
     <>
       {4 > selectedItems.length && selectedItems.length > 1 && (
@@ -239,9 +169,7 @@ const DataComparison = ({ sDatas, pDatas, cDatas, user }) => {
               </tbody>
             </table>
             <DialogActions />
-            <div>
-              <Line type="line" data={data} options={options} />
-            </div>
+            <CompareGraph sscore={sscore} pscore={pscore} cscore={cscore} mscore={mscore} />
             <div className="me-3">
               <div className="d-flex pb-3">
                 <img src={cal} alt="" className="pe-3" />
