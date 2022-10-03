@@ -1,5 +1,5 @@
 .width_max {
-    width : 1100px;
+    width : 940px;
     margin-left: 50px;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .h1_padding_bolder {
-    font-size: 48px;
+    font-size: 44px;
     font-weight: bolder;
     padding : 5px 0 30px 0;
     margin : 0;
@@ -35,12 +35,12 @@
 
 .h5_grey_font {
     color:#7a8982;
-    font-size: 24px;
-    margin-top: 120px;
+    font-size: 22px;
+    margin-top: 160px;
     padding-left: 50px;
 }
 .sureline {
-    width: 1200px;
+    width: 1000px;
     height: 4px;
     margin-top: 5px;
     background-color: #C2D1CA;

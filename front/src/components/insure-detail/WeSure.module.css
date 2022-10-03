@@ -10,9 +10,13 @@
     display: flex;
     justify-content: space-around;
 }
-
-
-
+.sureline {
+    width: 1000px;
+    height: 4px;
+    margin-top: 5px;
+    background-color: #C2D1CA;
+    margin-bottom: 80px;
+}
 .width_max {
     width : 100%;
 }
@@ -63,5 +67,5 @@
 }
 
 .width_max {
-    width : 1200px;
+    width : 1000px;
 }
