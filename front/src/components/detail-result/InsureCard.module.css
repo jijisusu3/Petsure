@@ -19,14 +19,14 @@
 .insure_logo {
     display: flex;
     justify-content: center;
-    width: 200px;
-    margin: 3rem;
+    width: 180px;
+    margin-left: 3rem;
     display: flex;
     align-items: center;
 }
 .titleBadge {
     /* padding-left: 40px; */
-    width: 390px;
+    width: 280px;
 }
 .detailButton {
     width: 150px;
@@ -47,12 +47,6 @@
     font-size: 20px;
     color: #f4aa41;
     margin-top: 1rem;
-}
-
-
-.sureScore {
-    justify-content: center;
-    align-items: center;
 }
 
 .compare {
@@ -92,7 +86,7 @@
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
-    margin: 3rem;
+    margin-right: 3rem;
 }
 .rowDiv {
     display: flex;
