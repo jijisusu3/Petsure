@@ -29,8 +29,8 @@ function HeaderNav() {
       <Container fluid>
         <Navbar.Brand href="/" className="ms-3">
           <img
-            src={`${process.env.PUBLIC_URL}/petsureLogo.png`}
-            width="40"
+            src={`${process.env.PUBLIC_URL}/logo.svg`}
+            width="144"
             height="40"
             className="d-inline-block align-top"
             alt=""

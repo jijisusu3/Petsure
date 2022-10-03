@@ -9,7 +9,7 @@ import ret from '../../images/return.svg';
 const InsureCard = () => {
   const [flipped, setflipped] = useState(false);
   const location = useLocation();
-  const [incentives, setIncentives] = useState([]);
+  const [incentives, setIncentives] = useState(['??????']);
 
   const [text, setText] = useState('');
   const insId = location.state.data.id;
@@ -34,10 +34,10 @@ const InsureCard = () => {
     <CardContainer>
       <CardInner className={flipped ? 'flipped' : ''}>
         <CardFront>
-          <RowDiv>
+          <LogoDiv>
             <img
               alt="insure"
-              style={{ width: 200, height: 70, marginTop: 15 }}
+              style={{ width: 150, height: 40 }}
               src={location.state.data.insurance.company_logo}
             />
             <div className="ms-5">
@@ -45,19 +45,19 @@ const InsureCard = () => {
               <h4 className="fw-bold pb-3">{location.state.data.insurance.insurance_name}</h4>
               <BasicText>{location.state.data.insurance.content}</BasicText>
             </div>
-          </RowDiv>
+          </LogoDiv>
           <div>
             <RowDiv>
               <BasicText className="pe-2">납입 / 보험기간</BasicText>
-              <h5 className="fw-bold">{location.state.data.insurance.payment_period}년</h5>
+              <h6 className="fw-bold">{location.state.data.insurance.payment_period}년</h6>
             </RowDiv>
             <RowDiv>
               <BasicText className="pe-2">월</BasicText>
-              <h3 className="fw-bold">{location.state.data.fee}원</h3>
+              <h4 className="fw-bold">{location.state.data.fee}원</h4>
             </RowDiv>
             <CalButton onClick={() => setflipped(true)}>
               <img src={calc} alt="img" className="pe-3" />
-              <CalText className="fw-bold">보장 금액 계산하기</CalText>
+              <CalText>보장 금액 계산하기</CalText>
             </CalButton>
           </div>
         </CardFront>
@@ -65,16 +65,16 @@ const InsureCard = () => {
           <div>
             <img
               alt="insure"
-              style={{ width: 200, height: 70 }}
+              style={{ width: 150, height: 40 }}
               src={location.state.data.insurance.company_logo}
             />
             <RowDiv>
-              <h3 className="fw-bold pt-3">{location.state.data.insurance.insurance_name}</h3>
+              <h4 className="fw-bold pt-3">{location.state.data.insurance.insurance_name}</h4>
               <BasicText>은?</BasicText>
             </RowDiv>
           </div>
           <div className="me-3">
-            <div className="d-flex pb-3">
+            <div className="d-flex pb-2">
               <img src={cal} alt="" className="pe-3" />
               <BasicText>동물병원에서 통원치료비</BasicText>
             </div>
@@ -83,12 +83,12 @@ const InsureCard = () => {
               <BasicBtn onClick={() => register()}>원 청구 시</BasicBtn>
             </div>
             <CardBox>
-              <h2 className="pe-2">{incentives}</h2>
-              <BasicText>원 보장</BasicText>
+              <h3 className="ms-5">{incentives}</h3>
+              <FeeText>원 보장</FeeText>
             </CardBox>
           </div>
           <ReturnBtn className="ms-3" onClick={() => setflipped(false)}>
-            <img src={ret} style={{ width: 40, height: 40 }} />
+            <img src={ret} style={{ width: 36, height: 36 }} />
           </ReturnBtn>
         </CardBack>
       </CardInner>
@@ -98,6 +98,7 @@ const InsureCard = () => {
 export default InsureCard;
 
 const CardContainer = styled.div`
+  margin-top: 3rem;
   display: flex;
   flex-direction: column;
   // cursor: pointer;
@@ -116,7 +117,7 @@ const CardSide = css`
   min-width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   -moz-backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
@@ -126,8 +127,8 @@ const CardSide = css`
 `;
 const CardInner = styled.div`
   // flex: 1;
-  width: 1200px;
-  height: 200px;
+  width: 800px;
+  height: 180px;
   display: flex;
   transition: transform 500ms;
   transform-style: preserve-3d;
@@ -151,6 +152,12 @@ const CardBack = styled.div`
   display: flex;
   flex-direction: row;
 `;
+const LogoDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
 const RowDiv = styled.div`
   display: flex;
   flex-direction: row;
@@ -161,8 +168,8 @@ const CalButton = styled.button`
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  width: 250px;
-  height: 50px;
+  width: 200px;
+  height: 40px;
   color: white;
   background-color: #f7f7f7;
   border: none;
@@ -175,14 +182,14 @@ const CalButton = styled.button`
 `;
 const CalText = styled.p`
   color: #5e6088;
+  font-weight: 600;
 `;
-
 const BasicText = styled.p`
   display: flex;
   align-items: flex-end;
   color: #5b5b5b;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 15px;
+  font-weight: 600;
 `;
 const BasicBtn = styled.button`
   display: flex;
@@ -199,12 +206,18 @@ const BasicBtn = styled.button`
 const CardBox = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
   background-color: #f4aa41;
   color: white;
   border-radius: 10px;
-  width: 300px;
-  height: 50px;
+  width: 250px;
+  height: 40px;
+`;
+const FeeText = styled.p`
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000;
+  position: absolute;
+  right: 150px;
 `;
 const ReturnBtn = styled.button`
   position: absolute;
@@ -215,4 +228,5 @@ const ReturnBtn = styled.button`
 `;
 const Ipt = styled.input`
   border-radius: 10px;
+  width: 180px;
 `;

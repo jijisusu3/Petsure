@@ -311,17 +311,19 @@ def detail(request):
     for i in into_user:
         user.append(data.get(i))
     user.append(0)
+    print(user)
 
 
     if data['species'] == 1:
         df_user = pd.read_csv("./knn_data/doguser.csv", encoding="cp949")
+        k = 51
     else:
         df_user = pd.read_csv("./knn_data/catuser.csv", encoding="cp949")
+        k = 191
     
     df_user.drop(['animal_name', 'species', 'animal_birth', 'breed'], axis=1, inplace=True)
     neighbor_list = df_user.values.tolist()
-
-    k = 51
+    print(df_user)
 
     lst = [0] * 8
     pk_lst = [0] * 8
@@ -474,7 +476,7 @@ def detail(request):
         before_ranking.append(temp_detail)
     
     result["sure_ranking"] = sorted(before_ranking, key = lambda item: ( -item['sure_score']))
-    result["price_ranking"] = sorted(before_ranking, key = lambda item: ( -item['fee']))
+    result["price_ranking"] = sorted(before_ranking, key = lambda item: ( item['fee']))
     result["cover_ranking"] = sorted(before_ranking, key= lambda item: ( -item['cover_count']))
     
 

@@ -1,33 +1,156 @@
-.insureCard {
-    align-items: center;
-    display:flex; 
+.mainbox {
+    justify-content: center;
+    display: flex;
 }
-
+.insureCard {
+    width: 1000px;
+    height: 200px;
+    justify-content: space-between;
+    align-items: center;
+    display:flex;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #d7d7d7;
+    margin: 2rem;
+}
+.name {
+    font-size: 24px;
+    font-weight: bold;
+}
 .insure_logo {
     display: flex;
     justify-content: center;
-    width: 320px;
+    width: 180px;
+    margin-left: 3rem;
+    display: flex;
+    align-items: center;
+}
+.titleBadge {
+    /* padding-left: 40px; */
+    width: 280px;
+}
+.detailButton {
+    width: 150px;
+    height: 40px;
+    color: white;
+    background-color: #F4AA41;
+    border: 1px solid #F4AA41;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-top: 1rem;
+}
+.detailButton:hover {
+    color: #ffffff;
+    opacity: 0.85;
+    box-shadow: 3px 3px 5px #d7d7d7;
+}
+  
+.compareButton {
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    border: 1px solid #F4AA41;
+    border-radius: 10px;
+    font-size: 20px;
+    color: #f4aa41;
+    margin-top: 1rem;
+}
+.removeButton {
+    width: 150px;
+    height: 40px;
+    background-color: #F4AA41;
+    border: 1px solid #F4AA41;
+    font-size: 20px;
+    color: white;
+    margin-top: 1rem;
+    opacity: 0.5;border-radius: 10px;
+}
+.compareButton:hover {
+    background-color: #F4AA41;
+    color: white;
+    opacity: 0.5;
+    box-shadow: 3px 3px 5px #d7d7d7;
+}
+.removeButton:hover {
+    background-color: white;
+    color: #f4aa41;
+    opacity: 0.5;
+    box-shadow: 3px 3px 5px #d7d7d7;
+}
+.compare {
+    position: fixed;
+    bottom: 0;
+    width: 80%;
+}
+
+.compareCard {
+    display: flex;
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    width: 60%;
+    justify-items: center;
+}
+
+.compare_logo {
+    display: flex;
+    justify-content: center;
+    width: 160px;
     display: flex;
     align-items: center;
 }
 
-.titleBadge {
-    padding-left: 40px;
-    width: 390px;
+.dialog_content {
+    display: flex;
 }
 
-.detailButton {
-    background-color: #F4AA41;
-    border-color: #F4AA41;
+.compare_chart {
+    width: 500px;
+    height: 300px;
 }
 
-.compareButton {
-    background-color: white;
-    border-color: #F4AA41;
-    color: black;
-}
-
-.sureScore {
-    justify-content: center;
+.colDiv {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
     align-items: center;
+    margin-right: 3rem;
+}
+.rowDiv {
+    display: flex;
+    align-items: flex-end;
+}
+.feetext {
+    font-size: 18px;
+    font-weight: bold;
+    color: #838383;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+.covbox{
+    margin-top: 1rem;
+    display: flex;
+}
+.covtext {
+    font-size: 18px;
+    font-weight: bold;
+    color: #838383;
+    padding-right: 1rem;
+}
+.covdiv {
+    width: 180px;
+    column-count: 2;
+}
+.badge {
+    margin-bottom: 1rem;
+    height: 36px;
+    line-height: 36px;
+    width: 80px;
+    text-align: center;
+    background-color: #F0B622;
+    border-radius: 10px;
+  }
+.badgetext {
+    color: white;
+    display: flex;
+    justify-content: center;
 }
