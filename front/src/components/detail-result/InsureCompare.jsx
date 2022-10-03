@@ -1,9 +1,7 @@
 import React from 'react';
 import classes from './InsureCard.module.css';
 import { Link } from 'react-router-dom';
-
-import { SureScore } from '../common/SureScore';
-import Sheet from '../common/Sheet';
+import { SureScoreA } from '../common/SureScore';
 
 const coverType = {
   0: '좋은상품',
@@ -18,44 +16,56 @@ const coverType = {
 };
 
 const CompareCard = ({ data, user, addToCompare, removeFromCompare, selected }) => (
-  <div key={data.id} className={classes.insureCard}>
-    <div>
+  <div key={data.id} className={classes.mainbox}>
+    <div className={classes.insureCard}>
       <img className={classes.insure_logo} alt="insure" src={data.insurance.company_logo} />
-    </div>
-    <div className={classes.titleBadge}>
-      <h2>{data.insurance.insurance_name}</h2>
-      <h5>보장내용</h5>
-      <div>
-        {data.all_cover &&
-          data.all_cover.map((key, value) => {
-            if (value > 3 && key == 1)
-              return (
-                <Sheet key={value} className={classes.badge} size="badge">
-                  {coverType[value]}
-                </Sheet>
-              );
-          })}
+      <div className={classes.titleBadge}>
+        <p className={classes.name}>{data.insurance.insurance_name}</p>
+        <div className={classes.covbox}>
+          <p className={classes.covtext}>보장내용</p>
+          <div className={classes.covdiv}>
+            {data.all_cover &&
+              data.all_cover.map((key, value) => {
+                if (value > 3 && key == 1)
+                  return (
+                    <div key={value} className={classes.badge} size="badge">
+                      {coverType[value]}
+                    </div>
+                  );
+              })}
+          </div>
+        </div>
       </div>
-    </div>
-    <div className={classes.sureScore}>
-      <h3>Sure점수</h3>
-      <SureScore value={data.sure_score.toFixed(2)} />
-      <h4>평균 70.34</h4>
-    </div>
-    <div>
-      <h5>월{data.fee}원</h5>
-      <Link to={`${user}/${data.id}`} state={{ data }}>
-        <button className={classes.compareButton}>상세보기</button>
-      </Link>
-      {selected && selected.includes(data) ? (
-        <button key={data.id} color="red" onClick={() => removeFromCompare(data)}>
-          Remove
-        </button>
-      ) : (
-        <button key={data.id} color="blue" onClick={() => addToCompare(data)}>
-          Compare
-        </button>
-      )}
+      <SureScoreA value={data.sure_score.toFixed(2)} />
+      <div className={classes.colDiv}>
+        <div className={classes.rowDiv}>
+          <p className={classes.feetext}>월</p>
+          <h3 className="fw-bold">{data.fee}</h3>
+          <p className={classes.feetext}>원</p>
+        </div>
+        <Link to={`${user}/${data.id}`} state={{ data }}>
+          <button className={classes.detailButton}>상세보기</button>
+        </Link>
+        {selected && selected.includes(data) ? (
+          <button
+            className={classes.compareButton}
+            key={data.id}
+            color="red"
+            onClick={() => removeFromCompare(data)}
+          >
+            Remove
+          </button>
+        ) : (
+          <button
+            className={classes.compareButton}
+            key={data.id}
+            color="blue"
+            onClick={() => addToCompare(data)}
+          >
+            Compare
+          </button>
+        )}
+      </div>
     </div>
   </div>
 );

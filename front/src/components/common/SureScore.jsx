@@ -83,7 +83,7 @@ export const SureScore = ({ value }) => {
           color: '#BBB7B7',
         }}
       >
-        평균: 89점
+        평균: 84.7점
       </div>
     </div>
   );
@@ -92,15 +92,15 @@ export const SureScoreA = ({ value }) => {
   const color = value > 90 ? '#50b840' : value < 30 ? '#eb5757' : '#F0B622';
   const data = createChartDataA(value, color);
   return (
-    <div style={{ width: '250px', padding: '2rem', position: 'relative' }}>
+    <div style={{ width: '220px', padding: '2rem', position: 'relative' }}>
       <Doughnut height="120px" data={data} options={data.options} />
       <div
         style={{
           position: 'absolute',
-          top: '8%',
+          top: '12%',
           left: 0,
           width: '100%',
-          fontSize: '26px',
+          fontSize: '22px',
           fontWeight: 'bold',
           textAlign: 'center',
           color: '#7A8982',
@@ -114,7 +114,7 @@ export const SureScoreA = ({ value }) => {
           top: '45%',
           left: 0,
           width: '100%',
-          fontSize: '38px',
+          fontSize: '34px',
           fontWeight: 'bold',
           textAlign: 'center',
           color,
@@ -128,13 +128,13 @@ export const SureScoreA = ({ value }) => {
           top: '65%',
           left: 0,
           width: '100%',
-          fontSize: '22px',
+          fontSize: '18px',
           fontWeight: '600',
           textAlign: 'center',
           color: '#BBB7B7',
         }}
       >
-        평균: 89점
+        평균: 84.7점
       </div>
     </div>
   );

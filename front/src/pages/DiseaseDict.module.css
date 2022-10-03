@@ -1,7 +1,7 @@
 .main {
   display: flex;
   justify-content: space-evenly;
-  margin: 3rem 18rem 3rem;
+  margin: 3rem 15rem 3rem;
 }
 .mainBox {
   color: #ffffff;
