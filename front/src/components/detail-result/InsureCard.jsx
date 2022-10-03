@@ -40,13 +40,13 @@ const DataComparison = ({ sDatas, pDatas, cDatas, user }) => {
     setSelectedItems(selectedItems => filteredItems);
     const filteredIds = insId.filter(data => data !== item.id);
     setInsId(insId => filteredIds);
-    const filteredSscore = sscore.filter(data => data.x !== item.id);
+    const filteredSscore = sscore.filter(data => Number(data.x) !== item.id);
     setSscore(sscore => filteredSscore);
-    const filteredPscore = pscore.filter(data => data.x !== item.id);
+    const filteredPscore = pscore.filter(data => Number(data.x) !== item.id);
     setPscore(pscore => filteredPscore);
-    const filteredCscore = cscore.filter(data => data.x !== item.id);
+    const filteredCscore = cscore.filter(data => Number(data.x) !== item.id);
     setCscore(cscore => filteredCscore);
-    const filteredMscore = mscore.filter(data => data.x !== item.id);
+    const filteredMscore = mscore.filter(data => Number(data.x) !== item.id);
     setMscore(mscore => filteredMscore);
   };
 
