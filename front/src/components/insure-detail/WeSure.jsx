@@ -55,22 +55,22 @@ export function WeSure() {
         direction="row"
         justifyContent="space-between"
         alignItems="baseline"
-        style={{ width: 1000 }}
+        style={{ width: 800 }}
       >
         <p style={{ color: '#F0B622', fontWeight: 600, fontSize: 36 }}>
-          We <span style={{ fontSize: 48, fontWeight: 630 }}>SURE !</span>
+          We <span style={{ fontSize: 40, fontWeight: 630 }}>SURE !</span>
         </p>
-        <p style={{ color: '#717171', fontSize: 24, fontWeight: 600 }}>
+        <p style={{ color: '#717171', fontSize: 22, fontWeight: 600 }}>
           당신에게 필요한{' '}
-          <span style={{ fontSize: 32, color: '#F58613', fontWeight: 620 }}>추천 정보</span>
+          <span style={{ fontSize: 30, color: '#F58613', fontWeight: 620 }}>추천 정보</span>
         </p>
       </Grid>
       <div className={classes.sureline} />
       <div style={{ marginLeft: 30 }}>
-        <p style={{ fontSize: 22, fontWeight: 600, color: '#7A8982', marginBottom: 4 }}>
+        <p style={{ fontSize: 20, fontWeight: 600, color: '#7A8982', marginBottom: 4 }}>
           유저 보험 평가
         </p>
-        <span style={{ fontSize: 40, fontWeight: 700, marginBottom: 8 }}>
+        <span style={{ fontSize: 38, fontWeight: 700, marginBottom: 8 }}>
           다른 사람들은 이 보험을
         </span>
         <span style={{ fontSize: 40, fontWeight: 700, marginBottom: 8, color: '#F58613' }}>
@@ -89,11 +89,11 @@ export function WeSure() {
           })()}
         </span>
       </div>
-      <div style={{ width: '60%', margin: 100, marginLeft: 250 }}>
+      <div style={{ width: '60%', margin: 100, marginLeft: 150 }}>
         <PieChart
           data={data}
           paddingAngle={0}
-          style={{ width: '540px', height: '540px' }}
+          style={{ width: '500px', height: '540px' }}
           label={({ x, y, dx, dy, dataEntry }) => (
             <text
               x={x}
@@ -123,10 +123,10 @@ export function WeSure() {
       <br />
 
       <div>
-        <p style={{ fontSize: 22, fontWeight: 600, color: '#7A8982', marginLeft: 30 }}>
+        <p style={{ fontSize: 20, fontWeight: 600, color: '#7A8982', marginLeft: 30 }}>
           보험에서 빠진 약관 영양제로 보충
         </p>
-        <p style={{ fontSize: 40, fontWeight: 700, marginLeft: 30 }}>
+        <p style={{ fontSize: 38, fontWeight: 700, marginLeft: 30 }}>
           이 보험에서 빠진{' '}
           <span className={classes.h1_fontcolor_yellow}>
             {' '}

@@ -86,7 +86,7 @@ export function InsureCoverage() {
       r: {
         pointLabels: {
           font: {
-            size: 22,
+            size: 20,
             weight: 'bold',
           },
         },
