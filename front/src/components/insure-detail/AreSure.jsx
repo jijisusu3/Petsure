@@ -100,20 +100,20 @@ export function AreSure() {
   }
 
   return (
-    <div style={{ marginTop: 50 }}>
+    <div>
       <Grid
         container
         direction="row"
         justifyContent="space-between"
         alignItems="baseline"
-        style={{ width: 1000 }}
+        style={{ width: 800 }}
       >
         <p style={{ color: '#F0B622', fontWeight: 600, fontSize: 36 }}>
-          Are You <span style={{ fontSize: 48, fontWeight: 630 }}>SURE?!</span>
+          Are You <span style={{ fontSize: 40, fontWeight: 630 }}>SURE?!</span>
         </p>
-        <p style={{ color: '#717171', fontSize: 24, fontWeight: 600 }}>
+        <p style={{ color: '#717171', fontSize: 22, fontWeight: 600 }}>
           이 보험 얼마나{' '}
-          <span style={{ fontSize: 32, color: '#F58613', fontWeight: 620 }}>확신</span>할 수 있나요?
+          <span style={{ fontSize: 30, color: '#F58613', fontWeight: 620 }}>확신</span>할 수 있나요?
         </p>
       </Grid>
       <div className={classes.sureline} />
@@ -124,25 +124,25 @@ export function AreSure() {
         alignItems="flex-end"
         style={{ marginBottom: 56, width: 1000 }}
       >
-        <div style={{ marginLeft: 30 }}>
-          <p style={{ fontSize: 44, fontWeight: 700, marginBottom: 8 }}>
+        <div style={{ marginLeft: 20 }}>
+          <p style={{ fontSize: 40, fontWeight: 700, marginBottom: 8 }}>
             이 보험의 <span style={{ color: '#F58613' }}>슈어 점수</span>
             <SureIcon sureScore={location.state.data.sure_score.toFixed(2)} />
           </p>
-          <p style={{ fontSize: 22, fontWeight: 600, color: '#7A8982', marginBottom: 4 }}>
+          <p style={{ fontSize: 19, fontWeight: 600, color: '#7A8982', marginBottom: 4 }}>
             '슈어 점수'는 아래의 세 가지 항목을 종합한 수치입니다.
           </p>
-          <p style={{ fontSize: 22, fontWeight: 600, color: '#7A8982' }}>
+          <p style={{ fontSize: 19, fontWeight: 600, color: '#7A8982' }}>
             물음표 아이콘을 클릭하시면 각 지수에 대해 더 상세히 알려드려요!
           </p>
         </div>
         <div>
-          <div style={{ width: 250, position: 'relative', marginRight: 110 }}>
+          <div style={{ width: 250, marginRight: 230 }}>
             <SureScore width="100%" value={location.state.data.sure_score.toFixed(2)} />
           </div>
         </div>
       </Grid>
-      <div style={{ marginTop: 30 }}>
+      <div style={{ marginTop: 0 }}>
         <div className={classes.threeScore}>
           <div className={classes.threeText}>
             <OneText scoreName="보험사 신뢰 등급" />

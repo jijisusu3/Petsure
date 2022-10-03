@@ -9,23 +9,24 @@ const CompareGraph = ({ sscore, pscore, cscore, mscore }) => {
       {
         type: 'line',
         label: '슈어점수',
-        borderColor: 'rgb(54, 162, 235)',
-        borderWidth: 2,
+        borderColor: 'rgba(245, 134, 19, 0.8)',
+        backgroundColor: 'rgba(245, 134, 19, 0.8)',
+        borderWidth: 5,
         data: sscore,
         yAxisID: 'y_sub',
       },
       {
         type: 'bar',
         label: '보험사 신뢰등급',
-        backgroundColor: 'rgb(255, 99, 132)',
+        backgroundColor: 'rgba(146, 211, 245, 1)',
+        borderColor: 'rgba(146, 211, 245, 1)',
         data: cscore,
-        borderColor: 'red',
         borderWidth: 2,
       },
       {
         type: 'bar',
         label: '가격대비 보장점수',
-        backgroundColor: 'rgb(75, 192, 192)',
+        backgroundColor: 'rgba(192, 250, 124, 1)',
         data: pscore,
         yAxisID: 'y_sub',
         indexAxis: 'x',
@@ -33,7 +34,7 @@ const CompareGraph = ({ sscore, pscore, cscore, mscore }) => {
       {
         type: 'bar',
         label: '예상 적합도',
-        backgroundColor: 'rgb(175, 192, 192)',
+        backgroundColor: 'rgba(240, 182, 34, 1)',
         data: mscore,
         yAxisID: 'y_sub',
         indexAxis: 'x',
@@ -41,45 +42,48 @@ const CompareGraph = ({ sscore, pscore, cscore, mscore }) => {
     ],
   };
   const options = {
+    categoryPercentage: 0.4,
+    barPercentage: 0.5,
+    maintainAspectRatio: false,
     spanGaps: true,
-    maxBarThickness: 30,
+    maxBarThickness: 20,
     grouped: true,
     interaction: {
       mode: 'index',
     },
     plugins: {
       legend: {
+        position: 'bottom',
         labels: {
           usePointStyle: true,
           padding: 10,
-        },
-      },
-      tooltip: {
-        backgroundColor: 'rgba(124, 35, 35, 0.4)',
-        padding: 10,
-        bodySpacing: 5,
-        usePointStyle: true,
-        filter: item => item.parsed.y !== null,
-        callbacks: {
-          title: context => context[0].label,
-          label: context => {
-            let label = context.dataset.label + '' || '';
-
-            return context.parsed.y !== null ? label + ': ' + context.parsed.y : null;
+          font: {
+            size: 18,
+            weight: 500,
+            family: 'Pretendard',
           },
         },
       },
+      tooltip: false,
     },
     scales: {
       y: [
         {
           ticks: {
             display: false,
+            font: {
+              size: 20,
+            },
           },
         },
       ],
       y_sub: {
         position: 'right',
+        labels: {
+          font: {
+            size: 24,
+          },
+        },
         ticks: {
           display: false,
         },
@@ -87,8 +91,8 @@ const CompareGraph = ({ sscore, pscore, cscore, mscore }) => {
     },
   };
   return (
-    <div>
-      <Line type="line" data={data} options={options} />
+    <div style={{ width: 800, height: 280 }}>
+      <Line type="line" syt data={data} options={options} width={700} height={500} />
     </div>
   );
 };
