@@ -31,6 +31,8 @@
 .inImg {
   width: 200px;
   height: 200px;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
 }
 .dText {
   font-weight: bold;
