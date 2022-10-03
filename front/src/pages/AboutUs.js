@@ -1,6 +1,5 @@
-// import SettingsContainer from '../../components/settings/SettingsContainer';
+import AboutUs from '../components/aboutus/AboutUs';
 
 export function AboutUsPage() {
-  // return <SettingsContainer />;
-  return <h1>AboutUs</h1>;
+  return <AboutUs />;
 }

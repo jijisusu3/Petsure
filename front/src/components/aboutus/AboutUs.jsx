@@ -1,9 +1,11 @@
-import AboutUsForm from './AboutUsForm';
+import { Banner } from './Banner';
+import { Projects } from './Projects';
 
 const AboutUs = () => {
   return (
     <div>
-      <AboutUs />
+      <Banner />
+      <Projects />
     </div>
   );
 };
