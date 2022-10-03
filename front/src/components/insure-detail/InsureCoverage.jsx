@@ -37,19 +37,21 @@ export function InsureCoverage() {
     }
   });
 
-  location.state.data.special.map(specialGuarantee => {
-    if (specialGuarantee.cover_type == 3) {
-      sergeryCost = specialGuarantee.price / 1.9;
-    } else if (specialGuarantee.cover_type == 4) {
-      kneeJoint = specialGuarantee.price / 1.1;
-    } else if (specialGuarantee.cover_type == 5) {
-      skinDisease = specialGuarantee.price * 1.8;
-    } else if (specialGuarantee.cover_type == 6) {
-      mouthDisease = specialGuarantee.price / 1.7;
-    } else if (specialGuarantee.cover_type == 7) {
-      urinarySystem = specialGuarantee.price / 1.9;
-    }
-  });
+  if (location.state.data.special) {
+    location.state.data.special.map(specialGuarantee => {
+      if (specialGuarantee.cover_type == 3) {
+        sergeryCost = specialGuarantee.price / 1.9;
+      } else if (specialGuarantee.cover_type == 4) {
+        kneeJoint = specialGuarantee.price / 1.1;
+      } else if (specialGuarantee.cover_type == 5) {
+        skinDisease = specialGuarantee.price * 1.8;
+      } else if (specialGuarantee.cover_type == 6) {
+        mouthDisease = specialGuarantee.price / 1.7;
+      } else if (specialGuarantee.cover_type == 7) {
+        urinarySystem = specialGuarantee.price / 1.9;
+      }
+    });
+  }
   const arr = [
     { guarantee: '수술치료비', cost: sergeryCost },
     { guarantee: '슬관절', cost: kneeJoint },

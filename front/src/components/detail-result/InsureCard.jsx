@@ -1,206 +1,235 @@
-import { SureScore } from '../common/SureScore';
-import Sheet from '../common/Sheet';
 import React, { useState, useEffect } from 'react';
-import classes from './InsureCard.module.css';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
+import Button from '@mui/material/Button';
+import CompareCard from './InsureCompare';
+import Card from '@mui/material/Card';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogActions from '@mui/material/DialogActions';
+import Dialog from '@mui/material/Dialog';
+import classes from './InsureCard.module.css';
 
-const coverType = {
-  0: '좋은상품',
-  1: '통원치료비',
-  2: '입원치료비',
-  3: '수술치료비',
-  4: '슬관절',
-  5: '피부병',
-  6: '구강',
-  7: '비뇨기',
-  8: '배상책임',
+import CompareGraph from './CompareGraph';
+
+import cal from '../../images/cal.svg';
+
+const DataComparison = ({ sDatas, pDatas, cDatas, user }) => {
+  const [selectedItems, setSelectedItems] = useState([]);
+  const [insId, setInsId] = useState([]);
+  const inId = insId.join(':');
+  const [sscore, setSscore] = useState([]);
+  const [pscore, setPscore] = useState([]);
+  const [cscore, setCscore] = useState([]);
+  const [mscore, setMscore] = useState([]);
+
+  const addToCompare = item => {
+    if (selectedItems.length < 3) {
+      setSelectedItems(selectedItems => [...selectedItems, item]);
+      setInsId(insId => [...insId, item.id]);
+      setSscore(sscore => [...sscore, { x: item.id.toString(), y: item.sure_score }]);
+      setPscore(pscore => [...pscore, { x: item.id.toString(), y: item.price_score }]);
+      setCscore(cscore => [...cscore, { x: item.id.toString(), y: item.insurance.company_score }]);
+      setMscore(mscore => [...mscore, { x: item.id.toString(), y: item.matching_score }]);
+    } else {
+      alert('보험은 3개까지만 선택 가능합니다.');
+      const filteredItems = selectedItems.filter(data => data.id !== item.id);
+      setSelectedItems(selectedItems => filteredItems);
+      const filteredIds = insId.filter(data => data !== item.id);
+      setInsId(insId => filteredIds);
+      const filteredSscore = sscore.filter(data => Number(data.x) !== item.id);
+      setSscore(sscore => filteredSscore);
+      const filteredPscore = pscore.filter(data => Number(data.x) !== item.id);
+      setPscore(pscore => filteredPscore);
+      const filteredCscore = cscore.filter(data => Number(data.x) !== item.id);
+      setCscore(cscore => filteredCscore);
+      const filteredMscore = mscore.filter(data => Number(data.x) !== item.id);
+      setMscore(mscore => filteredMscore);
+    }
+  };
+
+  const removeFromCompare = item => {
+    const filteredItems = selectedItems.filter(data => data.id !== item.id);
+    setSelectedItems(selectedItems => filteredItems);
+    const filteredIds = insId.filter(data => data !== item.id);
+    setInsId(insId => filteredIds);
+    const filteredSscore = sscore.filter(data => Number(data.x) !== item.id);
+    setSscore(sscore => filteredSscore);
+    const filteredPscore = pscore.filter(data => Number(data.x) !== item.id);
+    setPscore(pscore => filteredPscore);
+    const filteredCscore = cscore.filter(data => Number(data.x) !== item.id);
+    setCscore(cscore => filteredCscore);
+    const filteredMscore = mscore.filter(data => Number(data.x) !== item.id);
+    setMscore(mscore => filteredMscore);
+  };
+
+  // modal
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const valuelist = [1, 2, 3, 4, 5, 6, 7, 8];
+  function prices(insure) {
+    const pricess = valuelist.map(value =>
+      insure.basic.filter(one => one.cover_type === value)[0]
+        ? insure.basic.filter(one => one.cover_type === value)[0].price
+        : insure.special && insure.special.filter(two => two.cover_type === value)[0]
+        ? insure.special.filter(two => two.cover_type === value)[0].price
+        : '-',
+    );
+    return pricess;
+  }
+
+  // 계산기
+  const [text, setText] = useState('');
+  const [incentives, setIncentives] = useState([]);
+  const register = () => {
+    axios
+      .get(`https://j7b202.p.ssafy.io/api/calc/${text}/${inId}`)
+      .then(response => {
+        console.log(response);
+        setIncentives(response.data.result);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+  const onChange = e => {
+    setText(e.target.value);
+  };
+
+  return (
+    <>
+      {4 > selectedItems.length && selectedItems.length > 1 && (
+        <Card className={classes.compareCard}>
+          {selectedItems.map(el => (
+            <div key={el.id}>
+              <img className={classes.compare_logo} alt="insure" src={el.insurance.company_logo} />
+              <div>{el.insurance.insurance_name}</div>
+            </div>
+          ))}
+          <Button onClick={handleOpen}>보험 비교하기</Button>
+          <Dialog
+            PaperProps={{
+              style: {
+                height: '30000px',
+                minWidth: '1000px',
+                overflowY: 'scroll',
+                display: 'flex',
+              },
+            }}
+            open={open}
+            onClose={handleClose}
+          >
+            <DialogTitle>보험비교</DialogTitle>
+            <table>
+              <thead>
+                <tr>
+                  <th>보험상품</th>
+                  {selectedItems.map(el => (
+                    <th key={el.id}>
+                      <img
+                        className={classes.compare_logo}
+                        alt="insure"
+                        src={el.insurance.company_logo}
+                      />
+                      <div>{el.insurance.insurance_name}</div>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                <td>
+                  <div>보험료</div>
+                  <div>약관</div>
+                  <div>통원치료비</div>
+                  <div>입원치료비</div>
+                  <div>수술치료비</div>
+                  <div>슬관절</div>
+                  <div>피부병</div>
+                  <div>구강</div>
+                  <div>비뇨기</div>
+                  <div>배상책임</div>
+                </td>
+                {selectedItems.map(el => (
+                  <td key={el.id}>
+                    <div>{el.fee}</div>
+                    <div>&nbsp;</div>
+                    {prices(el).map((price, index) => (
+                      <div key={index}>
+                        {price === '-' ? (
+                          <div>{price}</div>
+                        ) : (
+                          <div>{(price * 10000).toLocaleString() + '원'}</div>
+                        )}
+                      </div>
+                    ))}
+                  </td>
+                ))}
+              </tbody>
+            </table>
+            <DialogActions />
+            <CompareGraph sscore={sscore} pscore={pscore} cscore={cscore} mscore={mscore} />
+            <div className="me-3">
+              <div className="d-flex pb-3">
+                <img src={cal} alt="" className="pe-3" />
+                <div>동물병원에서 통원치료비</div>
+              </div>
+              <div className="d-flex pb-3">
+                <input type="number" onChange={onChange} value={text} />
+                <button onClick={() => register()}>원 청구 시</button>
+              </div>
+              {incentives.map(incentive => (
+                <div>
+                  <h2>{incentive}</h2>
+                  <div>원 보장</div>
+                </div>
+              ))}
+            </div>
+            {console.log(sscore)}
+          </Dialog>
+        </Card>
+      )}
+      <Tabs defaultActiveKey="슈어 점수 순" id="tab" className="mb-3">
+        <Tab eventKey="슈어 점수 순" title="슈어 점수 순">
+          {sDatas.map(data => (
+            <CompareCard
+              key={data.id}
+              data={data}
+              user={user}
+              selected={selectedItems}
+              addToCompare={addToCompare}
+              removeFromCompare={removeFromCompare}
+            />
+          ))}
+        </Tab>
+        <Tab eventKey="낮은 가격 순" title="낮은 가격 순">
+          {pDatas.map(data => (
+            <CompareCard
+              key={data.id}
+              data={data}
+              user={user}
+              selected={selectedItems}
+              addToCompare={addToCompare}
+              removeFromCompare={removeFromCompare}
+            />
+          ))}
+        </Tab>
+        <Tab eventKey="많은 보장 순" title="많은 보장 순">
+          {cDatas.map(data => (
+            <CompareCard
+              key={data.id}
+              data={data}
+              user={user}
+              selected={selectedItems}
+              addToCompare={addToCompare}
+              removeFromCompare={removeFromCompare}
+            />
+          ))}
+        </Tab>
+      </Tabs>
+    </>
+  );
 };
 
-export function CData() {
-  const [datas, setDatas] = useState([]);
-  const [user, setUser] = useState([]);
-  useEffect(() => {
-    // dispatch(prdActions.getPostDB());
-    axios
-      .post('/api/insurance/detail/', {
-        breed: 31,
-        animal_name: '이봉봉',
-        species: 1,
-        animal_birth: 2,
-        hospitalization: 4,
-        outpatient: 3,
-        operation: 1,
-        patella: 4,
-        skin_disease: 3,
-        dental: 2,
-        urinary: 1,
-        liability: 1,
-      })
-      .then(response => {
-        setDatas(response.data.cover_ranking);
-        setUser(response.data.detail_user);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  });
-  return datas.map(data => (
-    <div key={data.id} className={classes.insureCard}>
-      <div>
-        <img className={classes.insure_logo} alt="insure" src={data.insurance.company_logo} />
-      </div>
-      <div className={classes.titleBadge}>
-        <h2>{data.insurance.insurance_name}</h2>
-        <h5>보장내용</h5>
-        <div>
-          {data.all_cover &&
-            data.all_cover.map((key, value) => {
-              if (value > 2 && key == 1)
-                return (
-                  <Sheet key={value} className={classes.badge} size="badge">
-                    {coverType[value]}
-                  </Sheet>
-                );
-            })}
-        </div>
-      </div>
-      <div className={classes.sureScore}>
-        <h3>Sure점수</h3>
-        <SureScore value={data.sure_score.toFixed(2)} />
-        <h4>평균 70.34</h4>
-      </div>
-      <div>
-        <h5>월{data.fee}원</h5>
-        <Link to={`${data.id}/${user}`} state={{ data }}>
-          <button className={classes.compareButton}>상세보기</button>
-        </Link>
-        <button className={classes.compareButton}>비교하기</button>
-      </div>
-    </div>
-  ));
-}
-export function PData() {
-  const [datas, setDatas] = useState([]);
-  const [user, setUser] = useState([]);
-  useEffect(() => {
-    axios
-      .post('/api/insurance/detail/', {
-        breed: 31,
-        animal_name: '이봉봉',
-        species: 1,
-        animal_birth: 2,
-        hospitalization: 4,
-        outpatient: 3,
-        operation: 1,
-        patella: 4,
-        skin_disease: 3,
-        dental: 2,
-        urinary: 1,
-        liability: 1,
-      })
-      .then(response => {
-        setDatas(response.data.price_ranking);
-        setUser(response.data.detail_user);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  });
-  return datas.map(data => (
-    <div key={data.id} className={classes.insureCard}>
-      <div>
-        <img className={classes.insure_logo} alt="insure" src={data.insurance.company_logo} />
-      </div>
-      <div className={classes.titleBadge}>
-        <h2>{data.insurance.insurance_name}</h2>
-        <h5>보장내용</h5>
-        <div>
-          {data.all_cover &&
-            data.all_cover.map((key, value) => {
-              if (value > 2 && key == 1)
-                return (
-                  <Sheet key={value} className={classes.badge} size="badge">
-                    {coverType[value]}
-                  </Sheet>
-                );
-            })}
-        </div>
-      </div>
-      <div className={classes.sureScore}>
-        <h3>Sure점수</h3>
-        <SureScore value={data.sure_score.toFixed(2)} />
-        <h4>평균 70.34</h4>
-      </div>
-      <div>
-        <h5>월{data.fee}원</h5>
-        <Link to={`${data.id}/${user}`} state={{ data }}>
-          <button className={classes.compareButton}>상세보기</button>
-        </Link>
-        <button className={classes.compareButton}>비교하기</button>
-      </div>
-    </div>
-  ));
-}
-export function SData() {
-  const [datas, setDatas] = useState([]);
-  const [user, setUser] = useState([]);
-  useEffect(() => {
-    axios
-      .post('/api/insurance/detail/', {
-        breed: 31,
-        animal_name: '이봉봉',
-        species: 1,
-        animal_birth: 2,
-        hospitalization: 4,
-        outpatient: 3,
-        operation: 1,
-        patella: 4,
-        skin_disease: 3,
-        dental: 2,
-        urinary: 1,
-        liability: 1,
-      })
-      .then(response => {
-        setDatas(response.data.sure_ranking);
-        setUser(response.data.detail_user);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  });
-  return datas.map(data => (
-    <div key={data.id} className={classes.insureCard}>
-      <div>
-        <img className={classes.insure_logo} alt="insure" src={data.insurance.company_logo} />
-      </div>
-      <div className={classes.titleBadge}>
-        <h2>{data.insurance.insurance_name}</h2>
-        <h5>보장내용</h5>
-        <div>
-          {data.all_cover &&
-            data.all_cover.map((key, value) => {
-              if (value > 2 && key == 1)
-                return (
-                  <Sheet key={value} className={classes.badge} size="badge">
-                    {coverType[value]}
-                  </Sheet>
-                );
-            })}
-        </div>
-      </div>
-      <div className={classes.sureScore}>
-        <h3>Sure점수</h3>
-        <SureScore value={data.sure_score.toFixed(2)} />
-        <h4>평균 70.34</h4>
-      </div>
-      <div>
-        <h5>월{data.fee}원</h5>
-        <Link to={`${data.id}/${user}`} state={{ data }}>
-          <button className={classes.compareButton}>상세보기</button>
-        </Link>
-        <button className={classes.compareButton}>비교하기</button>
-      </div>
-    </div>
-  ));
-}
+export default DataComparison;
