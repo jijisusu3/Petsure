@@ -1,7 +1,7 @@
 FROM node:16.16.0 as build-stage
 WORKDIR /jenkins_home/workspace/petsure/front
 COPY package*.json ./
-RUN npm install
+RUN npm install --force
 COPY . .
 RUN npm run build
 FROM nginx:alpine
