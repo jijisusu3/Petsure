@@ -48,12 +48,12 @@ const CompareCard = ({ data, user, addToCompare, removeFromCompare, selected }) 
         </Link>
         {selected && selected.some(el => el.id === data.id) ? (
           <button
-            className={classes.compareButton}
+            className={classes.removeButton}
             key={data.id}
             color="red"
             onClick={() => removeFromCompare(data)}
           >
-            Remove
+            선택취소
           </button>
         ) : (
           <button
@@ -62,7 +62,7 @@ const CompareCard = ({ data, user, addToCompare, removeFromCompare, selected }) 
             color="blue"
             onClick={() => addToCompare(data)}
           >
-            Compare
+            비교하기
           </button>
         )}
       </div>

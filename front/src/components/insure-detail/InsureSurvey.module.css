@@ -1,21 +1,21 @@
 .survey{
-  width: 250px;
+  width: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: fixed;
   left: 1000px;
-  top: 25rem;
+  top: 20rem;
 }
 .run {
   background-color: #f4aa41;
   margin-bottom: 10px;
-  width: 250px;
-  height: 50px;
+  width: 200px;
+  height: 40px;
   border: none;
   border-radius: 10px; 
   color: white;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
 }
 .run:hover {
@@ -25,7 +25,7 @@
 }
 .mainbox{
   background-color: #f0f0f0;
-  height: 350px;
+  height: 280px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,13 +39,13 @@ hr{
   height: 2px;
 }
 .rectext {
-  font-weight: bold;
-  font-size: 20px;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
 }
 .ip {
-  width: 220px;
+  width: 180px;
   height: 60px;
   border-radius: 10px;
   box-shadow: 3px 3px 5px #dbdbdb;
@@ -53,17 +53,18 @@ hr{
 }
 .ip::placeholder {
   color: #dbdbdb;
+  font-size: 14px;
 }
 .subbtn {
   width: 70px;
-  height: 40px;
+  height: 36px;
   border: none;
   border-radius: 10px;
   background-color: #f4aa41;
   color: white;
   font-weight: bold;
   box-shadow: 1px 1px 3px #d7d7d7;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 .subbtn:hover {
   color: #ffffff;
