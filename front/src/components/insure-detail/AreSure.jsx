@@ -50,7 +50,16 @@ export function AreSure() {
       }
     };
     return (
-      <div style={{ fontSize: 24, fontWeight: 600, color: '#7A8982', margin: 22, marginLeft: 50 }}>
+      <div
+        style={{
+          fontSize: 22,
+          fontWeight: 600,
+          color: '#7A8982',
+          margin: 22,
+          marginLeft: 30,
+          marginRight: 0,
+        }}
+      >
         {scoreName}
         <img
           src={`${process.env.PUBLIC_URL}/question.png`}
@@ -96,15 +105,15 @@ export function AreSure() {
         container
         direction="row"
         justifyContent="space-between"
-        alignItems="center"
-        style={{ width: 1200 }}
+        alignItems="baseline"
+        style={{ width: 1000 }}
       >
         <p style={{ color: '#F0B622', fontWeight: 600, fontSize: 36 }}>
           Are You <span style={{ fontSize: 48, fontWeight: 630 }}>SURE?!</span>
         </p>
-        <p style={{ color: '#717171', fontSize: 28, fontWeight: 600 }}>
+        <p style={{ color: '#717171', fontSize: 24, fontWeight: 600 }}>
           이 보험 얼마나{' '}
-          <span style={{ fontSize: 36, color: '#F58613', fontWeight: 620 }}>확신</span>할 수 있나요?
+          <span style={{ fontSize: 32, color: '#F58613', fontWeight: 620 }}>확신</span>할 수 있나요?
         </p>
       </Grid>
       <div className={classes.sureline} />
@@ -113,23 +122,22 @@ export function AreSure() {
         direction="row"
         justifyContent="space-between"
         alignItems="flex-end"
-        width="1200"
-        style={{ marginBottom: 56 }}
+        style={{ marginBottom: 56, width: 1000 }}
       >
-        <div style={{ marginLeft: 50 }}>
-          <p style={{ fontSize: 48, fontWeight: 700, marginBottom: 8 }}>
+        <div style={{ marginLeft: 30 }}>
+          <p style={{ fontSize: 44, fontWeight: 700, marginBottom: 8 }}>
             이 보험의 <span style={{ color: '#F58613' }}>슈어 점수</span>
             <SureIcon sureScore={location.state.data.sure_score.toFixed(2)} />
           </p>
-          <p style={{ fontSize: 24, fontWeight: 600, color: '#7A8982', marginBottom: 4 }}>
+          <p style={{ fontSize: 22, fontWeight: 600, color: '#7A8982', marginBottom: 4 }}>
             '슈어 점수'는 아래의 세 가지 항목을 종합한 수치입니다.
           </p>
-          <p style={{ fontSize: 24, fontWeight: 600, color: '#7A8982' }}>
+          <p style={{ fontSize: 22, fontWeight: 600, color: '#7A8982' }}>
             물음표 아이콘을 클릭하시면 각 지수에 대해 더 상세히 알려드려요!
           </p>
         </div>
         <div>
-          <div style={{ width: 250, position: 'relative', marginRight: 400 }}>
+          <div style={{ width: 250, position: 'relative', marginRight: 110 }}>
             <SureScore width="100%" value={location.state.data.sure_score.toFixed(2)} />
           </div>
         </div>
@@ -146,20 +154,20 @@ export function AreSure() {
               style={{
                 fontSize: 18,
                 color: '#7A8982',
-                marginBottom: 33,
+                marginBottom: 29,
                 marginTop: 24,
               }}
             >
-              <span style={{ fontWeight: 600 }}>{insureScore.toFixed(1)}</span> / (평균: 86)
+              <span style={{ fontWeight: 600 }}>{insureScore.toFixed(1)}</span> / 평균: 80.5
             </div>
             <div
               style={{
                 fontSize: 18,
                 color: '#7A8982',
-                marginBottom: 32,
+                marginBottom: 29,
               }}
             >
-              <span style={{ fontWeight: 600 }}>{guaranteeScore.toFixed(1)}</span> / (평균: 86)
+              <span style={{ fontWeight: 600 }}>{guaranteeScore.toFixed(1)}</span> / 평균: 80.2
             </div>
             <div
               style={{
@@ -168,7 +176,7 @@ export function AreSure() {
                 marginBottom: 20,
               }}
             >
-              <span style={{ fontWeight: 600 }}>{suitScore.toFixed(1)}</span> / (평균: 86)
+              <span style={{ fontWeight: 600 }}>{suitScore.toFixed(1)}</span> / 평균: 91.1
             </div>
           </div>
           <div className={classes.threeBar}>
