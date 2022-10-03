@@ -75,12 +75,18 @@ function BasicInputForm() {
     animal_name: animal_name,
   };
 
+  const others = {
+    breed_name: breed_name,
+    birth_date: birth,
+  };
+
   const searchBasic = () => {
+    console.log(user_data);
     axios
       .post('api/insurance/basic/', user_data)
       .then(response => {
-        console.log(response.data);
         localStorage.setItem('user', JSON.stringify(user_data));
+        localStorage.setItem('others', JSON.stringify(others));
         navigate('/basicinput/basicresult', { state: response.data });
       })
       .catch(error => {
@@ -123,7 +129,7 @@ function BasicInputForm() {
         <div className={classes.ribbonshit}>
           <div>
             <h4 style={{ fontWeight: '600', textAlign: 'center', marginBottom: '20px' }}>
-              우리 아이 보험료 확인
+              우리 아이 보험 검색
             </h4>
           </div>
           <br />
@@ -191,10 +197,6 @@ function BasicInputForm() {
                       {item.name}
                     </option>
                   ))}
-                  {/* <option selected>Open this select menu</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option> */}
                 </select>
               </div>
             </div>

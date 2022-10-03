@@ -1,0 +1,295 @@
+.ribbonshit {
+  margin-top: 40px;
+  width: 800px;
+  margin: auto;
+}
+
+.detail_input {
+  cursor: pointer;
+  line-height: 20px;
+  font-size: 14px;
+  margin: 0px 10px 20px 10px;
+  padding: 0px 5px 5px 5px;
+}
+
+.detail_input .detail_label {
+  transform: none;
+  transition: none;
+  position: relative;
+  display: block;
+  float: left;
+  margin-right: 10px;
+  width: 25px;
+  height: 25px;
+  border: 1.5px solid rgb(224, 224, 224);
+  border-radius: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.detail_input .detail_label:after {
+  content: '';
+  position: absolute;
+  top: 3.3px;
+  left: 3.25px;
+  width: 16px;
+  height: 15px;
+  border-radius: 100%;
+  background-image: url('../../../public/img/paw.svg');
+  background-size: cover;
+  transform: scale(0);
+  opacity: .08;
+  pointer-events: none;
+  }
+.detail_input .detail_label:hover 
+.detail_label:after {
+  transform: scale(3.6);
+}
+input[type="radio"]:checked + .detail_label {
+  border-width: 2px;
+  border-color: #ee9930;
+}
+input[type="radio"]:checked + .detail_label:after {
+  transform: scale(1);
+  transform: all .2s cubic-bazier(.35, .9, .4, .9);
+  opacity: 1;
+}
+.hidden {
+  display: none;
+}
+
+.detailcontents{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+
+.detailq {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+.detailqtitle {
+  color: #ee9325;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  width: 100px;
+  height: 30px;
+  border: solid #ffdcb5 1px;
+  background-color: #fff9f4;
+  /* box-shadow: rgba(255, 212, 169, 0.16) 0px 1px 3px 0px, rgba(255, 212, 169, 0.16) 0px 0px 0px 1px; */
+  border-radius: 5px;
+  margin-right: 63px;
+  padding-top: 4px;
+}
+
+.detailscale {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  
+}
+
+.detailqnone {
+  width: 100px;
+  margin-right: 54px;
+  height: 30px;
+}
+
+.detailqnums {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  width: 325px;
+  height: 13px;
+  margin-bottom: 25px;
+  background-image: linear-gradient(to right, #fddab5, #ECA043);
+  border-radius: 5px;
+
+}
+
+.detailqnums > div{
+  margin-right: 28px;
+  margin-left: 28px;
+  color: white;
+  font-weight: 400;
+  font-size: 10px;
+  
+}
+
+.detailbtn {
+  margin: auto;
+  margin-top: 30px;
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  border-style: none;
+  color: white;
+  font-weight: 600;
+  background-color: #ed9f3f;
+}
+
+.detailbtn:hover {
+  opacity: 0.8;
+}
+
+.qinfo {
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  max-width: 600px;
+  background-color: #fafafa;
+  border-radius: 5px;
+  text-align: center;
+  border-color: rgb(224, 224, 224);
+  box-shadow: rgba(181, 181, 181, 0.16) 0px 1px 3px 0px, rgba(196, 196, 196, 0.15) 0px 0px 0px 1px;
+  transform: scale(1.0); /* 이미지 확대 */
+  transition: transform .5s; /* 시간 설정 */
+}
+
+
+.qinfo:hover {    /* hover 시 애니메이션 */
+  transform: scale(1.01);   /* 이미지 확대 */
+  transition: transform .5s;  /* 시간 설정 */
+}
+.realall {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+}
+
+.all {
+  display: flex;
+  flex-direction: row;  
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;  
+}
+
+.radio {
+  visibility:hidden;
+}
+
+.sqaure {
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: solid rgb(224, 224, 224) 1px;
+  color: #ee9325;
+  height: 35px;
+  width: 293px;
+  margin-left: 13px;
+  margin-top: 20px;
+  padding:  5px 5px 5px 15px;
+  font-size: 14px;
+}
+
+.sqaure::placeholder {
+  color: #edc697;
+}
+
+.sqaure1 {
+  background-color: #fff9f4;
+  border-radius: 8px;
+  border-style: none;
+  height: 35px;
+  width: 293px;
+  margin-left: 13px;
+  margin-top: 20px;
+  padding:  5px 5px 5px 15px;
+}
+
+.sqaure:focus {
+  outline: 0;
+  border-color: #ee9325 !important;
+  background-color: #fff9f4;
+  /* box-shadow: inset rgb(129, 120, 161) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em !important; */
+}
+
+.selectimg {
+  cursor: pointer;
+  transform: scale(1.0); /* 이미지 확대 */
+  transition: transform .5s; /* 시간 설정 */
+}
+
+.selectimg:hover{
+  transform: scale(1.03);   /* 이미지 확대 */
+  transition: transform .5s;  /* 시간 설정 */
+}
+
+.selectimg > input[type=radio]:checked + img {
+  /* border: 3px solid ; */
+  border-radius: 18px;
+  border: #ee9325 1px solid
+  /* box-shadow: rgb(255, 135, 15) 0px 0px 0.25em, rgba(255, 205, 131, 0.57) 0px 0.25em 1em; */
+}
+
+select {
+  margin-top: 10px;
+  margin-left: 6px;;
+  /* width: 260px; */
+  height: 195px;
+}
+
+select:focus {
+  border-color: #ee9325 !important;
+  box-shadow: inset rgb(241, 241, 241) 0px 0px 0.25em, rgba(234, 238, 246, 0.05) 0px 0.25em 1em !important;
+}
+
+.form-select {
+  font-size: 1.1rem;
+}
+ option {
+  padding: 4px;
+ }
+
+.threebtns{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lastprevbtn {
+  margin-top: 48.5px;
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  border-style: none;
+  color: white;
+  font-weight: 600;
+  background-color: #ed9f3f;
+}
+
+.submitbtn {
+  margin-top: 48.5px;
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  border-style: none;
+  color: white;
+  font-weight: 600;
+  background-image: linear-gradient(to right, #ed9f3f,rgb(235, 98, 13));
+}
+
+.lastprevbtn:hover {
+  opacity: 0.8;
+}
+
+.submitbtn:hover {
+  opacity: 0.8;
+}
+
+.submitbtn:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
