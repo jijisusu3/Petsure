@@ -46,7 +46,7 @@ const CompareCard = ({ data, user, addToCompare, removeFromCompare, selected }) 
         <Link to={`${user}/${data.id}`} state={{ data }}>
           <button className={classes.detailButton}>상세보기</button>
         </Link>
-        {selected && selected.includes(data) ? (
+        {selected && selected.some(el => el.id === data.id) ? (
           <button
             className={classes.compareButton}
             key={data.id}

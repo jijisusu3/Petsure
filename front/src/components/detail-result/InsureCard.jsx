@@ -27,10 +27,16 @@ const DataComparison = ({ sDatas, pDatas, cDatas, user }) => {
     if (selectedItems.length < 3) {
       setSelectedItems(selectedItems => [...selectedItems, item]);
       setInsId(insId => [...insId, item.id]);
-      setSscore(sscore => [...sscore, { x: item.id.toString(), y: item.sure_score }]);
-      setPscore(pscore => [...pscore, { x: item.id.toString(), y: item.price_score }]);
-      setCscore(cscore => [...cscore, { x: item.id.toString(), y: item.insurance.company_score }]);
-      setMscore(mscore => [...mscore, { x: item.id.toString(), y: item.matching_score }]);
+      setSscore(sscore => [...sscore, { x: item.id.toString(), y: item.sure_score.toFixed(2) }]);
+      setPscore(pscore => [...pscore, { x: item.id.toString(), y: item.price_score.toFixed(2) }]);
+      setCscore(cscore => [
+        ...cscore,
+        { x: item.id.toString(), y: item.insurance.company_score.toFixed(2) },
+      ]);
+      setMscore(mscore => [
+        ...mscore,
+        { x: item.id.toString(), y: item.matching_score.toFixed(2) },
+      ]);
     } else {
       alert('보험은 3개까지만 선택 가능합니다.');
       const filteredItems = selectedItems.filter(data => data.id !== item.id);
