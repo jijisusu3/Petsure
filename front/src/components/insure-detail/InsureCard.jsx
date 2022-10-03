@@ -9,7 +9,7 @@ import ret from '../../images/return.svg';
 const InsureCard = () => {
   const [flipped, setflipped] = useState(false);
   const location = useLocation();
-  const [incentives, setIncentives] = useState(['???????']);
+  const [incentives, setIncentives] = useState(['??????']);
 
   const [text, setText] = useState('');
   const insId = location.state.data.id;
@@ -37,7 +37,7 @@ const InsureCard = () => {
           <LogoDiv>
             <img
               alt="insure"
-              style={{ width: 180, height: 50 }}
+              style={{ width: 150, height: 40 }}
               src={location.state.data.insurance.company_logo}
             />
             <div className="ms-5">
@@ -49,11 +49,11 @@ const InsureCard = () => {
           <div>
             <RowDiv>
               <BasicText className="pe-2">납입 / 보험기간</BasicText>
-              <h5 className="fw-bold">{location.state.data.insurance.payment_period}년</h5>
+              <h6 className="fw-bold">{location.state.data.insurance.payment_period}년</h6>
             </RowDiv>
             <RowDiv>
               <BasicText className="pe-2">월</BasicText>
-              <h3 className="fw-bold">{location.state.data.fee}원</h3>
+              <h4 className="fw-bold">{location.state.data.fee}원</h4>
             </RowDiv>
             <CalButton onClick={() => setflipped(true)}>
               <img src={calc} alt="img" className="pe-3" />
@@ -65,11 +65,11 @@ const InsureCard = () => {
           <div>
             <img
               alt="insure"
-              style={{ width: 180, height: 50 }}
+              style={{ width: 150, height: 40 }}
               src={location.state.data.insurance.company_logo}
             />
             <RowDiv>
-              <h3 className="fw-bold pt-3">{location.state.data.insurance.insurance_name}</h3>
+              <h4 className="fw-bold pt-3">{location.state.data.insurance.insurance_name}</h4>
               <BasicText>은?</BasicText>
             </RowDiv>
           </div>
@@ -83,12 +83,12 @@ const InsureCard = () => {
               <BasicBtn onClick={() => register()}>원 청구 시</BasicBtn>
             </div>
             <CardBox>
-              <h2 className="ms-5">{incentives}</h2>
+              <h3 className="ms-5">{incentives}</h3>
               <FeeText>원 보장</FeeText>
             </CardBox>
           </div>
           <ReturnBtn className="ms-3" onClick={() => setflipped(false)}>
-            <img src={ret} style={{ width: 40, height: 40 }} />
+            <img src={ret} style={{ width: 36, height: 36 }} />
           </ReturnBtn>
         </CardBack>
       </CardInner>
@@ -127,8 +127,8 @@ const CardSide = css`
 `;
 const CardInner = styled.div`
   // flex: 1;
-  width: 1000px;
-  height: 200px;
+  width: 800px;
+  height: 180px;
   display: flex;
   transition: transform 500ms;
   transform-style: preserve-3d;
@@ -168,8 +168,8 @@ const CalButton = styled.button`
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  width: 250px;
-  height: 50px;
+  width: 200px;
+  height: 40px;
   color: white;
   background-color: #f7f7f7;
   border: none;
@@ -188,7 +188,7 @@ const BasicText = styled.p`
   display: flex;
   align-items: flex-end;
   color: #5b5b5b;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 600;
 `;
 const BasicBtn = styled.button`
@@ -209,7 +209,7 @@ const CardBox = styled.div`
   background-color: #f4aa41;
   color: white;
   border-radius: 10px;
-  width: 280px;
+  width: 250px;
   height: 40px;
 `;
 const FeeText = styled.p`
@@ -217,7 +217,7 @@ const FeeText = styled.p`
   font-weight: bold;
   color: #000000;
   position: absolute;
-  right: 180px;
+  right: 150px;
 `;
 const ReturnBtn = styled.button`
   position: absolute;
@@ -228,5 +228,5 @@ const ReturnBtn = styled.button`
 `;
 const Ipt = styled.input`
   border-radius: 10px;
-  width: 200px;
+  width: 180px;
 `;

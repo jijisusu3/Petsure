@@ -38,6 +38,13 @@
     font-size: 20px;
     margin-top: 1rem;
 }
+.detailButton:hover {
+    color: #f4aa41;
+    background-color: white;
+    /* opacity: 0.5; */
+    box-shadow: 3px 3px 5px #d7d7d7;
+}
+  
 .compareButton {
     width: 150px;
     height: 40px;
@@ -48,7 +55,13 @@
     color: #f4aa41;
     margin-top: 1rem;
 }
-
+.compareButton:hover {
+    background-color: #F4AA41;
+    color: white;
+    opacity: 0.5;
+    box-shadow: 3px 3px 5px #d7d7d7;
+}
+  
 .compare {
     position: fixed;
     bottom: 0;
@@ -116,10 +129,14 @@
 .badge {
     margin-bottom: 1rem;
     height: 36px;
-    line-height: 40px;
+    line-height: 36px;
     width: 80px;
     text-align: center;
     background-color: #F0B622;
     border-radius: 10px;
-    color: white;
   }
+.badgetext {
+    color: white;
+    display: flex;
+    justify-content: center;
+}
