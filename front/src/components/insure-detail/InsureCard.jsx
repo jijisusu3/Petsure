@@ -9,7 +9,7 @@ import ret from '../../images/return.svg';
 const InsureCard = () => {
   const [flipped, setflipped] = useState(false);
   const location = useLocation();
-  const [incentives, setIncentives] = useState([]);
+  const [incentives, setIncentives] = useState(['???????']);
 
   const [text, setText] = useState('');
   const insId = location.state.data.id;
