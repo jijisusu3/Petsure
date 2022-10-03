@@ -101,7 +101,7 @@ export const SureScoreA = ({ value }) => {
           left: 0,
           width: '100%',
           fontSize: '22px',
-          fontWeight: 'bold',
+          fontWeight: '600',
           textAlign: 'center',
           color: '#7A8982',
         }}

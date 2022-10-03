@@ -29,7 +29,7 @@ const CompareCard = ({ data, user, addToCompare, removeFromCompare, selected }) 
                 if (value > 3 && key == 1)
                   return (
                     <div key={value} className={classes.badge} size="badge">
-                      {coverType[value]}
+                      <p className={classes.badgetext}>{coverType[value]}</p>
                     </div>
                   );
               })}
