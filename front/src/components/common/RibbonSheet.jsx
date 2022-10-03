@@ -10,7 +10,7 @@ const RibbonSheet = ({ children, size, shallow, clickBlocked }) => {
     >
       <div className={`${classes.ribbon} ${classes['ribbon-top-left']}`}>
         {/* <span>ribbon</span> */}
-        <span>　</span>
+        <span>간단 검색</span>
       </div>
       {children}
     </div>

@@ -4,7 +4,6 @@ import BasicCard from './BasicCard';
 
 function BasicResultForm(results) {
   const insurances = results.results;
-  console.log(insurances);
   return (
     <div className={classes.top_padding}>
       {insurances.map(insurance => (

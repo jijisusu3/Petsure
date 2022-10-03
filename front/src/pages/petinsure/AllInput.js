@@ -53,6 +53,7 @@ export function AllInputPage() {
       liability,
     };
     const json = JSON.stringify(data, null, 16);
+    console.log(data);
     console.log(json);
   };
   return (

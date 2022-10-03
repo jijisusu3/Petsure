@@ -162,7 +162,7 @@ function BasicInputForm() {
           }}
         >
           <div className={classes.basicinput_main}>
-            <h2 className={classes.basicinput_title}>우리 아이 보험료 확인</h2>
+            <h2 className={classes.basicinput_title}>우리 아이 보험 검색</h2>
             <table className={classes.basicinput_table_border}>
               <tr>
                 <td className={classes.text_table_border}>

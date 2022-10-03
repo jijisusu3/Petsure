@@ -1,6 +1,8 @@
 import classes from './LandingFour.module.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function LandingThree() {
+  const navigate = useNavigate();
   return (
     <div className={classes.landingFour}>
       <br />

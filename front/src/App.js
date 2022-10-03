@@ -14,6 +14,7 @@ import { InsureComparePage } from './pages/petinsure/InsureCompare';
 import InsureDetailPage from './pages/petinsure/InsureDetail';
 import { DiseaseDictPage } from './pages/DiseaseDict';
 import { AboutUsPage } from './pages/AboutUs';
+import { DetailInputPage } from './pages/petinsure/DetailInput';
 
 const authPathSet = new Set([]);
 
@@ -46,7 +47,8 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/basicinput" element={<BasicInputPage />} />
           <Route path="basicinput/basicresult" element={<BasicResultPage />} />
-          <Route path="/allinput" element={<AllInputPage />} />
+          {/* <Route path="/allinput" element={<AllInputPage />} /> */}
+          <Route path="/allinput" element={<DetailInputPage />} />
           <Route path="allinput/detailresult" element={<DetailResultPage />} />
           <Route path="allinput/insurecompare" element={<InsureComparePage />} />
           <Route path="allinput/detailresult/:id1/:id2" element={<InsureDetailPage />} />
