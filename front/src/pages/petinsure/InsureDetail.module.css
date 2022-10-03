@@ -1,6 +1,8 @@
 .areSure {
-    width: 1442px;
-    margin-left: 80px;
+    margin-left: 250px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
 }
 
 .insureCard {
