@@ -13,14 +13,14 @@ export function MakeSure() {
         direction="row"
         justifyContent="space-between"
         alignItems="baseline"
-        style={{ width: 1000 }}
+        style={{ width: 800 }}
       >
         <p style={{ color: '#F0B622', fontWeight: 600, fontSize: 36 }}>
-          Make <span style={{ fontSize: 44, fontWeight: 630 }}>SURE .</span>
+          Make <span style={{ fontSize: 40, fontWeight: 630 }}>SURE .</span>
         </p>
         <p style={{ color: '#717171', fontSize: 24, fontWeight: 600 }}>
           확실하게 알아보는{' '}
-          <span style={{ fontSize: 32, color: '#F58613', fontWeight: 620 }}>보장 내역</span>
+          <span style={{ fontSize: 30, color: '#F58613', fontWeight: 620 }}>보장 내역</span>
         </p>
       </Grid>
       <div className={classes.sureline} />
