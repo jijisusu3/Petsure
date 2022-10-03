@@ -46,14 +46,14 @@ const CompareCard = ({ data, user, addToCompare, removeFromCompare, selected }) 
         <Link to={`${user}/${data.id}`} state={{ data }}>
           <button className={classes.detailButton}>상세보기</button>
         </Link>
-        {selected && selected.includes(data) ? (
+        {selected && selected.some(el => el.id === data.id) ? (
           <button
-            className={classes.compareButton}
+            className={classes.removeButton}
             key={data.id}
             color="red"
             onClick={() => removeFromCompare(data)}
           >
-            Remove
+            선택취소
           </button>
         ) : (
           <button
@@ -62,7 +62,7 @@ const CompareCard = ({ data, user, addToCompare, removeFromCompare, selected }) 
             color="blue"
             onClick={() => addToCompare(data)}
           >
-            Compare
+            비교하기
           </button>
         )}
       </div>
