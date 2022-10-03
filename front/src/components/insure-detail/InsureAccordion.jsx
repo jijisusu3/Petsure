@@ -46,25 +46,35 @@ export function InsureBasicAccordion() {
 
 export function InsureSpecialAccordion() {
   const location = useLocation();
-  const sdatas = location.state.data.special;
-  return sdatas.map(data => (
-    <Accordion key={data.cover_type} className="accordion">
-      <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-        <table>
-          <tr>
-            <td className={classes.width_14em_basic_td_middle}>{coverType[data.cover_type]}</td>
-            <td>{data.detail.split(':')[0]}</td>
-          </tr>
-        </table>
-      </AccordionSummary>
-      <AccordionDetails className="accordionText">
-        <table>
-          <tr>
-            <td className={classes.width_14em}> &nbsp;</td>
-            <td>{data.detail.split(':')[1]}</td>
-          </tr>
-        </table>
-      </AccordionDetails>
-    </Accordion>
-  ));
+  if (location.state.data.special) {
+    const sdatas = location.state.data.special;
+    return sdatas.map(data => (
+      <Accordion key={data.cover_type} className="accordion">
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <table>
+            <tr>
+              <td className={classes.width_14em_basic_td_middle}>{coverType[data.cover_type]}</td>
+              <td>{data.detail.split(':')[0]}</td>
+            </tr>
+          </table>
+        </AccordionSummary>
+        <AccordionDetails className="accordionText">
+          <table>
+            <tr>
+              <td className={classes.width_14em}> &nbsp;</td>
+              <td>{data.detail.split(':')[1]}</td>
+            </tr>
+          </table>
+        </AccordionDetails>
+      </Accordion>
+    ));
+  } else {
+    return (
+      <table>
+        <tr>
+          <td className={classes.width_14em_basic_td_middle}>특약이 선택되지 않은 상품입니다.</td>
+        </tr>
+      </table>
+    );
+  }
 }
