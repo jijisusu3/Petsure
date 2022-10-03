@@ -4,7 +4,7 @@
     background: #F58613;
     transform: scaleX(0);
     height: 20px;
-    width: 550px;
+    width: 400px;
     margin-bottom: 37px;
     transition: transform 2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   }
@@ -27,7 +27,7 @@
     width: 9.5%;
 }
 .sureline {
-    width: 1000px;
+    width: 800px;
     height: 4px;
     background-color: #C2D1CA;
     margin-bottom: 80px;
