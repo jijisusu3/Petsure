@@ -230,6 +230,7 @@ body {
   transition: 0.5s ease-in-out;
   opacity: 0;
   width: 100%;
+  white-space: pre-wrap;
 }
 .proj_imgbx:hover .proj_txtx {
   top: 50%;

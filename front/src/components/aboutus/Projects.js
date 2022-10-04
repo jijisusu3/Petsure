@@ -15,7 +15,7 @@ export const Projects = () => {
   const projects = [
     {
       title: '김지수',
-      description: 'Team Leader / FullStack Developer',
+      description: 'Team Leader / FullStack Developer \n 배포',
       imgUrl: projImg1,
     },
     {
@@ -34,14 +34,14 @@ export const Projects = () => {
       imgUrl: projImg4,
     },
     {
+      title: '✨PetSure 마스코트✨',
+      description: '🐱냥이와 멍이🐶',
+      imgUrl: projImg6,
+    },
+    {
       title: '김채윤',
       description: 'FrontEnd Developer',
       imgUrl: projImg5,
-    },
-    {
-      title: '✨PetSure 마스코트✨',
-      description: '냥이와 멍이',
-      imgUrl: projImg6,
     },
   ];
 
@@ -56,9 +56,9 @@ export const Projects = () => {
                   {/* <span className={classes.tagline}>About us</span> */}
                   <br />
                   <br />
-                  <h2 className={classes.font_black}> 🐱 Project Team Member 🐶</h2>
+                  <h2 className={classes.font_black}>💡 Project Team Member 💡</h2>
                   <br />
-                  <h3 className={classes.font_black}> 오목조목 팀원들을 소개합니다 </h3>
+                  <h3 className={classes.font_black}> [오목조목] 팀원들을 소개합니다 </h3>
                   <p>오목조목 : 자그마한 것이 모여서 야무진 느낌을 주는 모양</p>
                   <br />
                   <hr />
