@@ -138,10 +138,39 @@ function DetailInput() {
       getCatList();
     }
   }, [species]);
+  useEffect(() => {
+    let user = localStorage.getItem('user');
+    let othersinfo = localStorage.getItem('others');
+    user = JSON.parse(user);
+    othersinfo = JSON.parse(othersinfo);
+    if (user && othersinfo) {
+      setBreed(user.breed);
+      setAge(user.animal_birth);
+      setSpecies(user.species);
+      setName(user.animal_name);
+      setBirth(othersinfo.birth_date);
+      setBreedName(othersinfo.breed_name);
+      setIsName(true);
+      setIsBreed(true);
+      setIsBirth(true);
+    }
+  }, []);
 
   const onPageHandler = event => {
     setPage(event.target.value);
   };
+  // const onInfoHander = event => {
+  //   let user = localStorage.getItem('user');
+  //   let others = localStorage.getItem('others');
+  //   if (user && others) {
+  //     setBreed(user.breed);
+  //     setAge(user.animal_birth);
+  //     setSpecies(user.species);
+  //     setName(user.animal_name);
+  //     setBirth(others.birth_date);
+  //     setBreed(others.breed_name);
+  //   }
+  // };
 
   const user_data = {
     breed: breed,
@@ -168,7 +197,6 @@ function DetailInput() {
     axios
       .post('api/insurance/detail/', user_data)
       .then(response => {
-        console.log(response.data);
         localStorage.setItem('user', JSON.stringify(user_data));
         localStorage.setItem('others', JSON.stringify(others));
         navigate('/allinput/detailresult', { state: response.data });
