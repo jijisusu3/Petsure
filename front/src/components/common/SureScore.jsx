@@ -113,7 +113,7 @@ export const SureScoreA = ({ value }) => {
           color: '#7A8982',
         }}
       >
-        SURE 지수
+        SURE 점수
       </div>
       <div
         style={{
