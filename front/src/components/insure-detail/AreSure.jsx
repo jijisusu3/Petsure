@@ -1,14 +1,12 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { SureScore } from '../common/SureScore';
 // import ScoreBar from './ScoreBar';
 import { useLocation } from 'react-router-dom';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend, PointElement } from 'chart.js';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import classes from './AreSure.module.css';
 import Grid from '@mui/material/Grid';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import { useState } from 'react';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -108,7 +106,7 @@ export function AreSure() {
         alignItems="baseline"
         style={{ width: 800 }}
       >
-        <p style={{ color: '#F0B622', fontWeight: 600, fontSize: 36 }}>
+        <p style={{ color: '#F0B622', fontWeight: 600, fontSize: 36, marginTop: 80 }}>
           Are You <span style={{ fontSize: 40, fontWeight: 630 }}>SURE?!</span>
         </p>
         <p style={{ color: '#717171', fontSize: 22, fontWeight: 600 }}>
@@ -193,8 +191,8 @@ export function AreSure() {
             <Box sx={style}>
               <Grid container direction="row" alignItems="center">
                 <Grid className="ps-2">
-                  <Typography
-                    sx={{ fontWeight: 'bold', color: '#F58613', fontSize: 30 }}
+                  <p
+                    style={{ fontWeight: 'bold', color: '#F58613', fontSize: 30 }}
                     className="pb-3"
                   >
                     회사 신뢰 등급
@@ -203,31 +201,28 @@ export function AreSure() {
                     >
                       이렇게 만들었어요 !
                     </span>
-                  </Typography>
+                  </p>
                 </Grid>
               </Grid>
               <Grid>
-                <Typography
-                  sx={{ fontWeight: 'bold', fontSize: 20, marginTop: 2 }}
-                  className="py-2"
-                >
+                <p style={{ fontWeight: 'bold', fontSize: 20, marginTop: 2 }} className="py-2">
                   고객이 보험사를 얼마나 신뢰할 수 있는지를 판별할 수 있는 등급이에요.
-                </Typography>
-                <Typography sx={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
+                </p>
+                <p style={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
                   손해보험협회에서 소비자를 위해 공시하는 데이터를 기반으로 만들었어요.
-                </Typography>
-                <Typography sx={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
+                </p>
+                <p style={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
                   펫슈어는 각 보험사의 보험금 부지급률, 보험 청구 후 해지율, 불완전 판매율,
-                </Typography>
-                <Typography sx={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
+                </p>
+                <p style={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
                   지급지연률을 이용해 회사지수를 산출했어요.
-                </Typography>
-                <Typography sx={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
+                </p>
+                <p style={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
                   각 회사가 어느 정도로 고객과의 약속을 잘 이행하고 있는지 나타내며,
-                </Typography>
-                <Typography sx={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
+                </p>
+                <p style={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
                   A / B / C 등급으로 구분해서 제공합니다.
-                </Typography>
+                </p>
               </Grid>
             </Box>
           </Modal>
@@ -240,8 +235,8 @@ export function AreSure() {
             <Box sx={style}>
               <Grid container direction="row" alignItems="center">
                 <Grid className="ps-2">
-                  <Typography
-                    sx={{ fontWeight: 'bold', color: '#F58613', fontSize: 30 }}
+                  <p
+                    style={{ fontWeight: 'bold', color: '#F58613', fontSize: 30 }}
                     className="pb-3"
                   >
                     안심 보장 점수
@@ -250,31 +245,28 @@ export function AreSure() {
                     >
                       이렇게 만들었어요 !
                     </span>
-                  </Typography>
+                  </p>
                 </Grid>
               </Grid>
               <Grid>
-                <Typography
-                  sx={{ fontWeight: 'bold', fontSize: 20, marginTop: 2 }}
-                  className="py-2"
-                >
+                <p style={{ fontWeight: 'bold', fontSize: 20, marginTop: 2 }} className="py-2">
                   내 반려동물이 아팠을 때, 얼마나 많은 보장을 받을 수 있는지 판단한 점수에요.
-                </Typography>
-                <Typography sx={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
+                </p>
+                <p style={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
                   각 보험의 1회 최대 보장 금액, 연간 최대 보장 가능 횟수(금액), 자기부담금,
-                </Typography>
-                <Typography sx={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
+                </p>
+                <p style={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
                   보장비율을 참고해 만들었어요.
-                </Typography>
-                <Typography sx={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
+                </p>
+                <p style={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
                   지급지연률을 이용해 회사지수를 산출했어요.
-                </Typography>
-                <Typography sx={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
+                </p>
+                <p style={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
                   갑자기 찾아올 수 있는 반려동물의 질병 / 상해, 동물병원 진료비가 걱정이라면
-                </Typography>
-                <Typography sx={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
+                </p>
+                <p style={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
                   안심 보장 점수가 높은 보험을 선택하는 것을 추천드려요.
-                </Typography>
+                </p>
               </Grid>
             </Box>
           </Modal>
@@ -287,8 +279,8 @@ export function AreSure() {
             <Box sx={style}>
               <Grid container direction="row" alignItems="center">
                 <Grid className="ps-2">
-                  <Typography
-                    sx={{ fontWeight: 'bold', color: '#F58613', fontSize: 30 }}
+                  <p
+                    style={{ fontWeight: 'bold', color: '#F58613', fontSize: 30 }}
                     className="pb-3"
                   >
                     예상적합도
@@ -297,31 +289,28 @@ export function AreSure() {
                     >
                       이렇게 만들었어요 !
                     </span>
-                  </Typography>
+                  </p>
                 </Grid>
               </Grid>
               <Grid>
-                <Typography
-                  sx={{ fontWeight: 'bold', fontSize: 20, marginTop: 2 }}
-                  className="py-2"
-                >
+                <p style={{ fontWeight: 'bold', fontSize: 20, marginTop: 2 }} className="py-2">
                   해당 보험을 선택한 사람들이 나와 얼마나 유사한지 판단한 점수에요.
-                </Typography>
-                <Typography sx={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
+                </p>
+                <p style={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
                   나와 비슷한 보장을 원하는 고객들이 얼마나 많이 해당 보험을 선택했는지를
-                </Typography>
-                <Typography sx={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
+                </p>
+                <p style={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
                   기준으로 상세 보험을 추천해줍니다.
-                </Typography>
-                <Typography sx={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
+                </p>
+                <p style={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
                   나와 비슷한 생각을 가진 사용자가 반려동물을 위해
-                </Typography>
-                <Typography sx={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
+                </p>
+                <p style={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
                   꼼꼼히 따져보고 선택한 결과를 한 번에 파악해볼 수 있습니다.
-                </Typography>
-                <Typography sx={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
+                </p>
+                <p style={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
                   오직 펫슈어에서만 확인할 수 있는 정보입니다.
-                </Typography>
+                </p>
               </Grid>
             </Box>
           </Modal>
