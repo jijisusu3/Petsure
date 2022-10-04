@@ -151,14 +151,16 @@ input[type="radio"]:checked + .detail_label:after {
   text-align: center;
   border-color: rgb(224, 224, 224);
   box-shadow: rgba(181, 181, 181, 0.16) 0px 1px 3px 0px, rgba(196, 196, 196, 0.15) 0px 0px 0px 1px;
-  transform: scale(1.0); /* 이미지 확대 */
-  transition: transform .5s; /* 시간 설정 */
+  
+  /* transform: scale(1.0);
+  transition: transform .5s;  */
 }
 
 
 .qinfo:hover {    /* hover 시 애니메이션 */
-  transform: scale(1.01);   /* 이미지 확대 */
-  transition: transform .5s;  /* 시간 설정 */
+  animation: vibration .3s 2;
+  /* transform: scale(1.01);   
+  transition: transform .5s;   */
 }
 .realall {
   display: flex;
@@ -241,10 +243,10 @@ select {
   height: 195px;
 }
 
-select:focus {
+/* select:focus {
   border-color: #ee9325 !important;
   box-shadow: inset rgb(241, 241, 241) 0px 0px 0.25em, rgba(234, 238, 246, 0.05) 0px 0.25em 1em !important;
-}
+} */
 
 .form-select {
   font-size: 1.1rem;
@@ -293,3 +295,11 @@ select:focus {
   opacity: 0.5;
 }
 
+@keyframes vibration {
+  from {
+    transform: rotate(0.3deg);
+  }
+  to {
+    transform: rotate(-0.3deg);
+  }
+}
