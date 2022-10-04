@@ -24,7 +24,7 @@ export function WeSure() {
   const data = [
     { title: '추천해요', value: surveyA, color: '#92D3F5' },
     { title: '최고에요', value: surveyB, color: '#F0B622' },
-    { title: '좋아요', value: surveyC, color: '#C0FA7C' },
+    { title: '보통이에요', value: surveyC, color: '#C0FA7C' },
     { title: '그냥 그래요', value: surveyD, color: '#C4ACFF' },
     { title: '별로에요', value: surveyE, color: '#C2D1CA' },
   ];
@@ -57,7 +57,7 @@ export function WeSure() {
         alignItems="baseline"
         style={{ width: 800 }}
       >
-        <p style={{ color: '#F0B622', fontWeight: 600, fontSize: 36 }}>
+        <p style={{ color: '#F0B622', fontWeight: 600, fontSize: 36, marginTop: 120 }}>
           We <span style={{ fontSize: 40, fontWeight: 630 }}>SURE !</span>
         </p>
         <p style={{ color: '#717171', fontSize: 22, fontWeight: 600 }}>
@@ -80,7 +80,7 @@ export function WeSure() {
             } else if (maxSurvey == surveyScore[0]) {
               return ' 추천해요 ! 😉';
             } else if (maxSurvey == surveyScore[2]) {
-              return ' 괜찮다고 생각해요 ! 🙂';
+              return ' 보통이라고 생각해요 ! 🙂';
             } else if (maxSurvey == surveyScore[3]) {
               return ' 그냥 그렇다고 생각해요 ! 🤨';
             } else if (maxSurvey == surveyScore[4]) {
