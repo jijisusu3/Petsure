@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './InsureCard.module.css';
+import classes from './InsureCompare.module.css';
 import { Link } from 'react-router-dom';
 import { SureScoreA } from '../common/SureScore';
 
@@ -20,6 +20,7 @@ const CompareCard = ({ data, user, addToCompare, removeFromCompare, selected }) 
     <div className={classes.insureCard}>
       <img className={classes.insure_logo} alt="insure" src={data.insurance.company_logo} />
       <div className={classes.titleBadge}>
+        <p className={classes.nametext}>{data.name.substr(0, 2)}형</p>
         <p className={classes.name}>{data.insurance.insurance_name}</p>
         <div className={classes.covbox}>
           <p className={classes.covtext}>보장내용</p>
@@ -29,7 +30,7 @@ const CompareCard = ({ data, user, addToCompare, removeFromCompare, selected }) 
                 if (value > 3 && key == 1)
                   return (
                     <div key={value} className={classes.badge} size="badge">
-                      <p className={classes.badgetext}>{coverType[value]}</p>
+                      <p>{coverType[value]}</p>
                     </div>
                   );
               })}
@@ -40,7 +41,7 @@ const CompareCard = ({ data, user, addToCompare, removeFromCompare, selected }) 
       <div className={classes.colDiv}>
         <div className={classes.rowDiv}>
           <p className={classes.feetext}>월</p>
-          <h3 className="fw-bold">{data.fee}</h3>
+          <h4 className="fw-bold mx-1">{data.fee}</h4>
           <p className={classes.feetext}>원</p>
         </div>
         <Link to={`${user}/${data.id}`} state={{ data }}>
