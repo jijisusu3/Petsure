@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Tab from 'react-bootstrap/Tab';
-import Tabs from 'react-bootstrap/Tabs';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import TopCard from './TopCard';
 import CompareCard from './InsureCompare';
 import Card from '@mui/material/Card';
 import DialogTitle from '@mui/material/DialogTitle';
@@ -110,6 +112,10 @@ const DataComparison = ({ sDatas, pDatas, cDatas, user }) => {
     setText(e.target.value);
   };
 
+  const [tabIndex, setTabIndex] = useState(0);
+  const handleTabChange = (event, newTabIndex) => {
+    setTabIndex(newTabIndex);
+  };
   return (
     <>
       {4 > selectedItems.length && selectedItems.length > 1 && (
@@ -202,44 +208,95 @@ const DataComparison = ({ sDatas, pDatas, cDatas, user }) => {
           </Dialog>
         </Card>
       )}
-      <Tabs defaultActiveKey="슈어 점수 순" id="tab" className="mb-3">
-        <Tab eventKey="슈어 점수 순" title="슈어 점수 순">
-          {sDatas.map(data => (
-            <CompareCard
-              key={data.id}
-              data={data}
-              user={user}
-              selected={selectedItems}
-              addToCompare={addToCompare}
-              removeFromCompare={removeFromCompare}
-            />
-          ))}
-        </Tab>
-        <Tab eventKey="낮은 가격 순" title="낮은 가격 순">
-          {pDatas.map(data => (
-            <CompareCard
-              key={data.id}
-              data={data}
-              user={user}
-              selected={selectedItems}
-              addToCompare={addToCompare}
-              removeFromCompare={removeFromCompare}
-            />
-          ))}
-        </Tab>
-        <Tab eventKey="많은 보장 순" title="많은 보장 순">
-          {cDatas.map(data => (
-            <CompareCard
-              key={data.id}
-              data={data}
-              user={user}
-              selected={selectedItems}
-              addToCompare={addToCompare}
-              removeFromCompare={removeFromCompare}
-            />
-          ))}
-        </Tab>
-      </Tabs>
+      <Box>
+        <Box>
+          <Tabs value={tabIndex} onChange={handleTabChange} indicatorColor="secondary">
+            <Tab label="슈어 점수 순" />
+            <Tab label="낮은 가격 순" />
+            <Tab label="보장 많은 순" />
+          </Tabs>
+        </Box>
+        <Box>
+          {tabIndex === 0 && (
+            <Box>
+              <div className={classes.top_card}>
+                {sDatas.slice(0, 3).map(data => (
+                  <TopCard
+                    key={data.id}
+                    data={data}
+                    user={user}
+                    selected={selectedItems}
+                    addToCompare={addToCompare}
+                    removeFromCompare={removeFromCompare}
+                  />
+                ))}
+              </div>
+              {sDatas.slice(3, 8).map(data => (
+                <CompareCard
+                  key={data.id}
+                  data={data}
+                  user={user}
+                  selected={selectedItems}
+                  addToCompare={addToCompare}
+                  removeFromCompare={removeFromCompare}
+                />
+              ))}
+            </Box>
+          )}
+          {tabIndex === 1 && (
+            <Box>
+              <div className={classes.top_card}>
+                {pDatas.slice(0, 3).map(data => (
+                  <TopCard
+                    key={data.id}
+                    data={data}
+                    user={user}
+                    selected={selectedItems}
+                    addToCompare={addToCompare}
+                    removeFromCompare={removeFromCompare}
+                  />
+                ))}
+              </div>
+              {pDatas.slice(3, 8).map(data => (
+                <CompareCard
+                  key={data.id}
+                  data={data}
+                  user={user}
+                  selected={selectedItems}
+                  addToCompare={addToCompare}
+                  removeFromCompare={removeFromCompare}
+                />
+              ))}
+            </Box>
+          )}
+          {tabIndex === 2 && (
+            <Box>
+              <div className={classes.top_card}>
+                {cDatas.slice(0, 3).map(data => (
+                  <TopCard
+                    key={data.id}
+                    data={data}
+                    user={user}
+                    selected={selectedItems}
+                    addToCompare={addToCompare}
+                    removeFromCompare={removeFromCompare}
+                  />
+                ))}
+              </div>
+              {cDatas.slice(3, 8).map(data => (
+                <CompareCard
+                  key={data.id}
+                  data={data}
+                  user={user}
+                  selected={selectedItems}
+                  addToCompare={addToCompare}
+                  removeFromCompare={removeFromCompare}
+                />
+              ))}
+            </Box>
+          )}
+        </Box>
+      </Box>
     </>
   );
 };
