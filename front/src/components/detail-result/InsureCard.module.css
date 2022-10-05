@@ -154,3 +154,13 @@
     display: flex;
     justify-content: center;
 }
+
+.top_card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab_topcard {
+    inset-inline-start: 400px;
+}
