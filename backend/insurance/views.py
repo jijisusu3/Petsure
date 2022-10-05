@@ -171,7 +171,7 @@ def basic(request):
     basics = []
     condition = [0]*5
     dog_fee = [1, 1.1, 1.3, 1.57, 1.8, 1.95, 2.1, 2.2, 2.27, 1.9, 1.97]
-    cat_fee = [1, 0.95, 1.01, 1.03, 1.06, 1.15, 1.19, 1.25, 1.33]
+    cat_fee = [1, 0.95, 1.01, 1.03, 1.06, 1.15, 1.19, 1.25, 1.33, 1.23, 1.26]
     breed_info = {}
 
     if data['species'] == 1: # 개
@@ -201,16 +201,31 @@ def basic(request):
                 break               
         breed_info['disease_name'] = disease_list
         basics.append(breed_info)
-        insurances = Insurance_detail.objects.values()
-        distance = []
-        distance_id = []
-        for insure in insurances:
-            if Insurance.objects.filter(id=insure['insurance_id']).values('species').get()['species'] != 2:
-                tmp = insure['all_cover'][4:]
-                compare = np.array(tmp)
-                dist = np.linalg.norm(compare - condition)
-                distance.append(dist)
-                distance_id.append(insure['id'])
+
+        if data['animal_birth'] > 8:
+            insurances = Insurance_detail.objects.filter(insurance_id=1).values() | Insurance_detail.objects.filter(insurance_id=3).values()
+            distance = []
+            distance_id = []
+            for insure in insurances:
+                if Insurance.objects.filter(id=insure['insurance_id']).values('species').get()['species'] != 2:
+                    tmp = insure['all_cover'][4:]
+                    compare = np.array(tmp)
+                    dist = np.linalg.norm(compare - condition)
+                    distance.append(dist)
+                    distance_id.append(insure['id'])
+
+
+        else:
+            insurances = Insurance_detail.objects.values()
+            distance = []
+            distance_id = []
+            for insure in insurances:
+                if Insurance.objects.filter(id=insure['insurance_id']).values('species').get()['species'] != 2:
+                    tmp = insure['all_cover'][4:]
+                    compare = np.array(tmp)
+                    dist = np.linalg.norm(compare - condition)
+                    distance.append(dist)
+                    distance_id.append(insure['id'])
 
 
     if data['species'] == 2: # 고양이
@@ -236,17 +251,33 @@ def basic(request):
         breed_info['disease_name'] = disease_list
         basics.append(breed_info)
             
+        if data['animal_birth'] > 8:
+            insurances = Insurance_detail.objects.filter(insurance_id=4).values()
+            distance = []
+            distance_id = []
+            for insure in insurances:
+                if Insurance.objects.filter(id=insure['insurance_id']).values('species').get()['species'] != 1: 
+                    tmp = insure['all_cover'][4:]
+                    compare = np.array(tmp)
+                    dist = np.linalg.norm(compare - condition)
+                    distance.append(dist)
+                    distance_id.append(insure['id'])
 
-        insurances = Insurance_detail.objects.values()
-        distance = []
-        distance_id = []
-        for insure in insurances:
-            if Insurance.objects.filter(id=insure['insurance_id']).values('species').get()['species'] != 1: 
-                tmp = insure['all_cover'][4:]
-                compare = np.array(tmp)
-                dist = np.linalg.norm(compare - condition)
-                distance.append(dist)
-                distance_id.append(insure['id'])
+        else:
+        ###################################
+            insurances = Insurance_detail.objects.values()
+            distance = []
+            distance_id = []
+            for insure in insurances:
+                if Insurance.objects.filter(id=insure['insurance_id']).values('species').get()['species'] != 1: 
+                    tmp = insure['all_cover'][4:]
+                    compare = np.array(tmp)
+                    dist = np.linalg.norm(compare - condition)
+                    distance.append(dist)
+                    distance_id.append(insure['id'])
+
+
+
         
     df = pd.DataFrame({
         "distance" : distance,
