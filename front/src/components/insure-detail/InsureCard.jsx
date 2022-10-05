@@ -37,7 +37,7 @@ const InsureCard = () => {
           <LogoDiv>
             <img
               alt="insure"
-              style={{ width: 150, height: 40 }}
+              style={{ width: 150 }}
               src={location.state.data.insurance.company_logo}
             />
             <div className="ms-5">
@@ -65,7 +65,7 @@ const InsureCard = () => {
           <div>
             <img
               alt="insure"
-              style={{ width: 150, height: 40 }}
+              style={{ width: 180 }}
               src={location.state.data.insurance.company_logo}
             />
             <RowDiv>

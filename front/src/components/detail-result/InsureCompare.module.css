@@ -1,0 +1,123 @@
+.mainbox {
+  justify-content: center;
+  display: flex;
+}
+.insureCard {
+  width: 800px;
+  height: 180px;
+  justify-content: space-between;
+  align-items: center;
+  display:flex;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #d7d7d7;
+  margin: 1rem;
+}
+.name {
+  font-size: 20px;
+  font-weight: bold;
+}
+.nametext {
+  display: flex;
+  align-items: flex-end;
+  color: #5b5b5b;
+  font-size: 16px;
+  font-weight: 600;
+}
+.insure_logo {
+  display: flex;
+  justify-content: center;
+  width: 150px;
+  margin-left: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.detailButton {
+  width: 110px;
+  height: 34px;
+  color: white;
+  background-color: #F4AA41;
+  border: 1px solid #F4AA41;
+  border-radius: 10px;
+  font-size: 16px;
+  margin-top: 0.5rem;
+}
+.detailButton:hover {
+  color: #ffffff;
+  opacity: 0.85;
+  box-shadow: 3px 3px 5px #d7d7d7;
+}
+
+.compareButton {
+  width: 110px;
+  height: 34px;
+  background-color: white;
+  border: 1px solid #F4AA41;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #f4aa41;
+  margin-top: 0.5rem;
+}
+.removeButton {
+  width: 110px;
+  height: 34px;
+  background-color: #F4AA41;
+  border: 1px solid #F4AA41;
+  font-size: 16px;
+  color: white;
+  margin-top: 0.5rem;
+  opacity: 0.5;border-radius: 10px;
+}
+.compareButton:hover {
+  background-color: #F4AA41;
+  color: white;
+  opacity: 0.5;
+  box-shadow: 3px 3px 5px #d7d7d7;
+}
+.removeButton:hover {
+  background-color: white;
+  color: #f4aa41;
+  opacity: 0.5;
+  box-shadow: 3px 3px 5px #d7d7d7;
+}
+.colDiv {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  margin-right: 2rem;
+}
+.rowDiv {
+  display: flex;
+  align-items: flex-end;
+}
+.feetext {
+  font-size: 16px;
+  font-weight: 600;
+  color: #838383;
+}
+.covbox{
+  margin-top: 1rem;
+  display: flex;
+}
+.covtext {
+  font-size: 16px;
+  font-weight: bold;
+  color: #838383;
+  padding-right: 1rem;
+}
+.covdiv {
+  /* width: 130px; */
+  column-count: 2;
+}
+.badge {
+  margin-bottom: 0.5rem;
+  height: 30px;
+  line-height: 30px;
+  width: 60px;
+  text-align: center;
+  background-color: #F0B622;
+  border-radius: 10px;
+  color: white;
+  font-size: 12px;
+}

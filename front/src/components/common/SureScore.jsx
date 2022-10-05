@@ -54,7 +54,7 @@ const createChartDataA = (N, color) => {
       legend: { display: false },
       rotation: -angle,
       circumference: angle * 2,
-      borderWidth: 5,
+      borderWidth: 4,
     },
   };
 };
@@ -99,21 +99,21 @@ export const SureScoreA = ({ value }) => {
   const color = value > 90 ? '#50b840' : value < 30 ? '#eb5757' : '#F0B622';
   const data = createChartDataA(value, color);
   return (
-    <div style={{ width: '220px', padding: '2rem', position: 'relative' }}>
+    <div style={{ width: '180px', padding: '1.5rem', position: 'relative' }}>
       <Doughnut height="120px" data={data} options={data.options} />
       <div
         style={{
           position: 'absolute',
-          top: '12%',
+          top: '13%',
           left: 0,
           width: '100%',
-          fontSize: '22px',
+          fontSize: '18px',
           fontWeight: '600',
           textAlign: 'center',
           color: '#7A8982',
         }}
       >
-        SURE 지수
+        SURE 점수
       </div>
       <div
         style={{
@@ -121,7 +121,7 @@ export const SureScoreA = ({ value }) => {
           top: '45%',
           left: 0,
           width: '100%',
-          fontSize: '34px',
+          fontSize: '26px',
           fontWeight: 'bold',
           textAlign: 'center',
           color,
@@ -135,7 +135,7 @@ export const SureScoreA = ({ value }) => {
           top: '65%',
           left: 0,
           width: '100%',
-          fontSize: '18px',
+          fontSize: '14px',
           fontWeight: '600',
           textAlign: 'center',
           color: '#BBB7B7',
