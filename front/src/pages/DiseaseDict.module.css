@@ -93,7 +93,7 @@
   transform: scale(1.0); /* 이미지 확대 */
   transition: transform .5s; /* 시간 설정 */
 }
-.mainBox5:hover {
+.mainBox3:hover {
   transform: scale(1.05); 
   transition: transform .5s; 
 }
@@ -112,7 +112,7 @@
   transform: scale(1.0); /* 이미지 확대 */
   transition: transform .5s; /* 시간 설정 */
 }
-.mainBox5:hover {
+.mainBox23:hover {
   transform: scale(1.05); 
   transition: transform .5s; 
 }
@@ -130,7 +130,7 @@
   transform: scale(1.0); /* 이미지 확대 */
   transition: transform .5s; /* 시간 설정 */
 }
-.mainBox5:hover {
+.mainBox1:hover {
   transform: scale(1.05); 
   transition: transform .5s; 
 }
@@ -148,7 +148,7 @@
   transform: scale(1.0); /* 이미지 확대 */
   transition: transform .5s; /* 시간 설정 */
 }
-.mainBox5:hover {
+.mainBox20:hover {
   transform: scale(1.05); 
   transition: transform .5s; 
 }
@@ -166,7 +166,7 @@
   transform: scale(1.0); /* 이미지 확대 */
   transition: transform .5s; /* 시간 설정 */
 }
-.mainBox5:hover {
+.mainBox15:hover {
   transform: scale(1.05); 
   transition: transform .5s; 
 }
@@ -184,7 +184,7 @@
   transform: scale(1.0); /* 이미지 확대 */
   transition: transform .5s; /* 시간 설정 */
 }
-.mainBox5:hover {
+.mainBox14:hover {
   transform: scale(1.05); 
   transition: transform .5s; 
 }
@@ -202,7 +202,7 @@
   transform: scale(1.0); /* 이미지 확대 */
   transition: transform .5s; /* 시간 설정 */
 }
-.mainBox5:hover {
+.mainBox10:hover {
   transform: scale(1.05); 
   transition: transform .5s; 
 }
@@ -220,7 +220,7 @@
   transform: scale(1.0); /* 이미지 확대 */
   transition: transform .5s; /* 시간 설정 */
 }
-.mainBox5:hover {
+.mainBox8:hover {
   transform: scale(1.05); 
   transition: transform .5s; 
 }
@@ -238,7 +238,7 @@
   transform: scale(1.0); /* 이미지 확대 */
   transition: transform .5s; /* 시간 설정 */
 }
-.mainBox5:hover {
+.mainBox7:hover {
   transform: scale(1.05); 
   transition: transform .5s; 
 }
@@ -256,7 +256,7 @@
   transform: scale(1.0); /* 이미지 확대 */
   transition: transform .5s; /* 시간 설정 */
 }
-.mainBox5:hover {
+.mainBox22:hover {
   transform: scale(1.05); 
   transition: transform .5s; 
 }
@@ -274,7 +274,7 @@
   transform: scale(1.0); /* 이미지 확대 */
   transition: transform .5s; /* 시간 설정 */
 }
-.mainBox5:hover {
+.mainBox13:hover {
   transform: scale(1.05); 
   transition: transform .5s; 
 }
