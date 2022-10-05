@@ -53,13 +53,13 @@ const CompareGraph = ({ sscore, pscore, cscore, mscore }) => {
     },
     plugins: {
       legend: {
-        position: 'bottom',
+        position: 'left',
         labels: {
           usePointStyle: true,
-          padding: 10,
+          padding: 24,
           font: {
             size: 18,
-            weight: 500,
+            weight: 400,
             family: 'Pretendard',
           },
         },
@@ -67,6 +67,11 @@ const CompareGraph = ({ sscore, pscore, cscore, mscore }) => {
       tooltip: false,
     },
     scales: {
+      x: {
+        ticks: {
+          callback: () => '',
+        },
+      },
       y: [
         {
           ticks: {
@@ -91,8 +96,8 @@ const CompareGraph = ({ sscore, pscore, cscore, mscore }) => {
     },
   };
   return (
-    <div style={{ width: 800, height: 280 }}>
-      <Line type="line" syt data={data} options={options} width={700} height={500} />
+    <div style={{ marginLeft: 30, width: 910, height: 280 }}>
+      <Line type="line" data={data} options={options} width={700} height={500} />
     </div>
   );
 };
