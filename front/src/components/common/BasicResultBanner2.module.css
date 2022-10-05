@@ -1,3 +1,6 @@
+
+
+
 .infocard {
     max-width: 800px;
     background-color: #FFF9F5;
@@ -7,7 +10,7 @@
     border-radius: 5px;
     text-align: center;
     margin-top: 50px;
-    margin-bottom: 80px;
+    /* margin-bottom: 80px; */
     border-color: bisque;
     box-shadow: rgba(255, 183, 136, 0.16) 0px 1px 3px 0px, rgba(255, 155, 55, 0.15) 0px 0px 0px 1px;
 }
@@ -28,3 +31,53 @@
     color: red;
     font-weight: 700;
 }
+
+.detailLinkBtn {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    /* text-align: center; */
+    height: 50px;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 60px;
+    font-size: 14px;
+    color: white;
+    border-style: none;
+    background-image: linear-gradient(to right, #FEC400,#FA917B);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    
+}
+.detailLinkBtn > p {
+    vertical-align: text-bottom;
+}
+
+.detailLinkBtn > p > span {
+    font-size: 18px;
+    font-weight: 600;
+    animation: blink-effect 1.5s step-end 3;
+    animation-duration: 1;
+}
+
+.detailLinkBtn:hover {
+    /* animation: vibration .3s 2; */
+    opacity: 90%;
+    
+  }
+
+  @keyframes vibration {
+    from {
+      transform: rotate(0.1deg);
+    }
+    to {
+      transform: rotate(-0.1deg);
+    }
+  }
+
+  @keyframes blink-effect {
+    50% {
+      opacity: 0;
+    }
+  }
