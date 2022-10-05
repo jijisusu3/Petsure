@@ -27,7 +27,18 @@ export default function BasicCard(insurance) {
       <div>
         <img className={classes.basiclogo} src={insure.company_logo} alt="" />
       </div>
-      <div className={classes.basicname}>{insure.insurance_name}</div>
+      <div className={classes.basicname}>{insure.insurance_name} </div>
+      {insure.name.slice(0, 2) === '기본' ? (
+        <span className={classes.basictype1}>기본</span>
+      ) : insure.name.slice(0, 2) === '고급' ? (
+        <span className={classes.basictype3}>고급</span>
+      ) : insure.name.slice(0, 2) === '실속' ? (
+        <span className={classes.basictype2}>실속</span>
+      ) : (
+        'null'
+      )}
+
+      {/* <div className={classes.basictype}>{insure.name.slice(0, 2)}</div> */}
       <div className={classes.basiccontents}>
         <div className={classes.basicleft}>
           {valuelist.map((value, index) => (
