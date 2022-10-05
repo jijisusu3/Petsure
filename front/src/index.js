@@ -11,10 +11,20 @@ import './styles/minireset.min.css';
 import './styles/pretendard.css';
 import App from './App';
 
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 // axios.defaults.baseURL = 'http://localhost:8000'
 // axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8'
 // axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*'
 // axios.defaults.withCredentials = true;
+
+export default function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
 window.addEventListener('unload', () => {
   // localStorage.removeItem('persist:root')
@@ -26,6 +36,7 @@ root.render(
   <BrowserRouter>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
+        <ScrollToTop />
         <App />
       </PersistGate>
     </Provider>
