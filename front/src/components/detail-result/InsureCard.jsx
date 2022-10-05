@@ -11,6 +11,8 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogActions from '@mui/material/DialogActions';
 import Dialog from '@mui/material/Dialog';
 import classes from './InsureCard.module.css';
+import styled, { css } from 'styled-components';
+import Grid from '@mui/material/Grid';
 
 import CompareGraph from './CompareGraph';
 
@@ -80,7 +82,11 @@ const DataComparison = ({ sDatas, pDatas, cDatas, user }) => {
   // modal
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    setOpen(false);
+    setIncentives(['???,???']);
+    setText('');
+  };
 
   const valuelist = [1, 2, 3, 4, 5, 6, 7, 8];
   function prices(insure) {
@@ -96,7 +102,7 @@ const DataComparison = ({ sDatas, pDatas, cDatas, user }) => {
 
   // 계산기
   const [text, setText] = useState('');
-  const [incentives, setIncentives] = useState([]);
+  const [incentives, setIncentives] = useState(['???,???']);
   const register = () => {
     axios
       .get(`https://j7b202.p.ssafy.io/api/calc/${text}/${inId}`)
@@ -130,7 +136,7 @@ const DataComparison = ({ sDatas, pDatas, cDatas, user }) => {
           <Dialog
             PaperProps={{
               style: {
-                height: '30000px',
+                height: '2000px',
                 minWidth: '1000px',
                 overflowY: 'scroll',
                 display: 'flex',
@@ -139,10 +145,13 @@ const DataComparison = ({ sDatas, pDatas, cDatas, user }) => {
             open={open}
             onClose={handleClose}
           >
-            <DialogTitle>보험비교</DialogTitle>
-            <table>
-              <thead>
-                <tr>
+            <DialogTitle />
+            <table
+              style={{ textAlign: 'center', marginBottom: 50 }}
+              className={classes.styledTable}
+            >
+              <thead style={{ textAlign: 'center' }}>
+                <tr style={{ marginTop: 30 }}>
                   <th>보험상품</th>
                   {selectedItems.map(el => (
                     <th key={el.id}>
@@ -158,21 +167,23 @@ const DataComparison = ({ sDatas, pDatas, cDatas, user }) => {
               </thead>
               <tbody>
                 <td>
-                  <div>보험료</div>
-                  <div>약관</div>
-                  <div>통원치료비</div>
-                  <div>입원치료비</div>
-                  <div>수술치료비</div>
-                  <div>슬관절</div>
-                  <div>피부병</div>
-                  <div>구강</div>
-                  <div>비뇨기</div>
-                  <div>배상책임</div>
+                  <div className={classes.styledColumn}>보험료</div>
+                  <div style={{ backgroundColor: '#FAFAFA', fontWeight: 600, textAlign: 'rignt' }}>
+                    {'- '}보장 내역{' -'}
+                  </div>
+                  <div className={classes.styledColumn}>통원치료비</div>
+                  <div className={classes.styledColumn}>입원치료비</div>
+                  <div className={classes.styledColumn}>수술치료비</div>
+                  <div className={classes.styledColumn}>슬관절</div>
+                  <div className={classes.styledColumn}>피부병</div>
+                  <div className={classes.styledColumn}>구강</div>
+                  <div className={classes.styledColumn}>비뇨기</div>
+                  <div className={classes.styledColumn}>배상책임</div>
                 </td>
                 {selectedItems.map(el => (
                   <td key={el.id}>
-                    <div>{el.fee}</div>
-                    <div>&nbsp;</div>
+                    <div>{el.fee.toLocaleString() + '원'}</div>
+                    <div style={{ backgroundColor: '#FAFAFA' }}>&nbsp;</div>
                     {prices(el).map((price, index) => (
                       <div key={index}>
                         {price === '-' ? (
@@ -188,23 +199,39 @@ const DataComparison = ({ sDatas, pDatas, cDatas, user }) => {
             </table>
             <DialogActions />
             <CompareGraph sscore={sscore} pscore={pscore} cscore={cscore} mscore={mscore} />
-            <div className="me-3">
-              <div className="d-flex pb-3">
+            <div style={{ marginTop: 50 }}>
+              <div style={{ marginLeft: '5%' }} className="d-flex pb-3">
                 <img src={cal} alt="" className="pe-3" />
-                <div>동물병원에서 통원치료비</div>
+                <p style={{ fontSize: '1.4rem' }}>보장 금액 계산하기</p>
               </div>
-              <div className="d-flex pb-3">
-                <input type="number" onChange={onChange} value={text} />
-                <button onClick={() => register()}>원 청구 시</button>
-              </div>
-              {incentives.map(incentive => (
+              <div className={classes.calcCompare}>
                 <div>
-                  <h2>{incentive}</h2>
-                  <div>원 보장</div>
+                  <Grid container direction="row" justifyContent="flex-start" alignItems="flex-end">
+                    <span style={{ fontSize: '1.4rem', marginLeft: 60, fontWeight: 600 }}>
+                      동물병원에서 통원치료비 {'  '}
+                    </span>
+                    <Ipt type="number" onChange={onChange} value={text} />
+                    <BasicBtn onClick={() => register()}>원 청구 시,</BasicBtn>
+                  </Grid>
                 </div>
-              ))}
+                <div className={classes.calcResult}>
+                  <Grid container direction="row" justifyContent="space-evenly" alignItems="center">
+                    {incentives.map(incentive => (
+                      <div>
+                        <p
+                          style={{ color: '#F58613', fontSize: 36, fontWeight: 600, marginTop: 40 }}
+                        >
+                          {incentive.toLocaleString()}
+                          <span style={{ color: '#000', fontSize: 20, fontWeight: 600 }}>
+                            원 보장
+                          </span>
+                        </p>
+                      </div>
+                    ))}
+                  </Grid>
+                </div>
+              </div>
             </div>
-            {console.log(sscore)}
           </Dialog>
         </Card>
       )}
@@ -302,3 +329,25 @@ const DataComparison = ({ sDatas, pDatas, cDatas, user }) => {
 };
 
 export default DataComparison;
+
+const Ipt = styled.input`
+  border-radius: 10px;
+  width: 240px;
+  margin-left: 20px;
+  margin-top: 30px;
+  height: 40px;
+  font-size: 20px;
+`;
+
+const BasicBtn = styled.button`
+  display: flex;
+  align-items: flex-end;
+  color: #5b5b5b;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  background-color: transparent;
+  &:hover {
+    color: #f4aa41;
+  }
+`;

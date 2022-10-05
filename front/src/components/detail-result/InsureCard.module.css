@@ -164,3 +164,43 @@
 .tab_topcard {
     inset-inline-start: 400px;
 }
+.styledTable {
+    border-collapse: collapse;
+    border: 2px #838383;
+    /* border-radius: 15px; */
+    margin: 30px 30px;
+    font-size: 1rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    width: 910px;
+}
+.styledColumn {
+    background-color: #838383;
+    color: #ffffff;
+    line-height: 40px;
+}
+.styledTable div{
+    line-height: 40px;
+}
+.styledTable td {
+    line-height: 40px;
+}
+.calcCompare {
+    margin-left: 3.5%;
+    width: 900px;
+    height: 280px;
+    border: 4px #838383;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+    margin-bottom: 50px;
+    border-radius: 15px;
+}
+.calcResult {
+    width: 700px;
+    height: 134px;
+    border: 4px #838383;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    background-color: #F7F7F7;
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 28px;
+}
