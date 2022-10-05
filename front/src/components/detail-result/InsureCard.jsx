@@ -13,10 +13,11 @@ import Dialog from '@mui/material/Dialog';
 import classes from './InsureCard.module.css';
 import styled, { css } from 'styled-components';
 import Grid from '@mui/material/Grid';
-
 import CompareGraph from './CompareGraph';
+import Typography from '@mui/material/Typography';
 
 import cal from '../../images/cal.svg';
+import BannerDetail from '../common/BannerDetail';
 
 const DataComparison = ({ sDatas, pDatas, cDatas, user }) => {
   const [selectedItems, setSelectedItems] = useState([]);
@@ -122,17 +123,40 @@ const DataComparison = ({ sDatas, pDatas, cDatas, user }) => {
   const handleTabChange = (event, newTabIndex) => {
     setTabIndex(newTabIndex);
   };
+
+  const styles = {
+    tab: {
+      color: 'black',
+      fontWeight: '600',
+      fontSize: '16px',
+      width: 150,
+    },
+    // tabs: {
+    //   backgroundColor: 'rgba(244, 170, 65, 0.5)',
+    //   width: 450,
+    // },
+  };
+
   return (
     <>
+      <BannerDetail />
       {4 > selectedItems.length && selectedItems.length > 1 && (
-        <Card className={classes.compareCard}>
-          {selectedItems.map(el => (
-            <div key={el.id}>
-              <img className={classes.compare_logo} alt="insure" src={el.insurance.company_logo} />
-              <div>{el.insurance.insurance_name}</div>
-            </div>
-          ))}
-          <Button onClick={handleOpen}>보험 비교하기</Button>
+        <div className={classes.compareCard}>
+          <div className={classes.lBox}>
+            {selectedItems.map(el => (
+              <div className={classes.compareBox} key={el.id}>
+                <img
+                  className={classes.compare_logo}
+                  alt="insure"
+                  src={el.insurance.company_logo}
+                />
+                <div>{el.insurance.insurance_name}</div>
+              </div>
+            ))}
+          </div>
+          <button className={classes.compareBtn} onClick={handleOpen}>
+            보험 비교하기
+          </button>
           <Dialog
             PaperProps={{
               style: {
@@ -233,16 +257,69 @@ const DataComparison = ({ sDatas, pDatas, cDatas, user }) => {
               </div>
             </div>
           </Dialog>
-        </Card>
+        </div>
       )}
       <Box>
-        <Box>
-          <Tabs value={tabIndex} onChange={handleTabChange} indicatorColor="secondary">
-            <Tab label="슈어 점수 순" />
-            <Tab label="낮은 가격 순" />
-            <Tab label="보장 많은 순" />
-          </Tabs>
-        </Box>
+        <div className={classes.recbox}>
+          <h1 className="mb-4">추천 TOP3</h1>
+          <Box>
+            <Tabs
+              style={styles.tabs}
+              value={tabIndex}
+              onChange={handleTabChange}
+              sx={{
+                color: 'white',
+                '& .MuiTabs-indicator': {
+                  width: '120px',
+                  bgcolor: '#F58613',
+                  height: '100%',
+                  zIndex: '-1',
+                },
+              }}
+            >
+              <Tab
+                style={styles.tab}
+                label={
+                  <Typography
+                    fontWeight="700"
+                    fontSize="16px"
+                    textTransform="none"
+                    color={tabIndex === 0 ? '#fff' : '#222'}
+                  >
+                    SURE 점수 순
+                  </Typography>
+                }
+              />
+              <Tab
+                style={styles.tab}
+                label={
+                  <Typography
+                    fontWeight="700"
+                    fontSize="16px"
+                    textTransform="none"
+                    color={tabIndex === 1 ? '#fff' : '#222'}
+                  >
+                    낮은 가격 순
+                  </Typography>
+                }
+              />
+              <Tab
+                style={styles.tab}
+                label={
+                  <Typography
+                    fontWeight="700"
+                    fontSize="16px"
+                    textTransform="none"
+                    color={tabIndex === 2 ? '#fff' : '#222'}
+                  >
+                    보장 많은 순
+                  </Typography>
+                }
+              />
+            </Tabs>
+            <div className={classes.bar} />
+          </Box>
+        </div>
         <Box>
           {tabIndex === 0 && (
             <Box>

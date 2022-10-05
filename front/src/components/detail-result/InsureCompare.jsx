@@ -40,7 +40,7 @@ const CompareCard = ({ data, user, addToCompare, removeFromCompare, selected }) 
       <div className={classes.colDiv}>
         <div className={classes.rowDiv}>
           <p className={classes.feetext}>월</p>
-          <h3 className="fw-bold">{data.fee}</h3>
+          <h3 className="fw-bold">{data.fee.toLocaleString()}</h3>
           <p className={classes.feetext}>원</p>
         </div>
         <Link to={`${user}/${data.id}`} state={{ data }}>

@@ -14,6 +14,7 @@ export default function TopCard({ data, user, addToCompare, removeFromCompare, s
     );
     return pricess;
   }
+  const surescore = data.sure_score;
 
   return (
     <div className={classes.card}>
@@ -31,7 +32,7 @@ export default function TopCard({ data, user, addToCompare, removeFromCompare, s
           <div>구강</div>
           <div>비뇨기</div>
           <div>배상책임</div>
-          <p style={{ color: '#F4AA41' }}>슈어 지수</p>
+          <p style={{ color: '#F4AA41' }}>슈어 점수</p>
         </div>
 
         <div className={classes.basicright}>
@@ -44,9 +45,17 @@ export default function TopCard({ data, user, addToCompare, removeFromCompare, s
               )}
             </div>
           ))}
-          <p style={{ color: '#F4AA41', fontWeight: '650', marginBottom: '20px' }}>
-            상세 검색에서 보실 수 있어요!
-          </p>
+          <div />
+          {surescore >= 90 && (
+            <p style={{ color: '#50b840', fontWeight: '650', marginBottom: '20px' }}>
+              {data.sure_score.toFixed(2)}
+            </p>
+          )}
+          {surescore < 90 && (
+            <p style={{ color: '#F4AA41', fontWeight: '650', marginBottom: '20px' }}>
+              {data.sure_score.toFixed(2)}
+            </p>
+          )}
         </div>
       </div>
       <div className={classes.basicfee}>
