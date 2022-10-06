@@ -82,10 +82,16 @@ const InsureCard = () => {
               <Ipt type="number" onChange={onChange} value={text} />
               <BasicBtn>원 청구 시</BasicBtn>
             </div>
-            <CardBox>
-              <h3 className="ms-5">{incentives.toLocaleString()}</h3>
-              <FeeText>원 보장</FeeText>
-            </CardBox>
+            {incentives === 0 ? (
+              <CardBox>
+                <FeeText>청구비가 낮아요</FeeText>
+              </CardBox>
+            ) : (
+              <CardBox>
+                <h3 className="ms-5">{incentives.toLocaleString()}</h3>
+                <FeeText>원 보장</FeeText>
+              </CardBox>
+            )}
           </div>
           <ReturnBtn className="ms-3" onClick={() => setflipped(false)}>
             <img src={ret} style={{ width: 36, height: 36 }} />

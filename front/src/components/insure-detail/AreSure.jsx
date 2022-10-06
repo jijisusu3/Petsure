@@ -156,7 +156,14 @@ export function AreSure() {
                 marginTop: 24,
               }}
             >
-              <span style={{ fontWeight: 600 }}>{insureScore.toFixed(1)}</span> / 평균: 80.5
+              {insureScore.toFixed(2) >= 90.78 ? (
+                <span style={{ fontWeight: 600 }}>A</span>
+              ) : insureScore.toFixed(2) >= 86.03 ? (
+                <span style={{ fontWeight: 600 }}>B</span>
+              ) : (
+                <span style={{ fontWeight: 600 }}>C</span>
+              )}{' '}
+              / 평균: B
             </div>
             <div
               style={{
@@ -215,7 +222,7 @@ export function AreSure() {
                   펫슈어는 각 보험사의 보험금 부지급률, 보험 청구 후 해지율, 불완전 판매율,
                 </p>
                 <p style={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
-                  지급지연률을 이용해 회사지수를 산출했어요.
+                  지급지연률을 이용해 회사 신뢰 등급을 산출했어요.
                 </p>
                 <p style={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
                   각 회사가 어느 정도로 고객과의 약속을 잘 이행하고 있는지 나타내며,
@@ -259,7 +266,7 @@ export function AreSure() {
                   보장비율을 참고해 만들었어요.
                 </p>
                 <p style={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
-                  지급지연률을 이용해 회사지수를 산출했어요.
+                  지급지연률을 이용해 안심 보장 점수를 산출했어요.
                 </p>
                 <p style={{ fontWeight: 'bold', fontSize: 20 }} className="py-2">
                   갑자기 찾아올 수 있는 반려동물의 질병 / 상해, 동물병원 진료비가 걱정이라면
