@@ -266,3 +266,6 @@
 .columnBox {
     display: flex;
 }
+.bigbox {
+    margin-bottom: 200px;
+}

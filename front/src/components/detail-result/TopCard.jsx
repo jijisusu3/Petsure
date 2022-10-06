@@ -22,6 +22,15 @@ export default function TopCard({ data, user, addToCompare, removeFromCompare, s
         <img className={classes.basiclogo} src={data.insurance.company_logo} alt="" />
       </div>
       <div className={classes.basicname}>{data.insurance.insurance_name}</div>
+      {data.name.slice(0, 2) === '기본' ? (
+        <span className={classes.basictype1}>기본</span>
+      ) : data.name.slice(0, 2) === '고급' ? (
+        <span className={classes.basictype3}>고급</span>
+      ) : data.name.slice(0, 2) === '실속' ? (
+        <span className={classes.basictype2}>실속</span>
+      ) : (
+        'null'
+      )}
       <div className={classes.basiccontents}>
         <div className={classes.basicleft}>
           <div>통원치료비</div>

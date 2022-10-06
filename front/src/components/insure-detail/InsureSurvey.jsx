@@ -31,10 +31,14 @@ export default function InsureSurvey() {
         "score": hover
       })
       .then(function (response) {
+        console.log(response);
         Swal.fire({
           title: '의견을 남겼습니다!',
           icon: 'success',
         });
+        setSurvey('');
+        setRating(0);
+        setHover(0);
       })
       .catch(function (error) {
         if (error.response.data === 'This survey already exists') {
@@ -43,6 +47,9 @@ export default function InsureSurvey() {
             icon: 'error',
           });
         }
+        setSurvey('');
+        setRating(0);
+        setHover(0);
       });
   };
 
@@ -102,6 +109,7 @@ export default function InsureSurvey() {
           onChange={e => {
             setSurvey(e.target.value);
           }}
+          value={survey}
         />
         {hover !== 0 && (
           <button className={classes.subbtn} onClick={() => register()}>

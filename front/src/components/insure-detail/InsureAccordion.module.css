@@ -9,3 +9,10 @@
     font-size: 18px;
     font-weight:normal;
 }
+.scoreimg {
+    pointer-events: auto;
+    z-index: 999;
+}
+.accordion {
+    z-index: 10;
+}
