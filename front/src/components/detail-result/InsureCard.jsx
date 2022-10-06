@@ -141,7 +141,7 @@ const DataComparison = ({ sDatas, pDatas, cDatas, user }) => {
     //   width: 450,
     // },
   };
-
+  console.log(sDatas);
   return (
     <>
       <BannerDetail />
@@ -271,7 +271,7 @@ const DataComparison = ({ sDatas, pDatas, cDatas, user }) => {
           </Dialog>
         </div>
       )}
-      <Box>
+      <Box className={classes.bigbox}>
         <div className={classes.recbox}>
           <h1 className="mb-4">추천 TOP3</h1>
           <Box>

@@ -122,7 +122,7 @@ export function WeSure() {
       <br />
       <br />
 
-      <div>
+      <div className={classes.last_compo}>
         <p style={{ fontSize: 20, fontWeight: 600, color: '#7A8982', marginLeft: 30 }}>
           보험에서 빠진 약관 영양제로 보충
         </p>

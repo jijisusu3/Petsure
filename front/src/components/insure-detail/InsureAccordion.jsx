@@ -9,6 +9,7 @@ import Grid from '@mui/material/Grid';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import classes from './InsureAccordion.module.css';
+
 const coverType = {
   0: '좋은상품',
   1: '통원치료비',
@@ -74,9 +75,20 @@ export function InsureBasicAccordion() {
     }
   };
   return bdatas.map(data => (
-    <div>
+    <div style={{}}>
       <Accordion key={data.cover_type} className="accordion">
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+        <AccordionSummary
+          sx={{
+            pointerEvents: 'none',
+          }}
+          expandIcon={
+            <ExpandMoreIcon
+              sx={{
+                pointerEvents: 'auto',
+              }}
+            />
+          }
+        >
           <table>
             <tr>
               <td className={classes.width_14em_basic_td_middle}>
