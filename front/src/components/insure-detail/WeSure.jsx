@@ -126,14 +126,21 @@ export function WeSure() {
         <p style={{ fontSize: 20, fontWeight: 600, color: '#7A8982', marginLeft: 30 }}>
           보험에서 빠진 약관 영양제로 보충
         </p>
-        <p style={{ fontSize: 38, fontWeight: 700, marginLeft: 30 }}>
-          이 보험에서 빠진{' '}
-          <span className={classes.h1_fontcolor_yellow}>
-            {' '}
-            {coverType[location.state.data.item_cover]} 관련{' '}
-          </span>{' '}
-          제품은 어떠세요? 🎁
-        </p>
+        {location.state.data.item_cover ? (
+          <p style={{ fontSize: 38, fontWeight: 700, marginLeft: 30 }}>
+            이 보험에서 빠진{' '}
+            <span className={classes.h1_fontcolor_yellow}>
+              {' '}
+              {coverType[location.state.data.item_cover]} 관련{' '}
+            </span>{' '}
+            제품은 어떠세요? 🎁
+          </p>
+        ) : (
+          <p style={{ fontSize: 38, fontWeight: 700, marginLeft: 30 }}>
+            이 보험에서 빠진 <span className={classes.h1_fontcolor_yellow}> 영양제 관련 </span>{' '}
+            제품은 어떠세요? 🎁
+          </p>
+        )}
         <br />
         <div className={classes.width_max}>
           <Sheet>

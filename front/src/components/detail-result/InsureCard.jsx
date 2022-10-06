@@ -19,6 +19,8 @@ import Typography from '@mui/material/Typography';
 import cal from '../../images/cal.svg';
 import BannerDetail from '../common/BannerDetail';
 
+import Swal from 'sweetalert2';
+
 const DataComparison = ({ sDatas, pDatas, cDatas, user }) => {
   const [selectedItems, setSelectedItems] = useState([]);
   const [insId, setInsId] = useState([]);
@@ -49,7 +51,10 @@ const DataComparison = ({ sDatas, pDatas, cDatas, user }) => {
         { x: item.id.toString(), y: item.matching_score.toFixed(2) - 65 },
       ]);
     } else {
-      alert('보험은 3개까지만 선택 가능합니다.');
+      Swal.fire({
+        title: '비교는 3개까지만 가능해요!',
+        icon: 'error',
+      });
       const filteredItems = selectedItems.filter(data => data.id !== item.id);
       setSelectedItems(selectedItems => filteredItems);
       const filteredIds = insId.filter(data => data !== item.id);
@@ -104,9 +109,9 @@ const DataComparison = ({ sDatas, pDatas, cDatas, user }) => {
   // 계산기
   const [text, setText] = useState('');
   const [incentives, setIncentives] = useState(['???,???']);
-  const register = () => {
+  const register = abc => {
     axios
-      .get(`https://j7b202.p.ssafy.io/api/calc/${text}/${inId}`)
+      .get(`https://j7b202.p.ssafy.io/api/calc/${abc}/${inId}`)
       .then(response => {
         console.log(response);
         setIncentives(response.data.result);
@@ -117,8 +122,8 @@ const DataComparison = ({ sDatas, pDatas, cDatas, user }) => {
   };
   const onChange = e => {
     setText(e.target.value);
+    register(e.target.value);
   };
-
   const [tabIndex, setTabIndex] = useState(0);
   const handleTabChange = (event, newTabIndex) => {
     setTabIndex(newTabIndex);
@@ -140,16 +145,23 @@ const DataComparison = ({ sDatas, pDatas, cDatas, user }) => {
   return (
     <>
       <BannerDetail />
-      {4 > selectedItems.length && selectedItems.length > 1 && (
+      {4 > selectedItems.length && selectedItems.length > 0 && (
         <div className={classes.compareCard}>
           <div className={classes.lBox}>
             {selectedItems.map(el => (
               <div className={classes.compareBox} key={el.id}>
-                <img
-                  className={classes.compare_logo}
-                  alt="insure"
-                  src={el.insurance.company_logo}
-                />
+                <div className={classes.columnBox}>
+                  <img
+                    className={classes.compare_logo}
+                    alt="insure"
+                    src={el.insurance.company_logo}
+                  />
+                  <button
+                    aria-label="delete"
+                    className={classes.closeButton}
+                    onClick={() => removeFromCompare(el)}
+                  />
+                </div>
                 <div>{el.insurance.insurance_name}</div>
               </div>
             ))}
@@ -235,7 +247,7 @@ const DataComparison = ({ sDatas, pDatas, cDatas, user }) => {
                       동물병원에서 통원치료비 {'  '}
                     </span>
                     <Ipt type="number" onChange={onChange} value={text} />
-                    <BasicBtn onClick={() => register()}>원 청구 시,</BasicBtn>
+                    <BasicBtn>원 청구 시,</BasicBtn>
                   </Grid>
                 </div>
                 <div className={classes.calcResult}>

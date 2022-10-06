@@ -29,7 +29,7 @@ export function AreSure() {
   const locationData = location.state.data;
   const insureScore = locationData.insurance.company_score;
   const guaranteeScore = locationData.price_score;
-  const suitScore = locationData.price_score;
+  const suitScore = locationData.matching_score;
   const [a, setShowA] = React.useState(false);
   const [b, setShowB] = React.useState(false);
   const [c, setShowC] = React.useState(false);
