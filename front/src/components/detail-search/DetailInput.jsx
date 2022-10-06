@@ -94,7 +94,7 @@ function DetailInput() {
       } else {
         setAge(Number(age));
       }
-      if (Number(age) >= 0 && Number(age - 1) <= 8) {
+      if (Number(age) >= 0 && Number(age - 1) <= 10) {
         setIsBirth(true);
         setBirthMsg('　');
       } else {

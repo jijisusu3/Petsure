@@ -15,17 +15,17 @@ export const Projects = () => {
   const projects = [
     {
       title: '김지수',
-      description: 'Team Leader / FullStack Developer \n 배포',
+      description: 'Team Leader / FullStack Developer \n Deployment',
       imgUrl: projImg1,
     },
     {
       title: '권예슬',
-      description: 'BE Leader / FullStack Developer',
+      description: 'BE Leader / FullStack Developer \n Core',
       imgUrl: projImg2,
     },
     {
       title: '전지수',
-      description: 'FullStack Developer',
+      description: 'FullStack Developer \n Core',
       imgUrl: projImg3,
     },
     {
@@ -62,7 +62,6 @@ export const Projects = () => {
                   <p>오목조목 : 자그마한 것이 모여서 야무진 느낌을 주는 모양</p>
                   <br />
                   <hr />
-                  <p>이미지에 커서를 올리면 소개글이 나옵니다</p>
                   <br />
 
                   <Tab.Container id="projects-tabs" defaultActiveKey="first">
