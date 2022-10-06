@@ -1,30 +1,18 @@
-import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router';
 
 export function DetailResultAxios() {
-  const [alldatas, setAlldatas] = useState([]);
+  const [sDatas, setSDatas] = useState([]);
+  const [pDatas, setPDatas] = useState([]);
+  const [cDatas, setCDatas] = useState([]);
+  const [user, setUser] = useState([]);
+  const { state } = useLocation();
   useEffect(() => {
-    axios
-      .post('/api/insurance/detail/', {
-        breed: 31,
-        animal_name: '이봉봉',
-        species: 1,
-        animal_birth: 2,
-        hospitalization: 4,
-        outpatient: 3,
-        operation: 1,
-        patella: 4,
-        skin_disease: 3,
-        dental: 2,
-        urinary: 1,
-        liability: 1,
-      })
-      .then(response => {
-        setAlldatas(response.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  });
-  return alldatas;
+    setSDatas(state.sure_ranking);
+    setPDatas(state.price_ranking);
+    setCDatas(state.cover_ranking);
+    setUser(state.detail_user);
+  }, []);
+  return [sDatas, pDatas, cDatas, user];
 }

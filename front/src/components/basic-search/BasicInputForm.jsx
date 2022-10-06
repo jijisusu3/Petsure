@@ -23,6 +23,8 @@ function BasicInputForm() {
 
   const onSpeciesHandler = event => {
     setSpecies(Number(event.target.value));
+    setBreedName(breed_name => []);
+    setIsBreed(isBreed => '');
   };
 
   const onNameHandler = event => {
