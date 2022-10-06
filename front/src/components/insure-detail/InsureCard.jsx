@@ -14,11 +14,10 @@ const InsureCard = () => {
   const [text, setText] = useState('');
   const insId = location.state.data.id;
 
-  const register = () => {
+  const register = abc => {
     axios
-      .get(`https://j7b202.p.ssafy.io/api/calc/${text}/${insId}`)
+      .get(`https://j7b202.p.ssafy.io/api/calc/${abc}/${insId}`)
       .then(response => {
-        console.log(response);
         setIncentives(response.data.result[0]);
       })
       .catch(error => {
@@ -27,6 +26,7 @@ const InsureCard = () => {
   };
 
   const onChange = e => {
+    register(e.target.value);
     setText(e.target.value);
   };
 
@@ -53,7 +53,7 @@ const InsureCard = () => {
             </RowDiv>
             <RowDiv>
               <BasicText className="pe-2">월</BasicText>
-              <h4 className="fw-bold">{location.state.data.fee}원</h4>
+              <h4 className="fw-bold">{location.state.data.fee.toLocaleString()}원</h4>
             </RowDiv>
             <CalButton onClick={() => setflipped(true)}>
               <img src={calc} alt="img" className="pe-3" />
@@ -80,10 +80,10 @@ const InsureCard = () => {
             </div>
             <div className="d-flex pb-3">
               <Ipt type="number" onChange={onChange} value={text} />
-              <BasicBtn onClick={() => register()}>원 청구 시</BasicBtn>
+              <BasicBtn>원 청구 시</BasicBtn>
             </div>
             <CardBox>
-              <h3 className="ms-5">{incentives}</h3>
+              <h3 className="ms-5">{incentives.toLocaleString()}</h3>
               <FeeText>원 보장</FeeText>
             </CardBox>
           </div>
@@ -191,7 +191,7 @@ const BasicText = styled.p`
   font-size: 15px;
   font-weight: 600;
 `;
-const BasicBtn = styled.button`
+const BasicBtn = styled.p`
   display: flex;
   align-items: flex-end;
   color: #5b5b5b;
@@ -199,9 +199,6 @@ const BasicBtn = styled.button`
   font-weight: bold;
   border: none;
   background-color: transparent;
-  &:hover {
-    color: #f4aa41;
-  }
 `;
 const CardBox = styled.div`
   display: flex;

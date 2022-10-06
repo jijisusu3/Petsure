@@ -5,6 +5,7 @@ import Modal from '@mui/material/Modal';
 import Grid from '@mui/material/Grid';
 import { useEffect } from 'react';
 import classes from './BasicResult.module.css';
+import { useNavigate } from 'react-router-dom';
 
 const style = {
   position: 'absolute',
@@ -42,6 +43,12 @@ export function BasicResultPage() {
       return;
     }
   };
+  const navigate = useNavigate();
+  let user = localStorage.getItem('user');
+  user = JSON.parse(user);
+  const onNavigateDetail = () => {
+    navigate('/allinput');
+  };
   return (
     <>
       <BasicResult />;
@@ -58,7 +65,9 @@ export function BasicResultPage() {
               alt="detail_modal"
               style={{ width: 950, height: 520 }}
             />
-            <button className={classes.learnMore}>상세검색 바로가기</button>
+            <button className={classes.learnMore} onClick={onNavigateDetail}>
+              상세검색 바로가기
+            </button>
           </Grid>
         </Box>
       </Modal>
