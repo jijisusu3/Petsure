@@ -1,0 +1,213 @@
+[
+    {
+        "model": "insurance.Insurance",
+        "pk": 1,
+        "fields": {
+            "company_name": "삼성화재",
+            "insurance_name": "위풍댕댕",
+            "species": 1,
+            "company_score": 90.78,
+            "company_url": "https://direct.samsungfire.com/ria/pc/product/petLong/?state=Front#",
+            "company_logo": "https://blog.kakaocdn.net/dn/lmjhi/btqB8oDRuQQ/JfqZ41bVWFDcn1a1kDk9m1/img.jpg",
+            "renewal": true,
+            "payment_period": 3,
+            "content": "만 20세까지 갱신 가능"
+        }
+    },
+    {
+        "model": "insurance.Insurance",
+        "pk": 2,
+        "fields": {
+            "company_name": "한화손해보험",
+            "insurance_name": "LIFEPLUS 댕댕이 안심보험",
+            "species": 1,
+            "company_score": 93.37,
+            "company_url": "https://www.lifeplus.co.kr/service/petnowinsurance/",
+            "company_logo": "https://www.hwgeneralins.com/images/company/tit_logo2.png",
+            "renewal": true,
+            "payment_period": 1,
+            "content": "갱신 가능하며, 계약서 재작성",
+            "etc": "장례비/15만원/반려견 사망 시 보험가입금액을 장례비로 지급 (동물병원에서 적법하게 시행된 안락사 포함, 만8세까지만 보장) : \n유실견찾기지원금/15만원/반려견이 유실되어 경찰서나 동물보호센터에 신고한 경우, 전단지 또는 현수막 제작과 게시를 위한 실손비용 보장"
+        }
+    },
+    {
+        "model": "insurance.Insurance",
+        "pk": 3,
+        "fields": {
+            "company_name": "메리츠화재",
+            "insurance_name": "펫퍼민트 Puppy&Home",
+            "species": 1,
+            "company_score": 90.32,
+            "company_url": "https://www.ppmint.com/pet/product.do#!/",
+            "company_logo": "https://cloudfront-ap-northeast-1.images.arcpublishing.com/chosunbiz/4K3SDZF2B67BK4I5JZBODG77IU.png",
+            "renewal": true,
+            "payment_period": 3,
+            "content": "3년 자동갱신"
+        }
+    },
+    {
+        "model": "insurance.Insurance",
+        "pk": 4,
+        "fields": {
+            "company_name": "메리츠화재",
+            "insurance_name": "펫퍼민트 Cat&Home",
+            "species": 2,
+            "company_score": 90.32,
+            "company_url": "https://www.ppmint.com/pet/product-cat.do#!/",
+            "company_logo": "https://cloudfront-ap-northeast-1.images.arcpublishing.com/chosunbiz/4K3SDZF2B67BK4I5JZBODG77IU.png",
+            "renewal": true,
+            "payment_period": 3,
+            "content": "3년 자동갱신"
+        }
+    },
+    {
+        "model": "insurance.Insurance",
+        "pk": 5,
+        "fields": {
+            "company_name": "삼성화재",
+            "insurance_name": "애니펫 반려묘보험",
+            "species": 2,
+            "company_score": 90.78,
+            "company_url": "https://direct.samsungfire.com/ria/pc/product/pet/?state=Front&kind=onlycat#",
+            "company_logo": "https://blog.kakaocdn.net/dn/lmjhi/btqB8oDRuQQ/JfqZ41bVWFDcn1a1kDk9m1/img.jpg",
+            "renewal": true,
+            "payment_period": 3,
+            "content": "만 20세까지 갱신 가능",
+            "etc": "반려묘 사망위로금 / 15 / 동일하게 보상하는 다른보험을 가입하고 있더라도 중복으로 지급"
+        }
+    },
+    {
+        "model": "insurance.Insurance",
+        "pk": 6,
+        "fields": {
+            "company_name": "KB손해보험",
+            "insurance_name": "KB반려행복펫보험",
+            "species": 1,
+            "company_score": 84.78,
+            "company_url": "https://direct.kbinsure.co.kr/home/#/MAIN_0001M/qrCodePop_Pet",
+            "company_logo": "https://blog.kakaocdn.net/dn/k49UG/btqyV5GR8vM/1wtUYHMLVTwwkaQoppSYjk/img.jpg",
+            "renewal": true,
+            "payment_period": 1,
+            "etc": "사망위로금/15:재분양 비용/유실 시 유기견 입양 비용/암 치료비/교통상해치료비/산책상해치료비/단체계약"
+        }
+    },
+    {
+        "model": "insurance.Insurance",
+        "pk": 7,
+        "fields": {
+            "company_name": "현대해상",
+            "insurance_name": "하이펫애견보험",
+            "species": 1,
+            "company_score": 96.04,
+            "company_url": "http://www.hi-pet.co.kr/main/main.html",
+            "company_logo": "http://www.hi-pet.co.kr/images/inc/logo.jpg",
+            "renewal": true,
+            "payment_period": 1,
+            "content": "만 12세까지 갱신 가능",
+            "etc": "장례비/15만원/반려견 사망 시 보험가입금액을 장례비로 지급 (동물병원에서 적법하게 시행된 안락사 포함)"
+        }
+    },
+    {
+        "model": "insurance.Insurance",
+        "pk": 8,
+        "fields": {
+            "company_name": "롯데손해보험",
+            "insurance_name": "롯데마이펫보험",
+            "species": 3,
+            "company_score": 89.28,
+            "company_url": "http://www.lotteins.co.kr/mobile/new_mobile/product/travel_insurance04.html",
+            "company_logo": "http://www.lotteins.co.kr/mobile/new_mobile/images/logo.png",
+            "renewal": true,
+            "payment_period": 1
+        }
+    },
+    {
+        "model": "insurance.Insurance",
+        "pk": 9,
+        "fields": {
+            "company_name": "에이스손해보험",
+            "insurance_name": "Chubb 펫밀리보험",
+            "species": 1,
+            "company_score": 79.3,
+            "company_url": "https://www.acedirect.co.kr/servlets/contract/contractForward.ace?target=pc/contract/step01Pet&cmd=Step01Command&layout=type2",
+            "company_logo": "https://m.acedirect.co.kr/jsp/directM/images/common/m_landing_logo.png",
+            "renewal": true,
+            "payment_period": 1,
+            "etc": "사망위로금/유실 시 광고 비용"
+        }
+    },
+    {
+        "model": "insurance.Insurance",
+        "pk": 10,
+        "fields": {
+            "company_name": "DB손해보험",
+            "insurance_name": "아이(I)러브(LOVE)펫보험",
+            "species": 3,
+            "company_score": 92.38,
+            "company_url": "https://www.idbins.com/FWMALV0782.do",
+            "company_logo": "https://www.directdb.co.kr/veraport/images/logo.png",
+            "renewal": true,
+            "payment_period": 3,
+            "content": "3년 자동갱신(보험료 고정), 만 20세까지 갱신 가능",
+            "etc": "장례비 / 30만원"
+        }
+    },
+    {
+        "model": "insurance.Insurance",
+        "pk": 11,
+        "fields": {
+            "company_name": "교보라이프플래닛생명",
+            "insurance_name": "펫사랑M정기보험",
+            "species": 3,
+            "company_score": 75.42,
+            "company_url": "https://www.lifeplanet.co.kr/",
+            "company_logo": "https://www.lifeplanet.co.kr/resources/images/common/lifeplanet_logo.png",
+            "renewal": true,
+            "payment_period": 1
+        }
+    },
+    {
+        "model": "insurance.Insurance",
+        "pk": 12,
+        "fields": {
+            "company_name": "하나손해보험",
+            "insurance_name": "하나 펫사랑보험",
+            "species": 1,
+            "company_score": 86.03,
+            "company_url": "https://www.educar.co.kr/honeQ/product/petLove/honeQPetLoveIntro",
+            "company_logo": "https://www.hanainsure.co.kr/static/resources/mo/img/hana_kakako_img_800x400.png",
+            "renewal": true,
+            "payment_period": 1,
+            "etc": "사망위로금/위탁비용/유실견 찾기 지원금"
+        }
+    },
+    {
+        "model": "insurance.Insurance",
+        "pk": 13,
+        "fields": {
+            "company_name": "하나손해보험",
+            "insurance_name": "하나 맹견배상책임보험",
+            "species": 1,
+            "company_score": 86.03,
+            "company_url": "https://www.educar.co.kr/w/product/accidentHealth/fiercedogResponsibility",
+            "company_logo": "https://www.hanainsure.co.kr/static/resources/mo/img/hana_kakako_img_800x400.png",
+            "renewal": true,
+            "payment_period": 1
+        }
+    },
+    {
+        "model": "insurance.Insurance",
+        "pk": 14,
+        "fields": {
+            "company_name": "캐롯손해보험",
+            "insurance_name": "스마트ON펫산책보험",
+            "species": 1,
+            "company_score": 76.81,
+            "company_url": "https://www.carrotins.com/desktop/calculation/general/petWalkSwitch/",
+            "company_logo": "https://image.dnews.co.kr/photo/photo/2020/01/14/202001141543562310937-2-137029.jpg",
+            "renewal": true,
+            "payment_period": 1,
+            "etc": "산책 중 사망시 장례비/유실견 찾기 지원금"
+        }
+    }
+]
