@@ -202,7 +202,7 @@ export function AreSure() {
                     style={{ fontWeight: 'bold', color: '#F58613', fontSize: 30 }}
                     className="pb-3"
                   >
-                    회사 신뢰 등급
+                    보험사 신뢰 등급
                     <span
                       style={{ fontWeight: 'bold', fontSize: 22, color: '#7A8982', marginLeft: 20 }}
                     >

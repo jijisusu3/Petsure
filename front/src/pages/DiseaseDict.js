@@ -296,7 +296,7 @@ export function DiseaseDictPage() {
                       평소 물을 잘 먹을 수 있도록 깨끗한 물을 주기적으로 급여해주세요.
                     </p>
                     <p className={classes.tip}>
-                      <span style={{ fontWeight: 600 }}>비뇨기 탈구 관련 배상이 있는 보험</span>을
+                      <span style={{ fontWeight: 600 }}>비뇨기 관련 배상이 있는 보험</span>을
                       들어두면 좋아요.
                     </p>
                   </div>

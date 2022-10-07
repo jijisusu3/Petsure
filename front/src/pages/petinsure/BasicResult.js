@@ -37,7 +37,7 @@ export function BasicResultPage() {
     };
   });
   const handleScroll = () => {
-    if (check === true && window.scrollY > 3800) {
+    if (check === true && window.scrollY > 2000) {
       handleOpen();
       setCheck(false);
       return;
