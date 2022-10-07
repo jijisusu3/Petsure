@@ -238,7 +238,7 @@ function BasicInputForm() {
         setSelected(selected - 1);
       }
       if (event.key === 'Enter' && selected >= 0) {
-        handleDropDownClick(options[selected].name);
+        setInputValue(options[selected].name);
         setSelected(-1);
         setBreed(options[selected].id);
         if (event.target.value) {
