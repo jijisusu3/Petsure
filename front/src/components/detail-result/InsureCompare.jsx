@@ -22,7 +22,15 @@ const CompareCard = ({ data, user, addToCompare, removeFromCompare, selected }) 
       <div className={classes.insureCard}>
         <img className={classes.insure_logo} alt="insure" src={data.insurance.company_logo} />
         <div className={classes.titleBadge}>
-          <p className={classes.nametext}>{data.name.substr(0, 2)}형</p>
+          {data.name.substr(0, 2) === '기본' ? (
+            <span className={classes.basictype1}>기본</span>
+          ) : data.name.substr(0, 2) === '고급' ? (
+            <span className={classes.basictype3}>고급</span>
+          ) : data.name.substr(0, 2) === '실속' ? (
+            <span className={classes.basictype2}>실속</span>
+          ) : (
+            'null'
+          )}
           <p className={classes.name}>{data.insurance.insurance_name}</p>
           <div className={classes.covbox}>
             <p className={classes.covtext}>보장내용</p>
