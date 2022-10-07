@@ -99,7 +99,7 @@
 
 ## :desktop_computer: 사용된 기술
 
-![기술스택](/uploads/b47cbbc6f0a62473274e6fd1f088c1a1/기술스택.png)
+![특화기술플젝수정본](/uploads/43e48261506545b0b0feb0bc2631b76c/특화기술플젝수정본.png)
 
 **[ BACK END ]** 
 
