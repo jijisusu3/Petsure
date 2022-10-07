@@ -5,6 +5,67 @@ import classes from './BasicInputForm.module.css';
 
 import axios from 'axios';
 
+import styled from 'styled-components';
+
+const boxShadow = '0 4px 6px rgb(32 33 36 / 28%)';
+const activeBorderRadius = '1rem 1rem 0 0';
+const inactiveBorderRadius = '1rem 1rem 1rem 1rem';
+
+export const InputContainer = styled.div`
+  margin-top: 0;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: row;
+  padding-left: 1rem;
+  border-radius: 8px;
+  z-index: 3;
+  box-shadow: 0;
+  width: 293px;
+  height: 35px;
+
+  > input {
+    flex: 1 0 0;
+    background-color: #f0f0f0;
+    border: none;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-size: 16px;
+  }
+`;
+export const DropDownContainer = styled.ul`
+  background-color: #ffffff;
+  display: block;
+  margin-left: 13px;
+  margin-right: 0px;
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
+  margin-top: -1px;
+  padding: 0.5rem 0;
+  border: 1px solid rgb(223, 225, 229);
+  border-radius: 0 0 1rem 1rem;
+  box-shadow: ${boxShadow};
+  z-index: 3;
+  width: 293px;
+  height: 220px;
+  overflow: scroll;
+
+  > li:hover {
+    background-color: lightgray;
+  }
+
+  > li {
+    padding: 0 1rem;
+
+    &.selected {
+      background-color: lightgray;
+    }
+  }
+`;
 function BasicInputForm() {
   const navigate = useNavigate();
   const [species, setSpecies] = useState('');
@@ -24,6 +85,7 @@ function BasicInputForm() {
   const onSpeciesHandler = event => {
     setSpecies(Number(event.target.value));
     setBreedName(breed_name => []);
+    setInputValue(inputValue => '');
     setIsBreed(isBreed => '');
   };
 
@@ -54,7 +116,7 @@ function BasicInputForm() {
       } else {
         setAge(Number(age));
       }
-      if (Number(age) >= 0 && Number(age - 1) <= 10) {
+      if (Number(age) >= 0 && Number(age - 1) <= 8) {
         setIsBirth(true);
         setBirthMsg('　');
       } else {
@@ -97,9 +159,9 @@ function BasicInputForm() {
   };
 
   const onBreedHandler = event => {
-    setBreed(Number(event.target.value));
-    let tmp = breed_list.filter(data => data.id === Number(event.target.value));
-    setBreedName(tmp[0].name);
+    setBreedName(event.target.value);
+    let tmp = breed_list.filter(data => data.name === event.target.value);
+    setBreed(tmp[0].id);
     if (event.target.value) {
       setIsBreed(true);
     } else {
@@ -125,6 +187,68 @@ function BasicInputForm() {
     }
   }, [species]);
 
+  const [hasText, setHasText] = useState(false);
+  const [inputValue, setInputValue] = useState('');
+  const [options, setOptions] = useState(breed_list);
+  const [selected, setSelected] = useState(-1);
+  useEffect(() => {
+    if (inputValue === '') {
+      setHasText(false);
+      setOptions([]);
+    }
+
+    if (inputValue !== '') {
+      setOptions(
+        breed_list.filter(el => {
+          return el.name.includes(inputValue);
+        }),
+      );
+    }
+  }, [inputValue]);
+  const handleInputChange = event => {
+    setInputValue(event.target.value);
+    console.log(inputValue);
+    setHasText(true);
+    let tmp = breed_list.filter(data => data.name === event.target.value);
+    setBreed(tmp[0].id);
+    if (event.target.value) {
+      setIsBreed(true);
+    } else {
+      setIsBreed(false);
+    }
+  };
+
+  const handleDropDownClick = clickedOption => {
+    setInputValue(clickedOption.name);
+    setHasText(true);
+    setBreed(clickedOption.id);
+    if (clickedOption) {
+      setIsBreed(true);
+    } else {
+      setIsBreed(false);
+    }
+  };
+
+  const handleKeyUp = event => {
+    if (hasText) {
+      if (event.key === 'ArrowDown' && options.length - 1 > selected) {
+        setSelected(selected + 1);
+      }
+      if (event.key === 'ArrowUp' && selected >= 0) {
+        setSelected(selected - 1);
+      }
+      if (event.key === 'Enter' && selected >= 0) {
+        handleDropDownClick(options[selected].name);
+        setSelected(-1);
+        setBreed(options[selected].id);
+        if (event.target.value) {
+          setIsBreed(true);
+        } else {
+          setIsBreed(false);
+        }
+      }
+    }
+  };
   return (
     <div style={{ padding: '70px' }}>
       <RibbonSheet>
@@ -179,27 +303,29 @@ function BasicInputForm() {
                 </p>
               </div>
               <div className={classes.right}>
-                <input
-                  className={classes.sqaure}
-                  type="text"
-                  placeholder="반려동물 종류가 어떻게 되나요?"
-                  value={breed_name}
-                  onChange={onBreedHandler}
-                />
-                <div />
-                <select
-                  className="form-select"
-                  value={breed || []}
-                  onChange={onBreedHandler}
-                  multiple
-                  aria-label="multiple select example"
-                >
-                  {breed_list.map(item => (
-                    <option value={item.id} key={item.id}>
-                      {item.name}
-                    </option>
-                  ))}
-                </select>
+                <InputContainer>
+                  <input
+                    type="text"
+                    placeholder="반려동물 종류가 어떻게 되나요?"
+                    value={inputValue}
+                    onChange={handleInputChange}
+                    onKeyUp={handleKeyUp}
+                  />
+                </InputContainer>
+
+                {hasText ? (
+                  <DropDown
+                    options={options}
+                    handleComboBox={handleDropDownClick}
+                    selected={selected}
+                  />
+                ) : (
+                  <DropDown
+                    options={breed_list}
+                    handleComboBox={handleDropDownClick}
+                    selected={selected}
+                  />
+                )}
               </div>
             </div>
             <div>
@@ -219,3 +345,21 @@ function BasicInputForm() {
 }
 
 export default BasicInputForm;
+
+export const DropDown = ({ options, handleComboBox, selected }) => {
+  return (
+    <DropDownContainer>
+      {options.map((option, idx) => {
+        return (
+          <li
+            key={idx}
+            onClick={() => handleComboBox(option)}
+            className={selected === idx ? 'selected' : ''}
+          >
+            {option.name}
+          </li>
+        );
+      })}
+    </DropDownContainer>
+  );
+};
