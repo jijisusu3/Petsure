@@ -8,8 +8,6 @@ import axios from 'axios';
 import styled from 'styled-components';
 
 const boxShadow = '0 4px 6px rgb(32 33 36 / 28%)';
-const activeBorderRadius = '1rem 1rem 0 0';
-const inactiveBorderRadius = '1rem 1rem 1rem 1rem';
 
 export const InputContainer = styled.div`
   margin-top: 0;
@@ -82,6 +80,11 @@ function BasicInputForm() {
   const [isBirth, setIsBirth] = useState(false);
   const [birthMsg, setBirthMsg] = useState('');
 
+  const [hasText, setHasText] = useState(false);
+  const [inputValue, setInputValue] = useState('');
+  const [options, setOptions] = useState(breed_list);
+  const [selected, setSelected] = useState(-1);
+
   const onSpeciesHandler = event => {
     setSpecies(Number(event.target.value));
     setBreedName(breed_name => []);
@@ -142,6 +145,9 @@ function BasicInputForm() {
   const others = {
     breed_name: breed_name,
     birth_date: birth,
+    inputValue: inputValue,
+    options: options,
+    selected: selected,
   };
 
   const searchBasic = () => {
@@ -187,10 +193,6 @@ function BasicInputForm() {
     }
   }, [species]);
 
-  const [hasText, setHasText] = useState(false);
-  const [inputValue, setInputValue] = useState('');
-  const [options, setOptions] = useState(breed_list);
-  const [selected, setSelected] = useState(-1);
   useEffect(() => {
     if (inputValue === '') {
       setHasText(false);
@@ -249,6 +251,7 @@ function BasicInputForm() {
       }
     }
   };
+  console.log(selected);
   return (
     <div style={{ padding: '70px' }}>
       <RibbonSheet>
