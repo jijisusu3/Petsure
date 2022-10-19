@@ -238,16 +238,16 @@
 ## 👤 저자
 
 * 김지수[FullStack] / [Team Leader] - Kim Jisoo - wltn7498@gmail.com
-  Infra
-  BE - Api
-  FE - Chart JS, Insurance detail
+  **Infra
+  **BE - Api
+  **FE - Chart JS, Insurance detail
 * 권예슬[FullStack] / [BE Leader] - Kwon Ye-seul - ysltub@gmail.com
-  BE - Euclidean algorithm, Data crawling, Api
-  FE - Landing page, Basic search, Basic result, Disease dict
+  **BE - Euclidean algorithm, Data crawling, Api
+  **FE - Landing page, Basic search, Basic result, Disease dict
 * 전지수[FullStack] - Jeon Ji-soo - newsty1107@gmail.com
-  BE - Weighted KNN, Api
-  FE - Detail result, Insurance detail, Disease dict
+  **BE - Weighted KNN, Api
+  **FE - Detail result, Insurance detail, Disease dict
 * 이성재[FrontEnd] / [FE Leader] - Lee Sung-jae - lsuksa0315@gmail.com
-  FE - Chart JS, Detail search, Detail result, Insurance detail, Insurance compare
+  **FE - Chart JS, Detail search, Detail result, Insurance detail, Insurance compare
 * 김채윤[FrontEnd] - Kim Chae-yoon - only363me@gmail.com
-  FE - About us
+  **FE - About us
