@@ -1,5 +1,7 @@
 # 🐱 PetSure? 🐶
 
+### 🏆🥉 SSAFY 7기 특화프로젝트 우수작
+
 ## 📊 PetSure ? 🐱🐶
 
 - ### 프로젝트 개요
@@ -227,13 +229,6 @@
 
 ---
 
-### 6. About Us
-
-* **[개발진 팀 소개 화면]** 
-
-![6-1](/uploads/ffe936e96a4e20a40ca44395bf4f01f2/6-1.gif)
-
----
 
 
 ## :calendar: 일정
@@ -242,8 +237,17 @@
 
 ## 👤 저자
 
-* 김지수 - Kim Jisoo - wltn7498@gmail.com - [FullStack] / [Team Leader]
-* 권예슬 - Kwon Ye-seul - ysltub@gmail.com -  [FullStack] / [BE Leader]
-* 전지수 - Jeon Ji-soo - newsty1107@gmail.com -  [FullStack]
-* 이성재 - Lee Sung-jae - lsuksa0315@gmail.com -  [FrontEnd] / [FE Leader]
-* 김채윤 - Kim Chae-yoon - only363me@gmail.com -  [FrontEnd]
+* 김지수[FullStack] / [Team Leader] - Kim Jisoo - wltn7498@gmail.com
+  Infra
+  BE - Api
+  FE - Chart JS, Insurance detail
+* 권예슬[FullStack] / [BE Leader] - Kwon Ye-seul - ysltub@gmail.com
+  BE - Euclidean algorithm, Data crawling, Api
+  FE - Landing page, Basic search, Basic result, Disease dict
+* 전지수[FullStack] - Jeon Ji-soo - newsty1107@gmail.com
+  BE - Weighted KNN, Api
+  FE - Detail result, Insurance detail, Disease dict
+* 이성재[FrontEnd] / [FE Leader] - Lee Sung-jae - lsuksa0315@gmail.com
+  FE - Chart JS, Detail search, Detail result, Insurance detail, Insurance compare
+* 김채윤[FrontEnd] - Kim Chae-yoon - only363me@gmail.com
+  FE - About us
