@@ -21,6 +21,7 @@ const LandingPage = () => {
           navigate('/basicinput');
         },
       },
+      foreground: <div />,
     },
     {
       title: ['최소 정보로 최대 만족'],

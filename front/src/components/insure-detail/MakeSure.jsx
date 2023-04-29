@@ -15,7 +15,7 @@ export function MakeSure() {
         alignItems="baseline"
         style={{ width: 800 }}
       >
-        <p style={{ color: '#F0B622', fontWeight: 600, fontSize: 36 }}>
+        <p style={{ color: '#F0B622', fontWeight: 600, fontSize: 36, marginTop: 100 }}>
           Make <span style={{ fontSize: 40, fontWeight: 630 }}>SURE .</span>
         </p>
         <p style={{ color: '#717171', fontSize: 24, fontWeight: 600 }}>

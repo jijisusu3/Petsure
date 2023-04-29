@@ -171,7 +171,7 @@ def basic(request):
     basics = []
     condition = [0]*5
     dog_fee = [1, 1.1, 1.3, 1.57, 1.8, 1.95, 2.1, 2.2, 2.27, 1.9, 1.97]
-    cat_fee = [1, 0.95, 1.01, 1.03, 1.06, 1.15, 1.19, 1.25, 1.33]
+    cat_fee = [1, 0.95, 1.01, 1.03, 1.06, 1.15, 1.19, 1.25, 1.33, 1.23, 1.26]
     breed_info = {}
 
     if data['species'] == 1: # 개
@@ -201,16 +201,31 @@ def basic(request):
                 break               
         breed_info['disease_name'] = disease_list
         basics.append(breed_info)
-        insurances = Insurance_detail.objects.values()
-        distance = []
-        distance_id = []
-        for insure in insurances:
-            if Insurance.objects.filter(id=insure['insurance_id']).values('species').get()['species'] != 2:
-                tmp = insure['all_cover'][4:]
-                compare = np.array(tmp)
-                dist = np.linalg.norm(compare - condition)
-                distance.append(dist)
-                distance_id.append(insure['id'])
+
+        if data['animal_birth'] > 8:
+            insurances = Insurance_detail.objects.filter(insurance_id=1).values() | Insurance_detail.objects.filter(insurance_id=3).values()
+            distance = []
+            distance_id = []
+            for insure in insurances:
+                if Insurance.objects.filter(id=insure['insurance_id']).values('species').get()['species'] != 2:
+                    tmp = insure['all_cover'][4:]
+                    compare = np.array(tmp)
+                    dist = np.linalg.norm(compare - condition)
+                    distance.append(dist)
+                    distance_id.append(insure['id'])
+
+
+        else:
+            insurances = Insurance_detail.objects.values()
+            distance = []
+            distance_id = []
+            for insure in insurances:
+                if Insurance.objects.filter(id=insure['insurance_id']).values('species').get()['species'] != 2:
+                    tmp = insure['all_cover'][4:]
+                    compare = np.array(tmp)
+                    dist = np.linalg.norm(compare - condition)
+                    distance.append(dist)
+                    distance_id.append(insure['id'])
 
 
     if data['species'] == 2: # 고양이
@@ -236,17 +251,33 @@ def basic(request):
         breed_info['disease_name'] = disease_list
         basics.append(breed_info)
             
+        if data['animal_birth'] > 8:
+            insurances = Insurance_detail.objects.filter(insurance_id=4).values()
+            distance = []
+            distance_id = []
+            for insure in insurances:
+                if Insurance.objects.filter(id=insure['insurance_id']).values('species').get()['species'] != 1: 
+                    tmp = insure['all_cover'][4:]
+                    compare = np.array(tmp)
+                    dist = np.linalg.norm(compare - condition)
+                    distance.append(dist)
+                    distance_id.append(insure['id'])
 
-        insurances = Insurance_detail.objects.values()
-        distance = []
-        distance_id = []
-        for insure in insurances:
-            if Insurance.objects.filter(id=insure['insurance_id']).values('species').get()['species'] != 1: 
-                tmp = insure['all_cover'][4:]
-                compare = np.array(tmp)
-                dist = np.linalg.norm(compare - condition)
-                distance.append(dist)
-                distance_id.append(insure['id'])
+        else:
+        ###################################
+            insurances = Insurance_detail.objects.values()
+            distance = []
+            distance_id = []
+            for insure in insurances:
+                if Insurance.objects.filter(id=insure['insurance_id']).values('species').get()['species'] != 1: 
+                    tmp = insure['all_cover'][4:]
+                    compare = np.array(tmp)
+                    dist = np.linalg.norm(compare - condition)
+                    distance.append(dist)
+                    distance_id.append(insure['id'])
+
+
+
         
     df = pd.DataFrame({
         "distance" : distance,
@@ -301,7 +332,7 @@ def basic(request):
 @api_view(["POST"])
 def detail(request):
     dog_fee = [1, 1.1, 1.3, 1.57, 1.8, 1.95, 2.1, 2.2, 2.27, 1.9, 1.97]
-    cat_fee = [1, 0.95, 1.01, 1.03, 1.06, 1.15, 1.19, 1.25, 1.33]
+    cat_fee = [1, 0.95, 1.01, 1.03, 1.06, 1.15, 1.19, 1.25, 1.33, 1.5, 1.7]
     data = request.data
     user = []
     into_user = [
@@ -311,35 +342,61 @@ def detail(request):
     for i in into_user:
         user.append(data.get(i))
     user.append(0)
-    print(user)
-
-
-    if data['species'] == 1:
-        df_user = pd.read_csv("./knn_data/doguser.csv", encoding="cp949")
-        k = 51
-    else:
-        df_user = pd.read_csv("./knn_data/catuser.csv", encoding="cp949")
-        k = 191
-    
-    df_user.drop(['animal_name', 'species', 'animal_birth', 'breed'], axis=1, inplace=True)
-    neighbor_list = df_user.values.tolist()
-    print(df_user)
-
-    lst = [0] * 8
-    pk_lst = [0] * 8
-    dist_lst = get_pred(user, neighbor_list, k)
-
-    for i in range(8):
-        lst[i] = max(dist_lst)
-        pk_lst[i] = dist_lst.index(max(dist_lst))
-        dist_lst[dist_lst.index(max(dist_lst))] = 0
-    print(lst, pk_lst)
-
-
 
     recommends = list()
-    for j in range(8):
-        recommends.append((pk_lst[j], 100 - 1.96*(j+1)))
+
+
+    if data['animal_birth'] >= 9:
+        if data['species'] == 1:
+            df_user = pd.read_csv("./knn_data/olddoguser.csv", encoding="cp949")
+            k = 51
+            lst = [0] * 8
+            pk_lst = [0] * 8
+            df_user.drop(['animal_name', 'species', 'animal_birth', 'breed'], axis=1, inplace=True)
+            neighbor_list = df_user.values.tolist()
+            dist_lst = get_pred(user, neighbor_list, k)
+            for i in range(8):
+                lst[i] = max(dist_lst)
+                pk_lst[i] = dist_lst.index(max(dist_lst))
+                dist_lst[dist_lst.index(max(dist_lst))] = 0
+            for j in range(8):
+                recommends.append((pk_lst[j], 100 - 1.96*(j+1)))
+                
+        else:
+            df_user = pd.read_csv("./knn_data/oldcatuser.csv", encoding="cp949")
+            k = 71
+            lst = [0] * 6
+            pk_lst = [0] * 6
+            df_user.drop(['animal_name', 'species', 'animal_birth', 'breed'], axis=1, inplace=True)
+            neighbor_list = df_user.values.tolist()
+            dist_lst = get_pred(user, neighbor_list, k)
+            for i in range(6):
+                lst[i] = max(dist_lst)
+                pk_lst[i] = dist_lst.index(max(dist_lst))
+                dist_lst[dist_lst.index(max(dist_lst))] = 0
+            for j in range(6):
+                recommends.append((pk_lst[j], 100 - 1.96*(j+1)))
+
+    else:
+        if data['species'] == 1:
+            df_user = pd.read_csv("./knn_data/doguser.csv", encoding="cp949")
+            k = 51
+        else:
+            df_user = pd.read_csv("./knn_data/catuser.csv", encoding="cp949")
+            k = 191
+        df_user.drop(['animal_name', 'species', 'animal_birth', 'breed'], axis=1, inplace=True)
+        neighbor_list = df_user.values.tolist()
+        dist_lst = get_pred(user, neighbor_list, k)
+        lst = [0] * 8
+        pk_lst = [0] * 8
+        for i in range(8):
+            lst[i] = max(dist_lst)
+            pk_lst[i] = dist_lst.index(max(dist_lst))
+            dist_lst[dist_lst.index(max(dist_lst))] = 0
+        for j in range(8):
+            recommends.append((pk_lst[j], 100 - 1.96*(j+1)))
+    
+
 
     # recommend의 결과값은
     # (insurance_pk, score) 형태로 나옵니다.
@@ -505,18 +562,15 @@ def get_neighbors(user, neighbor_list, k):
 		dist = inverse_weight(user, neighbor)
 		distances.append((neighbor, dist))
 	distances.sort(reverse=True, key=lambda tup: tup[1])
-	print('neighbors distances : ', distances)
 
 	near_neighbors = list()
 	for i in range(k):
 		near_neighbors.append(distances[i][0])
-	print('near neighbors : ', near_neighbors)
 	return near_neighbors
 
 def predict_classification(user, neighbor_list, k):
 	neighbors = get_neighbors(user, neighbor_list, k)
 	predict_candidate = [row[-1] for row in neighbors]
-	print('predict_candidate : ', predict_candidate)
 	prediction = predict_candidate
 	# prediction = max(set(predict_candidate), key=predict_candidate.count)
 	return prediction

@@ -1,7 +1,7 @@
 .HeaderBanner {
     padding: 60px;
     text-align: center;
-    background-image: linear-gradient(to right, #f58613, #f0b612);
+    background-image: linear-gradient(to right, #f0b612, #FA917B);
     color: white;
     height: 200px;
     font-size: 30px;
@@ -9,13 +9,21 @@
 
 .title {
     font-size: 2.3rem;
-    margin: 0 0 1rem 0;
+    margin: 1rem 0;
+    animation: fadein 2s;
   }
 
+  @keyframes fadein {
+    from { opacity: 0; 
+  }
+    to   { opacity: 1; }
+  }
+  
+/* 
 .second_title {
     font-size: 1.5rem;
     margin: 0.5rem 0;
-}
+} */
 
 @media screen and (max-width: 650px) {
     .column {

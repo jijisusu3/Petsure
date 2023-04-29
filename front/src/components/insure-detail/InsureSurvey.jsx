@@ -4,14 +4,16 @@ import axios from 'axios';
 import './Star.css';
 import classes from './InsureSurvey.module.css';
 
+import Swal from 'sweetalert2';
+
 export default function InsureSurvey() {
   const current = decodeURI(window.location.href);
-  const search = current.split('/')[6];
+  const search = current.split('/')[5];
   const numSearch = Number(search);
   const location = useLocation();
   const insureId = Number(location.state.data.id);
   const insureUrl = location.state.data.insurance.company_url;
-  const [survey, setSurvey] = useState('');
+  const [survey, setSurvey] = useState(null);
 
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
@@ -30,9 +32,24 @@ export default function InsureSurvey() {
       })
       .then(function (response) {
         console.log(response);
+        Swal.fire({
+          title: '의견을 남겼습니다!',
+          icon: 'success',
+        });
+        setSurvey('');
+        setRating(0);
+        setHover(0);
       })
       .catch(function (error) {
-        console.log(error);
+        if (error.response.data === 'This survey already exists') {
+          Swal.fire({
+            title: '이미 의견을 남겼어요!',
+            icon: 'error',
+          });
+        }
+        setSurvey('');
+        setRating(0);
+        setHover(0);
       });
   };
 
@@ -92,10 +109,18 @@ export default function InsureSurvey() {
           onChange={e => {
             setSurvey(e.target.value);
           }}
+          value={survey}
         />
-        <button className={classes.subbtn} onClick={() => register()}>
-          제출
-        </button>
+        {hover !== 0 && (
+          <button className={classes.subbtn} onClick={() => register()}>
+            제출
+          </button>
+        )}
+        {hover === 0 && (
+          <button className={classes.subbtndisabled} disabled={true}>
+            제출
+          </button>
+        )}
       </div>
     </div>
   );

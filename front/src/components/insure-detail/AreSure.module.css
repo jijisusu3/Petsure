@@ -10,10 +10,11 @@
   }
 .threeScore {
     display: flex;
+    width: 1200px;
 }
 
 .threeText {
-    width: 17%;
+    width: 20%;
 }
 .threeText p {
     margin: 20px 0px;
@@ -21,16 +22,16 @@
 }
 
 .threeBar {
-    width: 60%;
+    width: 50%;
 }
 .threeInt {
-    width: 9.5%;
+    width: 12%;
 }
 .sureline {
     width: 800px;
     height: 4px;
     background-color: #C2D1CA;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
 }
 .scoreimg {
     cursor: pointer;

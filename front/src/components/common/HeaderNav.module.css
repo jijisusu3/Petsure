@@ -37,3 +37,38 @@
 .profileImageContainer {
   position: relative;
 } */
+
+.qtitle {
+  /* box-shadow: inset 0 -15px 0 rgba(250, 211, 177, 0.855); 
+  line-height: 21px; */
+  color: black;
+  font-weight: 600
+}
+
+.qcontent {
+  margin-left: 43px;
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-weight: 450;
+  padding-right: 60px;
+}
+.firstcnt {
+  font-size: 14px;
+  margin-top: 8px;
+  font-weight: 450;
+}
+
+.guideinfo {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 50px;
+  border-radius: 5px;
+  margin-top: 50px;
+  color: #9036c4;
+  background-color: #fdfafff4;
+  border: 1px solid #e6d4ef;
+  box-shadow: rgba(252, 230, 255, 0.16) 0px 1px 3px 0px, rgba(252, 231, 255, 0.16) 0px 0px 0px 1px;
+}

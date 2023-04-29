@@ -1,0 +1,15 @@
+.learnMore {
+  background-color: #F79420;
+  width: 320px;
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  margin-left: 20px;
+  display: inline-block;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 40px;
+  cursor: pointer;
+  border-radius: 10px;
+}
