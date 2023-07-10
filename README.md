@@ -147,6 +147,8 @@
 
 #### 1-1. Landing page
 
+![1-1메인 (1)](https://github.com/jijisusu3/Petsure/assets/97648027/8f9e673e-143d-411c-9727-99c3c31ca15b)
+
 ---
 ### 2. 메인 화면 및 가이드
 
